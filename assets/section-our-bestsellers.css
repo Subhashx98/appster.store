@@ -1,0 +1,102 @@
+.section-our-bestsellers {
+    padding: 40px 0 72px;
+    background: #f6f6f6;
+    margin-top: 40px;
+  }
+  
+  .section-our-bestsellers .title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .section-our-bestsellers .title-box h2 {
+    color: var(--primary);
+  }
+  
+  .section-our-bestsellers .title-box .d-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .section-our-bestsellers .title-box .d-flex .slide-button {
+    cursor: pointer;
+  }
+  
+  .section-our-bestsellers .product-slider .slick-slide {
+    margin: 0 10px;
+  }
+  
+  .section-our-bestsellers .product-slider .slick-list {
+    margin: 0 -10px;
+  }
+  
+  .section-our-bestsellers .progress-bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 220px;
+    background-color: #231f201a;
+    background-image: linear-gradient(to right, black, black);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    transition: background-size 0.4s ease-in-out;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  
+  .section-our-bestsellers .right-corner {
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 767px) {
+    .section-our-bestsellers .title-box {
+      flex-direction: column;
+      align-items: baseline;
+      gap: 18px;
+    }
+  
+    .section-our-bestsellers {
+      padding: 50px 0;
+    }
+    .section-our-bestsellers .progress-bar {
+      margin-left: unset;
+    }
+  
+    .section-our-bestsellers .title-box h2 {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 43.2px;
+      letter-spacing: -0.02em;
+    }
+    .product-card .add-box button {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 16.1px;
+    }
+    .section-our-bestsellers .right-corner {
+      width: 100%;
+    }
+  
+    .section-our-bestsellers .progress-bar {
+      margin-right: 70px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .section-our-bestsellers .product-slider .slick-slide {
+      max-width: 330px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .section-our-bestsellers .progress-bar {
+      min-width: 110px;
+    }
+  }
+  

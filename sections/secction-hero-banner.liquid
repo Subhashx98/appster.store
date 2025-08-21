@@ -1,0 +1,85 @@
+{{ 'section-hero-banner.css' | asset_url | stylesheet_tag }}
+
+<section class="hero-banner" style="position: relative;">
+  <div class="media-container">
+    {% if section.settings.media_type == 'image' and section.settings.image %}
+      <img
+        src="{{ section.settings.image | img_url: '2048x2048' }}"
+        alt="{{ section.settings.image_alt_text }}"
+        class="hero-banner__image"
+        width=""
+        height="" />
+    {% elsif section.settings.media_type == 'video' and section.settings.video_url %}
+      {{ section.settings.video_url | video_tag: autoplay: true, loop: true, muted: true, class: 'hero-banner__video' }}
+    {% endif %}
+  </div>
+  <div class="hero-banner__content">
+    <div class="page-width">
+      <h1>{{ section.settings.heading }}</h1>
+      <p>{{ section.settings.subheading }}</p>
+      {% if section.settings.button_text and section.settings.button_link %}
+        <a href="{{ section.settings.button_link }}" class="main-cta">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Section Hero Banner",
+    "settings": [
+      {
+        "type": "select",
+        "id": "media_type",
+        "label": "Media Type",
+        "options": [
+          {
+            "value": "image",
+            "label": "Image"
+          }, {
+            "value": "video",
+            "label": "Video"
+          }
+        ],
+        "default": "image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Hero Image"
+      },
+      {
+        "type": "video",
+        "id": "video_url",
+        "label": "Video"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading Text",
+        "default": "Welcome to APPSTER!"
+      }, {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading Text",
+        "default": "Discover our collection."
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Section Hero Banner"
+      }
+    ]
+  }
+{% endschema %}

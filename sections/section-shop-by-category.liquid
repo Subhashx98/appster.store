@@ -1,0 +1,114 @@
+{{ 'section-shop-by-category.css' | asset_url | stylesheet_tag }}
+
+<div class="section-shop-brand">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="shop-brand-tabing">
+      <ul class="tab-menu">
+        {% for collectiontext in section.blocks %}
+          {% case collectiontext.type %}
+            {% when 'collections' %}
+              {% if forloop.index == 1 %}
+                <li class="active">
+                  <a href="javascript:void(0)">{{ collectiontext.settings.title }}</a>
+                </li>
+              {% else %}
+                <li>
+                  <a href="javascript:void(0)">{{ collectiontext.settings.title }}</a>
+                </li>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </ul>
+      <div class="tab-main-box">
+        {% for tab in section.blocks %}
+          {% case tab.type %}
+            {% when 'collections' %}
+              <div id="tab-{{ forloop.index }}" class="tab-box">
+                <div class="d-flex">
+                  {% for collection in tab.settings.collection_list %}
+                    <div class="product-box">
+                      <img
+                        class="main-img"
+                        src="{{ collection.image.src | image_url }}"
+                        width=""
+                        height=""
+                        alt="{{ collection.title }}"
+                      >
+                      <a href="{{ collection.url }}">
+                        <span>{{- collection.title }}</span>
+                        <img src="{{ "black-rieght-arrow.svg" | asset_url }}" width="18" height="18" alt="Arrow"
+                      ></a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    // Initially hide all tabs except the first one
+    $('.tab-box').hide();
+    $('#tab-1').show();
+
+    // Handle click event on tab menu links
+    $('.tab-menu li').click(function (e) {
+      e.preventDefault();
+
+      // Remove active class from all li elements and add to the clicked one
+      $('.tab-menu li').removeClass('active');
+      $(this).addClass('active'); // Add 'active' to the clicked li
+
+      // Get the index of the clicked tab and show corresponding content
+      var index = $(this).index() + 1;
+      $('.tab-box').hide();
+      $('#tab-' + index).show();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Shop By Category",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Collections",
+      "type": "collections",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "collection_list",
+          "id": "collection_list",
+          "label": "Select Collections",
+          "limit": 6
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop By Category",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

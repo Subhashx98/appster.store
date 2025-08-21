@@ -1,0 +1,188 @@
+.section-shop-brand {
+    padding: 60px 0 30px 0;
+    overflow: hidden;
+  }
+  
+  .section-shop-brand h2 {
+    color: var(--olive);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+  
+  .section-shop-brand .shop-brand-tabing .tab-main-box {
+    margin-top: 87px;
+  }
+  
+  .product-box .main-img {
+    mix-blend-mode: multiply;
+  }
+  
+  .section-shop-brand .shop-brand-tabing .tab-main-box .d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .section-shop-brand .shop-brand-tabing .tab-main-box .d-flex .product-box {
+    max-width: calc(16.66% - 17px);
+    width: 100%;
+  }
+  
+  .section-shop-brand .shop-brand-tabing .tab-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .section-shop-brand .shop-brand-tabing .tab-menu li a {
+    padding: 17px 20px;
+    font-family: var(--font-helvetica);
+    border: 1px solid #6d6e7299;
+    background: var(--white);
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.4px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    display: inline-block;
+    color: var(--primary);
+    white-space: nowrap;
+  }
+  
+  .section-shop-brand .shop-brand-tabing .tab-menu li.active a {
+    background: var(--primary);
+    color: var(--white);
+  }
+  
+  @media (max-width: 1200px) {
+    .section-shop-brand .shop-brand-tabing .tab-main-box .d-flex .product-box {
+      max-width: calc(20% - 16px);
+    }
+  
+    .section-shop-brand
+      .shop-brand-tabing
+      .tab-main-box
+      .d-flex
+      .product-box:nth-child(n + 6) {
+      margin-top: 50px;
+    }
+  }
+  
+  @media (max-width: 989px) {
+    .section-shop-brand .shop-brand-tabing .tab-main-box .d-flex .product-box {
+      max-width: calc(25% - 15px);
+    }
+  
+    .section-shop-brand
+      .shop-brand-tabing
+      .tab-main-box
+      .d-flex
+      .product-box:nth-child(n + 5) {
+      margin-top: 50px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .section-shop-brand .shop-brand-tabing .tab-main-box .d-flex .product-box {
+      max-width: calc(50% - 6px);
+    }
+  
+    .section-shop-brand .shop-brand-tabing .tab-main-box .d-flex {
+      gap: 12px;
+    }
+  
+    .section-shop-brand
+      .shop-brand-tabing
+      .tab-main-box
+      .d-flex
+      .product-box:nth-child(n + 3) {
+      margin-top: 75px;
+    }
+  }
+  
+  @media (max-width: 630px) {
+    .section-shop-brand .shop-brand-tabing .tab-menu {
+      justify-content: flex-start;
+    }
+    .section-shop-brand .shop-brand-tabing .tab-menu::-webkit-scrollbar {
+      width: 1px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .product-box {
+      padding: 10px;
+    }
+    .product-box .main-img {
+      max-height: 210px;
+      min-height: 210px;
+    }
+    .section-shop-brand .shop-brand-tabing .tab-main-box {
+      margin-top: 40px;
+    }
+    .section-shop-brand
+      .shop-brand-tabing
+      .tab-main-box
+      .d-flex
+      .product-box:nth-child(n + 3) {
+      margin-top: 0px;
+    }
+    .section-shop-brand .shop-brand-tabing .tab-menu {
+      scrollbar-width: none;
+    }
+  
+    .section-shop-brand .shop-brand-tabing .tab-menu::-webkit-scrollba {
+      width: 0;
+      height: 0;
+    }
+  
+    .section-shop-brand .shop-brand-tabing .tab-menu:hover::-webkit-scrollbar {
+      width: 30px;
+      height: 4px;
+    }
+  
+    .section-shop-brand
+      .shop-brand-tabing
+      .tab-menu:hover::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.5); /* Scrollbar color */
+      border-radius: 4px; /* Rounded edges */
+    }
+  
+    .section-shop-brand
+      .shop-brand-tabing
+      .tab-menu:hover::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0); /* Track color */
+    }
+    .section-shop-brand h2{
+      font-size: 30px;
+    }
+  }
+  
+  @media (max-width: 359px) {
+    .section-shop-brand .shop-brand-tabing .tab-main-box .d-flex .product-box {
+      max-width: 100%;
+    }
+  
+    .product-box .main-img {
+      object-fit: contain;
+    }
+  
+    .section-shop-brand
+      .shop-brand-tabing
+      .tab-main-box
+      .d-flex
+      .product-box:nth-child(n) {
+      margin-top: 75px;
+    }
+  }
+  

@@ -1,0 +1,61 @@
+{{ 'section-about-story.css' | asset_url | stylesheet_tag }}
+
+<div class="section-about-story">
+  <div class="page-width">
+    <div class="row">
+      {% if section.settings.main_image != blank %}
+        <div class="col-6">
+          <div class="about-story-block">
+            <img
+              src="{{ section.settings.main_image | image_url }}"
+              width=""
+              height=""
+              alt="About Image"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      {% endif %}
+      {% if section.settings.description != blank or section.settings.title != blank %}
+        <div class="col-6">
+          <div class="about-story-content">
+            {% if section.settings.title != blank %}
+              <h2>{{ section.settings.title }}</h2>
+            {% endif %}
+            {% if section.settings.description != blank %}
+              {{ section.settings.description }}
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About Story",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Story"
+    }
+  ]
+}
+{% endschema %}

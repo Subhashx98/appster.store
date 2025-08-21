@@ -1,0 +1,206 @@
+.section-descover {
+    padding: 60px 0;
+  }
+  
+  .section-descover .page-width {
+    max-width: 1440px;
+  }
+  
+  .section-descover .row {
+    display: flex;
+    gap: 94px;
+    margin-top: 48px;
+    align-items: center;
+  }
+  
+  .section-descover .row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .section-descover .descover-main .descover-title h2 {
+    font-family: var(--font-minion-pro);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 57.6px;
+    color: var(--primary);
+  }
+  
+  .section-descover .row .col-6 {
+    max-width: calc(50% - 45px);
+    width: 100%;
+  }
+  
+  .section-descover .descover-main {
+    background-color: #f6f6f6;
+    padding: 80px 100px;
+    border-radius: 22px;
+  }
+  
+  .section-descover .descover-main .descover-title {
+    font-family: var(--font-minion-pro);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 57.6px;
+    text-align: center;
+    color: var(--dark-black);
+  }
+  
+  .section-descover .descover-block img,
+  .section-descover .descover-block video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-height: 500px;
+    min-height: 500px;
+    border-radius: 5px;
+    object-position: 100% 40%;
+  }
+  
+  .section-descover .descover-content h2 {
+    font-family: var(--font-minion-pro);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0.02em;
+    color: var(--primary);
+    margin-bottom: 18px;
+    max-width: 518px;
+  }
+  
+  .section-descover .descover-content p {
+    font-family: var(--font-helvetica);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #5c5d60;
+  }
+  
+  .section-descover .descover-content a {
+    font-family: var(--font-helvetica);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.4px;
+    padding: 21px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    color: var(--white);
+    margin-top: 40px;
+    display: block;
+    margin-top: 40px;
+    max-width: 187px;
+    text-align: center;
+  }
+  
+  .section-descover .descover-content a:hover {
+    background-color: var(--dark-black);
+  }
+  
+  @media (max-width: 1290px) {
+    .section-descover .row {
+      gap: 50px;
+    }
+  
+    .section-descover .descover-main {
+      padding: 50px;
+    }
+  
+    .section-descover .row .col-6 {
+      max-width: calc(50% - 25px);
+    }
+  }
+  
+  @media (max-width: 1147px) {
+    .section-descover .descover-main {
+      padding: 40px 20px;
+    }
+  }
+  
+  @media (max-width: 1087px) {
+    .section-descover .descover-content h2 {
+      font-size: 33px;
+      line-height: 36px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .section-descover .row {
+      flex-direction: column;
+    }
+  
+    .section-descover .row .col-6 {
+      max-width: 100%;
+    }
+  
+    .section-descover .descover-block img {
+      object-position: 100% 32%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .section-descover .row {
+      gap: 24px;
+      margin-top: 28px;
+    }
+  
+    .section-descover .descover-main {
+      padding: 40px 20px 20px;
+    }
+  }
+  
+  @media (max-width: 580px) {
+    .section-descover .page-width {
+      padding: 0 10px;
+    }
+  
+    .section-descover .descover-main .descover-title h2 {
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 46px;
+    }
+  
+    .section-descover .descover-content h2 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 32px;
+      margin-bottom: 10px;
+    }
+  
+    .section-descover .descover-content p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+  
+    .section-descover .descover-content a {
+      margin-top: 28px;
+      max-width: 100%;
+    }
+  
+    .section-descover .descover-block img,
+    .section-descover .descover-block video {
+      max-height: 300px;
+      min-height: 300px;
+      object-position: 100% 34%;
+    }
+  }
+  
+  @media (max-width: 421px) {
+    .section-descover .descover-main .descover-title h2 {
+      font-size: 35px;
+      line-height: 40px;
+    }
+  }
+  
+  @media (max-width: 394px) {
+    .section-descover .descover-content h2 {
+      font-size: 22px;
+      line-height: 26px;
+    }
+  
+    .section-descover .descover-main .descover-title h2 {
+      font-size: 24px;
+      line-height: 26px;
+    }
+  }
+  

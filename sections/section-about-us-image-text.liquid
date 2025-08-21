@@ -1,0 +1,170 @@
+<section class="about-section">
+    <div class="page-width">
+        <div class="about-container">
+            <div class="content-column">
+                <div class="inner-column">
+                    <div class="sec-title">
+                        <div class="title">{{ section.settings.heading_text }}</div>
+                        <h2>{{ section.settings.subtitle_text }}</h2>
+                    </div>
+                    <div class="text">{{ section.settings.description_text }}</div>
+                    <div class="email">Request Quote: <span class="theme_color">{{ section.settings.contact_email }}</span></div>
+                    <a href="{{ section.settings.button_link }}" class="main-cta">{{ section.settings.button_text }}</a>
+                </div>
+            </div>
+            <div class="image-column">
+                <div class="inner-column">
+                    <div class="image">
+                        <img src="{{ section.settings.image | img_url: 'master' }}" alt="About Us">
+                        <div class="overlay-box">
+                            <div class="year-box"><span class="number">{{ section.settings.experience_years }}</span> Years <br> Experience <br> Working</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.about-section {
+   
+    padding: 80px 20px;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.content-column, .image-column {
+    flex: 1;
+}
+
+.inner-column{
+    position: relative;
+}
+
+.sec-title {
+    padding-bottom: 20px;
+}
+
+.sec-title .title {
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.text {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8em;
+    margin-bottom: 20px;
+}
+
+.email {
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #252525;
+}
+
+.image img {
+    width: 100%;
+    display: block;
+    max-width:cover;
+    height: auto;
+    border-radius: 10px;
+}
+
+.overlay-box {
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 5px solid var(--olive);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.number {
+    font-size: 40px;
+    color: var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column-reverse;
+        gap:0;
+    }
+    .image img {
+        max-width: 100%;
+    }
+    .overlay-box {
+       right:-10px;
+       top:-10px;
+    }
+}
+</style>
+
+{% schema %}
+{
+  "name": "About Us Image & Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "About Us Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "We Are The Leader In Interiors"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_text",
+      "label": "Subtitle Text",
+      "default": "Innovative and Creative Design Solutions"
+    },
+    {
+      "type": "richtext",
+      "id": "description_text",
+      "label": "Description Text"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact Email"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "experience_years",
+      "label": "Years of Experience",
+      "default": "5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us Image & Text"
+    }
+  ]
+}
+{% endschema %}

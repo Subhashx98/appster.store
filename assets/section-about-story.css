@@ -1,0 +1,108 @@
+.section-about-story {
+    padding: 60px 0;
+  }
+  
+  .section-about-story .page-width {
+    max-width: 1440px;
+  }
+  
+  .section-about-story .row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  .section-about-story .row .col-6 {
+    max-width: calc(50% - 30px);
+    width: 100%;
+  }
+  
+  .section-about-story .about-story-block img {
+    width: 100%;
+    display: block;
+    /* min-height: 566px;
+    max-height: 566px; */
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+  }
+  .section-about-story .about-story-content {
+    max-width: 660px;
+  }
+  
+  .section-about-story .about-story-content h2 {
+    font-family: var(--font-minion-pro);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 57.6px;
+    color: var(--primary);
+    margin-bottom: 32px;
+  }
+  
+  .section-about-story .about-story-content p {
+    font-family: var(--font-helvetica);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    opacity: 0.7;
+    color: var(--dark-black);
+  }
+  
+  .section-about-story .about-story-content p:last-child {
+    margin-bottom: 0px;
+  }
+  @media (max-width: 1013px) {
+    .section-about-story .row {
+      gap: 20px;
+    }
+    .section-about-story .row .col-6 {
+      max-width: calc(50% - 20px);
+    }
+    .section-about-story .about-story-content h2 {
+      font-size: 46px;
+      line-height: 54.6px;
+    }
+  }
+  @media (max-width: 991px) {
+    .section-about-story .row .col-6 {
+      max-width: 100%;
+    }
+    .section-about-story .row {
+      flex-direction: column;
+    }
+    .section-about-story .about-story-content {
+      max-width: 100%;
+    }
+  }
+  @media (max-width: 767px) {
+    .section-about-story {
+      padding: 50px 0;
+    }
+  }
+  @media (max-width: 580px) {
+    .section-about-story .about-story-block img {
+      min-height: auto;
+    }
+    .section-about-story .about-story-content h2 {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 38.4px;
+      margin-bottom: 12px;
+    }
+    .section-about-story .about-story-content p {
+      margin-bottom: 15px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .section-about-story .about-story-content h2 {
+      font-size: 28px;
+      line-height: 32px;
+      margin-bottom: 10px;
+    }
+  }
+  

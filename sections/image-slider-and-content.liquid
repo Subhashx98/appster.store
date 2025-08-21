@@ -1,0 +1,97 @@
+{{ 'image-slider-and-content.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .hero-banner-slider{
+    background: url({{ section.settings.background_image | image_url }}) no-repeat center center/cover;
+  }
+
+  @media (max-width: 768px) {
+    .hero-banner-slider {
+      background: url({{ section.settings.mobile_background_image | image_url }}) no-repeat center center/cover;
+    }
+  }
+{% endstyle %}
+
+<section class="hero-banner-slider">
+  {% comment %} <div class="wrap-images">
+    <div class="row-images">
+      {% for block in section.blocks %}
+        {% if block.type == 'slider_block' %}
+          <img src="{{ block.settings.slide_image | image_url }}" alt="Slide Image" width="" height="">
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="row-images">
+      {% for block in section.blocks %}
+        {% if block.type == 'slider_block' %}
+          <img src="{{ block.settings.slide_image | image_url }}" alt="Slide Image" width="" height="">
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div> {% endcomment %}
+  <div class="wrap-content">
+    <h1 class="main-title">{{ section.settings.heading_text }}</h1>
+    <p class="description-hero">{{ section.settings.subtitle_text }}</p>
+    <a class="main-cta" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner Slider",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_background_image",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "Efficient watering solutions to grow your <span>farm's potential.</span>"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_text",
+      "label": "Subtitle Text",
+      "default": "Smart tools for better yields and water savings."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "boost your farm today"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "default": "/"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider_block",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "Slide Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner Slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+{{ 'text-animation-banner.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.animation_text != blank %}
+  <div class="text-animation">
+    <div class="page-width">
+      <p>{{ section.settings.animation_text }}</p>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Text Animation Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "animation_text",
+      "label": "Animation Text",
+      "default": "Welcome to APPSTER!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Animation Banner"
+    }
+  ]
+}
+{% endschema %}

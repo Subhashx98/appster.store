@@ -1,0 +1,35 @@
+.text-animation {
+    background-color: var(--olive);
+}
+
+.text-animation p {
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 5s linear infinite;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+
+    100% {
+        background-position: 500%;
+    }
+}
+@media (max-width: 480px) {
+    .text-animation p {
+      font-size: 1.9rem;
+    }
+  }

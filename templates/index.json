@@ -1,75 +1,151 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "image_slider_and_content_BETmm4": {
+      "type": "image-slider-and-content",
+      "settings": {
+        "background_image": "shopify://shop_images/Group_7.png",
+        "heading_text": "Efficient watering solutions to grow your <span>farm's potential.</span>",
+        "subtitle_text": "Smart tools for better yields and water savings.",
+        "button_text": "boost your farm today",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "section_shop_by_category_XazVf6": {
+      "type": "section-shop-by-category",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "collections_4fnqpY": {
+          "type": "collections",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "title": "EMITTERS/DRIPPERS",
+            "collection_list": [
+              "frontpage"
+            ]
           }
         },
-        "button": {
-          "type": "buttons",
+        "collections_jrXKEB": {
+          "type": "collections",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "title": "EMITTERS/DRIPPERS",
+            "collection_list": [
+              "frontpage"
+            ]
+          }
+        },
+        "collections_HANArb": {
+          "type": "collections",
+          "settings": {
+            "title": "EMITTERS/DRIPPERS",
+            "collection_list": [
+              "frontpage"
+            ]
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "collections_4fnqpY",
+        "collections_jrXKEB",
+        "collections_HANArb"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "SHOP BY CATEGORY"
+      }
+    },
+    "our_bestseller_xA6fTX": {
+      "type": "our-bestseller",
+      "settings": {
+        "heading": "Bestselling Solutions",
+        "products": [
+          "10-meter-hose-pipe-5pcs-6mm-atomization-misting-fog-nozzles-with-tee-connector-suitable-for-diy-sanitization-tunnel-fogger-sprayer-watering-irrigation-fogging-cooling-kit",
+          "4-way-fogger-assembly-complete-1-2-threaded-with-anti-drip-check-valve-for-garden-greenhouses-mist-cooling-stable-poultry-farm"
+        ]
+      }
+    },
+    "discover_CcDrUh": {
+      "type": "discover",
+      "blocks": {
+        "discover_block_UVyWtN": {
+          "type": "discover_block",
+          "settings": {
+            "title": "Smart Irrigation for Maximum Yield",
+            "description": "<p>Learn how advanced irrigation systems can optimize water usage, reduce waste, and enhance crop growth. Discover the latest innovations in automated irrigation and precision watering techniques.</p>",
+            "image_url": "shopify://shop_images/woman-science-assistant-agricultural-officer-greenhouse-farm-research-melon.jpg",
+            "media_selection": "image",
+            "media_alignment": false,
+            "button_text": "SHOP NOW",
+            "button_url": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "discover_block_UVyWtN"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "heading": ""
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
+        "products_to_show": 25,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-2",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "section_about_story_8tWQcf": {
+      "type": "section-about-story",
+      "settings": {
+        "main_image": "shopify://shop_images/about-us.png",
+        "title": "Appster Your Partner in Smart Farming.",
+        "description": "<p>At <strong>Appster</strong>, we are committed to revolutionizing irrigation with cutting-edge technology and smart solutions. Our mission is to help farmers and businesses optimize water usage, enhance crop yields, and promote sustainable farming practices. With a range of innovative irrigation products, we ensure precision, efficiency, and reliability in every drop. Whether you're looking for automated irrigation systems, water-saving techniques, or advanced farming tools, Appster is your trusted partner in modern agriculture.</p><p>Grow smarter, save water, and cultivate success with <strong>Appster!</strong> 🌱💧</p>"
+      }
+    },
+    "section_contact_us_G4Hxzi": {
+      "type": "section-contact-us",
+      "settings": {
+        "heading": "We’re Just a Message Away",
+        "form_title": "",
+        "contact_display": "map",
+        "embed_map_code": "<div class=\"embed-map-responsive\">\n<div class=\"embed-map-container\">\n<iframe class=\"embed-map-frame\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.com/maps?width=680&height=538&hl=en&q=appcom%20sales&t=&z=13&ie=UTF8&iwloc=B&output=embed\"></iframe><a href=\"https://sprunkiretake.net\" style=\"font-size:2px!important;color:gray!important;position:absolute;bottom:0;left:0;z-index:1;max-height:1px;overflow:hidden\">sprunki retake</a>\n</div>\n<style>.embed-map-responsive{position:relative;text-align:right;width:100%;height:0;padding-bottom:79.11764705882352%;}.embed-map-container{overflow:hidden;background:none!important;width:100%;height:100%;position:absolute;top:0;left:0;}.embed-map-frame{width:100%!important;height:100%!important;position:absolute;top:0;left:0;}</style>\n</div>"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "image_slider_and_content_BETmm4",
+    "section_shop_by_category_XazVf6",
+    "our_bestseller_xA6fTX",
+    "discover_CcDrUh",
+    "featured_collection",
+    "section_about_story_8tWQcf",
+    "section_contact_us_G4Hxzi"
   ]
 }

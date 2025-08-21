@@ -1,0 +1,182 @@
+{{ 'section-contact-us.css' | asset_url | stylesheet_tag }}
+
+<div class="section-contact-us" id="contactus">
+  <div class="page-width">
+    <div class="contact-title">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="contact-form">
+          {% if section.settings.form_title != blank %}
+            <h3>{{ section.settings.form_title }}</h3>
+          {% endif %}
+          {% if section.blocks.size > 0 %}
+            {% for block in section.blocks %}
+              {% if block.type == '@app' %}
+                {% render block %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+              {%- if form.posted_successfully? -%}
+                <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+                  {{- 'icon-success.svg' | inline_asset_content -}}
+                  {{ 'templates.contact.form.post_success' | t }}
+                </h2>
+              {%- elsif form.errors -%}
+                <div class="form__message">
+                  <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+                    {{- 'icon-error.svg' | inline_asset_content -}}
+                    {{ 'templates.contact.form.error_heading' | t }}
+                  </h2>
+                </div>
+                <ul class="form-status-list caption-large" role="list">
+                  <li>
+                    <a href="#ContactForm-email" class="link">
+                      {{ form.errors.translated_fields.email | capitalize }}
+                      {{ form.errors.messages.email }}
+                    </a>
+                  </li>
+                </ul>
+              {%- endif -%}
+              <div class="field">
+                <input
+                  class="field__input"
+                  autocomplete="name"
+                  type="text"
+                  id="ContactForm-name"
+                  name="contact[{{ 'templates.contact.form.name' | t }}]"
+                  value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                  placeholder="{{ 'templates.contact.form.name' | t }}"
+                  pattern="[A-Za-z\s]*"
+                  required
+                >
+              </div>
+              <div class="field field--with-error">
+                <input
+                  autocomplete="email"
+                  type="email"
+                  id="ContactForm-email"
+                  class="field__input"
+                  name="contact[email]"
+                  spellcheck="false"
+                  autocapitalize="off"
+                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                  aria-required="true"
+                  {% if form.errors contains 'email' %}
+                    aria-invalid="true"
+                    aria-describedby="ContactForm-email-error"
+                  {% endif %}
+                  placeholder="{{ 'templates.contact.form.email' | t }}"
+                  required
+                >
+                  {%- if form.errors contains 'email' -%}
+                    <small class="contact__field-error" id="ContactForm-email-error">
+                      <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                      <span class="form__message">
+                        <span class="svg-wrapper">
+                          {{- 'icon-error.svg' | inline_asset_content -}}
+                        </span>
+                        {{- form.errors.translated_fields.email | capitalize }}
+                        {{ form.errors.messages.email -}}
+                      </span>
+                    </small>
+                  {%- endif -%}
+              </div>
+              <input
+                id="ContactForm-address"
+                value="{% if form.address %}{{ form.address }}{% elsif customer %}{{ customer.address }}{% endif %}"
+                type="text"
+                placeholder="Address"
+                class="field__input"
+                required
+              >
+              <div class="field">
+                <input
+                  type="tel"
+                  id="ContactForm-phone"
+                  class="field__input"
+                  autocomplete="tel"
+                  name="contact[{{ 'templates.contact.form.phone' | t }}]"
+                  pattern="[0-9\-]*"
+                  value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                  placeholder="{{ 'templates.contact.form.phone' | t }}"
+                  required
+                >
+              </div>
+              <div class="field textarea">
+                <textarea
+                  rows="10"
+                  id="ContactForm-body"
+                  class="text-area field__input"
+                  name="contact[{{ 'templates.contact.form.comment' | t }}]"
+                  placeholder="{{ 'templates.contact.form.comment' | t }}"
+                  required
+                >
+                  {{- form.body -}}
+                </textarea>
+              </div>
+              <div class="contact__button">
+                <button type="submit" class="button">
+                  {{ 'templates.contact.form.send' | t }}
+                </button>
+              </div>
+            {% endform %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="contact-block">
+          {% if section.settings.contact_display == 'image' and section.settings.contact__img != blank %}
+            <img src="{{ section.settings.contact__img | image_url }}" alt="Contact Image" loading="lazy">
+          {% elsif section.settings.contact_display == 'map' and section.settings.embed_map_code != blank %}
+            <div style="width: 100%">{{ section.settings.embed_map_code }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Contact Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title",
+      "default": "Contact Us"
+    },
+    {
+      "type": "select",
+      "id": "contact_display",
+      "label": "Display Option",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "map", "label": "Map" }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "contact__img",
+      "label": "Contact Image"
+    },
+    {
+      "type": "textarea",
+      "id": "embed_map_code",
+      "label": "Embed Map Code",
+      "info": "Paste the embed code for the map here"
+    }
+  ]
+}
+{% endschema %}

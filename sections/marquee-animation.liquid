@@ -1,0 +1,92 @@
+<div class="text-animation">
+  <div class="page-width">
+    <p>Shining Text Animation Effects</p>
+  </div>
+</div>
+{% style %}
+
+  .text-animation {
+    background-color: var(--olive);
+  }
+  .text-animation p {
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 5s linear infinite;
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+{% endstyle %}
+{% schema %}
+  {
+    "name": "Text Animation",
+    "settings": [
+      {
+        "type": "select",
+        "id": "media_type",
+        "label": "Media Type",
+        "options": [
+          {
+            "value": "image",
+            "label": "Image"
+          }, {
+            "value": "video",
+            "label": "Video"
+          }
+        ],
+        "default": "image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Hero Image"
+      },
+      {
+        "type": "video",
+        "id": "video_url",
+        "label": "Video"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading Text",
+        "default": "Welcome to APPSTER!"
+      }, {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading Text",
+        "default": "Discover our collection."
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Shop Now"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text Animation"
+      }
+    ]
+  }
+{% endschema %}
