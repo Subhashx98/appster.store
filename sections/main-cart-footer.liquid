@@ -37,7 +37,7 @@
         </cart-note>
       {%- endif -%}
 
-      <div class="cart__blocks">
+      <div class="cart__blocks cart_bottom">
         {% for block in section.blocks %}
           {%- case block.type -%}
             {%- when '@app' -%}
@@ -108,7 +108,7 @@
                 <button
                   type="submit"
                   id="checkout"
-                  class="cart__checkout-button button"
+                  class="cart__checkout-button button main-btn-small btn-blue"
                   name="checkout"
                   {% if cart == empty %}
                     disabled

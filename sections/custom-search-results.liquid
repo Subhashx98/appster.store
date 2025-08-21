@@ -1,0 +1,60 @@
+{{ 'custom-search-results.css' | asset_url | stylesheet_tag }}
+{{ 'component-pagination.css' | asset_url | stylesheet_tag }}
+{{ 'component-facets.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-filter.css' | asset_url | stylesheet_tag }}
+
+<div class="search-results-page">
+
+  <div class="page-width">
+    <header class="search-results-header">
+      <h1 class="search-results-heading">Search Results</h1>
+      <div id="search-results-count"></div>
+    </header>
+
+    <div id="search-loading" style="display: none;">
+      <p>Searching...</p>
+    </div>
+
+    <div class="search-results-layout facets-vertical">
+      <!-- Add facets sidebar -->
+      <aside class="facets-wrapper" id="main-search-filters">
+        <div class="facets-container">
+          <form id="FacetFiltersForm" class="facets__form-vertical">
+            <div class="active-facets active-facets-desktop">
+              <div class="active-facets-vertical-filter">
+                <h2 class="facets__heading facets__heading--vertical caption-large text-body" id="verticalTitle" tabindex="-1">
+                  Filter
+                </h2>
+              </div>
+            </div>
+            <div id="search-facets-container">
+              <!-- Facets will be populated by JavaScript -->
+            </div>
+          </form>
+        </div>
+      </aside>
+
+      <!-- Results container -->
+      <main class="search-results-main">
+        <div id="search-results-container">
+          <!-- Results will be populated by JavaScript -->
+        </div>
+
+        <div id="search-pagination-container">
+          <!-- Pagination will be populated by JavaScript -->
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.ALGOLIA_FACET_LIST_URL = "{{ 'algolia-facet-list.json' | asset_url }}";
+</script>
+
+{% schema %}
+{
+  "name": "Custom Search Results",
+  "settings": []
+}
+{% endschema %}

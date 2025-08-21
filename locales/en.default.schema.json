@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "settings_schema": {
     "global": {
@@ -336,6 +345,9 @@
         },
         "show_cart_note": {
           "label": "Enable cart note"
+        },
+        "show_free_shipping": {
+          "label": "Enable Free Shipping"
         },
         "cart_drawer": {
           "header": "Cart drawer",
@@ -1737,6 +1749,9 @@
         "show_author": {
           "label": "Show author"
         },
+        "show_learn_more": {
+          "label": "Show Learn More"
+        },
         "paragraph": {
           "content": "Change excerpts by editing your blog posts. [Learn more](https://help.shopify.com/manual/online-store/blogs/writing-blogs#display-an-excerpt-from-a-blog-post)"
         },
@@ -1783,7 +1798,7 @@
       "name": "Items"
     },
     "main-collection-banner": {
-      "name": "Collection banner",
+      "name": "Main Collection banner",
       "settings": {
         "paragraph": {
           "content": "Add a description or image by editing your collection. [Learn more](https://help.shopify.com/manual/products/collections/collection-layout)"

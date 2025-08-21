@@ -1,0 +1,172 @@
+{{ 'section-learning-howto.css' | asset_url | stylesheet_tag }}
+
+
+<div class="learning-how-to">
+  <div class="page-width">
+    <h2 class="section-main-title">
+      {% if section.settings.title != blank %}
+        {{ section.settings.title }}
+      {% endif %}
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_url }}" class="view-link">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </h2>
+    <div class="howto-slider-list">
+      {% for block in section.blocks %}
+        {% assign article = block.settings.articles %}
+        {% if article %}
+          <div class="slick-slide howto-slide-main">
+            <a href="{{ article.url }}">
+              <div class="howto-inner-slider">
+                <div class="howto-inner-block">
+                  <div class="howto-slider-for">
+                    {% if article.image %}
+                      <div>
+                        <img
+                          src="{{ article.image | image_url: width: 480 }}"
+                          width="480"
+                          height="270"
+                          loading="lazy"
+                          alt="{{ article.title }}"
+                        >
+                        {% if article.tags contains 'Featured Article' or article.tags contains 'New' %}
+                          <div class="selleing-tag-option">
+                            {% if article.tags contains 'Featured Article' %}
+                              <span class="selling-tag">Featured Article</span>
+                            {% endif %}
+                            {% if article.tags contains 'New' %}
+                              <span class="selling-tag">New</span>
+                            {% endif %}
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="howto-slide-content">
+                  <h3 class="howto-slide-content-heading">{{ article.title }}</h3>
+                  {% if article.author or article.published_at %}
+                    <div class="article-meta">
+                      {%- if article.author -%}
+                        <span>By CableOrganizer®</span>
+                      {%- endif -%}
+                      {% if article.published_at %}
+                        <span class="line-divider">
+                          {{ article.published_at | time_tag: format: 'date' }}
+                        </span>
+                      {% endif %}
+                    </div>
+                  {% endif %} 
+                  <p>{{ article.excerpt | strip_html | truncatewords: 50 }}</p>  
+                    <div class="blog-view-link"
+                      >Learn More
+                      <span class="svg-wrapper">
+                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                      </span>
+                    </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  // Main Slider
+  $(document).ready(function () {
+    $('.howto-slider-list').slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      infinite: false,
+      speed: 300,
+      lazyLoad: 'ondemand',
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: false,
+          },
+        },
+      ],
+    });
+  });
+  // Slider
+  $(document).ready(function () {
+    $('.howto-inner-slider').each(function (index) {
+      let sliderFor = $(this).find('.howto-slider-for');
+      let sliderNav = $(this).find('.howto-slider-nav');
+
+      sliderFor.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
+        fade: true,
+        infinite: false,
+        asNavFor: sliderNav,
+      });
+
+      sliderNav.slick({
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        asNavFor: sliderFor,
+        arrows: false,
+        focusOnSelect: true,
+        infinite: false,
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Learning How To",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article_block",
+      "name": "Article",
+      "settings": [
+        {
+          "type": "article",
+          "id": "articles",
+          "label": "Select Blog"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Learning How To"
+    }
+  ]
+}
+{% endschema %}

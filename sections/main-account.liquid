@@ -1,155 +1,137 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-<div class="customer account section-{{ section.id }}-padding">
-  <div>
-    <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
-    <a href="{{ routes.account_logout_url }}">
-      <span class="svg-wrapper">
-        {{- 'icon-account.svg' | inline_asset_content -}}
-      </span>
-      {{ 'customer.log_out' | t }}
-    </a>
-  </div>
-
-  <div>
-    <div>
-      <h2>{{ 'customer.orders.title' | t }}</h2>
-
-      {% paginate customer.orders by 20 %}
-        {%- if customer.orders.size > 0 -%}
-          <table role="table" class="order-history">
-            <caption class="visually-hidden">
+<div class="customer account main-account">
+  <div class="page-width">
+    <div class="account-details">
+      {% comment %} Account Tab {% endcomment %}
+      <div class="account-list-tab">
+        <h3>Hello {{ customer.name }}!</h3>
+        <a href="javascript:void(0);" class="mobile-dropdown">
+          {{- 'icon-account.svg' | inline_asset_content -}}
+          {{ 'customer.account.title' | t }}
+        </a>
+        <ul class="myList">
+          <li class="my-list-item">
+            <a href="#myAccount" class="active">
+              <span class="svg-wrapper">
+                {{- 'icon-account.svg' | inline_asset_content -}}
+              </span>
+              {{ 'customer.account.title' | t }}
+            </a>
+          </li>
+          <li class="my-list-item">
+            <a href="#orderHistory">
+              <span class="svg-wrapper">
+                {{- 'icon-order.svg' | inline_asset_content -}}
+              </span>
               {{ 'customer.orders.title' | t }}
-            </caption>
-            <thead role="rowgroup">
-              <tr role="row">
-                <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
-                <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
-                <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
-                <th id="ColumnFulfillment" scope="col" role="columnheader">
-                  {{ 'customer.orders.fulfillment_status' | t }}
-                </th>
-                <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
-              </tr>
-            </thead>
-            <tbody role="rowgroup">
-              {%- for order in customer.orders -%}
-                <tr role="row">
-                  <td
-                    id="RowOrder"
-                    role="cell"
-                    headers="ColumnOrder"
-                    data-label="{{ 'customer.orders.order_number' | t }}"
-                  >
-                    <a
-                      href="{{ order.customer_url }}"
-                      aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
-                    >
-                      {{ order.name }}
-                    </a>
-                  </td>
-                  <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
-                    {{ order.created_at | time_tag: format: 'date' }}
-                  </td>
-                  <td
-                    headers="RowOrder ColumnPayment"
-                    role="cell"
-                    data-label="{{ 'customer.orders.payment_status' | t }}"
-                  >
-                    {{ order.financial_status_label }}
-                  </td>
-                  <td
-                    headers="RowOrder ColumnFulfillment"
-                    role="cell"
-                    data-label="{{ 'customer.orders.fulfillment_status' | t }}"
-                  >
-                    {{ order.fulfillment_status_label }}
-                  </td>
-                  <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
-                    {{ order.total_net_amount | money_with_currency }}
-                  </td>
-                </tr>
-              {%- endfor -%}
-            </tbody>
-          </table>
-        {%- else -%}
-          <p>{{ 'customer.orders.none' | t }}</p>
-        {%- endif -%}
-
-        {%- if paginate.pages > 1 -%}
-          {%- if paginate.parts.size > 0 -%}
-            <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
-              <ul role="list">
-                {%- if paginate.previous -%}
-                  <li>
-                    <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
-                      <span class="svg-wrapper">
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                      </span>
-                    </a>
-                  </li>
-                {%- endif -%}
-
-                {%- for part in paginate.parts -%}
-                  <li>
-                    {%- if part.is_link -%}
-                      <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
-                        {{- part.title -}}
-                      </a>
-                    {%- else -%}
-                      {%- if part.title == paginate.current_page -%}
-                        <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
-                          {{- part.title -}}
-                        </span>
-                      {%- else -%}
-                        <span>{{ part.title }}</span>
-                      {%- endif -%}
-                    {%- endif -%}
-                  </li>
-                {%- endfor -%}
-
-                {%- if paginate.next -%}
-                  <li>
-                    <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
-                      <span class="svg-wrapper">
-                        {{- 'icon-caret.svg' | inline_asset_content -}}
-                      </span>
-                    </a>
-                  </li>
-                {%- endif -%}
-              </ul>
-            </nav>
-          {%- endif -%}
-        {%- endif -%}
-      {% endpaginate %}
-    </div>
-
-    <div>
-      <h2>{{ 'customer.account.details' | t }}</h2>
-
-      {{ customer.default_address | format_address }}
-
-      <a href="{{ routes.account_addresses_url }}">
-        {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
-      </a>
+            </a>
+          </li>
+          <li class="my-list-item">
+            <a href="{{ routes.account_addresses_url }}">
+              <span class="svg-wrapper">
+                {{- 'icon-location.svg' | inline_asset_content -}}
+              </span>
+              {{ 'customer.account.view_addresses' | t }}
+            </a>
+          </li>
+          <li class="my-list-item">
+            <a href="/pages/loyalty-and-rewards">
+              <span class="svg-wrapper">
+                {{- 'icon-loyalty.svg' | inline_asset_content -}}
+              </span>
+              Loyalty
+            </a>
+          </li>
+          <li class="my-list-item">
+            <a href="{{ routes.account_logout_url }}">
+              <span class="svg-wrapper">
+                {{- 'icon-logout.svg' | inline_asset_content -}}
+              </span>
+              {{ 'customer.log_out' | t }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      {% comment %} Account Information {% endcomment %}
+      <div class="account-information">
+        {%- render 'account-order-history' -%}
+      </div>
     </div>
   </div>
 </div>
+<script>
+$(document).ready(function() {
+  // When a link is clicked
+  $(".account-list-tab a[href^='#']").click(function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      
+      // Get the target section's offset position
+      var target = $(this).attr("href");
+      var position = $(target).offset().top;
+      
+      // Animate the scroll to the target section
+      $("body, html").animate({
+          scrollTop: position
+      }, 500); // 500ms smooth scrolling duration
 
+      // Remove 'active' class from all links and sections
+      $(".account-list-tab a[href^='#']").removeClass("active");
+
+      // Add 'active' class to the clicked link
+      $(this).addClass("active");
+
+      // Add 'active' class to the corresponding section
+      $(target).addClass("active");
+  });
+
+  // Function to handle the active class on page load based on the current hash
+  function setActiveFromHash() {
+      const currentHash = window.location.hash;
+
+      // If there is a valid hash
+      if (currentHash) {
+          // Remove 'active' class from all links and sections
+          $(".account-list-tab a[href^='#']").removeClass("active");
+
+          // Add 'active' class to the link that matches the hash
+          $("a[href='" + currentHash + "']").addClass("active");
+
+          // Add 'active' class to the corresponding section
+          $(currentHash).addClass("active");
+      }
+  }
+  // Call the function to apply the active class on page load
+  setActiveFromHash();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.querySelector('.mobile-dropdown');
+    const dropdown = document.querySelector('.myList');
+    const dropdownItems = document.querySelectorAll('.my-list-item');
+
+    // Toggle dropdown visibility
+    dropdownToggle.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default link behavior
+      dropdown.classList.toggle('open');
+    });
+
+    // Update dropdown-toggle text when an item is clicked
+    dropdownItems.forEach((item) => {
+      item.addEventListener('click', function () {
+        // Find the image and text within the clicked item
+        const img = this.querySelector('svg').outerHTML;
+        const text = this.textContent.trim();
+
+        // Set the dropdown-toggle content to include the image and the selected item text
+        dropdownToggle.innerHTML = img + text;
+        // Close the dropdown
+        dropdown.classList.remove('open');
+      });
+    });
+  });
+
+</script>
 {% schema %}
 {
   "name": "t:sections.main-account.name",

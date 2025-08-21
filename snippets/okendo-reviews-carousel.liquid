@@ -1,0 +1,6 @@
+{% if product != blank %}
+  {% capture product_data_attribute %}data-oke-reviews-product-id="shopify-{{ product.id }}"{% endcapture %}
+{% endif %}
+{% if product.metafields.okendo.summaryData.reviewCount > 0 or product.metafields.okendo.ReviewCount > 0 %}
+  <div data-oke-carousel {{ product_data_attribute }}></div>
+{% endif %}

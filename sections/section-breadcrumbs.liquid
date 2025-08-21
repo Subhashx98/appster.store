@@ -1,0 +1,105 @@
+{%- unless template == 'index' or template == '404' -%}
+    {%- assign t = template | split: '.' | first -%}
+    <nav class="breadcrumbs cable-breadcrumbs" role="navigation" aria-label="breadcrumbs">
+      <div class="page-width {% if section.settings.show_small_width %}page-small-width {% endif %}">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="/">Home</a>
+          </li>
+          {% assign pro_collection = product.collections.last %}
+          {% if pro_collection %}
+            <li class="breadcrumbs__item">
+              {{ pro_collection.title | link_to: pro_collection.url }}
+            </li>
+          {% endif %}
+          {%- case t -%}
+            {%- when 'page' -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+              </li>
+            {%- when 'product' -%}
+              {%- if collection.url -%}
+                <li class="breadcrumbs__item breadcrumbs__link_n">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+              {%- endif -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ product.url }}" aria-current="page">
+                  {{- product.title -}}
+                </a>
+              </li>
+            {%- when 'collection' and collection.handle -%}
+              {%- if current_tags -%}
+                <li class="breadcrumbs__item">
+                  {{ collection.title | link_to: collection.url }}
+                </li>
+                <li class="breadcrumbs__item breadcrumbs__link_1">
+                  {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+" }}{%- endcapture -%}
+                  <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ tag_url }}" aria-current="page">
+                    {{- current_tags | join: ' + ' -}}
+                  </a>
+                </li>
+              {%- else -%}
+                <li class="breadcrumbs__item ">
+                  <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ collection.url }}" aria-current="page">
+                    {{- collection.title -}}
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- when 'blog' -%}
+              {%- if current_tags -%}
+                <li class="breadcrumbs__item">
+                  {{ blog.title | link_to: blog.url }}
+                </li>
+                <li class="breadcrumbs__item">
+                  {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                  <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ tag_url }}" aria-current="page">
+                    {{- current_tags | join: ' + ' -}}
+                  </a>
+                </li>
+              {%- else -%}
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ blog.url }}" aria-current="page">
+                    {{- blog.title -}}
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- when 'article' -%}
+              <li class="breadcrumbs__item">
+                {{ blog.title | link_to: blog.url }}
+              </li>
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ article.url }}" aria-current="page">
+                  {{- article.title -}}
+                </a>
+              </li>
+            {%- else -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ request.path }}" aria-current="page">
+                  {{- page_title -}}
+                </a>
+              </li>
+          {%- endcase -%}
+        </ul>
+      </div>
+    </nav>
+{%- endunless -%}
+{% schema %}
+  {
+    "name": "Breadcrumbs",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_small_width",
+        "label": "Show Small width",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "Breadcrumbs"
+      }
+    ]
+  }
+  {% endschema %}  

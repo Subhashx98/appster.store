@@ -1,0 +1,153 @@
+.how-to-corner{
+    padding-bottom: 60px;
+}
+.how-to-corner .search-all-brand .go-main-link{
+    width: auto;
+    padding: 0px;
+    margin-bottom: -52px;
+}
+.how-to-corner .how-blog-list{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.how-to-corner .how-blog-list .how-blog-item{
+    display: flex;
+    flex: 0 0 calc(33.33% - 14px);
+    width: calc(33.33% - 14px);;
+}
+.how-to-corner .how-blog-item .article-card-wrapper{
+    border: 1px solid rgba(68, 68, 68, 0.14);
+    padding: 0px;
+    width: 100%;
+    overflow: hidden;
+}
+.how-to-corner .article-card-wrapper .card__inner {
+    padding: 0px;
+    width: 100% !important;
+    border-radius: 5px 5px 0px 0px;
+    overflow: hidden;
+}
+.how-to-corner .article-card-wrapper .card__inner:before{
+    content: none;
+}
+.how-to-corner .card__inner .card__media{
+    width: 100%;
+}
+.how-to-corner .card__inner .media img{
+    /* height: 270px; */
+    object-fit: contain;
+    background-color: var(--white-color);
+}
+.how-to-corner .card__content {
+    display: block;
+}
+.how-to-corner .card__content .card__information{
+    margin: 0px;
+    padding:32px;
+}
+.how-to-corner .card__information .cable-blog-tag-flex{
+    display: none;
+}
+.how-to-corner .card__information .card__heading{
+    font-size: 20px;
+    line-height: 28px;
+    font-family: var(--font-open-sans);
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.how-to-corner .card__information .card__heading a{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.how-to-corner .card__information .article-card__excerpt{
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 24px;
+    margin: 0;
+}
+.how-to-corner .load-more-article{
+    display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-top: 40px;
+}
+.ajax-loader{
+    display: block; position:relative; text-align: center; padding: 10rem 0;
+}
+.load-more_btn{display: none !important;}
+.loader {
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-weight: 900;
+    color:var(--primary-blue-color);
+    letter-spacing: 0.2em;
+  }
+
+  .loader::before,
+  .loader::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: var(--primary-blue-color);
+    position: absolute;
+    animation: load 0.7s infinite alternate ease-in-out;
+  }
+
+  .loader::before {
+    top: 0;
+  }
+
+  .loader::after {
+    bottom: 0;
+  }
+
+  @keyframes load {
+    0% {
+      left: 0;
+      height: 30px;
+      width: 15px;
+    }
+
+    50% {
+      height: 8px;
+      width: 40px;
+    }
+
+    100% {
+      left: 235px;
+      height: 30px;
+      width: 15px;
+    }
+  }
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+    .how-to-corner .card__content .card__information{ padding: 24px;  }
+    .how-to-corner .card__information .card__heading{ font-size: 18px;}
+}
+@media only screen and (max-width: 991px) {
+    .how-to-corner{ padding-bottom: 40px;}
+    .how-to-corner .how-blog-list{gap: 10px;}
+    .how-to-corner .how-blog-list .how-blog-item{  flex: 0 0 calc(50% - 5px);  width: calc(50% - 5px);}
+    /* .how-to-corner .card__inner .media img{ height: 225px;} */
+    .how-to-corner .load-more-article{ margin-top: 32px;}
+}
+@media only screen and (max-width: 767px) {
+    .how-to-corner .search-all-brand .go-main-link{margin-bottom: 16px;}
+}
+@media only screen and (max-width: 576px) {
+    .how-to-corner .how-blog-list{row-gap: 30px;}
+    .how-to-corner .how-blog-list .how-blog-item{  flex: 0 0 100%;  width: 100%;}  
+    .how-to-corner .load-more-article .main-btn-large{width: 100%;}
+}
+

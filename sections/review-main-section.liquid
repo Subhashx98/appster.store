@@ -1,0 +1,30 @@
+{{ 'section-okendo-review.css' | asset_url | stylesheet_tag }}
+
+<div class="section-okendo-review okendo_review_main">
+  <div class="page-width">
+    <div class="okeReviews_block">
+    {%- for block in section.blocks -%}
+        {% render block %}
+      {%- endfor -%}
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Okendo Review Main",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Okendo Review Main",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

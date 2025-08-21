@@ -1,0 +1,36 @@
+
+<div class="page-width">
+  <div class="review-section">
+    <div data-oke-widget=""></div>
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+          {% render block %}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Review",
+  "class": "review_okendo_main",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Review"
+    }
+  ]
+}
+{% endschema %}

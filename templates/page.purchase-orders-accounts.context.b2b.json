@@ -1,0 +1,72 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.purchase-orders-accounts.json",
+  "context": {
+    "b2b": true
+  },
+  "sections": {
+    "main_image_banner_x8aQX": {
+      "type": "main-image-banner",
+      "disabled": false,
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Purchase Orders and Accounts"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "purchase_order_content_re7A8": {
+      "type": "purchase-order-content",
+      "disabled": false,
+      "settings": {
+        "description": "<h2>Purchase Orders</h2><p>WireCare, Inc. accepts Purchase Orders from our approved US-based customers. We aim to make the process simple and straightforward so you can complete your orders with ease. Follow these steps to submit your PO:<br/></p><ul><li>Ensure your company has completed a credit application and been approved for Net 30 Terms.</li><li> Prepare your purchase order document with accurate details, including product descriptions, quantities, pricing, and your company’s information.</li><li>Email the completed PO to [Company Email] or upload it through our secure online portal.</li><li>Await a confirmation email from our team to verify that your PO has been received and<br/>processed.</li></ul>",
+        "image": "shopify://shop_images/purchase-order.jpg",
+        "header-398bfbe9b868c020a062349632712c1a": null,
+        "email_text": "Email us",
+        "email": "sales@cableorganizer.com",
+        "contact_text": "Give us call",
+        "contact": "1-833-3CABLEORG",
+        "call_text": "(1-833-322-2536)"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "purchase_orders_form_c4W6k": {
+      "type": "purchase-orders-form",
+      "disabled": false,
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_3875.png",
+        "title": "Submit A Purchase Order"
+      },
+      "blocks": {
+        "powerful_form_builder_app_block_3bzrd": {
+          "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "disabled": false,
+          "settings": {
+            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"ODU3MjA=\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "powerful_form_builder_app_block_3bzrd"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "main_image_banner_x8aQX",
+    "purchase_order_content_re7A8",
+    "purchase_orders_form_c4W6k"
+  ]
+}

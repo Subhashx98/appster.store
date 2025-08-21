@@ -355,10 +355,27 @@ quick-add-modal .product-form__buttons {
 }
 
 .quick-add__submit {
-  padding: 0.8rem;
-  min-width: 100%;
   box-sizing: border-box;
+  height:50px;
+  font-size: 16px;
+  line-height: 22px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 14px 8px;
+  background-color: var(--primary-blue-color);
+  color: var(--white-color);
+  letter-spacing: 0px;
+  min-width: 100%;
+  transition: var(--webkit-transition-all);
 }
+.quick-add__submit:after{
+  display: none;
+}
+.card-wrapper:hover .quick-add__submit{
+  background-color: var(--orange-color);  
+}
+
 
 quick-add-modal .product-media-container.constrain-height {
   --viewport-offset: calc((var(--modal-height-offset) + var(--modal-padding) + var(--popup-border-width)) * 2);
@@ -402,4 +419,9 @@ quick-add-bulk .quantity__input {
 
 .quantity__input-disabled {
   pointer-events: none;
+}
+
+@media only screen and (max-width: 1300px) {
+  .quick-add__submit{ font-size: 15px;}
+  .quick-add__submit { height: 45px; font-size: 14px; min-height: 45px;}
 }

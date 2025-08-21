@@ -17,34 +17,92 @@
         "padding_bottom": 36
       }
     },
-<<<<<<< HEAD
-    "contact_form_PDCcHC": {
-      "type": "contact-form",
+    "main_image_banner_aUFK9a": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
       "settings": {
-        "heading": "Contact form",
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Contact Us"
+      }
+    },
+    "section_breadcrumbs_VTLMVH": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": true
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "heading": "",
         "heading_size": "h1",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
-=======
-    "section_contact_us_eUYjWY": {
-      "type": "section-contact-us",
+      }
+    },
+    "contact_form_gorgias_3WExFG": {
+      "type": "contact-form-gorgias",
       "settings": {
-        "heading": "We’re Just a Message Away",
-        "form_title": "",
-        "contact_display": "map",
-        "contact__img": "shopify://shop_images/contact-us.png",
-        "embed_map_code": "<div style=\"width: 100%\"><iframe width=\"100%\" height=\"538\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.com/maps?width=100%25&height=538&hl=en&q=appcom%20sales+(appcom%20sales)&t=&z=14&ie=UTF8&iwloc=B&output=embed\"><a href=\"https://www.gps.ie/collections/drones/\">best drones</a></iframe></div>"
->>>>>>> development
+        "heading": "Send us a message.",
+        "sub_heading": "Use the form below to contact a CableOrganizer® representative."
+      }
+    },
+    "customer_services_dMj9DA": {
+      "type": "customer-services",
+      "settings": {}
+    },
+    "get_way_help_gJqjXQ": {
+      "type": "get-way-help",
+      "blocks": {
+        "contact_block_4ccEtA": {
+          "type": "contact_block",
+          "settings": {
+            "icon": "shopify://shop_images/chat-icon.svg",
+            "title": "Chat With Us",
+            "button_id": "chat-with-us",
+            "link": "#"
+          }
+        },
+        "contact_block_RhTYiV": {
+          "type": "contact_block",
+          "settings": {
+            "icon": "shopify://shop_images/phon-icon.svg",
+            "title": "(1-833-322-2536)",
+            "button_id": "",
+            "link": "tel:(1-833-322-2536)"
+          }
+        },
+        "contact_block_nedycc": {
+          "type": "contact_block",
+          "settings": {
+            "icon": "shopify://shop_images/information-icon.svg",
+            "title": "Visit Our FAQ Page",
+            "button_id": "",
+            "link": "shopify://pages/faq"
+          }
+        }
+      },
+      "block_order": [
+        "contact_block_4ccEtA",
+        "contact_block_RhTYiV",
+        "contact_block_nedycc"
+      ],
+      "settings": {
+        "heading": "Additional Ways to Get Help"
       }
     }
   },
   "order": [
     "main",
-<<<<<<< HEAD
-    "contact_form_PDCcHC"
-=======
-    "section_contact_us_eUYjWY"
->>>>>>> development
+    "main_image_banner_aUFK9a",
+    "section_breadcrumbs_VTLMVH",
+    "form",
+    "contact_form_gorgias_3WExFG",
+    "customer_services_dMj9DA",
+    "get_way_help_gJqjXQ"
   ]
 }

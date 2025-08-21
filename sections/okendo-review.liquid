@@ -1,0 +1,26 @@
+{{ 'section-okendo-review.css' | asset_url | stylesheet_tag }}
+
+<div class="section-okendo-review">
+  <div class="page-width">
+    <div class="okendo-reviews-carousel-block">
+      {% render 'okendo-reviews-carousel', product: product %}
+    </div>
+    <div class="okeReviews_block">
+      {% render 'okendo-reviews-widget', product: product %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Okendo Review",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Okendo Review",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,97 @@
+{{ 'section-image-block.css' | asset_url | stylesheet_tag }}
+{%  liquid 
+    assign content_width = section.settings.full_width
+    assign img_position = section.settings.image_position
+    assign text_large = section.settings.text_size
+%} 
+{% if template contains 'faqs' %}
+ <h1 style="display:none;">{{ section.settings.title }}</h1>
+{% endif %}
+{% if section.settings.image or section.settings.title or section.settings.description != blank %}
+  <div class="main-container">
+    <div class="page-width page-small-width" data-full-width="{{ content_width }}">
+      <div class="image-content" 
+        data-image-position="{{ img_position }}"
+        data-text-size="{{ text_large }}"
+      >
+        {% if section.settings.image != blank %}
+          <div class="image-content-inner">
+            <img
+              src="{{ section.settings.image |  image_url   }}"
+              alt="{{ shop.name }}"
+              height="430"
+              width="600"
+              loading="lazy"
+              class="content-main-img"
+            >
+          </div>
+        {% endif %}
+        
+        {% if section.settings.title or section.settings.description != blank %}
+          <div class="image-content-inner">
+            {% if section.settings.title != blank %}
+              {% if template.suffix == 'desk-power-management' or template.suffix == 'cable-management' or template.suffix == 'it-networking-supplies' or template.suffix == 'safety-protection' or template.suffix == 'tools-accessories' or template.suffix == 'installation-termination'  or template.suffix == 'electrical-supplies' %}
+                <h1>{{ section.settings.title }}</h1>
+              {% else %}
+                <h2>{{ section.settings.title }}</h2>
+              {% endif %}
+            {% endif %}
+            {% if section.settings.description != blank %}
+              {{ section.settings.description }}
+            {% endif %}
+          </div>
+        {% endif %}
+        
+        
+        
+        
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Image Text Block",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Content Full Width",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "image_position",
+        "label": "Image Position Right",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "text_size",
+        "label": "Text Size Large",
+        "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Text Block"
+    }
+  ]
+}
+{% endschema %}

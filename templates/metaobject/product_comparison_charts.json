@@ -1,0 +1,34 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main_image_banner_nzmiBA": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Product Comparison Charts"
+      }
+    },
+    "product_charts_table_zJc7Aj": {
+      "type": "product-charts-table",
+      "settings": {
+        "cta_text": "Go Back",
+        "cta_url": "shopify://pages/product-comparison-charts"
+      }
+    }
+  },
+  "order": [
+    "main_image_banner_nzmiBA",
+    "product_charts_table_zJc7Aj"
+  ]
+}

@@ -1,0 +1,189 @@
+.learning-how-to{
+    padding-bottom: 40px;
+}
+.learning-how-to .howto-slider-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.learning-how-to .howto-slider-list .slick-list{
+    margin: 0px -10px;
+}
+.learning-how-to .howto-slider-list .slick-slide.howto-slide-main{
+    padding: 0px 10px;
+}
+.learning-how-to .howto-slider-list .howto-inner-slider {
+    width: 100%;
+    border: none !important;
+    /* border: 1px solid rgb(68, 68, 68, 0.14); */
+    border-radius: var(--border-radius-5);
+    overflow: hidden;
+}
+.learning-how-to .howto-slider-list .howto-inner-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.learning-how-to .howto-slider-for .slick-slide{
+    padding: 0px;
+}
+.learning-how-to .howto-slider-for .slick-slide img {
+    height: 270px;
+    object-fit: cover;
+}
+.learning-how-to .howto-slider-for .slick-arrow {
+    top: 50%;
+    bottom: auto;
+    margin: 0px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    right: 0;
+}
+.learning-how-to .howto-slider-for .slick-arrow.slick-prev {
+    left: 20px;
+}
+.learning-how-to .howto-slider-for .slick-arrow.slick-next {
+    right: 20px;
+}
+.learning-how-to .howto-inner-block .howto-slider-nav {
+    padding: 20px 0px;
+    justify-content: center;
+    display: flex
+}
+.learning-how-to .howto-slider-nav .slick-slide {
+    cursor: pointer;
+}
+.learning-how-to .howto-slider-nav .slick-slide img {
+    width: 50px;
+    height: 50px;
+    border-radius: 2px;
+    margin: 0px 10px;
+    cursor: pointer;
+    object-fit: cover;
+}
+.learning-how-to .howto-slider-nav .slick-list {
+    width: 280px;
+    margin: 0px;
+}
+.learning-how-to .howto-slider-nav .slick-slide.slick-current img {
+    border-color: var(--black-color);
+}
+.learning-how-to .howto-howto-slider-for .slick-slide {
+    padding: 0px 48px;
+}
+.learning-how-to .howto-slide-content {
+    background: var(--light-grey-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.learning-how-to .howto-slide-content h3 {
+    /* font-size: 20px;
+    line-height: normal;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    font-size: 20px;
+    color: #231F20;
+    font-weight: 600;
+    line-height: 28px;
+    font-family: var(--font-open-sans);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    min-height: 56px;
+}
+.learning-how-to .howto-slide-content p {
+    color: #0009;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    min-height: 52px;
+}
+.learning-how-to .howto-slide-content .article-meta { 
+    text-transform: capitalize;
+    font-size: 15px;
+    color: #1B1F23;
+    font-weight: 500;
+    padding: 0;
+    letter-spacing:0px;
+    margin: 0px;
+    gap: 15px;
+    display: flex;
+}
+.learning-how-to .howto-slide-content .article-meta span{
+    line-height: 16px;
+}
+
+.learning-how-to .howto-slide-content .article-meta .line-divider{
+    border-left: 1px solid #1B1F23;
+    padding-left: 15px;
+}
+
+.learning-how-to .howto-slide-content .blog-view-link{
+    color: var(--primary-blue-color);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+    position: relative;
+    z-index: 1;
+    margin-top: 0px;
+}
+
+.learning-how-to .howto-slide-content .blog-view-link .svg-wrapper { 
+    margin-left: 8px;
+    transition: var(--webkit-transition-all);
+}
+
+.learning-how-to .howto-slide-content .blog-view-link svg {
+    width: 16px;
+    height: 14px;
+}
+
+.learning-how-to .howto-slide-content .blog-view-link:hover .svg-wrapper{
+    margin-left: 12px;
+}
+.howto-slider-list .howto-slide-main a:hover .howto-slide-content-heading {
+    text-decoration: underline;
+    color: #085284;
+}
+.howto-slider-list .howto-slide-main a:hover .blog-view-link {
+    text-decoration: underline;
+}
+.howto-slider-list .howto-slide-main a:hover img {
+    transform: scale(1.03);
+    transition: transform var(--duration-long) ease;
+}
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .learning-how-to .howto-slide-content{ padding: 10px 24px;}
+     .learning-how-to .howto-slide-content h3{font-size: 18px; display: -webkit-box; line-clamp: 2;
+        -webkit-line-clamp: 2; -webkit-box-orient: vertical;  white-space: normal;}
+    /* .learning-how-to .howto-slide-content p{line-height: 22px;} */
+    .learning-how-to .howto-slide-content .article-meta { 
+        font-size: 13px;
+    }
+    .learning-how-to .howto-slide-content .article-meta span{
+        line-height: 13px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .learning-how-to .section-main-title{ justify-content: center;}
+    .learning-how-to .section-main-title .view-link{ display: none;}
+    .learning-how-to .howto-slider-list .slick-slide.howto-slide-main{ padding: 10px 0px;}
+    .learning-how-to .howto-slider-list .slick-slide.howto-slide-main:first-child{padding-top: 0px; }
+    .learning-how-to .howto-slider-list .slick-slide.howto-slide-main:last-child {padding-bottom: 0px;}
+    .learning-how-to .howto-slider-list .slick-list{ margin: 0px;}
+    .learning-how-to .howto-slider-for .slick-slide img{ height: 230px;}
+    .howto-slider-list .slick-arrow{display: none !important;}
+    .howto-slider-list > .slick-list >  .slick-track {  width: 100% !important; transform: none !important;}
+}

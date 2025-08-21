@@ -1,0 +1,52 @@
+{{ 'section-text-content.css' | asset_url | stylesheet_tag }}
+<div class="page-width">
+  <div class="policy-content">
+    {% for block in section.blocks %}
+      {% if block.type == 'heading' %}
+         {% if block.settings.block_heading != blank %}
+        <h3>{{ block.settings.block_heading }}</h3>
+        {% endif %}
+      {% endif %}
+      {% if block.type == 'description' %}
+         {% if block.settings.block_description != blank %}
+        {{ block.settings.block_description }}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+</div>
+{% schema %}
+{
+  "name": "Text Content",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "block_heading",
+          "label": "Heading"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "block_description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Content"
+    }
+  ]
+}
+{% endschema %}

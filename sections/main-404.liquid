@@ -1,23 +1,227 @@
-<style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
+<style>
+  /* 404 */
+  .template-404 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 40px;
+    padding-top: 60px;
   }
-
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
+  .template-404 .template-404-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 calc(50% - 20px);
+    width: 50%;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+  }
+  .template-404 .template-404-img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .template-404 .template-404-img img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .template-404 .content-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 64px 40px;
+    width: 100%;
+  }
+  .template-404 .content-404 .logo-404 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .template-404 .content-404 .logo-404 img{
+    mix-blend-mode: multiply;
+  }
+  .template-404 .content-404 h1 {
+    font-size: 120px;
+    letter-spacing: 2px;
+    margin: 34px 0px 0px;
+    line-height: 84px;
+  }
+  .template-404 .content-404 p {
+    margin: 34px 0px 0px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.8px;
+  }
+  .template-404 .content-404 .main-btn-large {
+    margin-top: 48px;
+    width: 100%;
+  }
+  .template-404 .social-404 {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .template-404 .social-404 .icon svg rect {
+    stroke: none;
+  }
+  .template-404 .social-404 .icon svg path {
+    fill: var(--black-color);
+  }
+  .template-404 .social-404 .icon {
+    display: flex;
+  }
+  .template-404 .social-404 .icon:hover {
+    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+  }
+  /* Responsive */
+  @media only screen and (min-width: 1200px) {
+    .template-404 .content-404 {
+      padding: 116px 95px;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    .template-404 {
+      padding-top: 40px;
+      gap: 32px;
+    }
+    .template-404 .template-404-content {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+    .template-404 .template-404-img img {
+      max-height: 280px;
+    }
+    .template-404 .content-404 {
+      padding: 50px 20px;
+    }
+    .template-404 .content-404 .logo-404 img {
+      max-width: 120px;
+      height: auto;
+    }
+    .template-404 .content-404 h1 {
+      font-size: 100px;
+      line-height: 70px;
+      margin: 18px 0px 0px;
+    }
+    .template-404 .content-404 p {
+      margin: 18px 0px 0px;
+      font-size: 14px;
+    }
+    .template-404 .content-404 .main-btn-large {
+      margin-top: 32px;
+    }
+    .template-404 .social-404 {
+      margin-top: 24px;
     }
   }
 </style>
-
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+<div class="template-404 page-width">
+  {% if section.settings.bg_img != blank %}
+    <div class="template-404-content">
+      <span class="template-404-img">
+        <img
+          src="{{ section.settings.bg_img |  image_url }}"
+          alt=""
+          height="700"
+          width="700"
+          loading="lazy"
+        >
+      </span>
+    </div>
+  {% endif %}
+  <div class="template-404-content">
+    <div class="content-404">
+      <div class="logo-404">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/404.gif?v=1741859869"
+          alt="404 GIF"
+          height="104"
+          width="178"
+          loading="lazy"
+        >
+      </div>
+      <h1 class="title">
+        {{ 'templates.404.title' | t }}
+      </h1>
+      <p>
+        {{ 'templates.404.subtext' | t }}
+      </p>
+      <a href="{{ shop.url }}" class="main-btn-large btn-blue">
+        {{ 'templates.404.back_to_home' | t }}
+      </a>
+      <div class="social-404">
+        {% if section.settings['icon-facebook'] or section.settings.facebook != blank %}
+          <a href="{{ section.settings.facebook }}" target="_blank" class="icon" aria-label="Facebook">
+            {{ 'icon-facebook.svg' | inline_asset_content }}
+          </a>
+        {% endif %}
+        {% if section.settings['icon-instagram'] or section.settings.insta != blank %}
+          <a href="{{ section.settings.insta }}" target="_blank" class="icon" aria-label="Instagram">
+            {{ 'icon-instagram.svg' | inline_asset_content }}
+          </a>
+        {% endif %}
+        {% if section.settings['icon-youtube'] or section.settings.youtube != blank %}
+          <a href="{{ section.settings.youtube }}" target="_blank" class="icon" aria-label="YouTube">
+            {{ 'icon-youtube.svg' | inline_asset_content }}
+          </a>
+        {% endif %}
+        {% if section.settings['iocn-x'] or section.settings.twitter != blank %}
+          <a href="{{ section.settings.twitter }}" target="_blank" class="icon" aria-label="X">
+            {{ 'icon-x.svg' | inline_asset_content }}
+          </a>
+        {% endif %}
+        {% if section.settings['icon-linkedin'] or section.settings.linkedin != blank %}
+          <a href="{{ section.settings.linkedin }}" target="_blank" class="icon" aria-label="LinkedIn">
+            {{ 'icon-linkedin.svg' | inline_asset_content }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 </div>
+{% schema %}
+{
+  "name": "404 Page",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_img",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "facebook",
+      "label": "Facebook"
+    },
+    {
+      "type": "url",
+      "id": "twitter",
+      "label": "Twitter"
+    },
+    {
+      "type": "url",
+      "id": "insta",
+      "label": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "youtube",
+      "label": "Youtube"
+    },
+    {
+      "type": "url",
+      "id": "linkedin",
+      "label": "Linkedin"
+    }
+  ],
+  "presets": [
+    {
+      "name": "404 Page"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,125 @@
+{{ 'section-comparison-charts.css' | asset_url | stylesheet_tag }}
+{% if section.settings.heading != blank or section.settings.product_comparison_charts != blank %}
+  <div class="learning-charts">
+      <div class="page-width">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      <div class="tabs-wrapper">
+        <ul class="tabs-list">
+          {% for category in section.settings.product_comparison_charts %}
+            <li data-tab="tab{{ forloop.index }}" rel="tab{{ forloop.index }}">
+            <img
+            src="{{ category.image | file_url }}"
+            alt="{{ category.title | default: shop.name }}"
+            height="32"
+            width="32"
+            loading="lazy"
+            >
+            {{ category.title }}
+            </li>
+          {% endfor %}
+        </ul>
+        {% comment %} Tab Content {% endcomment %}
+        <div class="tab-content-wrapper">
+          {% for category in section.settings.product_comparison_charts %}
+            <h3 class="tab_drawer_heading" rel="tab{{ forloop.index }}">
+              <img
+              src="{{ category.image | file_url }}"
+              alt="{{ category.title | default: shop.name }}"
+              height="32"
+              width="32"
+              loading="lazy"
+              >
+              {{ category.title }}
+            </h3>
+            <div id="tab{{ forloop.index }}" class="tab-content">
+              {% assign comparison_charts_list = category.product_comparison_charts.value %}
+              {% if comparison_charts_list == blank or comparison_charts_list.size == 0 %}
+              <p>Product Comparison Charts Category Not Available</p>
+              {% else %}
+              <ul>
+                {% for chart in comparison_charts_list %}
+                  <li>
+                  <a href="{{ chart.system.url }}">{{ chart.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+        </div>
+      </div>
+  </div>
+{% endif %}
+<script>
+  const tabs = document.querySelectorAll('.tabs-list li');
+  const contents = document.querySelectorAll('.tab-content');
+
+  // Function to show the selected tab
+  function showTab(tabId) {
+    contents.forEach((content) => content.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+
+    tabs.forEach((tab) => tab.classList.remove('active'));
+    document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+  }
+
+  // Event listener for tabs in regular mode
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', function () {
+      showTab(this.getAttribute('data-tab'));
+    });
+  });
+
+  // Functionality for Drawer mode (mobile mode or when tabs are in a drawer)
+  $('.tab_drawer_heading').click(function () {
+    $('.tab-content').hide();
+    var d_activeTab = $(this).attr('rel');
+    $('#' + d_activeTab).fadeIn();
+
+    $('.tab_drawer_heading').removeClass('d_active');
+    $(this).addClass('d_active');
+
+    $('ul.tabs-list li').removeClass('active');
+    $("ul.tabs-list li[rel^='" + d_activeTab + "']").addClass('active');
+  });
+
+  // Initialize the first tab and content as active by default
+  $(document).ready(function () {
+    var firstTab = $('.tab_drawer_heading').first(); // Get the first tab heading
+    var firstTabRel = firstTab.attr('rel'); // Get the rel value of the first tab heading
+
+    $('#' + firstTabRel).fadeIn(); // Show the first tab content
+    firstTab.addClass('d_active'); // Set the first tab as active
+    $("ul.tabs-list li[rel^='" + firstTabRel + "']").addClass('active'); // Set the first tab in the list as active
+  });
+
+  // Initializing the first tab as active by default
+  showTab('tab1');
+</script>
+{% schema %}
+{
+  "name": "Product Comparison Charts",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "metaobject_list",
+      "id": "product_comparison_charts",
+      "label": "Product Comparison Charts",
+      "metaobject_type": "product_comparison_charts_categories"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Comparison Charts"
+    }
+  ]
+}
+{% endschema %}

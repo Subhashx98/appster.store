@@ -11,33 +11,131 @@
   "sections": {
     "main": {
       "type": "main-page",
-<<<<<<< HEAD
-=======
       "disabled": true,
->>>>>>> development
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
-<<<<<<< HEAD
-    }
-  },
-  "order": [
-    "main"
-=======
     },
-    "section_about_story_pkNQbc": {
-      "type": "section-about-story",
+    "search_category_a3XBPN": {
+      "type": "search-category",
+      "disabled": true,
       "settings": {
-        "main_image": "shopify://shop_images/about-us.png",
-        "title": "Smart Irrigation Solutions for a Sustainable Future",
-        "description": "<p>At <strong>Appster</strong>, we are committed to revolutionizing irrigation with cutting-edge technology and smart solutions. Our mission is to help farmers and businesses optimize water usage, enhance crop yields, and promote sustainable farming practices. With a range of innovative irrigation products, we ensure precision, efficiency, and reliability in every drop. Whether you're looking for automated irrigation systems, water-saving techniques, or advanced farming tools, Appster is your trusted partner in modern agriculture.</p><p>Grow smarter, save water, and cultivate success with Appster! 🌱💧</p>"
+        "search_text": "",
+        "show_go_back": true,
+        "show_heading": false
+      }
+    },
+    "main_image_banner_44d4kc": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "About Us"
+      }
+    },
+    "section_breadcrumbs_LULAQF": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": true
+      }
+    },
+    "about_us_content_MfUtWU": {
+      "type": "about-us-content",
+      "blocks": {
+        "icon_text_block_neAncd": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/4547d0f5f71fc513c4337e9c4cefaa0f.svg",
+            "text": "In Business Since 2002"
+          }
+        },
+        "icon_text_block_U3xnAW": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/e178aafc3113e0a9c8ac6899fbff24c8.svg",
+            "text": "US Company"
+          }
+        },
+        "icon_text_block_pUWDya": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/bc2161c30c64523d2828b45065ad83c4.svg",
+            "text": "Thousands of Quality Products"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_block_neAncd",
+        "icon_text_block_U3xnAW",
+        "icon_text_block_pUWDya"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "About Us",
+        "description": "<p>CableOrganizer® is a leading online retailer for cable management, electrical supplies, network products, home theater components, security, tools, and more.</p>",
+        "bg_img": "shopify://shop_images/About_Us_image.jpg"
+      }
+    },
+    "about_our_story_eFbkV6": {
+      "type": "about-our-story",
+      "custom_css": [],
+      "settings": {
+        "heading": "Our Story",
+        "description": "<p>CableOrganizer® is a leading online retailer for cable management, electrical supplies, network products, home theater components, security, tools, and more.<br/><br/>We began operating in 2002 with just a few items in stock and have since grown to offer our customers over 100,000 products. CableOrganizer® is known for our personal touch, excellent customer service, and attention to detail. Our customer service representatives are available to help with orders Monday - Friday, from 9am to 5:00pm EST and are expertly trained in our entire product catalog.<br/><br/>Our online store is a user friendly go-to resource for both professionals and do-it-yourselfers alike, as we are a one-stop-shop for all of your needs.<br/><br/>We cater to a number of different industries, included but not limited to Contractors and Installers, Electricians, Military and Government, Education, IT, Automotive, A/V, and more. We pride ourselves in having the widest selection of the highest-quality products out there. CableOrganizer® - Cable management. Your way. A click away.®</p>",
+        "image_1": "shopify://shop_images/CO-AboutUs-01.jpg",
+        "image_2": "shopify://shop_images/CO-AboutUs-02.jpg",
+        "full_img": "shopify://shop_images/CO-AboutUs-03.jpg"
+      }
+    },
+    "image_text_block_cFLrUz": {
+      "type": "image-text-block",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/our-mission.png",
+        "title": "Our Mission",
+        "description": "<p>Lorem ipsum dolor sit amet consectetur. Faucibus adipiscing eu scelerisque laoreet eget ac posuere id. Proin urna mi mauris faucibus pretium. Semper id odio id tincidunt. Praesent bibendum gravida posuere quis velit risus. <br/><br/>Sit non ultricies elit sagittis nunc euismod curabitur diam orci. Erat sed a amet sed. Sed pellentesque placerat laoreet vitae in consectetur id felis. Montes blandit commodo pharetra vel. Dui etiam imperdiet blandit mauris rhoncus lorem orci nam risus. Orci fringilla sodales malesuada tempor enim et bibendum suscipit vitae. Blandit eget velit sapien bibendum arcu at libero.</p>",
+        "full_width": false,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "image_text_block_hb9Rrg": {
+      "type": "image-text-block",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/shop-banner-img.jpg",
+        "title": "Our Values",
+        "description": "<p>Lorem ipsum dolor sit amet consectetur. Faucibus adipiscing eu scelerisque laoreet eget ac posuere id. Proin urna mi mauris faucibus pretium. Semper id odio id tincidunt. Praesent bibendum gravida posuere quis velit risus. <br/><br/>Sit non ultricies elit sagittis nunc euismod curabitur diam orci. Erat sed a amet sed. Sed pellentesque placerat laoreet vitae in consectetur id felis. Montes blandit commodo pharetra vel. Dui etiam imperdiet blandit mauris rhoncus lorem orci nam risus. Orci fringilla sodales malesuada tempor enim et bibendum suscipit vitae. Blandit eget velit sapien bibendum arcu at libero.</p>",
+        "full_width": false,
+        "image_position": true,
+        "text_size": false
+      }
+    },
+    "get_touch_block_W6MKFz": {
+      "type": "get-touch-block",
+      "settings": {
+        "image": "shopify://shop_images/co-contactus-banner_480.jpg",
+        "image_position": false,
+        "title": "Get in Touch",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? Our knowledgeable sales professionals can answer your questions by phone from 9 a.m. to 5 p.m. ET at <strong>1-833-3CABLEORG </strong>or by email at <a href=\"mailto:sales@cableorganizer.com\" target=\"_blank\" title=\"mailto:sales@cableorganizer.com\">sales@cableorganizer.com</a></p>",
+        "contact": "1-833-322-2536",
+        "address": "520 Lafayette Rd. Sparta, NJ 07871",
+        "email": "sales@cableorganizer.com"
       }
     }
   },
   "order": [
     "main",
-    "section_about_story_pkNQbc"
->>>>>>> development
+    "search_category_a3XBPN",
+    "main_image_banner_44d4kc",
+    "section_breadcrumbs_LULAQF",
+    "about_us_content_MfUtWU",
+    "about_our_story_eFbkV6",
+    "image_text_block_cFLrUz",
+    "image_text_block_hb9Rrg",
+    "get_touch_block_W6MKFz"
   ]
 }

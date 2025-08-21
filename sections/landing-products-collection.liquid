@@ -1,0 +1,76 @@
+{{ 'section-landing-products.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Buy Now Button {% endcomment %}
+{%- unless section.settings.quick_add == 'none' -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endunless -%}
+
+{%- if section.settings.quick_add == 'standard' -%}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- if section.settings.quick_add == 'bulk' -%}
+  <script src="{{ 'quick-add-bulk.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quick-order-list.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<div class="landing-products-main">
+  <div class="page-width page-small-width">
+    <div class="landing-products">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      <ul class="collection-list">
+        {% if section.settings.collection != blank %}
+        {% for product in section.settings.collection.products limit: section.settings.number_of_products_show %}
+          <li>
+            {% render 'card-product',
+            card_product: product,
+            show_secondary_image: false,
+            lazy_load: false,
+            section_id: section.id
+            %}
+          </li>
+        {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Collection",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "heading"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "range",
+      "id": "number_of_products_show",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "label": "Number Of Products Show",
+      "default": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Collection"
+    }
+  ]
+}
+{% endschema %}

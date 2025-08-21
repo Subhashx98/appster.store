@@ -14,60 +14,129 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_XkWVX6": {
-          "type": "announcement",
-          "settings": {
-            "text": "🌱 Precision Irrigation – Water where it matters most",
-            "link": ""
-          }
-        },
-        "announcement_KF4CEE": {
-          "type": "announcement",
-          "settings": {
-            "text": "💧 Eco-Friendly & Sustainable – Save water, grow more",
-            "link": ""
-          }
-        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "💰 Cost-Effective – Reduce waste, cut costs",
+            "text": "Welcome to CableOrganizer®",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement_XkWVX6",
-        "announcement_KF4CEE",
         "announcement-bar-0"
       ],
       "settings": {
-        "color_scheme": "scheme-a93e382d-da2b-4e2f-8043-577836846979",
-        "show_line_separator": false,
-        "show_social": false,
-        "auto_rotate": true,
-        "change_slides_speed": 4,
-        "enable_country_selector": false,
-        "enable_language_selector": false
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "track_text": "Manage Your Order",
+        "track_link": "/pages/returns-exchanges"
       }
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "navigation_with_cards_jG4kxD": {
+          "type": "navigation-with-cards",
+          "settings": {
+            "navigation_title": "Shop By Category",
+            "block_navigation_menu": "menu-shop-by-category",
+            "tag_name": "Featured Product",
+            "card_image_1": "shopify://shop_images/Hellerman-Tyton.jpg",
+            "card_title_1": "Wahoo™ Under Desk Baskets",
+            "card_button_text_1": "Shop Now",
+            "card_button_url_1": "shopify://products/bonito-usb-in-desk-power-outlet"
+          }
+        },
+        "navigation_with_cards_kCBGGr": {
+          "type": "navigation-with-cards",
+          "settings": {
+            "navigation_title": "Shop By Industries",
+            "block_navigation_menu": "menu-shop-by-industries",
+            "tag_name": "Featured Product",
+            "card_image_1": "shopify://shop_images/Alarm.jpg",
+            "card_title_1": "Wahoo™ Under Desk Baskets",
+            "card_button_text_1": "Shop Now",
+            "card_button_url_1": "shopify://products/bonito-usb-in-desk-power-outlet"
+          }
+        },
+        "navigation_with_brands_CVYjcL": {
+          "type": "navigation-with-brands",
+          "settings": {
+            "navigation_title": "Shop By Brand",
+            "brand_name": "Shop By Brands",
+            "button_view_name": "View All",
+            "button_view_link": "shopify://pages/shop-by-brand",
+            "shop_by_brand_list": [
+              "techflex",
+              "wirerun",
+              "wirewrap",
+              "quest",
+              "kendall-howard",
+              "byrne",
+              "doug-mockett-company-inc",
+              "legrand",
+              "signamax",
+              "wiretrak",
+              "hellermann-tyton",
+              "snake-tray",
+              "mertek-industries",
+              "leviton",
+              "panduit"
+            ],
+            "featured_title_1": "",
+            "featured_image": "shopify://shop_images/Techflex-F6W-Application.jpg",
+            "logo_image": "shopify://shop_images/Techflex-ShopByBrandDropDown-Logo.png",
+            "featured__sub_1": "",
+            "featured_button_text": "Shop Now",
+            "featured_button_url": "shopify://collections/techflex"
+          }
+        },
+        "nav_featured_products_rjJmWf": {
+          "type": "nav-featured-products",
+          "settings": {
+            "navigation_title": "Shop Featured Products",
+            "brand_name": "Featured Products",
+            "product_list": [
+              "griplockties",
+              "360-electrical-heavy-duty-powerhook-extension-cord",
+              "helios-black-series-hdmi-cable-with-ethernet-au-gl",
+              "knipex-20-tool-case-big-twin-move-empty"
+            ]
+          }
+        },
+        "link_list_6AgNmW": {
+          "type": "link_list",
+          "settings": {
+            "menu": "menu-shop-by-category"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_with_cards_jG4kxD",
+        "navigation_with_cards_kCBGGr",
+        "navigation_with_brands_CVYjcL",
+        "nav_featured_products_rjJmWf",
+        "link_list_6AgNmW"
+      ],
       "settings": {
-        "logo_position": "middle-center",
+        "logo_position": "middle-left",
         "menu": "main-menu",
-        "menu_type_desktop": "mega",
+        "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
+        "enable_country_selector": false,
         "enable_language_selector": true,
         "enable_customer_avatar": true,
         "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "call_text_1": "1-833-3CABLEORG",
+        "call_text_2": "1-833-322-2536",
+        "email_text": "sales@cableorganizer.com",
+        "offers_text_1": "Last Chance",
+        "offers_url_1": "shopify://collections/last-chance-items",
+        "offers_text_2": "Rewards",
+        "offers_url_2": "shopify://pages/loyalty-and-rewards"
       }
     }
   },

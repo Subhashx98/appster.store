@@ -1,0 +1,72 @@
+{{ 'section-request-quote.css' | asset_url | stylesheet_tag }}
+{{ 'common-form.css' | asset_url | stylesheet_tag  }}
+
+<div class="request-quote" 
+    style="background-image: url({{ section.settings.bg_image | image_url }});">
+    {% if section.settings.bg_image != blank %} 
+        <span class="gradiant-bg"></span>
+    {% endif %}
+	<div class="page-width">
+		<div class="request-quote-form">
+            {% if section.settings.logo_image != blank %}
+                <div class="quote-logo">
+                    <img
+                        src="{{ section.settings.logo_image |  image_url }}"
+                        alt="{{ section.settings.logo_image.alt |  default:  section.settings.heading_text }}"
+                        height="46"
+                        width="78"
+                        loading="lazy"
+                        id="login"
+                        tabindex="-1"
+                    >
+                </div>
+            {% endif %}
+            {% if section.settings.heading != blank %}
+                <h1>{{ section.settings.heading }} </h1>
+            {% endif %}
+            {% if section.blocks.size > 0 %}
+                <div class="request-form main-form">
+                    {% for block in section.blocks %}
+                    {% if block.type == '@app' %}
+                        {% render block %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+		</div>
+	</div>
+</div>
+{% schema %}
+	{
+		"name": "Request A Quote",
+		"tag": "section",
+		"settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "logo_image",
+                "label": "logo"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            }
+		],
+		"blocks": [
+			{
+				"type": "@app"
+			}
+		],
+		"presets": [
+			{
+				"name": "Request A Quote"
+			}
+		]
+	}
+{% endschema %}
+    

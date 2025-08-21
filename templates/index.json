@@ -9,143 +9,439 @@
  */
 {
   "sections": {
-    "image_slider_and_content_BETmm4": {
-      "type": "image-slider-and-content",
-      "settings": {
-        "background_image": "shopify://shop_images/Group_7.png",
-        "heading_text": "Efficient watering solutions to grow your <span>farm's potential.</span>",
-        "subtitle_text": "Smart tools for better yields and water savings.",
-        "button_text": "boost your farm today",
-        "button_link": "shopify://collections/all"
-      }
-    },
-    "section_shop_by_category_XazVf6": {
-      "type": "section-shop-by-category",
+    "home_banner_zLywwr": {
+      "type": "home-banner",
       "blocks": {
-        "collections_4fnqpY": {
-          "type": "collections",
+        "card_block_bXxhJY": {
+          "type": "card_block",
           "settings": {
-            "title": "EMITTERS/DRIPPERS",
-            "collection_list": [
-              "frontpage"
-            ]
+            "card_bg_img": "shopify://shop_images/Banner1-Background.jpg",
+            "card_tag": "New",
+            "card_heading": "6:1 Adhesive Lined Heatshrink",
+            "card_content": "",
+            "cta_text": "Buy Now",
+            "cta_url": "shopify://collections/6-1-heatshrink",
+            "image_position": "right_image"
           }
         },
-        "collections_jrXKEB": {
-          "type": "collections",
+        "card_block_bc4JWw": {
+          "type": "card_block",
           "settings": {
-            "title": "EMITTERS/DRIPPERS",
-            "collection_list": [
-              "frontpage"
-            ]
+            "card_bg_img": "shopify://shop_images/CO-CableManagement-Article-Banner2.jpg",
+            "card_tag": "",
+            "card_heading": "10 Simple Tips",
+            "card_content": "for Cable Organization in your Home Office!",
+            "cta_text": "Read Now",
+            "cta_url": "shopify://blogs/articles/10-simple-cable-organization-tips-for-your-home-office",
+            "image_position": "bottom_image"
           }
         },
-        "collections_HANArb": {
-          "type": "collections",
+        "slider_block_wWqR6H": {
+          "type": "slider_block",
           "settings": {
-            "title": "EMITTERS/DRIPPERS",
-            "collection_list": [
-              "frontpage"
-            ]
+            "slider_card_img": "shopify://shop_images/Knipex-HomePage-Banner-2025.jpg",
+            "slider_logo": "shopify://shop_images/LogoForBanners-Knipex.png",
+            "slider_heading": "Gear Up With Knipex®",
+            "slider_content": "",
+            "cta_text": "Shop Now",
+            "cta_url": "shopify://collections/tool-storage"
+          }
+        },
+        "slider_block_RJkR7D": {
+          "type": "slider_block",
+          "settings": {
+            "slider_card_img": "shopify://shop_images/Metra-HomePage-Banner-2025.jpg",
+            "slider_logo": "shopify://shop_images/LogoForBanners-Metra.png",
+            "slider_heading": "Backstage Power, Front-Row Results!",
+            "slider_content": "",
+            "cta_text": "Buy Now",
+            "cta_url": "shopify://products/helios-6-outlet-wall-tap-surge-protector"
+          }
+        },
+        "slider_block_Uwh9YA": {
+          "type": "slider_block",
+          "settings": {
+            "slider_card_img": "shopify://shop_images/GripLockTies-HomePage-Banner-2025.jpg",
+            "slider_logo": "shopify://shop_images/LogoForBanners-GripLockTies-White.png",
+            "slider_heading": "Reimagine Cable Ties!",
+            "slider_content": "",
+            "cta_text": "Shop Now",
+            "cta_url": "shopify://products/griplockties"
           }
         }
       },
       "block_order": [
-        "collections_4fnqpY",
-        "collections_jrXKEB",
-        "collections_HANArb"
+        "card_block_bXxhJY",
+        "card_block_bc4JWw",
+        "slider_block_wWqR6H",
+        "slider_block_RJkR7D",
+        "slider_block_Uwh9YA"
       ],
-      "disabled": true,
+      "custom_css": [
+        "h3 {color: #ffffff; font-weight: normal;}",
+        "h2 {font-family: var(--font-days-one);}"
+      ],
       "settings": {
-        "title": "SHOP BY CATEGORY"
+        "section_card_img": "shopify://shop_images/WireRunManta-Banner3.jpg",
+        "tag": "",
+        "heading": "WireRun® Manta™ Removable Desk Outlet",
+        "button_text": "Buy Now",
+        "button_url": "shopify://products/manta-desk-mount-power-strip-charging-station"
       }
     },
-    "our_bestseller_xA6fTX": {
-      "type": "our-bestseller",
+    "marquee_slider_HyBzAt": {
+      "type": "marquee-slider",
+      "blocks": {
+        "policies_A83kNJ": {
+          "type": "policies",
+          "settings": {
+            "policie_text": "Fast Shipping"
+          }
+        },
+        "policies_bbJBB6": {
+          "type": "policies",
+          "settings": {
+            "policie_text": "Expert Customer Service"
+          }
+        },
+        "policies_zNrVmy": {
+          "type": "policies",
+          "settings": {
+            "policie_text": "Quality You Can Count On"
+          }
+        },
+        "policies_qBWKdV": {
+          "type": "policies",
+          "settings": {
+            "policie_text": "Huge Selection"
+          }
+        },
+        "policies_dd86Bd": {
+          "type": "policies",
+          "settings": {
+            "policie_text": "Everything You Need, All in One Place"
+          }
+        }
+      },
+      "block_order": [
+        "policies_A83kNJ",
+        "policies_bbJBB6",
+        "policies_zNrVmy",
+        "policies_qBWKdV",
+        "policies_dd86Bd"
+      ],
+      "settings": {}
+    },
+    "shop_top_collections_9xbphW": {
+      "type": "shop-top-collections",
       "settings": {
-        "heading": "Bestselling Solutions",
-        "products": [
-          "10-meter-hose-pipe-5pcs-6mm-atomization-misting-fog-nozzles-with-tee-connector-suitable-for-diy-sanitization-tunnel-fogger-sprayer-watering-irrigation-fogging-cooling-kit",
-          "4-way-fogger-assembly-complete-1-2-threaded-with-anti-drip-check-valve-for-garden-greenhouses-mist-cooling-stable-poultry-farm"
+        "heading": "Shop By Top Collections",
+        "cta_text": "View All",
+        "cta_url": "shopify://collections",
+        "collection": [
+          "braided-sleeving",
+          "heatshrink",
+          "cable-tray-systems",
+          "cable-raceway",
+          "wire-duct",
+          "enclosures"
         ]
       }
     },
-    "discover_CcDrUh": {
-      "type": "discover",
+    "best_seller_e8RKWK": {
+      "type": "best-seller",
+      "settings": {
+        "heading": "Our Best Sellers",
+        "cta_text": "View All",
+        "cta_url": "shopify://collections/best-sellers",
+        "collection": "best-sellers",
+        "number_of_products_show": 12
+      }
+    },
+    "shop_now_list_yFfkbb": {
+      "type": "shop-now-list",
       "blocks": {
-        "discover_block_UVyWtN": {
-          "type": "discover_block",
+        "product_detail_block_Vt3GTX": {
+          "type": "product_detail_block",
           "settings": {
-            "title": "Smart Irrigation for Maximum Yield",
-            "description": "<p>Learn how advanced irrigation systems can optimize water usage, reduce waste, and enhance crop growth. Discover the latest innovations in automated irrigation and precision watering techniques.</p>",
-            "image_url": "shopify://shop_images/woman-science-assistant-agricultural-officer-greenhouse-farm-research-melon.jpg",
-            "media_selection": "image",
-            "media_alignment": false,
-            "button_text": "SHOP NOW",
-            "button_url": "shopify://collections/all"
+            "image": "shopify://shop_images/Banner7-GripLockTies-VER2-2025_687e8158-6aed-4bd0-84ab-8dfa4e9c4159.jpg",
+            "logo_image": "shopify://shop_images/LogoForBanners-GripLockTies-White.png",
+            "heading": "",
+            "description": "Maximum Grip and Vibration Control.",
+            "cta_text": "Shop Now",
+            "cta_url": "shopify://products/griplockties"
+          }
+        },
+        "product_detail_block_zD6hNF": {
+          "type": "product_detail_block",
+          "settings": {
+            "image": "shopify://shop_images/Banner8-360Electrical-PowerHubXL.jpg",
+            "logo_image": "shopify://shop_images/360Electrical-Logo-For-Banners.png",
+            "heading": "NEW ARRIVAL!",
+            "description": "Heavy Duty PowerHub XL",
+            "cta_text": "Shop Now",
+            "cta_url": "/products/360-electrical-heavy-duty-powerhubs-indoor-outdoor-adapter?variant=51638370107697"
+          }
+        },
+        "product_detail_block_6a9Kmz": {
+          "type": "product_detail_block",
+          "settings": {
+            "image": "shopify://shop_images/Banner9-LastChance.jpg",
+            "heading": "NOW $114.91!",
+            "description": "Byrne® Glenbeigh Pop Up Desk Outlet",
+            "cta_text": "Buy Now",
+            "cta_url": "/products/last-chance-glenbeigh-contemporary-desktop-power-outlets"
           }
         }
       },
       "block_order": [
-        "discover_block_UVyWtN"
+        "product_detail_block_Vt3GTX",
+        "product_detail_block_zD6hNF",
+        "product_detail_block_6a9Kmz"
+      ],
+      "custom_css": [
+        ".shop-bg-image::before {display: none;}"
+      ],
+      "settings": {}
+    },
+    "shop_by_brand_LmJNK4": {
+      "type": "shop-by-brand",
+      "settings": {
+        "title": "Shop By Brand",
+        "cta_text": "View All",
+        "cta_url": "shopify://pages/shop-by-brand",
+        "shop_by_brand_list": [
+          "techflex",
+          "byrne",
+          "hellermann-tyton",
+          "wirerun",
+          "doug-mockett-company-inc",
+          "snake-tray",
+          "wirewrap",
+          "legrand",
+          "mertek-industries",
+          "quest",
+          "signamax",
+          "leviton",
+          "kendall-howard",
+          "wiretrak",
+          "panduit"
+        ],
+        "image": "shopify://shop_images/FeaturedBrand-Techflex.jpg",
+        "heading": "Featured Brand",
+        "logo": "shopify://shop_images/Techflex-RedWhite-Logo_9dbb79e3-0d58-409e-af7c-a63c5b48e227.png",
+        "sale_text": "",
+        "tag": "",
+        "offer_text": "",
+        "button_text": "Shop Now",
+        "button_url": "shopify://collections/techflex"
+      }
+    },
+    "product_categories_wgxy8m": {
+      "type": "product-categories",
+      "blocks": {
+        "categories_block_4UgbWT": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Shop By Interest",
+            "cta_text": "View All",
+            "link": "shopify://collections/shop-by-interest",
+            "icon": "shopify://shop_images/ICONS-SHOP-BY-INTEREST_55e37be9-df3a-4c80-8cf9-0a47529d54b8.svg",
+            "block_collection": "shop-by-interest"
+          }
+        },
+        "categories_block_dky384": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Contractors & Installers",
+            "cta_text": "View All",
+            "link": "shopify://collections/contractors-installers-1",
+            "icon": "shopify://shop_images/icon-installer.svg",
+            "block_collection": "contractors-installers-1"
+          }
+        },
+        "categories_block_cwUfVm": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Electricians",
+            "cta_text": "View All",
+            "link": "shopify://collections/electricians",
+            "icon": "shopify://shop_images/icon-Electricians.svg",
+            "block_collection": "electricians"
+          }
+        },
+        "categories_block_pmw9hM": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Industrial",
+            "cta_text": "View All",
+            "link": "shopify://collections/industrial-1",
+            "icon": "shopify://shop_images/icon-Industrial.svg",
+            "block_collection": "industrial-1"
+          }
+        },
+        "categories_block_wDxr8z": {
+          "type": "categories_block",
+          "settings": {
+            "text": "IT/Communications",
+            "cta_text": "View All",
+            "link": "shopify://collections/it-communications-1",
+            "icon": "shopify://shop_images/icon-ITCommunications.svg",
+            "block_collection": "it-communications-1"
+          }
+        },
+        "categories_block_WR9wUG": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Audio & Video",
+            "cta_text": "View All",
+            "link": "shopify://collections/audio-video-1",
+            "icon": "shopify://shop_images/icon-Audio_Video.svg",
+            "block_collection": "audio-video-1"
+          }
+        },
+        "categories_block_9qW4bF": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Automotive",
+            "cta_text": "View All",
+            "link": "shopify://collections/automotive-1",
+            "icon": "shopify://shop_images/icon-Automotive.svg",
+            "block_collection": "automotive-1"
+          }
+        },
+        "categories_block_kVDmca": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Residential",
+            "cta_text": "View All",
+            "link": "shopify://collections/residential",
+            "icon": "shopify://shop_images/icon-Residential.svg",
+            "block_collection": "residential"
+          }
+        },
+        "categories_block_WGjzXE": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Office",
+            "cta_text": "View All",
+            "link": "shopify://collections/office",
+            "icon": "shopify://shop_images/icon-Office.svg",
+            "block_collection": "office"
+          }
+        },
+        "categories_block_6cMibf": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Military Entities",
+            "cta_text": "View All",
+            "link": "shopify://collections/military-entities",
+            "icon": "shopify://shop_images/icon-Military_Entities.svg",
+            "block_collection": "military-entities"
+          }
+        },
+        "categories_block_RmgT4Q": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Government Entities",
+            "cta_text": "View All",
+            "link": "shopify://collections/governement-entities",
+            "icon": "shopify://shop_images/icon-Government_Entities.svg",
+            "block_collection": "governement-entities"
+          }
+        },
+        "categories_block_tNhF8L": {
+          "type": "categories_block",
+          "settings": {
+            "text": "Educational Entities",
+            "cta_text": "View All",
+            "link": "shopify://collections/educational-entities",
+            "icon": "shopify://shop_images/icon-Educational_Entities.svg",
+            "block_collection": "educational-entities"
+          }
+        }
+      },
+      "block_order": [
+        "categories_block_4UgbWT",
+        "categories_block_dky384",
+        "categories_block_cwUfVm",
+        "categories_block_pmw9hM",
+        "categories_block_wDxr8z",
+        "categories_block_WR9wUG",
+        "categories_block_9qW4bF",
+        "categories_block_kVDmca",
+        "categories_block_WGjzXE",
+        "categories_block_6cMibf",
+        "categories_block_RmgT4Q",
+        "categories_block_tNhF8L"
       ],
       "settings": {
-        "heading": ""
+        "heading": "Shop By Interest",
+        "cta_text": "View All",
+        "link": "shopify://collections/shop-by-interest",
+        "collection": "shop-by-interest",
+        "number_of_products_show": 12,
+        "title": "Categories"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 25,
-        "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "scheme-2",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
+    "home_block_section_ff9RHQ": {
+      "type": "home-block-section",
+      "blocks": {
+        "tutorial_block_7KcfbB": {
+          "type": "tutorial_block",
+          "settings": {
+            "heading": "Same Day Shipping",
+            "sub_heading": "<p>On orders placed before 2pm EST Mon-Fri<br/>*Some Restriction May Apply</p>",
+            "cta_text": "Shipping Policy",
+            "cta_url": "shopify://pages/shipping-policy",
+            "image": "shopify://shop_images/home-block-bg1.png",
+            "mobile_image": "shopify://shop_images/mobile.jpg"
+          }
+        },
+        "tutorial_block_WWdP6E": {
+          "type": "tutorial_block",
+          "settings": {
+            "heading": "How to Use Heat Shrink",
+            "sub_heading": "<p>Sign Up For Early Access to CableOrganizer® Exclusive, Limited Time Special Offers!</p>",
+            "cta_text": "Learn More",
+            "cta_url": "shopify://blogs/articles/how-do-i-use-heat-shrink-tubing",
+            "image": "shopify://shop_images/home-block-bg2.png",
+            "mobile_image": "shopify://shop_images/banner-mobile.png"
+          }
+        }
+      },
+      "block_order": [
+        "tutorial_block_7KcfbB",
+        "tutorial_block_WWdP6E"
+      ],
+      "settings": {}
     },
-    "section_about_story_8tWQcf": {
-      "type": "section-about-story",
+    "featured_home_blog_6t9qj4": {
+      "type": "featured-home-blog",
       "settings": {
-        "main_image": "shopify://shop_images/about-us.png",
-        "title": "Appster Your Partner in Smart Farming.",
-        "description": "<p>At <strong>Appster</strong>, we are committed to revolutionizing irrigation with cutting-edge technology and smart solutions. Our mission is to help farmers and businesses optimize water usage, enhance crop yields, and promote sustainable farming practices. With a range of innovative irrigation products, we ensure precision, efficiency, and reliability in every drop. Whether you're looking for automated irrigation systems, water-saving techniques, or advanced farming tools, Appster is your trusted partner in modern agriculture.</p><p>Grow smarter, save water, and cultivate success with <strong>Appster!</strong> 🌱💧</p>"
-      }
-    },
-    "section_contact_us_G4Hxzi": {
-      "type": "section-contact-us",
-      "settings": {
-        "heading": "We’re Just a Message Away",
-        "form_title": "",
-        "contact_display": "map",
-        "embed_map_code": "<div class=\"embed-map-responsive\">\n<div class=\"embed-map-container\">\n<iframe class=\"embed-map-frame\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.com/maps?width=680&height=538&hl=en&q=appcom%20sales&t=&z=13&ie=UTF8&iwloc=B&output=embed\"></iframe><a href=\"https://sprunkiretake.net\" style=\"font-size:2px!important;color:gray!important;position:absolute;bottom:0;left:0;z-index:1;max-height:1px;overflow:hidden\">sprunki retake</a>\n</div>\n<style>.embed-map-responsive{position:relative;text-align:right;width:100%;height:0;padding-bottom:79.11764705882352%;}.embed-map-container{overflow:hidden;background:none!important;width:100%;height:100%;position:absolute;top:0;left:0;}.embed-map-frame{width:100%!important;height:100%!important;position:absolute;top:0;left:0;}</style>\n</div>"
+        "heading": "Featured Posts",
+        "subheading": "",
+        "article_1": "articles/the-ultimate-flexo®-pet-color-reference-resource",
+        "article_2": "how-to/how-to-build-a-custom-cable-management-system-for-your-pc",
+        "article_3": "articles/the-ultimate-guide-to-cable-management-for-beginners",
+        "blog": "articles",
+        "cta_text": "View All",
+        "cta_url": "shopify://blogs/articles",
+        "show_image": true,
+        "show_date": true,
+        "show_author": true
       }
     }
   },
   "order": [
-    "image_slider_and_content_BETmm4",
-    "section_shop_by_category_XazVf6",
-    "our_bestseller_xA6fTX",
-    "discover_CcDrUh",
-    "featured_collection",
-    "section_about_story_8tWQcf",
-    "section_contact_us_G4Hxzi"
+    "home_banner_zLywwr",
+    "marquee_slider_HyBzAt",
+    "shop_top_collections_9xbphW",
+    "best_seller_e8RKWK",
+    "shop_now_list_yFfkbb",
+    "shop_by_brand_LmJNK4",
+    "product_categories_wgxy8m",
+    "home_block_section_ff9RHQ",
+    "featured_home_blog_6t9qj4"
   ]
 }

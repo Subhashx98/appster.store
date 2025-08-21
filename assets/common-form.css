@@ -1,0 +1,194 @@
+.main-form .shopify-block{
+    width: 100%;
+}
+.main-form .globo-form .globo-form-app{
+    max-width: 100%;
+    margin: 0px;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+.main-form .globo-form .globo-form-app .header{
+    padding: 0px !important;
+    margin-bottom: 28px;
+}
+.main-form .globo-form .globo-form-app .header h3.title{
+    font-family: var(--font-days-one);
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 8px;
+    color: var(--black-color);
+    font-weight: 400;
+    width: 100%;
+}
+.main-form .globo-form .globo-form-app .description p,
+.main-form .globo-form .globo-form-app .description{
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 26px;
+}
+.main-form .globo-form .globo-form-app .panels .panel{
+    gap: 12px;
+}
+.main-form .globo-form .globo-form-app .globo-form-control{
+    padding: 0px;
+    margin: 0px;
+}
+.main-form .globo-form .globo-form-app .globo-form-control hr{
+    height: 0;
+}
+.main-form .globo-form .globo-form-app .globo-form-control.layout-2-column{
+    width: calc(50% - 6px)
+}
+.main-form .globo-form .globo-form-app .globo-form-control.layout-3-column{
+    width: calc(33.33% - 8px)
+}
+.main-form .globo-form .globo-form-app .globo-form-control .heading-title{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--black-color);
+    font-family: var(--font-days-one);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.main-form .globo-form-control .globo-form-input {
+    background: var(--white-color);
+    border-radius: 6px;
+}
+.main-form .gfb-style-material_outlined .gfb_material_outlined .gfb__outline-start::after,
+.main-form .gfb-style-material_outlined .gfb_material_outlined .gfb__outline-notch::after, 
+.main-form .gfb-style-material_outlined .gfb_material_outlined .gfb__outline-end::after,
+.main-form .gfb-style-material_outlined .gfb_material_outlined .gfb__outline-notch .gfb__outline-panel-inactive,
+.main-form .gfb-style-material_outlined .gfb_material_outlined .gfb__outline-notch .gfb__outline-panel-inactive::before,
+.main-form .gfb-style-material_outlined .gfb_material_outlined .gfb__outline-notch .gfb__outline-panel-inactive::after{
+    border-width: 1px;
+    border-color: #DDDDDD;
+}
+.main-form .gfb-style-material_outlined .gfb_material_outlined .gfb__outline-notch {
+    max-width: 85%;
+}
+.main-form .gfb-style-material_outlined .gfb_material_outlined .gfb__outline-notch .gfb__outline-panel-label{
+    max-width: 100%;
+}
+.main-form .globo-form-control .material_outlined-input,
+.main-form .globo-form-control .gfb_material_outlined label .label-content{
+    font-weight: 500 !important;
+    font-family: var(--font-open-sans) !important;
+}
+.main-form .globo-form-control .gfb_material_outlined label .label-content{
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+.main-form .globo-form-control .globo-form-input textarea{
+    height: 68px !important;
+}
+/* File design */
+.main-form .globo-form-control .gfb__dropzone{
+    min-height: 80px;
+    border-color: rgba(0, 0, 0, 0.24);
+    padding: 18px 12px;
+}
+.main-form .globo-form-control .gfb__dropzone .gfb__dropzone--placeholder{
+    display: grid !important;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    row-gap: 8px;
+}
+.main-form .globo-form-control .gfb__dropzone--content{
+    gap: 0;
+}
+.main-form .globo-form-control .gfb__dropzone .gfb__dropzone--placeholder--title{
+    font-weight: 500 !important;
+    font-family: var(--font-open-sans) !important;
+    font-size: 14px !important;
+    color: rgba(0, 0, 0, 0.5) !important;
+    grid-column: 1;
+    grid-row: 1;
+    line-height: normal;
+}
+.main-form .globo-form-control .gfb__dropzone .gfb__dropzone--placeholder--description{
+    font-size: 10px !important;
+    font-family: var(--font-open-sans) !important;
+    color: rgba(0, 0, 0, 0.6) !important;
+    grid-column: 1;
+    grid-row: 2;
+    line-height: normal;
+}
+.main-form .globo-form-control .gfb__dropzone .gfb__dropzone--placeholder--button{
+    background-color: var(--light-grey-color) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    font-family: var(--font-open-sans) !important;
+    border: 0px !important;
+    color: rgba(0, 0, 0, 0.5) !important;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    padding: 13px 32px;
+}
+.main-form .globo-form-control .gfb__dropzone .gfb__dropzone--placeholder--button:hover{
+    color: var(--black-color) !important;
+}
+/* checkbox lable */
+.main-form .globo-form-control .checkbox-wrapper .checkbox-input~.checkbox-label:before{
+    border-color: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+}
+.main-form .globo-form-control .globo-list-control .checkbox-label{
+    color: rgba(0, 0, 0, 0.5) !important;
+    font-weight: 500 !important;
+    font-family: var(--font-open-sans) !important;
+}
+/* footer button */
+.main-form .globo-formbuilder-wizard .gfb__footer.wizard__footer{
+    padding: 0;
+    margin: 32px 0 0;
+}
+.main-form .globo-formbuilder-wizard .gfb__footer.wizard__footer button{
+    margin: 0 !important;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 17px 46px;
+    font-family: var(--font-open-sans);
+}
+.main-form .globo-formbuilder-wizard .gfb__footer.wizard__footer button:hover{
+    background: var(--orange-color);
+    border-color: var(--orange-color);
+}
+.main-form .globo-formbuilder-wizard .gfb__footer.wizard__footer button.reset{
+    background: var(--white-color);
+    color: var(--primary-blue-color);
+    margin-left: 10px !important;
+}
+.main-form .globo-formbuilder-wizard .gfb__footer.wizard__footer button.reset:hover{
+    background: var(--primary-blue-color);
+    color: var(--white-color);
+    border-color: var(--primary-blue-color);
+}
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+    .main-form .globo-form .globo-form-app .header h3.title{ font-size: 20px; line-height: 28px; width: 100%;}
+    .main-form .globo-form .globo-form-app .description p{ line-height: 20px;}
+}
+@media only screen and (max-width: 991px) {
+    .main-form .globo-form .globo-form-app .globo-form-control.layout-3-column{width: calc(50% - 6px);}
+    .main-form .globo-form .globo-form-app .globo-form-control hr{margin: 0px;}
+    .main-form .globo-form .globo-form-app .globo-form-control .heading-title{font-size: 16px;  line-height: 26px;}
+    .main-form .globo-formbuilder-wizard .gfb__footer.wizard__footer{ margin-top: 28px !important;}
+    .main-form .globo-formbuilder-wizard .gfb__footer.wizard__footer button{ font-size: 14px; padding: 12px 14px;} 
+}
+@media only screen and (max-width: 767px) {
+    .main-form .globo-form .globo-form-app .globo-form-control.layout-2-column,
+    .main-form .globo-form .globo-form-app .globo-form-control.layout-3-column{width: 100%;}
+}
+@media only screen and (max-width: 576px) {
+    .main-form .globo-form-control .gfb__dropzone .gfb__dropzone--placeholder--button{margin: 12px 0px 0px; padding: 12px 50px;}
+    .main-form .globo-form-control .gfb__dropzone .gfb__dropzone--placeholder{ display: flex !important;}
+}

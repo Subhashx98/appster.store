@@ -1,0 +1,242 @@
+{{ 'section-blog.css' | asset_url | stylesheet_tag }}
+<div class="blog-banner">
+  <span class="blog-banner-img">
+    <img
+      src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/CO-MultiplePage-Banner.jpg?v=1742909640"
+      alt="CO Banner"
+      height="100"
+      width="100"
+      loading="lazy"
+    >
+  </span>
+  <div class="page-width">
+    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {% if section.settings.heading != blank %}
+        {{ section.settings.heading }}
+      {% else %}
+        {{ blog.title | escape }}
+      {% endif %}
+    </h1>
+    {% if blog.tags.size > 0 %}
+      <div class="blog-filter">
+        <ul id="BlogTagFilter" class="tag-list">
+          <li>
+            <a
+              href="{{ blog.url | split: '?' | first }}"
+              class="button"
+            >
+              All Topics
+            </a>
+          </li>
+          {% for tag in blog.all_tags %}
+            {% if tag == 'New' or tag == 'Featured Article' %}
+              {% continue %}
+            {% endif %}
+            {% assign tag_handleized = tag | handleize %}
+            <li>
+              <a
+                href="{{ blog.url }}/tagged/{{ tag_handleized }}"
+                class="button"
+              >
+                {{- tag -}}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+
+        <!-- Dropdown for mobile -->
+        <div class="tag-filter-dropdown-main" id="tagDropdownWrapper">
+          <select id="tagFilterDropdown">
+            <option
+              value="{{ blog.url | split: '?' | first }}"
+              {% if current_tags == blank %}
+                selected
+              {% endif %}
+            >
+              All Topics
+            </option>
+            {% for tag in blog.all_tags %}
+              {% if tag == 'New' or tag == 'Featured Article' %}
+                {% continue %}
+              {% endif %}
+              <option
+                value="{{ blog.url }}/tagged/{{ tag | handleize }}"
+                {% if current_tags contains tag %}
+                  selected
+                {% endif %}
+              >
+                {{ tag }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <script>
+          const dropdown = document.getElementById('tagFilterDropdown');
+          const wrapper = document.getElementById('tagDropdownWrapper');
+          let isOpen = false;
+
+          dropdown.addEventListener('mousedown', function (e) {
+            isOpen = !isOpen;
+            wrapper.classList.toggle('open', isOpen);
+          });
+
+          dropdown.addEventListener('blur', function () {
+            isOpen = false;
+            wrapper.classList.remove('open');
+          });
+
+          dropdown.addEventListener('change', function () {
+            window.location.href = this.value;
+          });
+        </script>
+
+        {% comment %}
+          <script>
+            // Function to apply active class based on stored active link
+            function setActiveLink() {
+              // Retrieve the active link from localStorage
+              const activeLinkId = localStorage.getItem('activeLink');
+              if (activeLinkId) {
+                const activeLink = document.getElementById(activeLinkId);
+                if (activeLink) {
+                  activeLink.classList.add('active');
+                }
+              }
+            }
+
+            // Add event listener to each link
+            navItems.forEach(item => {
+              item.addEventListener('click', function(e) {
+                // Remove the active class from all items
+                navItems.forEach(i => i.classList.remove('active'));
+
+                // Add active class to the clicked item
+                e.target.classList.add('active');
+
+                // Store the active link's id in localStorage
+                localStorage.setItem('activeLink', e.target.id);
+              });
+            });
+
+            // Call setActiveLink to restore the active class on page load
+            setActiveLink();
+
+
+            // Function to filter by tag and store the selection
+            function filterByTag(selectElement) {
+              var selectedValue = selectElement.value;
+              // Store the selected value in local storage
+              localStorage.setItem('selectedTag', selectedValue);
+              // Redirect to the selected value
+              window.location.href = selectedValue;
+            }
+
+            // On page load, check local storage for the selected tag
+            document.addEventListener('DOMContentLoaded', function () {
+              window.onload = function () {
+                var selectedTag = localStorage.getItem('selectedTag');
+                if (selectedTag) {
+                  // Set the dropdown to the stored value
+                  var dropdown = document.getElementById('tagFilterDropdown');
+                  dropdown.value = selectedTag;
+
+                  // Update the selected button as well
+                  var buttons = document.querySelectorAll('.button');
+                  buttons.forEach(function (button) {
+                    button.classList.remove('selected');
+                  });
+                  var selectedButton = Array.from(buttons).find(function (button) {
+                    return button.getAttribute('href') === selectedTag;
+                  });
+                  if (selectedButton) {
+                    selectedButton.classList.add('selected');
+                  }
+                }
+
+                // Add a listener to the "All Topics" button to clear the local storage
+                var allTopicsButton = document.querySelector('.button.selected');
+                if (allTopicsButton) {
+                  allTopicsButton.addEventListener('click', function () {
+                    localStorage.removeItem('selectedTag');
+                  });
+                }
+              };
+            });
+            if (typeof Storage !== 'undefined') {
+              // Use localStorage if available
+              window.onload = function () {
+                var selectedTag = localStorage.getItem('selectedTag');
+                if (selectedTag) {
+                  var dropdown = document.getElementById('tagFilterDropdown');
+                  dropdown.value = selectedTag;
+                  var buttons = document.querySelectorAll('.button');
+                  buttons.forEach(function (button) {
+                    button.classList.remove('selected');
+                  });
+                  var selectedButton = Array.from(buttons).find(function (button) {
+                    return button.getAttribute('href') === selectedTag;
+                  });
+                  if (selectedButton) {
+                    selectedButton.classList.add('selected');
+                  }
+                }
+              };
+            } else {
+              console.log('Local storage is not supported in this browser.');
+            }
+          </script>
+        {% endcomment %}
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const navItems = document.querySelectorAll('#BlogTagFilter a');
+
+            // Function to set active class based on the current URL
+            function setActiveLink() {
+              const currentUrl = window.location.href;
+
+              navItems.forEach((item) => {
+                // Check if the link's href matches the current URL
+                if (currentUrl === item.href) {
+                  item.classList.add('active');
+                } else {
+                  item.classList.remove('active');
+                }
+              });
+            }
+
+            // Apply active class on page load
+            setActiveLink();
+
+            // Add event listener to each link to update active class on click
+            navItems.forEach((item) => {
+              item.addEventListener('click', function () {
+                navItems.forEach((link) => link.classList.remove('active'));
+                item.classList.add('active');
+              });
+            });
+          });
+        </script>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Blog Banner",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Banner"
+    }
+  ]
+}
+{% endschema %}

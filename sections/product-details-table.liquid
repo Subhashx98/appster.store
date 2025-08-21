@@ -1,0 +1,65 @@
+{{ 'section-details-table.css' | asset_url | stylesheet_tag }}
+{{ '//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js' | script_tag }}
+
+<div class="product-details-table">
+  <div class="page-width">
+    <div class="chart-image-text">
+      {% if metaobject.sub_image != blank %}
+        <img
+          src="{{ metaobject.sub_image | image_url }}"
+          alt="{{ metaobject.sub_image.alt | default: 'Secondary image' }}"
+          height="160"
+          width="500"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+    <div class="charts-table">
+      <div
+        id="pdf-container"
+        data-pdf="{{ metaobject.pdf.value.url }}"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const container = document.getElementById('pdf-container');
+  const pdfUrl = container.getAttribute('data-pdf');
+
+  // Load the PDF document
+  pdfjsLib.getDocument(pdfUrl).promise.then((pdf) => {
+    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+      pdf.getPage(pageNumber).then((page) => {
+        const scale = 6.0; // Higher scale = better quality
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        container.appendChild(canvas);
+
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport,
+        };
+        page.render(renderContext);
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Details Table",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Product Details Table"
+    }
+  ]
+}
+{% endschema %}

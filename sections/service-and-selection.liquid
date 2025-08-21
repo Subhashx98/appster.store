@@ -1,0 +1,99 @@
+{{ 'service-selection.css' | asset_url | stylesheet_tag }}
+
+<div class="service-and-selection-section {% if section.settings.hide_on_desktop %}hidden-desktop{% endif %}">
+  <div class="page-width">
+    <div class="service-section-flex">
+      {% if section.settings.top_image != blank %}
+        <div class="service-and-selection-top">
+          <img
+            class="service-selection-image"
+            src="{{ section.settings.top_image | image_url }}"
+            alt="{{ section.settings.top_image.alt |  default: section.settings.section_title  }}"
+            height="100%"
+            width="100%"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+
+      <div class="service-and-selection-content">
+        <h2 class="service-selection-title">{{ section.settings.section_title }}</h2>
+
+        {% for block in section.blocks %}
+          <div class="service-selection-content-box">
+            {% if block.settings.icon != blank %}
+              <img
+                class="service-selection-icon"
+                src="{{ block.settings.icon | image_url }}"
+                alt="{{ block.settings.icon.alt |  default: block.settings.title }}"
+                height="100%"
+                width="100%"
+                loading="lazy"
+              >
+            {% endif %}
+            <div class="service-selection-details">
+              <h5>{{ block.settings.title }}</h5>
+              <p>{{ block.settings.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Service and selection",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "top_image",
+      "label": "Top Image"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Service and Selection You'll Love"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Hide on Desktop (Min 768px)",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Service Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Service Title",
+          "default": "Fast Shipping"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Service Description",
+          "default": "Fast, accurate order turnarounds is one of our top priorities."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service and selection"
+    }
+  ]
+}
+{% endschema %}

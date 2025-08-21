@@ -1,0 +1,85 @@
+{{ 'section-learning-faq.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="learning-home-faq">
+    {% if section.settings.heading != blank %}
+      <h2 class="section-main-title">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.content %}
+      <p>{{ section.settings.content }}</p>
+    {% endif %}
+    <ul class="home-faq-icon">
+      {% for block in section.blocks %}
+        {% if block.type == 'icon_block' %}
+          {% if block.settings.link != blank or block.settings.icon != blank or block.settings.title != blank %}
+            <li>
+              <a href="{{ block.settings.link }}">
+                {% if block.settings.icon != blank %}
+                  <span class="home-faq-item">
+                    <img
+                      src="{{ block.settings.icon | image_url }}"
+                      alt="{{ block.settings.title | default: shop.name }}"
+                      height="110"
+                      width="110"
+                      loading="lazy"
+                    >
+                  </span>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                  {{ block.settings.title }}
+                {% endif %}
+              </a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Learning FAQ Home",
+  "tag": "section",
+  "class": "section-faq",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_block",
+      "name": "Icon Block",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Learning FAQ Home"
+    }
+  ]
+}
+{% endschema %}

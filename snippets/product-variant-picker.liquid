@@ -1,3 +1,13 @@
+{% unless shsd_product_variants %}{% assign shsd_product_variants = product.variants %}{% endunless %}
+{% unless shsd_product_images %}{% assign shsd_product_images = product.images %}{% endunless %}
+{% unless shsd_product_media %}{% assign shsd_product_media = product.media %}{% endunless %}
+{% unless shsd_product_options_with_values %}{% assign shsd_product_options_with_values = product.options_with_values %}{% endunless %}
+{% unless shsd_list_options_with_values %}{% assign shsd_list_options_with_values =  product.options_with_values %}{% endunless %}
+{% unless selected_variant %}{% assign selected_variant = product.selected_or_first_available_variant %}{% endunless %}
+{% unless is_shsd_parent %}{% assign is_shsd_parent = false %}{% endunless %}
+{% unless selected_options %}{% assign selected_options = selected_variant.options | map: "name" %}{% endunless %}
+
+
 {% comment %}
   Renders product variant-picker
 
@@ -10,13 +20,20 @@
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
   <variant-selects
+  class="variant-selects"
     id="variant-selects-{{ section.id }}"
     data-section="{{ section.id }}"
     {{ block.shopify_attributes }}
   >
-    {%- for option in product.options_with_values -%}
+  {%- for option in shsd_product_options_with_values -%}
+    {% assign option_selected_value = option.selected_value %}
+   
+    {% if is_shsd_parent %}
+      {% assign option_selected_value_text = selected_options[forloop.index0] %}
+      {% assign option_selected_value = shsd_list_options_with_values | where: "position", option.position | compact | map: "values" | where: "name", option_selected_value_text | first %}
+    {% endif %} 
       {%- liquid
-        assign swatch_count = option.values | map: 'swatch' | compact | size
+        assign swatch_count = shsd_list_options_with_values | where: "position", option.position | map: "values" | map: 'swatch' | compact | size
         assign picker_type = block.settings.picker_type
 
         if swatch_count > 0 and block.settings.swatch_shape != 'none'
@@ -32,14 +49,15 @@
           <legend class="form__label">
             {{ option.name }}:
             <span data-selected-value>
-              {{- option.selected_value -}}
+              {{- option_selected_value -}}
             </span>
           </legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
             block: block,
-            picker_type: picker_type
+            picker_type: picker_type,
+            selected_variant: selected_variant, is_shsd_parent: is_shsd_parent, option_selected_value: option_selected_value, shsd_list_options_with_values: shsd_list_options_with_values, shsd_product_variants: shsd_product_variants, selected_options: selected_options  
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
@@ -49,7 +67,8 @@
             product: product,
             option: option,
             block: block,
-            picker_type: picker_type
+            picker_type: picker_type,
+            selected_variant: selected_variant, is_shsd_parent: is_shsd_parent, option_selected_value: option_selected_value, shsd_list_options_with_values: shsd_list_options_with_values, shsd_product_variants: shsd_product_variants, selected_options: selected_options
           %}
         </fieldset>
       {%- else -%}
@@ -57,13 +76,13 @@
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>
-          <div class="select">
+          <div class="select variant_dropdown_select">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span
                 data-selected-value
                 class="dropdown-swatch"
               >
-                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+              {% render 'swatch', swatch: option_selected_value.swatch, shape: block.settings.swatch_shape %}
               </span>
             {%- endif -%}
             <select
@@ -76,7 +95,8 @@
                 product: product,
                 option: option,
                 block: block,
-                picker_type: picker_type
+                picker_type: picker_type,
+                selected_variant: selected_variant, is_shsd_parent: is_shsd_parent, option_selected_value: option_selected_value, shsd_list_options_with_values: shsd_list_options_with_values, shsd_product_variants: shsd_product_variants, selected_options: selected_options
               %}
             </select>
             <span class="svg-wrapper">
@@ -88,7 +108,14 @@
     {%- endfor -%}
 
     <script type="application/json" data-selected-variant>
-      {{ product.selected_or_first_available_variant | json }}
+    {{ selected_variant | json }}
     </script>
   </variant-selects>
 {%- endunless -%}
+
+<style>
+  .option_inactive{
+    display:none;
+  }
+</style>
+

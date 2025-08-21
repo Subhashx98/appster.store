@@ -1,19 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "main_blog_banner_fwk4Ew": {
+      "type": "main-blog-banner",
+      "settings": {
+        "heading": ""
+      }
+    },
+    "section_breadcrumbs_YJW63h": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "featured_home_blog_iLwQUt": {
+      "type": "featured-home-blog",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "article_1": "articles/essential-cable-management-tools-every-tech-needs",
+        "article_2": "articles/the-diyer-guide-to-organizing-your-gaming-cables",
+        "article_3": "articles/ordering-continuous-lengths-or-segments-of-wire-loom-braided-sleeving-and-heat-shrink",
+        "blog": "articles",
+        "cta_text": "",
+        "cta_url": "",
+        "show_image": true,
+        "show_date": true,
+        "show_author": true
+      }
+    },
     "main": {
       "type": "main-blog",
+      "custom_css": [
+        "h1 .title--primary {}",
+        "div .card__inner {width: 250px;}",
+        "h3 {color: #336699; font-size: 150%;}"
+      ],
       "settings": {
-        "layout": "collage",
+        "heading": "Read our Articles",
+        "view_text": "View All",
+        "view_url": "shopify://blogs/articles",
+        "layout": "grid",
         "show_image": true,
-        "image_height": "medium",
+        "image_height": "small",
         "show_date": true,
-        "show_author": false,
-        "padding_top": 36,
+        "show_learn_more": true,
+        "show_author": true,
+        "padding_top": 28,
         "padding_bottom": 36
       }
     }
   },
   "order": [
+    "main_blog_banner_fwk4Ew",
+    "section_breadcrumbs_YJW63h",
+    "featured_home_blog_iLwQUt",
     "main"
   ]
 }

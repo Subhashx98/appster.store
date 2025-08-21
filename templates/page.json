@@ -17,17 +17,13 @@
         "padding_bottom": 28
       }
     },
-    "section_about_story_dye7XM": {
-      "type": "section-about-story",
-      "settings": {
-        "main_image": "shopify://shop_images/woman-science-assistant-agricultural-officer-greenhouse-farm-research-melon.jpg",
-        "title": "Smart Irrigation for Maximum Yield",
-        "description": "<p>At <strong>Appster</strong>, we are committed to revolutionizing irrigation with cutting-edge technology and smart solutions. Our mission is to help farmers and businesses optimize water usage, enhance crop yields, and promote sustainable farming practices. With a range of innovative irrigation products, we ensure precision, efficiency, and reliability in every drop. Whether you're looking for automated irrigation systems, water-saving techniques, or advanced farming tools, Appster is your trusted partner in modern agriculture.</p><p>Grow smarter, save water, and cultivate success with <strong>Appster!</strong> 🌱💧</p>"
-      }
+    "search_category_a3XBPN": {
+      "type": "search-category",
+      "settings": {}
     }
   },
   "order": [
     "main",
-    "section_about_story_dye7XM"
+    "search_category_a3XBPN"
   ]
 }

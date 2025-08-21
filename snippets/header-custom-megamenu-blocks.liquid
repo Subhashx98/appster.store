@@ -1,0 +1,294 @@
+{% if block.type == 'navigation-with-cards' %}
+  <div class="first-menu second-level-mega-menu-wrapper">
+    {% if block.settings.block_navigation_menu != blank %}
+      <ul class="sub-menu second-level-menu">
+        {% for secondLevelLink in block.settings.block_navigation_menu.links %}
+          {% if secondLevelLink.links.size > 0 %}
+            <li
+              data-tabid="{{ secondLevelLink.title | handleize | append: "_" |  append: forloop.index }}"
+              class="{% if forloop.index == 1 %}active{% endif %}"
+            >
+              <a href="{{ secondLevelLink.url }}">{{ secondLevelLink.title }}</a>
+            </li>
+          {% else %}
+            <li class="{% if forloop.index == 1 %}active{% endif %}">
+              <a href="{{ secondLevelLink.url }}">{{ secondLevelLink.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      {% for secondLevelLink in block.settings.block_navigation_menu.links %}
+        {% if secondLevelLink.links.size > 0 %}
+          <div class="menu-wrap {% if forloop.index != 1 %}hidden{% endif %} {{ secondLevelLink.title | handleize | append: "_" |  append: forloop.index }}">
+            <div class="menu-box">
+              <ul>
+                {% for thirdLevelLink in secondLevelLink.links %}
+                  <li class="{% if forloop.index == 1 %}active{% endif %}">
+                    <a href="{{ thirdLevelLink.url }}">{{ thirdLevelLink.title }}</a>
+                    {% if thirdLevelLink.links.size > 0 %}
+                      <div class="product-card-block {% unless forloop.index == 1 %}hidden{% endunless %}">
+                        <ul>
+                          {% for fourthLevelLink in thirdLevelLink.links %}
+                            {% assign collection_handle = fourthLevelLink.url | split: '/' | last %}
+                            {% assign collection = collections[collection_handle] %}
+                            <li>
+                              {% if collection != blank and collection.featured_image != blank %}
+                                <a href="{{ collection.url }}">
+                                  <img
+                                    src="{{ collection.featured_image | image_url }}"
+                                    width="64"
+                                    height="64"
+                                    loading="lazy"
+                                    alt="{{ collection.featured_image.alt | default: collection.title }}"
+                                  >
+                                  <span>{{ fourthLevelLink.title }}</span>
+                                </a>
+                              {% else %}
+                                <a href="{{ fourthLevelLink.url }}">
+                                  <img
+                                    src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Brand-no-image.svg"
+                                    width="64"
+                                    height="64"
+                                    loading="lazy"
+                                    alt="{{ fourthLevelLink.title | handleize | default: collection.title }}"
+                                  >
+                                  <span>{{ fourthLevelLink.title }}</span>
+                                </a>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% assign meta_category_handle = secondLevelLink.url | split: '/' | last %}
+            {% assign meta_category = shop.metaobjects.meta_category[meta_category_handle] %}
+            {% if meta_category == blank %}
+              {% assign meta_category = shop.metaobjects.industry[meta_category_handle] %}
+            {% endif %}
+            {% assign featured_product = meta_category.menu_featured_product.value %}
+            {% if featured_product != blank %}
+              <div class="card">
+                <div class="selleing-tag-option">
+                  <span class="selling-tag">{{ block.settings.tag_name }}</span>
+                </div>
+                <img
+                  src="{{ featured_product.featured_image | image_url }}"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  alt="{{ featured_product.featured_image.alt | default: featured_product.title }}"
+                >
+                <div class="d-flex">
+                  <span class="h4">{{ featured_product.title }}</span>
+                  <a href="{{ featured_product.url }}" class="main-cta"> Shop Now </a>
+                </div>
+              </div>
+            {% elsif block.settings.card_image_1 != blank %}
+              <div class="card">
+                <div class="selleing-tag-option">
+                  <span class="selling-tag">{{ block.settings.tag_name }}</span>
+                </div>
+                <img
+                  src="{{ block.settings.card_image_1 | image_url }}"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  alt="{{ block.settings.card_image_1.alt | default: block.settings.card_title_1 }}"
+                >
+                <div class="d-flex">
+                  <span class="h4">{{ block.settings.card_title_1 }}</span>
+                  {% if block.settings.card_button_text_1 != blank and block.settings.card_button_url_1 != blank %}
+                    <a href="{{ block.settings.card_button_url_1 }}" class="main-cta">
+                      {{- block.settings.card_button_text_1 -}}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% elsif link.links.size > 0 %}
+      <ul class="sub-menu second-level-menu">
+        {% for secondLevelLink in link.links %}
+          {% if secondLevelLink.url == '#tab' or secondLevelLink.url == '#Tab' %}
+            <li
+              data-tabid="{{ secondLevelLink.title | handleize | append: "_" |  append: forloop.index }}"
+              class="{% if forloop.index == 1 %}active{% endif %}"
+            >
+              <a href="javascript:void(0)">{{ secondLevelLink.title }}</a>
+            </li>
+          {% else %}
+            <li class="{% if forloop.index == 1 %}active{% endif %}">
+              <a href="{{ secondLevelLink.url }}">{{ secondLevelLink.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      {% for secondLevelLink in link.links %}
+        {% if secondLevelLink.url == '#tab' or secondLevelLink.url == '#Tab' %}
+          <div class="menu-wrap {% if forloop.index != 1 %}hidden{% endif %} {{ secondLevelLink.title | handleize | append: "_" |  append: forloop.index }}">
+            <div class="menu-box">
+              <ul>
+                {% for thirdLevelLink in secondLevelLink.links %}
+                  {% if thirdLevelLink.url == '#title' or secondLevelLink.url == '#Title' %}
+                    <li
+                      data-tabid="{{ thirdLevelLink.title | handleize | append: "_" |  append: forloop.index }}"
+                      class="{% if forloop.index == 1 %}active{% endif %}"
+                    >
+                      <h6>{{ thirdLevelLink.title }}</h6>
+                    </li>
+                  {% else %}
+                    <li class="{% if forloop.index == 1 %}active{% endif %}">
+                      <a href="{{ thirdLevelLink.url }}">{{ thirdLevelLink.title }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+            {% if block.settings.card_image_1 != blank %}
+              <div class="card">
+                <div class="selleing-tag-option">
+                  <span class="selling-tag">{{ block.settings.tag_name }}</span>
+                </div>
+                <img
+                  src="{{ block.settings.card_image_1 | image_url }}"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  alt="{{ block.settings.card_image_1.alt | default: block.settings.card_title_1 }}"
+                >
+                <div class="d-flex">
+                  <span class="h4">{{ block.settings.card_title_1 }}</span>
+                  {% if block.settings.card_button_text_1 != blank and block.settings.card_button_url_1 != blank %}
+                    <a href="{{ block.settings.card_button_url_1 }}" class="main-cta">
+                      {{- block.settings.card_button_text_1 -}}
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endif %}
+
+{% if block.type == 'navigation-with-brands' %}
+  <div class="first-menu second-level-mega-menu-wrapper">
+    <div class="brands-block-main">
+      <div class="brand-container">
+        <div class="top-block">
+          <span class="h2">{{ block.settings.brand_name }}</span>
+          <a href="{{ block.settings.button_view_link }}" class="view-link">{{ block.settings.button_view_name }}</a>
+        </div>
+
+        <div class="brand-list">
+          {% if block.settings.shop_by_brand_list != blank %}
+            {% for brand in block.settings.shop_by_brand_list %}
+              {% assign brand_url = brand.system.url %}
+          
+              {% if brand.child_manufacturer == blank %}
+                {% assign brand_handle = brand.system.handle | handle %}
+                {% assign brand_collection = collections[brand_handle] %}
+                {% if brand_collection and brand_collection.url %}
+                  {% assign brand_url = brand_collection.url %}
+                {% endif %}
+              {% endif %}
+          
+              {% if brand_url == blank %}
+                {% assign brand_url = 'javascript:void(0)' %}
+              {% endif %}
+          
+              {% if brand.image %}
+                <a href="{{ brand_url }}">
+                  <img
+                    src="{{ brand.image | file_url }}"
+                    width="155"
+                    height="60"
+                    loading="lazy"
+                    alt="{{ brand.title }}"
+                    class="image"
+                  >
+                </a>
+              {% else %}
+                <a href="{{ brand_url }}">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Brand-no-image.svg"
+                    width="155"
+                    height="60"
+                    loading="lazy"
+                    alt="{{ brand.title }}"
+                    class="image"
+                  >
+                </a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="card-featured-block">
+        {% if block.settings.featured_image != blank %}
+          <img
+            src="{{ block.settings.featured_image | image_url }}"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            alt="{{ block.settings.featured_image.alt | default: block.settings.featured_title_1 }}"
+          >
+        {% endif %}
+
+        <div class="content-box">
+          <div class="featured_card_logo">
+            {% if block.settings.logo_image != blank %}
+              <img
+                src="{{ block.settings.logo_image | image_url }}"
+                width="150"
+                height="40"
+                loading="lazy"
+                alt="{{ block.settings.logo_image.alt | default: block.settings.featured_title_1 |  default:  'CableOrganizer®' }}"
+              >
+            {% endif %}
+          </div>
+          {% if block.settings.featured_title_1 != blank %}
+            <span class="h2">{{ block.settings.featured_title_1 }}</span>
+          {% endif %}
+
+          {% if block.settings.featured__sub_1 != blank %}
+            <p>{{ block.settings.featured__sub_1 }}</p>
+          {% endif %}
+
+          {% if block.settings.featured_button_text != blank and block.settings.featured_button_url != blank %}
+            <a href="{{ block.settings.featured_button_url }}" class="main-btn-large btn-white">
+              {{- block.settings.featured_button_text -}}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if block.type == 'nav-featured-products' %}
+  <div class="first-menu">
+    <div class="featured-products-container">
+      <span class="h2">{{ block.settings.brand_name }}</span>
+      <div class="product_list">
+        {% for product_list in block.settings.product_list %}
+          {% render 'card-product',
+            card_product: product_list,
+            show_secondary_image: false,
+            lazy_load: false,
+            section_id: section.id
+          %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,97 @@
+{%- unless template == 'index' or template == '404' -%}
+  {%- assign t = template | split: '.' | first -%}
+  <div class="page-width page-small-width">
+    <nav class="breadcrumbs cable-breadcrumbs" role="navigation" aria-label="breadcrumbs">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="/">Home</a>
+        </li>
+        {%- case t -%}
+          {%- when 'page' -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ page.url }}" aria-current="page">{{ page.title }}</a>
+            </li>
+          {%- when 'product' -%}
+            {%- if product.metafields.custom.meta_categories.value != blank -%}
+              <li class="breadcrumbs__item breadcrumbs__link_n">
+                {% for meta_category in product.metafields.custom.meta_categories.value %}
+                  {{ meta_category.title | link_to: meta_category.system.url }}
+                  {%- unless forloop.last -%}, {% endunless -%}
+                {% endfor %}
+              </li>
+            {%- endif -%}
+            {%- if product.metafields.custom.branch_categories.value != blank -%}
+              <li class="breadcrumbs__item breadcrumbs__link_n">
+                {% for branch_category in product.metafields.custom.branch_categories.value %}
+                  {{ branch_category.title | link_to: collections[branch_category.system.handle].url }}
+                  {%- unless forloop.last -%}, {% endunless -%}
+                {% endfor %}
+              </li>
+            {%- endif -%}
+            {%- if product.metafields.custom.leaf_categories.value != blank -%}
+              <li class="breadcrumbs__item breadcrumbs__link_n">
+                {% for leaf_category in product.metafields.custom.leaf_categories.value %}
+                  {{ leaf_category.title | link_to: collections[leaf_category.system.handle].url }}
+                  {%- unless forloop.last -%}, {% endunless -%}
+                {% endfor %}
+              </li>
+            {%- endif -%}
+            <li class="breadcrumbs__item">
+              {{- product.title -}}
+            </li>
+          {%- when 'collection' and collection.handle -%}
+            {%- if current_tags -%}
+              <li class="breadcrumbs__item">
+                {{ collection.title | link_to: collection.url }}
+              </li>
+              <li class="breadcrumbs__item breadcrumbs__link_1">
+                {%- capture tag_url -%}{{ collection.url }}/{{ current_tags | join: "+" }}{%- endcapture -%}
+                <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ tag_url }}" aria-current="page">
+                  {{- current_tags | join: ' + ' -}}
+                </a>
+              </li>
+            {%- else -%}
+              <li class="breadcrumbs__item ">
+                <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ collection.url }}" aria-current="page">
+                  {{- collection.title -}}
+                </a>
+              </li>
+            {%- endif -%}
+          {%- when 'blog' -%}
+            {%- if current_tags -%}
+              <li class="breadcrumbs__item">
+                {{ blog.title | link_to: blog.url }}
+              </li>
+              <li class="breadcrumbs__item">
+                {%- capture tag_url -%}{{blog.url}}/tagged/{{ current_tags | join: "+" }}{%- endcapture -%}
+                <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ tag_url }}" aria-current="page">
+                  {{- current_tags | join: ' + ' -}}
+                </a>
+              </li>
+            {%- else -%}
+              <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ blog.url }}" aria-current="page">
+                  {{- blog.title -}}
+                </a>
+              </li>
+            {%- endif -%}
+          {%- when 'article' -%}
+            <li class="breadcrumbs__item">
+              {{ blog.title | link_to: blog.url }}
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ article.url }}" aria-current="page">
+                {{- article.title -}}
+              </a>
+            </li>
+          {%- else -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link breadcrumbs__link_1" href="{{ request.path }}" aria-current="page">
+                {{- page_title -}}
+              </a>
+            </li>
+        {%- endcase -%}
+      </ul>
+    </nav>
+  </div>
+{%- endunless -%}

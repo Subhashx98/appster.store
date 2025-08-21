@@ -14,16 +14,39 @@
       "disabled": true,
       "settings": {
         "show_collection_description": true,
-        "show_collection_image": true,
-        "color_scheme": "scheme-a93e382d-da2b-4e2f-8043-577836846979"
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
       }
+    },
+    "main_image_banner_8eiVRK": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "{{ collection.title }}"
+      }
+    },
+    "section_breadcrumbs_CkFbWr": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "collection_product_slider_fWznUY": {
+      "type": "collection-product-slider",
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "custom_css": [
+        ".sub-heading {text-transform: capitalize;}"
+      ],
       "settings": {
-        "products_per_page": 16,
+        "products_per_page": 12,
         "columns_desktop": 3,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -34,13 +57,35 @@
         "filter_type": "vertical",
         "enable_sorting": true,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 40
       }
+    },
+    "text_content_m3CFTj": {
+      "type": "text-content",
+      "blocks": {
+        "description_QjbeVw": {
+          "type": "description",
+          "settings": {
+            "block_description": "{{ collection.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "description_QjbeVw"
+      ],
+      "custom_css": [
+        "a {color: #fe5b00;}"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "main_image_banner_8eiVRK",
+    "section_breadcrumbs_CkFbWr",
+    "collection_product_slider_fWznUY",
+    "product-grid",
+    "text_content_m3CFTj"
   ]
 }

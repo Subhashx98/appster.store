@@ -1,0 +1,44 @@
+{{ 'section-collection-product-list.css' | asset_url | stylesheet_tag }}
+<div class="collection-product-list">
+  <div class="page-width">
+    <ul class="collection-list-main">
+      {% for meta_category in metaobject.branch_category.value %}
+        <li>
+          <span class="list-image">
+            {% if meta_category.image != blank %}
+              <img
+                src="{{ meta_category.image | image_url: width: 205, height: 205 }}"
+                alt="{{ meta_category.image.alt | handle |  default: meta_category.title }}"
+                height="205"
+                width="205"
+                loading="lazy"
+              >
+            {% else %}
+              <img
+                src="//cdn.shopify.com/s/files/1/0892/0583/4033/files/default-ui-image-placeholder-wireframes-600nw-1037719192.webp?v=1742821231"
+                alt="{{ meta_category.image.alt | handle |  default: meta_category.title }}"
+                height="205"
+                width="205"
+                loading="lazy"
+              >
+            {% endif %}
+          </span>
+          <a href="{{ meta_category.url }}">{{ meta_category.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Product List",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Collection Product List"
+    }
+  ]
+}
+{% endschema %}

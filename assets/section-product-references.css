@@ -1,0 +1,67 @@
+.product-references{
+    padding: 80px 0px;
+}
+.product-references .product-references-slider .slick-list{
+    margin: 0px -10px;
+    padding: 0 100px 0 0 !important;
+}
+.product-references .product-references-slider .slick-slide{
+    padding: 0px 10px;
+    position: relative;
+}
+.product-references .product-references-slider .slide-product-img{
+    background-color: var(--light-grey-color);
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+.product-references .product-references-slider .slide-product-img img{
+    mix-blend-mode: multiply;
+    transition: var(--webkit-transition-all);
+    width: 100%;
+    height: 100%;
+}
+.product-references .product-references-slider .slick-slide a{
+    margin-top: 18px;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: var(--black-color);
+    line-height: normal;
+}
+.product-references .product-references-slider .slick-slide a:after{
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+.product-references .product-references-slider .slick-slide a:hover{
+    color: var(--orange-color);
+}
+.product-references .product-references-slider .slick-slide:hover img{
+    transform: scale(1.1);
+}
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .product-references{padding: 40px 0px;}
+    .product-references .product-references-slider .slide-product-img{ padding: 0px;}
+    .product-references .product-references-slider .slide-product-img img{height: 185px;}
+    .product-references .product-references-slider .slick-slide a{  margin-top: 14px;}
+}
+@media only screen and (max-width: 767px) {
+    .product-references .product-references-slider .slick-track{width: 100% !important; display: flex; flex-wrap: wrap; transform:none !important}
+    .product-references .product-references-slider .slick-list{padding: 0px !important; margin: 0px -5px;}
+    .product-references .product-references-slider .slick-slide{ padding: 10px 5px; width: 50% !important;}
+    .product-references-slider .slick-arrow{ display: none !important}
+    .product-references .section-main-title{text-align: center; justify-content: center; margin-bottom: 22px;}
+    .product-references .section-main-title .view-link{ display: none;}
+}

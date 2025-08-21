@@ -1,0 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection_main_heding_HUA8fm": {
+      "type": "collection-main-heding",
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "heading": "{{ metaobject.title.value }}"
+      }
+    },
+    "section_breadcrumbs_gE7YYj": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "collection_banner_MW7ibc": {
+      "type": "collection-banner",
+      "custom_css": [
+        ".collection-content-img :after {display: none;}"
+      ],
+      "settings": {
+        "heading": "{{ metaobject.featured_title.value }}",
+        "content": "{{ metaobject.featured_description | metafield_tag }}",
+        "cta_text": "Shop Now",
+        "link": "{{ metaobject.featured_button_url.value }}",
+        "image": "{{ metaobject.featured_image.value }}"
+      }
+    },
+    "collection_product_list_NVgnU6": {
+      "type": "collection-product-list",
+      "settings": {}
+    },
+    "collection_brand_9W4qLM": {
+      "type": "collection-brand",
+      "settings": {
+        "heading": "Top Brands",
+        "cta_text": "View All",
+        "cta_url": "shopify://pages/shop-by-brand"
+      }
+    },
+    "service_and_selection_X6TXnW": {
+      "type": "service-and-selection",
+      "blocks": {
+        "service_dX4nBN": {
+          "type": "service",
+          "settings": {
+            "icon": "shopify://shop_images/Group_4794.png",
+            "title": "Fast Shipping",
+            "description": "Fast, accurate order turnarounds is one of our top priorities."
+          }
+        },
+        "service_iK8aRH": {
+          "type": "service",
+          "settings": {
+            "icon": "shopify://shop_images/Group_4794_1.png",
+            "title": "Expert Customer Service",
+            "description": "Our knowledgable staff is standing by to answer your questions"
+          }
+        },
+        "service_97HYzz": {
+          "type": "service",
+          "settings": {
+            "icon": "shopify://shop_images/Group_4794_2.png",
+            "title": "Huge Selection",
+            "description": "Over 100,000 products from the top brands in wire and cable management."
+          }
+        }
+      },
+      "block_order": [
+        "service_dX4nBN",
+        "service_iK8aRH",
+        "service_97HYzz"
+      ],
+      "settings": {
+        "top_image": "shopify://shop_images/image_8.png",
+        "section_title": "Service and Selection You'll Love",
+        "hide_on_desktop": true
+      }
+    },
+    "collection_management_slider_MpeMRU": {
+      "type": "collection-management-slider",
+      "settings": {
+        "slider_heading": "{{ metaobject.title.value }} Tips & Resources"
+      }
+    }
+  },
+  "order": [
+    "collection_main_heding_HUA8fm",
+    "section_breadcrumbs_gE7YYj",
+    "collection_banner_MW7ibc",
+    "collection_product_list_NVgnU6",
+    "collection_brand_9W4qLM",
+    "service_and_selection_X6TXnW",
+    "collection_management_slider_MpeMRU"
+  ]
+}

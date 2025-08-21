@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "main_image_banner_XJtgfa": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Video Library"
+      }
+    },
+    "section_breadcrumbs_NbjHWz": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "video_library_Md9hDb": {
+      "type": "video-library",
+      "settings": {}
+    },
+    "featured_home_blog_UVnH7T": {
+      "type": "featured-home-blog",
+      "settings": {
+        "heading": "Latest Articles",
+        "subheading": "Learning Center",
+        "blog": "articles",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "show_image": true,
+        "show_date": true,
+        "show_author": true,
+        "show_view_all": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_image_banner_XJtgfa",
+    "section_breadcrumbs_NbjHWz",
+    "video_library_Md9hDb",
+    "featured_home_blog_UVnH7T"
+  ]
+}

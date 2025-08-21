@@ -1,0 +1,94 @@
+{{ 'section-image-block.css' | asset_url | stylesheet_tag }}
+{% liquid
+  assign content_width = section.settings.full_width
+  assign img_position = section.settings.image_position
+  assign text_large = section.settings.text_size
+%}
+
+<div class="main-container main-product-banner">
+  <div class="page-width page-small-width" data-full-width="{{ content_width }}">
+    <div class="go-link">
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+      <a href="{{ section.settings.cta_url }}" class="view-link">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </div>  
+    <div
+      class="image-content"
+      data-image-position="{{ img_position }}"
+      data-text-size="{{ text_large }}"
+    >
+      <div class="image-content-inner">
+        {% if metaobject.main_image != blank %}
+          <img
+            src="{{ metaobject.main_image |  image_url  }}"
+            alt="{{ metaobject.main_image.alt | default: metaobject.title | default: 'Main image' }}"
+            height="430"
+            width="600"
+            loading="lazy"
+            class="content-main-img"
+          >
+        {% else %}
+          <img
+            src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/fiber-optic-1.jpg?v=1745002789"
+            alt="Default Main Image"
+            height="430"
+            width="600"
+            loading="lazy"
+            class="content-main-img"
+          >
+        {% endif %}
+      </div>
+
+      <div class="image-content-inner">
+        {% if metaobject.sub_title != blank %}
+          <h2>{{ metaobject.sub_title }}</h2>
+        {% else %}
+          <h2>{{ metaobject.title }}</h2>
+        {% endif %}
+
+        {{ metaobject.content | metafield_tag }}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product References Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Content Full Width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "image_position",
+      "label": "Image Position Right",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "text_size",
+      "label": "Text Size Large",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product References Banner"
+    }
+  ]
+}
+{% endschema %}

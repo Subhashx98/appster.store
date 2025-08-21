@@ -1,0 +1,115 @@
+{{ 'section-faq.css' | asset_url | stylesheet_tag }}
+<div class="page-width">
+  <div class="frequently-question-answer">
+    {% if section.settings.button_text != blank %}
+      <div class="go-back-btn">
+        <a href="{{ section.settings.button_link }}" class="main-btn-small btn-blue">
+          {{- section.settings.button_text -}}
+        </a>
+      </div>
+    {% endif %}
+    <div class="accordion-container">
+      {% if section.settings.faq_heading != blank %}
+        <h3>{{ section.settings.faq_heading | capitalize }}</h3>
+      {% endif %}
+      <ul>
+        {% for block in section.blocks %}
+          {% if block.type == 'faq' %}
+            {% if block.settings.faq_que and block.settings.faq_ans != blank %}
+              <li class="faq-item">
+                <h4 class="faq-question">
+                  {{ block.settings.faq_que }}
+                  <span class="faq-arrow"></span>
+                </h4>
+                <div class="faq-answer">
+                  {% if block.settings.faq_que != blank %}
+                    {{ block.settings.faq_ans }}
+                  {% endif %}
+                </div>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% comment %}
+      <ul class="accordion-container">
+        <h3>accordion container</h3>
+        <li class="faq-item">
+          <h4 class="faq-question">
+            How to Stop Braided Sleeving From Fraying?
+            <span class="faq-arrow"></span>
+          </h4>
+          <div class="faq-answer">
+            <p>
+              When terminating braided sleeving, use a hot knife to keep the ends from fraying. Once the sleeving is cut,
+              use pliers, or an inverted funnel to flare the ends to allow the sleeving to slide easily over your
+              application.
+            </p>
+          </div>
+        </li>
+        <li class="faq-item">
+          <h4 class="faq-question">
+            How to Stop Braided Sleeving From Fraying?
+            <span class="faq-arrow"></span>
+          </h4>
+          <div class="faq-answer">
+            <p>How to Use Expandable Braided Sleeving?</p>
+          </div>
+        </li>
+      </ul>
+    {% endcomment %}
+  </div>
+</div>
+
+<script>
+
+</script>
+{% schema %}
+{
+  "name": "FAQ Question Answer",
+  "tag": "section",
+  "class": "faq-qa-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+	{
+      "type": "text",
+      "id": "faq_heading",
+      "label": "Heading"
+   }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Question & Answer",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_que",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_ans",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Question Answer"
+    }
+  ]
+}
+{% endschema %}

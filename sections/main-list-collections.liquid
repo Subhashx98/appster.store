@@ -23,14 +23,15 @@
       assign paginate_by = 28
     endif
   -%}
-  {%- paginate collections by paginate_by -%}
-    <ul
-      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-      role="list"
-    >
-      {%- for collection in collections -%}
+  {% comment %} {%- paginate collections by paginate_by -%} {% endcomment %}
+  <ul
+    class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+    role="list"
+  >
+    {%- for collection in collections -%}
+      {% if collection.template_suffix == '' and collection.metafields.custom.hide_collection != true %}
         <li
-          class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="collection-list__item main_collection_list grid__item"
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
             style="--animation-order: {{ forloop.index }};"
@@ -42,11 +43,42 @@
             columns: 3
           %}
         </li>
-      {%- endfor -%}
-    </ul>
+      {% endif %}
+    {%- endfor -%}
+  </ul>
+  {% comment %}
     {% render 'pagination', paginate: paginate %}
-  {%- endpaginate -%}
+    {%- endpaginate -%}
+  {% endcomment %}
 </div>
+
+<script>
+  $(document).ready(function () {
+    const $cards = $('.collection-list__item');
+    let cardsToShow = 50;
+    const cardsPerScroll = 50;
+
+    // Hide all cards initially
+    $cards.hide();
+    $cards.slice(0, cardsToShow).show();
+
+    $(window).on('scroll', function () {
+      const $visibleCards = $cards.filter(':visible');
+      const $lastVisibleCard = $visibleCards.last();
+
+      if ($lastVisibleCard.length) {
+        const lastCardOffset = $lastVisibleCard.offset().top + $lastVisibleCard.outerHeight();
+        const scrollPosition = $(window).scrollTop() + $(window).height();
+
+        if (scrollPosition > lastCardOffset + 100) {
+          const $hidden = $cards.filter(':hidden');
+          $hidden.slice(0, cardsPerScroll).fadeIn();
+        }
+      }
+    });
+  });
+</script>
+
 {% schema %}
 {
   "name": "t:sections.main-list-collections.name",

@@ -1,0 +1,54 @@
+<style>
+	.go-main-link{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		padding-top: 40px;
+	}
+	.go-main-link .view-link{
+		color: var(--primary-blue-color);
+		border-color: var(--primary-blue-color);
+		display: flex;
+		align-items: center;
+		font-size: 18px;
+		cursor: pointer;
+	}
+	.go-main-link .view-link:before{
+		border-color: var(--primary-blue-color);
+		position: static;
+		margin-right: 15px;
+		transform: rotate(135deg);
+		-webkit-transform: rotate(135deg);
+		content: "";
+	}
+	.go-main-link .view-link:after{
+		border: solid var(--primary-blue-color);
+		border-width: 0 2px 2px 0;
+		display: inline-block;
+		padding: 4px;
+		transform: rotate(135deg);
+		-webkit-transform: rotate(135deg);
+		position: absolute;
+		left: 6px;
+		top: 8px;
+		content: "";
+		transition: var(--webkit-transition-all);
+	}
+	/* Responsive */
+	@media screen and (max-width: 767px) {
+		.go-main-link{padding-top: 20px;}
+		.go-main-link .view-link{font-size: 16px;}
+	}
+</style>
+<div class="go-main-link">
+	<a href="javascript:void(0)" class="view-link">Go Back</a>
+</div>
+<script>
+	var backButtons = document.getElementsByClassName('view-link');
+  // Loop through the collection and add the event listener to each element
+  for (var i = 0; i < backButtons.length; i++) {
+    backButtons[i].addEventListener('click', function () {
+      window.history.back(); // Go back to the previous page
+    });
+  }
+</script>

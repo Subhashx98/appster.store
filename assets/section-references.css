@@ -1,0 +1,134 @@
+.product-references-main{
+    padding: 80px 0px;
+}
+.product-references-main h2{
+    margin-bottom: 5px;
+}
+.product-references-main p{
+    color:#444444;
+    line-height: 26px;
+}
+.product-references-main .references-faq{
+    margin-top: 54px;
+}
+.product-references-main .references-faq-item{
+    background: var(--light-grey-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    margin-top: 24px;
+}
+.product-references-main .references-faq-question{
+    display: flex;
+    width: 100%;
+    padding:25px 60px 25px 32px;
+    position: relative;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: normal;
+    cursor: pointer;
+}
+.product-references-main .references-faq-question .plus-minus{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--webkit-transition-all);
+}
+.product-references-main .references-faq-question .plus-minus:after,
+.product-references-main .references-faq-question .plus-minus:before{
+    content: "";
+    display: flex;
+    background-color: #0F0F0F;
+    transition: var(--webkit-transition-all);
+}
+.product-references-main .references-faq-question .plus-minus:before{
+    width: 2px;
+    height: 100%;
+    position: absolute;
+}
+.product-references-main .references-faq-question .plus-minus:after{
+    height: 2px;
+    width: 100%;
+}
+.product-references-main .references-faq-question.active .plus-minus:before{
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+.product-references-main .references-faq-answer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 32px 0px;
+    opacity: 0;
+    transform: translateY(2px);
+    transition: var(--webkit-transition-all);
+    height: 0;
+}
+.product-references-main .references-faq-question.active+.references-faq-answer {
+    opacity: 1;
+    transform: translateY(0);
+    height: 100%;
+    padding-bottom: 32px;
+}
+.product-references-main .references-faq-answer ul{
+    background: var(--white-color);
+    border: 1px solid #dddddd;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-references-main .references-faq-answer ul li{
+    display: flex;
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 18px 28px;
+    border-left: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+    line-height: normal;
+}
+.product-references-main .references-faq-answer p{
+    font-weight: 500;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: capitalize;
+}
+.product-references-main .references-faq-answer ul li a{
+    color: rgba(0, 0, 0, 0.8);
+}
+.product-references-main .references-faq-answer ul li a:hover{
+    color: var(--orange-color);
+}
+.product-references-main .references-faq-answer ul li:nth-child(-n + 2){
+    border-top: 0;
+}
+.product-references-main .references-faq-answer ul li:nth-child(odd){
+    border-left: 0;
+}
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .product-references-main{padding: 40px 0px;}
+    .product-references-main h2{ margin-bottom: 10px;}
+    .product-references-main .references-faq{ margin-top: 32px;}
+    .product-references-main .references-faq-question{padding: 18px 40px 18px 18px; font-size: 16px;}
+    .product-references-main .references-faq-question.active+.references-faq-answer{ padding-bottom: 18px;}
+    .product-references-main .references-faq-answer{ padding: 0 18px;}
+    .product-references-main .references-faq-answer ul li{ font-size: 14px; padding: 14px 16px;font-size: 14px;}
+    .product-references-main .references-faq-question .plus-minus{right: 18px;}
+    .product-references-main .references-faq-item{ margin-top: 10px;}
+    .product-references-main .references-faq-answer p{ font-size: 16px; line-height: normal;}
+}
+@media only screen and (max-width: 767px) {
+    .product-references-main .references-faq-answer ul li{flex: 0 0 100%; width: 100%; border-left: 0px; }
+    .product-references-main .references-faq-answer ul li:first-child{border-top: 0px;}
+    .product-references-main .references-faq-answer ul li:nth-child(2){ border-top: 1px solid #dddddd;}
+}

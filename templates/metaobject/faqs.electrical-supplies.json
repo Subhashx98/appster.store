@@ -1,0 +1,237 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_text_block_nFGLpF": {
+      "type": "image-text-block",
+      "settings": {
+        "image": "shopify://shop_images/FAQ-ElectricalSupplies.jpg",
+        "title": "Have Any More Questions About Electrical Supplies?",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? CableOrganizer® representatives can answer your questions by phone from 9 a.m. to 5 p.m. ET at <strong>1-888-3CABLEORG</strong> or by email at  <a href=\"mailto:sales@cableorganizer.com\" target=\"_blank\" title=\"mailto:sales@cableorganizer.com\">sales@cableorganizer.com</a></p>",
+        "full_width": true,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "faq_question_answer_LED8ND": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_EzdRrH": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Can I Conserve Energy in My Home?",
+            "faq_ans": "<p>You can use motion detectors — By using a motion detector, you can ensure that the lights in your house will turn off when no one is in the room / no motion is detected; this can help save electricity! <a href=\"/blogs/articles/automatic-lighting-controls-save-energy-and-money\" target=\"_blank\" title=\"Automatic Lighting Controls Save Energy and Money\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_EzdRrH"
+      ],
+      "settings": {
+        "button_text": "go back FAQ landing page",
+        "button_link": "shopify://pages/faq",
+        "faq_heading": "Outlets, Switches, & Boxes"
+      }
+    },
+    "faq_question_answer_7jeAJC": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_WpQTrk": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Purpose of a Wall Plate?",
+            "faq_ans": "<p>Wall plates hide messy cords and protect said cords from dust and moisture. <a href=\"/blogs/articles/using-wall-plates-to-tighten-up-the-look-of-your-a-v-unit\" target=\"_blank\" title=\"Using Wall Plates to Tighten Up the Look of Your A/V Unit\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_WpQTrk"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Wall Plates"
+      }
+    },
+    "faq_question_answer_gacLyX": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_FnNmYg": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a GFCI Receptacle?",
+            "faq_ans": "<p>A Ground Fault Circuit Interrupter helps protect against the risk of electrical shocks and fires that are caused by ground fault currents. <a href=\"/collections/gfci-receptacles-cords\" target=\"_blank\" title=\"/collections/gfci-receptacles-cords\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_FnNmYg"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "GFCI Receptacles & Cords"
+      }
+    },
+    "faq_question_answer_r3yYda": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_aQMaGM": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Do I Know What Fuse to Use?",
+            "faq_ans": "<p>There is a list of UL standards for fuses and their requirements. This list gets updated continuously so always make sure you refer to the latest version. <a href=\"/blogs/articles/how-do-you-know-the-right-fuse-for-your-circuit-protection-needs\" target=\"_blank\" title=\"How Do You Know the Right Fuse for Your Circuit Protection Needs?\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_aQMaGM"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Electrical Fuses"
+      }
+    },
+    "faq_question_answer_7BTBdr": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_jkH4kd": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Twist-On Wire Connector?",
+            "faq_ans": "<p>When you want to fasten together at least two low-voltage electrical conductors, twist-on wire connectors will allow you to do just that. <a href=\"/collections/termination-connectors\" target=\"_blank\" title=\"/collections/termination-connectors\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_jkH4kd"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Termination & Connectors"
+      }
+    },
+    "faq_question_answer_jieQkF": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_JJNqVJ": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is an AC-DC Power Supply?",
+            "faq_ans": "<p>AC stands for alternating current and DC stands for direct current. When a device is labeled as AC/DC it means it can operate on either current. <a href=\"/products/tripp-lite-portable-powerverters\" target=\"_blank\" title=\"Tripp Lite Portable PowerVerters\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_JJNqVJ"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Power Supplies"
+      }
+    },
+    "faq_question_answer_TPydKT": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_RXdjBw": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Do I Need a Surge Protector or Power Strip?",
+            "faq_ans": "<p>You will want a surge protector if you want to protect your devices from a sudden spike in electricity. A power strip may add convenience, but will not add any protection to your devices. <a href=\"/blogs/articles/current-connection-protect-your-computer-keep-the-juice-flowing-with-advanced-surge-protectors-suppressors-ups\" target=\"_blank\" title=\"Current Connection: Protect Your Computer & Keep the Juice Flowing with Advanced Surge Protectors, Suppressors, & UPS\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_RXdjBw"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Power Strips & Extensions"
+      }
+    },
+    "faq_question_answer_PAyg3G": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_fAtkKC": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are the Types of UPS?",
+            "faq_ans": "<p>Uninterruptible Power Supplies can either be standby or continuous UPSs. <a href=\"/collections/power-cords-surge-protectors\" target=\"_blank\" title=\"/collections/power-cords-surge-protectors\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_fAtkKC"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Surge Protectors & UPS"
+      }
+    },
+    "faq_question_answer_W6PCYG": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_PeCwCQ": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Raised Floor System?",
+            "faq_ans": "<p>Raised floor systems allow you to have a power / data access center in the floor. Some floor boxes can also be converted to be used in a wall. <a href=\"/collections/raised-floor-systems\" target=\"_blank\" title=\"/collections/raised-floor-systems\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_PeCwCQ"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Raised Floor Systems"
+      }
+    },
+    "faq_question_answer_WeLDFg": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_7XpUeA": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Control Cable?",
+            "faq_ans": "<p>Control Cables are often used in the automotive industry and in construction equipment. They are well protected against extreme temperatures, UV, oil, nad abrasion. <a href=\"/collections/electrical-wire\" target=\"_blank\" title=\"/collections/electrical-wire\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_7XpUeA"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Electrical Wire"
+      }
+    }
+  },
+  "order": [
+    "image_text_block_nFGLpF",
+    "faq_question_answer_LED8ND",
+    "faq_question_answer_7jeAJC",
+    "faq_question_answer_gacLyX",
+    "faq_question_answer_r3yYda",
+    "faq_question_answer_7BTBdr",
+    "faq_question_answer_jieQkF",
+    "faq_question_answer_TPydKT",
+    "faq_question_answer_PAyg3G",
+    "faq_question_answer_W6PCYG",
+    "faq_question_answer_WeLDFg"
+  ]
+}

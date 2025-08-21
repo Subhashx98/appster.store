@@ -1,0 +1,587 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_text_block_gDBRP8": {
+      "type": "image-text-block",
+      "settings": {
+        "image": "shopify://shop_images/FAQ-NetworkingSupplies.jpg",
+        "title": "Have Any More Questions About Network Products?",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? CableOrganizer® representatives can answer your questions by phone from 9 a.m. to 5 p.m. ET at <strong>1-888-3CABLEORG</strong> or by email at  <a href=\"mailto:sales@cableorganizer.com\" target=\"_blank\" title=\"mailto:sales@cableorganizer.com\">sales@cableorganizer.com</a></p>",
+        "full_width": true,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "faq_question_answer_NrrtXj": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_xKGGVa": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Do you Calculate Rack Units?",
+            "faq_ans": "<p>A rack unit is equal to about 1.75\". So if an item has a value of 2U, you would multiply 1.75\" by 2 to get 3.50\". <a href=\"/blogs/articles/what-is-a-u-or-rack-unit\" target=\"_blank\" title=\"What is a &quot;U&quot; or Rack Unit?\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_FVtKfN": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a 2 Post Rack?",
+            "faq_ans": "<p>A two post racks is for smaller equipment and tends to be in smaller offices. They can also act as support for larger server enclosures. <a href=\"/blogs/articles/open-frame-racks-two-post-vs-four-post-racks\" target=\"_blank\" title=\"Open Frame Racks: Two-Post vs. Four-Post Racks\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_mempG9": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Difference Between 2 Post and 4 Post Racks?",
+            "faq_ans": "<p>A four post rack has 4 posts instead of two. It also has a larger capacity and a sturdier foundation in comparison to the two post racks. Because the four post racks can hold heavy equipment, they are normally found in serious network set ups. <a href=\"/blogs/articles/open-frame-racks-two-post-vs-four-post-racks\" target=\"_blank\" title=\"Open Frame Racks: Two-Post vs. Four-Post Racks\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_xKGGVa",
+        "faq_FVtKfN",
+        "faq_mempG9"
+      ],
+      "settings": {
+        "button_text": "go back FAQ landing page",
+        "button_link": "shopify://pages/faq",
+        "faq_heading": "Open Frame Racks"
+      }
+    },
+    "faq_question_answer_9FifaY": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_Dmyadd": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Why Use a Network Cabinet?",
+            "faq_ans": "<p>Cabinets can be considered one of the best approaches for containing all of your network equipment. However, the cooling of the components could cause an issue depending on the physical design and air-conditioning situation in your space. <a href=\"/blogs/articles/open-racks-versus-cabinets\" target=\"_blank\" title=\"Open Racks Versus Cabinets\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_Dmyadd"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Enclosures"
+      }
+    },
+    "faq_question_answer_criY8W": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_K4xMkC": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Are Lock Boxes a Good Idea?",
+            "faq_ans": "<p>Yes, lock boxes and other security boxes help protect your valuables. Leaving your devices or valuables unprotected can result in theft. Keeping your valuables secure is always a good idea. <a href=\"/blogs/how-to/how-to-prevent-computer-and-data-theft\" target=\"_blank\" title=\"How to Prevent Computer and Data Theft\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_K4xMkC"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Security & Lock Boxes"
+      }
+    },
+    "faq_question_answer_D9PBkJ": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_yNADiB": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Wall Mount Enclosure?",
+            "faq_ans": "<p>Wall mount enclosures are small enclosures that provide more security than an open frame option, and takes up less floor space compared to a full-size cabinet. <a href=\"/blogs/articles/wall-mount-enclosures-and-when-to-use-them\" target=\"_blank\" title=\"Wall Mount Enclosures and When to Use Them\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_yNADiB"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Wall Mount & Ceiling"
+      }
+    },
+    "faq_question_answer_TBGUcy": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_jVxkph": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Rack Mount Power Supply?",
+            "faq_ans": "<p>Rack mount power supplies are made to fit in racks and enclosures while also protecting your equipment from power spikes and surges. <a href=\"/collections/power-strips\" target=\"_blank\" title=\"Power Strips\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_jVxkph"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Rack Mount Power Strips"
+      }
+    },
+    "faq_question_answer_PRpMfx": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_eVnPx8": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Cable Manage a Server Rack",
+            "faq_ans": "<p>Using vertical and horizontal cable managers allow you to neatly organize your cables and wires. The Neat-Patch® allows you to save money, space, time, and frustration. On top of that, the Neat-Patch® will protect the cables bend radius. <a href=\"/blogs/articles/smart-and-easy-rack-cable-management-with-neat-patch®\" target=\"_blank\" title=\"Smart and Easy Rack Cable Management with Neat-Patch®\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_eVnPx8"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Rack Cable Management"
+      }
+    },
+    "faq_question_answer_qzKaVe": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_4fii8U": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Are Metal Equipment Racks Grounded?",
+            "faq_ans": "<p>Equipment racks can be grounded using bus bars and jumper straps. <a href=\"/collections/grounding-equipment\" target=\"_blank\" title=\"/collections/grounding-equipment\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_4fii8U"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Hardware & Accessories"
+      }
+    },
+    "faq_question_answer_7JqzNV": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_JxPzhm": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Type of Rack Shelf Should I Use?",
+            "faq_ans": "<p>If using an open frame rack, fixed shelves, sliding shelves, and swing out shelves will work. However, if using an enclosure, fixed shelves will not allow for easy access to your equipment. <a href=\"/blogs/articles/5-things-to-consider-when-purchasing-a-rack-system\" target=\"_blank\" title=\"5 Things to Consider When Purchasing a Rack System\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_JxPzhm"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Rack Shelves & Drawers"
+      }
+    },
+    "faq_question_answer_wWBrfQ": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_3XzH8U": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is Meant by 42U Rack?",
+            "faq_ans": "<p>Racks with 42U means that there are 73.5\" of internal usable space. (U x 1.75 = inches of internal usable space) <a href=\"/blogs/articles/what-is-a-u-or-rack-unit\" target=\"_blank\" title=\"What is a &quot;U&quot; or Rack Unit?\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_3XzH8U"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Rack Panels"
+      }
+    },
+    "faq_question_answer_HqXXhf": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_D83R7F": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Rack Fan?",
+            "faq_ans": "<p>Rack fans helps ventilate your rack enclosures. This will help improve the performance of your equipment and extend its life. <a href=\"/blogs/articles/5-things-to-consider-when-purchasing-a-rack-system\" target=\"_blank\" title=\"5 Things to Consider When Purchasing a Rack System\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_MnVPkd": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Do I Need to Use a Rack Fan?",
+            "faq_ans": "<p>While rack fans do help extend the life and performance of your equipment, if you are using an open rack in a temperature controlled environment, there is no need for rack fans. <a href=\"/blogs/articles/5-things-to-consider-when-purchasing-a-rack-system\" target=\"_blank\" title=\"5 Things to Consider When Purchasing a Rack System\"><strong>...more</strong></a></p><p>Thermal management should not be taken lightly, the components in these racks create a lot of heat and need to be kept cool by rack fans. <a href=\"/blogs/how-to/how-to-prepare-for-your-rack-installation\" target=\"_blank\" title=\"How to Prepare for Your Rack Installation\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_D83R7F",
+        "faq_MnVPkd"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Rack Fans & Cooling"
+      }
+    },
+    "faq_question_answer_q4eTpp": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_HMtE8c": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Do You Manage Cables Behind an Entertainment Center?",
+            "faq_ans": "<p>Using a patch panel can greatly increase the organization of your wires and cables. Patch panels will allow you to organize your cables in a way that is easy to manage, flexible, and scalable. <a href=\"/blogs/articles/why-should-i-use-a-patch-panel\" target=\"_blank\" title=\"Why Should I Use a Patch Panel?\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_HMtE8c"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Home Theater Racks"
+      }
+    },
+    "faq_question_answer_FrkDm9": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_wxPcYY": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are the Different Types of Patch Panels?",
+            "faq_ans": "<p>Patch panels come in a feed through style, standard punchdown style, unloaded, outside rack, and a telco-style termination. <a href=\"/blogs/articles/why-should-i-use-a-patch-panel\" target=\"_blank\" title=\"Why Should I Use a Patch Panel?\"><strong>...more</strong></a></p><p>Patch panels come in two types; ethernet patch panels and fiber optic patch panels. <a href=\"/collections/patch-panels\" target=\"_blank\" title=\"/collections/patch-panels\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_wxPcYY"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Patch Panels"
+      }
+    },
+    "faq_question_answer_RHNQrt": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_TLM38b": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are Rj45 Connectors?",
+            "faq_ans": "<p>Rj45 connectors are placed on either end of stranded cable and help the cords make or \"patch\" a computer to a network. <a href=\"/blogs/how-to/how-to-use-cat5e-cat6-patch-cords\" target=\"_blank\" title=\"How to Use Cat5e & Cat6 Patch Cords\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_izyWPw": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Are Rj45 Connectors the Same for Cat5 and Cat6?",
+            "faq_ans": "<p>Yes, Rj45 connectors can be used for both Cat5 and Cat6 cords. <a href=\"/collections/connectors\" target=\"_blank\" title=\"/collections/connectors\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_TLM38b",
+        "faq_izyWPw"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Network Connectors"
+      }
+    },
+    "faq_question_answer_yagVjE": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_YAV7mT": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What are 66 and 110 Blocks?",
+            "faq_ans": "<p>66 and 110 blocks have punchdown points for connecting voice and data wiring. <a href=\"/collections/wiring-systems\" target=\"_blank\" title=\"/collections/wiring-systems\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_YAV7mT"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Wiring Systems"
+      }
+    },
+    "faq_question_answer_6UqceW": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_DWY4UV": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Network Switch Used For?",
+            "faq_ans": "<p>A network switch is used to connect multiple devices in the same local area network. It helps ensure the communication path is separated and controlled. <a href=\"/blogs/how-to/how-to-tell-what-network-switch-is-best-for-your-application\" target=\"_blank\" title=\"How to Tell What Network Switch is Best for Your Application\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_DWY4UV"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Network Switches"
+      }
+    },
+    "faq_question_answer_TF393A": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_E6gdTt": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Media Converter Used For?",
+            "faq_ans": "<p>Media converters allow you to extend your network; it makes data conversion easier. <a href=\"/collections/media-converters\" target=\"_blank\" title=\"/collections/media-converters\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_D8hahc": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are the Different Types of Media Converters?",
+            "faq_ans": "<p>Media converters are either Ethernet, VGA, or HDMI. <a href=\"/collections/media-converters\" target=\"_blank\" title=\"/collections/media-converters\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_E6gdTt",
+        "faq_D8hahc"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Media Converters"
+      }
+    },
+    "faq_question_answer_MMhUDL": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_DA7aYn": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are the 6 Types of Fiber Optic Cable Connectors?",
+            "faq_ans": "<p>The 6 types of fiber optic connectors are Straight Tips (ST), Subscriber Connectors (SC), Lucent \"Little\" Connectors (LC), Ferrule Connectors (FC), MT-RJ Connectors, and Multiple-Fiber Push-On/Pull-Off Connectors (MPO/MTP). <a href=\"/blogs/articles/fiber-optic-connectors\" target=\"_blank\" title=\"Fiber Optic Connectors\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_DA7aYn"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fiber Optic Connectors"
+      }
+    },
+    "faq_question_answer_CbRheP": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_4TTdtd": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is Fiber Optic Termination?",
+            "faq_ans": "<p>Fiber optic termination in the connection from a fiber cable to a device. It allows for a cross connection and light wave signal distribution. <a href=\"/blogs/articles/fiber-optic-termination\" target=\"_blank\" title=\"Fiber Optic Termination\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_yhRh7Q": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Tools Are Used in Fiber Optic Termination?",
+            "faq_ans": "<p>In order to safely terminate your fiber cable, you will need: safety glasses, a fiber disposal bin, connectors, fiber optic cables, epoxy/syringes or Anaerobic adhesive, polishing film, fiber stripper, scribe, yarn scissors, cable jacket stripper, polishing puck, polishing glass plate, rubber pad, power meter, tracer, reference test cables, LED light source, and a microscope. <a href=\"/blogs/articles/fiber-optic-termination\" target=\"_blank\" title=\"Fiber Optic Termination\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_4TTdtd",
+        "faq_yhRh7Q"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fiber Optic Termination Kit"
+      }
+    },
+    "faq_question_answer_4PPakB": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_HzfxJQ": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Purpose of a Fiber Enclosure Box?",
+            "faq_ans": "<p>Fiber optic enclosures are designed specifically to keep your fiber cables protected. They can also help to keep your cables more organized / tidy. <a href=\"/collections/fiber-optic-enclosures\" target=\"_blank\" title=\"/collections/fiber-optic-enclosures\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_HzfxJQ"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fiber Optic Enclosures"
+      }
+    },
+    "faq_question_answer_8Vh63i": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_FjURkK": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Difference Between LC and SC patch panels?",
+            "faq_ans": "<p>SC patch panels can only have 24 ports, whereas the LC patch panels can have 24 or 48 ports. <a href=\"/collections/fiber-optic-patch-panels\" target=\"_blank\" title=\"/collections/fiber-optic-patch-panels\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_FjURkK"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fiber Optic Patch Panels"
+      }
+    },
+    "faq_question_answer_6fdbyb": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_F3pwyz": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Best Way to Clean Fiber Optic Connectors?",
+            "faq_ans": "<p>Use a fiberscope at 200x magnification, if contaminated, use the dry cleaning method. Inspect, and repeat if necessary. If the ends are still contaminated, use the wet cleaning method and then dry until it's clean. <a href=\"/blogs/articles/cleaning-fiber-optics\" target=\"_blank\" title=\"Cleaning Fiber Optics\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_yVbwB9": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Is Cleaning Fiber Optics Necessary?",
+            "faq_ans": "<p>Fiber optics must be regularly cleaned. In order to keep the signals reliable and flawless, ensure that the connector end is also contaminate free. <a href=\"/blogs/articles/maintaining-cables-with-fiber-optic-cleaners\" target=\"_blank\" title=\"Maintaining Cables with Fiber Optic Cleaners\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_F3pwyz",
+        "faq_yVbwB9"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Cleaners & Consumables"
+      }
+    },
+    "faq_question_answer_TPnYFi": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_APfhEy": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Is Cat5 and Cat6 Wired the Same?",
+            "faq_ans": "<p>While the two wires are compatible, Cat5 only has a bandwidth of up to 100MHz while Cat6 has a bandwidth of up to 250MHz. <a href=\"/blogs/how-to/how-to-use-cat5e-cat6-patch-cords\" target=\"_blank\" title=\"How to Use Cat5e & Cat6 Patch Cords\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_APfhEy"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Network & Ethernet Cables"
+      }
+    },
+    "faq_question_answer_Q884wY": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_JDerw3": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are the Different \"Speed\" Categories for USB Cables?",
+            "faq_ans": "<p>USB Cables can have differing bandwidths, making some be low speed, full speed, high speed, or super speed. <a href=\"/blogs/articles/usb-cable-faqs\" target=\"_blank\" title=\"USB Cable FAQs\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_JDerw3"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Data & Connectivity Cables"
+      }
+    },
+    "faq_question_answer_M4Geyf": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_nDXEiJ": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is So Special About Fiber Optic Cables?",
+            "faq_ans": "<p>Unlike copper and metal wiring, fiber optic wiring is much more secure for network applications. They can transmit more information, faster, at greater distances, than their counterparts. And if that's not enough, there is no need for grounding or worrying about electrical interference and corrosion! <a href=\"/blogs/articles/fiber-optics-run-down-features-benefits-safety\" target=\"_blank\" title=\"Fiber Optics Run Down: Features, Benefits, Safety\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_nDXEiJ"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fiber Optic Cables"
+      }
+    }
+  },
+  "order": [
+    "image_text_block_gDBRP8",
+    "faq_question_answer_NrrtXj",
+    "faq_question_answer_9FifaY",
+    "faq_question_answer_criY8W",
+    "faq_question_answer_D9PBkJ",
+    "faq_question_answer_TBGUcy",
+    "faq_question_answer_PRpMfx",
+    "faq_question_answer_qzKaVe",
+    "faq_question_answer_7JqzNV",
+    "faq_question_answer_wWBrfQ",
+    "faq_question_answer_HqXXhf",
+    "faq_question_answer_q4eTpp",
+    "faq_question_answer_FrkDm9",
+    "faq_question_answer_RHNQrt",
+    "faq_question_answer_yagVjE",
+    "faq_question_answer_6UqceW",
+    "faq_question_answer_TF393A",
+    "faq_question_answer_MMhUDL",
+    "faq_question_answer_CbRheP",
+    "faq_question_answer_4PPakB",
+    "faq_question_answer_8Vh63i",
+    "faq_question_answer_6fdbyb",
+    "faq_question_answer_TPnYFi",
+    "faq_question_answer_Q884wY",
+    "faq_question_answer_M4Geyf"
+  ]
+}

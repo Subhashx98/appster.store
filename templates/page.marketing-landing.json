@@ -1,0 +1,187 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "section_breadcrumbs_E9XXcD": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": true
+      }
+    },
+    "landing_banner_6fF3CJ": {
+      "type": "landing-banner",
+      "settings": {
+        "banner_img": "shopify://shop_images/landing-banner.jpg",
+        "top_padding": true,
+        "logo_1": "shopify://shop_images/cabel-logo.png",
+        "logo_2": "shopify://shop_images/cable-white-logo.png",
+        "heading": "Primus Cable Now at CableOrganizer®",
+        "content": "Save now on our top rated product equipment and accessories.",
+        "cta_text": "Buy Now",
+        "cta_url": "shopify://collections/cable-tray-systems"
+      }
+    },
+    "landing_products_collection_M8LJmp": {
+      "type": "landing-products-collection",
+      "settings": {
+        "heading": "Ratchet & Crimp Tools",
+        "collection": "frontpage",
+        "number_of_products_show": 3
+      }
+    },
+    "landing_card_product_pRb7Xg": {
+      "type": "landing-card-product",
+      "blocks": {
+        "landing_block_9wmh7h": {
+          "type": "landing_block",
+          "settings": {
+            "product_img": "shopify://shop_images/CAT5E_RJ45_Shielded_Keystone_Jack_U-Style.png",
+            "logo": "shopify://shop_images/cabel-logo.png",
+            "title": "CAT5E RJ45 Shielded Keystone Jack, U-Style",
+            "price": "Only $2.59",
+            "cta_text": "Buy Now",
+            "link": "shopify://products/110v-hand-held-hot-knife-copy"
+          }
+        },
+        "landing_block_qykqjB": {
+          "type": "landing_block",
+          "settings": {
+            "product_img": "shopify://shop_images/CAT5E_RJ45_Inline_Coupler_Extension.png",
+            "logo": "shopify://shop_images/cabel-logo.png",
+            "title": "CAT5E RJ45 Inline Coupler Extension",
+            "price": "Only $2.25",
+            "cta_text": "Buy Now",
+            "link": "shopify://products/bonito®-usb-in-desk-power-outlet-copy"
+          }
+        },
+        "landing_block_UCCcLd": {
+          "type": "landing_block",
+          "settings": {
+            "product_img": "shopify://shop_images/Ratchet_Crimp_Tool_For_Easy_Feed_RJ45_Plugs.png",
+            "logo": "shopify://shop_images/cabel-logo.png",
+            "title": "Ratchet Crimp Tool For Easy Feed RJ45 Plugs",
+            "price": "Only $84.38",
+            "cta_text": "Buy Now",
+            "link": "shopify://products/eagle-manufacturing®-polyethylene-delineators-copy"
+          }
+        },
+        "landing_block_9YRYKU": {
+          "type": "landing_block",
+          "settings": {
+            "product_img": "shopify://shop_images/CAT5E_Ethernet_Patch_Cable_Shielded_Snagless_Molded_Boot.png",
+            "logo": "shopify://shop_images/cabel-logo.png",
+            "title": "CAT5E Ethernet Patch Cable Shielded, Snagless Molded Boot",
+            "price": "Only $15.99",
+            "cta_text": "Buy Now",
+            "link": "shopify://products/invid-tech-hd-paramount-series-analog-cameras-copy"
+          }
+        }
+      },
+      "block_order": [
+        "landing_block_9wmh7h",
+        "landing_block_qykqjB",
+        "landing_block_UCCcLd",
+        "landing_block_9YRYKU"
+      ],
+      "settings": {
+        "heading": "CAT6 / CAT6A RJ45 Connectors"
+      }
+    },
+    "landing_products_collection_VUcxKy": {
+      "type": "landing-products-collection",
+      "settings": {
+        "heading": "CAT6",
+        "collection": "cat6",
+        "number_of_products_show": 3
+      }
+    },
+    "landing_column_card_D4NGnX": {
+      "type": "landing-column-card",
+      "blocks": {
+        "card_block_fWieRJ": {
+          "type": "card_block",
+          "settings": {
+            "bg_img": "shopify://shop_images/image.jpg",
+            "logo": "shopify://shop_images/cabel-logo.png",
+            "title": "Ratchet Crimp Tool For Easy Feed RJ45 Plugs",
+            "price": "Only $84.38",
+            "cta_text": "Buy Now",
+            "link": "shopify://products/kendall-howard-adjustable-cpu-holder-copy"
+          }
+        },
+        "card_block_ExVqPU": {
+          "type": "card_block",
+          "settings": {
+            "bg_img": "shopify://shop_images/Rectangle_34624249.jpg",
+            "logo": "shopify://shop_images/cabel-logo.png",
+            "title": "Ratchet Crimp Tool For Easy Feed RJ45 Plugs",
+            "price": "Only $84.38",
+            "cta_text": "Buy Now",
+            "link": "shopify://products/macurco-detection-and-ventilation-control-panel-copy"
+          }
+        }
+      },
+      "block_order": [
+        "card_block_fWieRJ",
+        "card_block_ExVqPU"
+      ],
+      "settings": {}
+    },
+    "landing_products_collection_UBenDD": {
+      "type": "landing-products-collection",
+      "settings": {
+        "heading": "CAT5",
+        "collection": "cat5",
+        "number_of_products_show": 3
+      }
+    },
+    "landing_banner_96PYRp": {
+      "type": "landing-banner",
+      "settings": {
+        "banner_img": "shopify://shop_images/landing-banner_-2.jpg",
+        "top_padding": false,
+        "logo_1": "shopify://shop_images/cabel-logo.png",
+        "logo_2": "shopify://shop_images/cable-white-logo.png",
+        "heading": "Primus Cable Now at CableOrganizer®",
+        "content": "Save now on our top rated product equipment and accessories.",
+        "cta_text": "Buy Now",
+        "cta_url": "shopify://collections/cable-support-systems"
+      }
+    },
+    "landing_products_collection_RHdJA7": {
+      "type": "landing-products-collection",
+      "settings": {
+        "heading": "CAT6 Ethernet Patch Cable",
+        "collection": "cat6-ethernet-patch-cable",
+        "number_of_products_show": 3
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_breadcrumbs_E9XXcD",
+    "landing_banner_6fF3CJ",
+    "landing_products_collection_M8LJmp",
+    "landing_card_product_pRb7Xg",
+    "landing_products_collection_VUcxKy",
+    "landing_column_card_D4NGnX",
+    "landing_products_collection_UBenDD",
+    "landing_banner_96PYRp",
+    "landing_products_collection_RHdJA7"
+  ]
+}

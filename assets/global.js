@@ -619,7 +619,6 @@ class ModalDialog extends HTMLElement {
   connectedCallback() {
     if (this.moved) return;
     this.moved = true;
-    this.dataset.section = this.closest('.shopify-section').id.replace('shopify-section-', '');
     document.body.appendChild(this);
   }
 
@@ -759,7 +758,6 @@ class SliderComponent extends HTMLElement {
     // Temporarily prevents unneeded updates resulting from variant changes
     // This should be refactored as part of https://github.com/Shopify/dawn/issues/2057
     if (!this.slider || !this.nextButton) return;
-
     const previousPage = this.currentPage;
     this.currentPage = Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
 
@@ -1267,3 +1265,158 @@ class BulkAdd extends HTMLElement {
 if (!customElements.get('bulk-add')) {
   customElements.define('bulk-add', BulkAdd);
 }
+
+
+// FAQ
+document.addEventListener('DOMContentLoaded', function () {
+  const accordionHeaders = document.querySelectorAll('.faq-question');
+   const firstItem = document.querySelector('.faq-item');
+
+   if (firstItem) {
+    const firstContent = firstItem.querySelector('.faq-answer');
+    firstItem.classList.add('active');
+    firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+  }
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener('click', function () {
+      const parentItem = this.closest('.faq-item'); // Ensure it looks up the correct parent item
+      const content = parentItem.querySelector('.faq-answer');
+
+      // Toggle the active class on the parent item
+      parentItem.classList.toggle('active');
+
+      // If the parent is active, the content will show, else it will hide
+      if (parentItem.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = 0;
+      }
+
+      // Close other accordion items
+      document.querySelectorAll('.faq-item').forEach((item) => {
+        if (item !== parentItem) {
+          item.classList.remove('active');
+          item.querySelector('.faq-answer').style.maxHeight = 0;
+        }
+      });
+    });
+  });
+});
+
+// Details Accordian
+$(document).ready(function () {
+  $( ".fact-wrapper-desktop .facets__disclosure-vertical:last-child" ).attr( "open", "open" );
+  $( ".mobile-facets__inner .mobile-facets__main .mobile-facets__details:nth-last-child(3)" ).attr( "open", "open" );
+});
+
+// Account Order History
+document.addEventListener('DOMContentLoaded', () => {
+  // Check if .accordion-header elements exist
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  
+  if (accordionHeaders.length === 0) {
+    return; // Exit early if no accordion headers are present
+  }
+
+  // Add 'active' class to the first accordion section by default
+  accordionHeaders[0].classList.add('active');
+
+  // Add click event to all headers
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      // Check if the clicked header already has the 'active' class
+      if (this.classList.contains('active')) {
+        // If it has the 'active' class, remove it
+        this.classList.remove('active');
+      } else {
+        // If it doesn't have the 'active' class, remove it from all headers
+        accordionHeaders.forEach(h => h.classList.remove('active'));
+
+        // Add 'active' class to the clicked header
+        this.classList.add('active');
+      }
+    });
+  });
+});
+
+// Account Producr Refernce
+document.addEventListener('DOMContentLoaded', () => {
+  // Check if .accordion-header elements exist
+  const accordionHeaders = document.querySelectorAll('.references-faq-question');
+
+  if (accordionHeaders.length === 0) {
+    return; // Exit early if no accordion headers are present
+  }
+
+  // Add 'active' class to the first accordion section by default
+  accordionHeaders[0].classList.add('active');
+
+  // Add click event to all headers
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', function() {
+      // Check if the clicked header already has the 'active' class
+      if (this.classList.contains('active')) {
+        // If it has the 'active' class, remove it
+        this.classList.remove('active');
+      } else {
+        // If it doesn't have the 'active' class, remove it from all headers
+        accordionHeaders.forEach(h => h.classList.remove('active'));
+
+        // Add 'active' class to the clicked header
+        this.classList.add('active');
+      }
+    });
+  });
+});
+
+// Net 30 form Script
+window.addEventListener('load', () => {
+  const headings = document.querySelectorAll('.globo-form-control.toggle-heading');
+
+  function hideAllSections() {
+    // Remove 'active' class from all headings
+    headings.forEach(h => h.classList.remove('active'));
+
+    // Hide all content (non-heading) elements
+    document.querySelectorAll('.globo-form-control').forEach(el => {
+      if (!el.classList.contains('toggle-heading')) {
+        el.style.display = 'none';
+      }
+    });
+  }
+
+  function toggleSection(heading) {
+    const isActive = heading.classList.contains('active');
+
+    // If it's already active, hide everything
+    if (isActive) {
+      hideAllSections();
+    } else {
+      hideAllSections();
+      heading.classList.add('active');
+
+      // Show the content after the clicked heading, until the next heading
+      let next = heading.nextElementSibling;
+      while (next && !next.classList.contains('toggle-heading')) {
+        if (next.classList.contains('globo-form-control')) {
+          next.style.display = 'flex';
+        }
+        next = next.nextElementSibling;
+      }
+    }
+  }
+
+  headings.forEach(heading => {
+    heading.addEventListener('click', () => {
+      toggleSection(heading);
+    });
+  });
+
+  // ✅ Open the first section by default
+  if (headings.length > 0) {
+    toggleSection(headings[0]);
+  }
+});
+
+

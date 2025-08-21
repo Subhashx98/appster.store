@@ -1,0 +1,101 @@
+{{ 'home-block-section.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="home-page-block">
+    {% for block in section.blocks %}
+      {% if block.type == 'tutorial_block' %}
+        {% if block.settings.image != blank 
+          or block.settings.mobile_image != blank
+          or block.settings.heading != blank
+          or block.settings.sub_heading != blank
+          or block.settings.cta_url != blank
+          or block.settings.cta_text != blank
+        %}
+          <div
+            class="block block-{{ block.id }}"
+          >
+            <style>
+              .block-{{ block.id }}  {
+                {% if block.settings.image != blank %}
+                background-image: url('{{ block.settings.image | image_url }}') !important;
+                {% endif %}
+
+              }
+              @media screen and (max-width: 767px) {
+                .block-{{ block.id }} {
+                  {% if block.settings.mobile_image != blank %}
+                  background-image: url('{{ block.settings.mobile_image | image_url }}') !important;
+                  {% endif %}
+                }
+              }
+            </style>
+            <div class="content">
+              {% if block.settings.heading != blank %}
+                <h2>{{ block.settings.heading }}</h2>
+              {% endif %}
+              {% if block.settings.sub_heading != blank %}
+                <p>
+                  {{ block.settings.sub_heading }}
+                </p>
+              {% endif %}
+            </div>
+            {% if block.settings.cta_url and block.settings.cta_text != blank %}
+              <a href="{{ block.settings.cta_url }}" class="main-btn-large btn-white">{{ block.settings.cta_text }}</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home Block",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "tutorial_block",
+      "name": "Tutorial Block", 
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "sub_heading",
+          "label": "Sub Heading"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Block"
+    }
+  ]
+}
+{% endschema %}

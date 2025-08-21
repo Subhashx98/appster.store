@@ -12,7 +12,7 @@
 {% endcomment %}
 
 {%- liquid
-  if section.settings.hide_variants and variant_images.size == product.media.size
+  if section.settings.hide_variants and variant_images.size == shsd_product_media.size
     assign single_media_visible = true
   endif
 
@@ -20,7 +20,7 @@
     assign single_media_visible = true
   endif
 
-  assign media_count = product.media.size
+  assign media_count = shsd_product_media.size
   if section.settings.hide_variants and media_count > 1 and variant_images.size > 0
     assign media_count = media_count | minus: variant_images.size | plus: 1
   endif
@@ -56,13 +56,23 @@
     <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
       {{ 'accessibility.skip_to_product_info' | t }}
     </a>
+    <div class="selleing-tag-option">
+      {% if product.tags contains 'New Arrivals' %}
+        <span class="selling-tag">New Arrivals</span>
+      {% elsif product.tags contains 'Best Sellers' %}
+        <span class="selling-tag">Best Sellers</span>
+      {% elsif product.tags contains 'Last Chance Items' %}
+          <span class="selling-tag">Last Chance</span>
+      {% endif %}
+    </div>
     <ul
       id="Slider-Gallery-{{ section.id }}"
       class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
       role="list"
     >
-      {%- if product.selected_or_first_available_variant.featured_media != null -%}
-        {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+    {% if product.featured_media != null %}  
+      {%- if selected_variant.featured_media != null -%}
+      {%- assign featured_media = selected_variant.featured_media -%}
         <li
           id="Slide-{{ section.id }}-{{ featured_media.id }}"
           class="product__media-item grid__item slider__slide is-active{% if single_media_visible %} product__media-item--single{% endif %}{% if featured_media.media_type != 'image' %} product__media-item--full{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
@@ -85,7 +95,7 @@
           %}
         </li>
       {%- endif -%}
-      {%- for media in product.media -%}
+      {%- for media in shsd_product_media -%}
         {% if media_position >= limit
           or media_position >= 1
           and section.settings.hide_variants
@@ -94,10 +104,10 @@
           {% continue %}
         {% endif %}
 
-        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+        {%- unless media.id == selected_variant.featured_media.id -%}
           <li
             id="Slide-{{ section.id }}-{{ media.id }}"
-            class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if product.selected_or_first_available_variant.featured_media == nil and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+            class="product__media-item grid__item slider__slide{% if single_media_visible %} product__media-item--single{% endif %}{% if selected_variant.featured_media == nil and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
             data-media-id="{{ section.id }}-{{ media.id }}"
           >
             {%- liquid
@@ -124,6 +134,16 @@
           </li>
         {%- endunless -%}
       {%- endfor -%}
+    {% else %}
+    <img
+      src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Brand-no-image.svg?v=1743798471" 
+      height="" 
+      width="" 
+      alt="Brand"
+      loading="lazy"
+      class="no-image"
+      >
+    {% endif %}
     </ul>
     <div class="slider-buttons quick-add-hidden{% if hide_mobile_slider %} small-hide{% endif %}">
       <button
@@ -183,7 +203,7 @@
   -%}
     <slider-component
       id="GalleryThumbnails-{{ section.id }}"
-      class="thumbnail-slider slider-mobile-gutter quick-add-hidden{% unless section.settings.gallery_layout contains 'thumbnail' %} medium-hide large-up-hide{% endunless %}{% if section.settings.mobile_thumbnails != 'show' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}"
+      class="thumbnail-slider slider-mobile-gutter quick-add-hidden {% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}"
     >
       <button
         type="button"
@@ -226,6 +246,7 @@
             class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains featured_media.src %} thumbnail-list_item--variant{% endif %}"
             data-target="{{ section.id }}-{{ featured_media.id }}"
             data-media-position="{{ media_index }}"
+            data-variant-media-id="{{ featured_media.id }}"
           >
             {%- capture thumbnail_id -%}
               Thumbnail-{{ section.id }}-0
@@ -237,22 +258,23 @@
               aria-controls="GalleryViewer-{{ section.id }}"
               aria-describedby="{{ thumbnail_id }}"
             >
+                {% assign alt = featured_media.alt| default: product.title %}
               {{
                 featured_media.preview_image
                 | image_url: width: 416
                 | image_tag:
-                  loading: 'lazy',
+                  loading: 'eager',
                   sizes: sizes,
                   widths: '54, 74, 104, 162, 208, 324, 416',
                   id: thumbnail_id,
-                  alt: featured_media.alt
+                  alt: alt
                 | escape
               }}
             </button>
           </li>
         {%- endif -%}
-        {%- for media in product.media -%}
-          {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+        {%- for media in shsd_product_media -%}
+          {%- unless media.id == selected_variant.featured_media.id -%}
             {%- liquid
               capture media_index
                 if media.media_type == 'model'
@@ -270,6 +292,7 @@
               class="thumbnail-list__item slider__slide{% if section.settings.hide_variants and variant_images contains media.src %} thumbnail-list_item--variant{% endif %}"
               data-target="{{ section.id }}-{{ media.id }}"
               data-media-position="{{ media_index }}"
+              data-variant-media-id="{{ media.id }}"
             >
               {%- if media.media_type == 'model' -%}
                 <span class="thumbnail__badge" aria-hidden="true">
@@ -290,8 +313,8 @@
               <button
                 class="thumbnail global-media-settings global-media-settings--no-shadow"
                 aria-label="{%- if media.media_type == 'image' -%}{{ 'products.product.media.load_image' | t: index: media_index }}{%- elsif media.media_type == 'model' -%}{{ 'products.product.media.load_model' | t: index: media_index }}{%- elsif media.media_type == 'video' or media.media_type == 'external_video' -%}{{ 'products.product.media.load_video' | t: index: media_index }}{%- endif -%}"
-                {% if media == product.selected_or_first_available_variant.featured_media
-                  or product.selected_or_first_available_variant.featured_media == null
+                {% if media == selected_variant.featured_media
+                  or selected_variant.featured_media == null
                   and forloop.index == 1
                 %}
                   aria-current="true"
@@ -299,15 +322,16 @@
                 aria-controls="GalleryViewer-{{ section.id }}"
                 aria-describedby="{{ thumbnail_id }}"
               >
+                {% assign alt = media.alt | default: product.title %}
                 {{
                   media.preview_image
                   | image_url: width: 416
                   | image_tag:
-                    loading: 'lazy',
+                    loading: 'eager',
                     sizes: sizes,
                     widths: '54, 74, 104, 162, 208, 324, 416',
                     id: thumbnail_id,
-                    alt: media.alt
+                    alt: alt
                   | escape
                 }}
               </button>

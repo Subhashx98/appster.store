@@ -1,0 +1,579 @@
+{{ 'section-search-category.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="search-category search_blogs_block_main">
+    <button class="view-link mobile-view-link back-button">Go Back</button>
+    {% if section.settings.search_text != blank %}
+      <p class="section-main-title">{{ section.settings.search_text }}</p>
+    {% endif %}
+    <!-- Shop Brand Search -->
+    <div class="search-all-brand">
+      <button class="view-link back-button">Go Back</button>
+      <!-- Search Form -->
+      <form method="get" role="search">
+        <div class="field">
+          <input
+            class="shop-by-brand-search-filter search__input field__input"
+            id="Search-In-Brand"
+            type="search"
+            placeholder="Search For Products"
+          >
+          <label class="field__label" for="Search-In-Brand">Search For Products</label>
+          <button id="search-button" class="search__button field__button">
+            <img src="{{ 'icon-search.svg' | asset_url }}" width="20" loading="lazy" height="20" alt="Search">
+            Search
+          </button>
+        </div>
+      </form>
+      <!-- Alphabate -->
+      <ul class="alphabet-filter"></ul>
+    </div>
+
+    <div class="collection-slider">
+      <div class="page-width">
+        <div class="collection-product-slider">
+          <div class="collection-slider-card">
+            <div class="product-slider-block">
+              <div class="slider-for">
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/image_5_3f8b75d7-c0b8-4914-8f1a-0776af6f5a73.png"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cable_Ties.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Wraps_Clips_Clamps.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cord_Reels_Winders.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+              <div class="slider-nav">
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/image_5_3f8b75d7-c0b8-4914-8f1a-0776af6f5a73.png"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cable_Ties.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Wraps_Clips_Clamps.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cord_Reels_Winders.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="slider-block-text">
+              <h3>10 Creative Cable Management Solutions for Your Home Theater </h3>
+
+              <p class="description-text">There’s nothing like having a home theater setup to unwind with, whether it’s a simple flat screen TV in your living room or a dedicated space with reclining seats and surround sound. CableOrganizer® is here to help you with creative cable management either way. No one wants a mound of cables detracting from sleek-looking video, sound, and gaming equipment. A home entertainment area is a place...</p>
+              <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+            </div>
+          </div>
+          <div class="collection-slider-card">
+            <div class="product-slider-block">
+              <div class="slider-for">
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/image_5_3f8b75d7-c0b8-4914-8f1a-0776af6f5a73.png"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cable_Ties.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Wraps_Clips_Clamps.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cord_Reels_Winders.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+              <div class="slider-nav">
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/image_5_3f8b75d7-c0b8-4914-8f1a-0776af6f5a73.png"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cable_Ties.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Wraps_Clips_Clamps.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cord_Reels_Winders.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="slider-block-text">
+              <h3>10 Creative Cable Management Solutions for Your Home Theater </h3>
+
+              <p class="description-text">There’s nothing like having a home theater setup to unwind with, whether it’s a simple flat screen TV in your living room or a dedicated space with reclining seats and surround sound. CableOrganizer® is here to help you with creative cable management either way. No one wants a mound of cables detracting from sleek-looking video, sound, and gaming equipment. A home entertainment area is a place...</p>
+              <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+            </div>
+          </div>
+          <div class="collection-slider-card">
+            <div class="product-slider-block">
+              <div class="slider-for">
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/image_5_3f8b75d7-c0b8-4914-8f1a-0776af6f5a73.png"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cable_Ties.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Wraps_Clips_Clamps.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cord_Reels_Winders.jpg"
+                    alt=""
+                    height="250"
+                    width="400"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+              <div class="slider-nav">
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/image_5_3f8b75d7-c0b8-4914-8f1a-0776af6f5a73.png"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cable_Ties.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Wraps_Clips_Clamps.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+                <div>
+                  <img
+                    src="https://cableorganizer-arcticgrey.myshopify.com/cdn/shop/files/Cord_Reels_Winders.jpg"
+                    alt=""
+                    height="50"
+                    width="50"
+                    loading="lazy"
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="slider-block-text">
+              <h3>10 Creative Cable Management Solutions for Your Home Theater </h3>
+
+              <p class="description-text">There’s nothing like having a home theater setup to unwind with, whether it’s a simple flat screen TV in your living room or a dedicated space with reclining seats and surround sound. CableOrganizer® is here to help you with creative cable management either way. No one wants a mound of cables detracting from sleek-looking video, sound, and gaming equipment. A home entertainment area is a place...</p>
+              <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script>
+  // Slider
+  $(document).ready(function () {
+    $('.collection-slider-card').each(function (index) {
+      let sliderFor = $(this).find('.slider-for');
+      let sliderNav = $(this).find('.slider-nav');
+
+      sliderFor.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
+        fade: true,
+        asNavFor: sliderNav,
+      });
+
+      sliderNav.slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: sliderFor,
+        arrows: false,
+        focusOnSelect: true,
+      });
+    });
+  });
+
+  //ReadMore Button
+  $(document).ready(function () {
+    function toggleText(button) {
+      var $paragraph = $(button).prev('p');
+      var isExpanded = $paragraph.css('webkit-line-clamp') === 'none';
+
+      if (isExpanded) {
+        $paragraph.css('webkit-line-clamp', '5');
+        $(button).text('Read More');
+      } else {
+        $paragraph.css('webkit-line-clamp', 'none');
+        $(button).text('Read Less');
+      }
+    }
+
+    $('.slider-block-text').each(function () {
+      var $paragraph = $(this).find('p');
+      var paragraphHeight = $paragraph[0].scrollHeight;
+      var visibleHeight = $paragraph.height();
+
+      if (paragraphHeight > visibleHeight) {
+        $(this).find('.read-more-btn').show();
+      }
+    });
+
+    $('.read-more-btn').click(function () {
+      toggleText(this);
+    });
+  });
+</script>
+<script>
+  // Go Back
+  var backButtons = document.getElementsByClassName('back-button');
+  // Loop through the collection and add the event listener to each element
+  for (var i = 0; i < backButtons.length; i++) {
+    backButtons[i].addEventListener('click', function () {
+      window.history.back(); // Go back to the previous page
+    });
+  }
+
+  // URL of the uploaded JSON file in Shopify Files
+  const jsonDataUrl = '{{ "glossary_newdata.json" | file_url }}';
+
+  let activeLetter = '#';
+
+  // Function to create and display alphabet filter links
+  function createAlphabetFilter(data) {
+    const alphabetFilter = document.querySelector('.alphabet-filter');
+    const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+    // Create the '#' link for non-alphabetic characters first
+    const hashLink = document.createElement('li');
+    const hashAnchor = document.createElement('a');
+    hashAnchor.href = 'javascript:void(0)';
+    hashAnchor.textContent = '#';
+    hashAnchor.setAttribute('data-brand', '#');
+
+    // Add event listener for the '#' click
+    hashAnchor.addEventListener('click', () => {
+      // Remove active class from previously active letter
+      const activeLink = alphabetFilter.querySelector('.active');
+      if (activeLink) {
+        activeLink.classList.remove('active');
+      }
+
+      // Add active class to the '#' link
+      hashAnchor.classList.add('active');
+      activeLetter = '#';
+
+      // Reset the search input when switching to '#'
+      const searchInput = document.getElementById('Search-In-Brand');
+      searchInput.value = ''; // Clear the search input
+
+      filterContentByHash(data);
+    });
+
+    hashLink.appendChild(hashAnchor);
+    alphabetFilter.appendChild(hashLink);
+
+    // Create alphabet links A-Z
+    letters.forEach((letter) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = 'javascript:void(0)';
+      a.textContent = letter.toUpperCase();
+      a.setAttribute('data-brand', letter);
+
+      // Add event listener for each alphabet letter
+      a.addEventListener('click', () => {
+        // Remove active class from previously active letter
+        const activeLink = alphabetFilter.querySelector('.active');
+        if (activeLink) {
+          activeLink.classList.remove('active');
+        }
+
+        // Add active class to the clicked letter
+        a.classList.add('active');
+        activeLetter = letter;
+
+        // Reset the search input when switching alphabet
+        const searchInput = document.getElementById('Search-In-Brand');
+        searchInput.value = ''; // Clear the search input
+
+        filterContentByLetter(letter, data);
+      });
+
+      li.appendChild(a);
+      alphabetFilter.appendChild(li);
+    });
+
+    // Set the default active link to '#'
+    const defaultActiveLink = alphabetFilter.querySelector('[data-brand="#"]');
+    if (defaultActiveLink) {
+      defaultActiveLink.classList.add('active');
+    }
+  }
+
+  // Function to filter content based on the selected letter
+  function filterContentByLetter(letter, data) {
+    const filteredData = data.filter((item) => item.title && item.title.toLowerCase().startsWith(letter.toLowerCase()));
+
+    displayContent(filteredData, letter);
+  }
+
+  // Function to filter content when '#' is clicked
+  function filterContentByHash(data) {
+    const filteredData = data.filter((item) => item.title && /[^a-zA-Z]/.test(item.title.charAt(0)));
+
+    displayContent(filteredData, '#');
+  }
+
+  // Function to filter content by search term
+  function filterContentBySearch(searchTerm, data) {
+    const filteredData = data.filter(
+      (item) => item.title && item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    displayContent(filteredData, searchTerm);
+  }
+
+  // Function to display the filtered content
+  function displayContent(filteredData, category) {
+    const categoryList = document.getElementById('category-list');
+    categoryList.innerHTML = ''; // Clear current content
+
+    if (filteredData.length > 0) {
+      filteredData.forEach((item, index) => {
+        let listItem = document.createElement('li');
+        const anchor = document.createElement('a');
+        anchor.href = '#';
+        anchor.textContent = item.title;
+        anchor.classList.add('open-modal');
+
+        const modalContent = document.createElement('div');
+        modalContent.classList.add('modal-content');
+        const modalBody = document.createElement('div');
+        modalBody.classList.add('modal-body');
+        modalBody.textContent = item.content;
+
+        const closeModal = document.createElement('div');
+        closeModal.classList.add('close-modal');
+        modalBody.appendChild(closeModal);
+        modalContent.appendChild(modalBody);
+        listItem.appendChild(anchor);
+        listItem.appendChild(modalContent);
+
+        categoryList.appendChild(listItem);
+
+        anchor.addEventListener('click', function (event) {
+          event.preventDefault();
+          modalContent.classList.add('visible');
+        });
+
+        closeModal.addEventListener('click', function () {
+          modalContent.classList.remove('visible');
+        });
+      });
+    } else {
+      categoryList.innerHTML = `<p>No items found for the letter ${category}</p>`;
+    }
+  }
+
+  // Fetch the JSON file and display the data
+  fetch(jsonDataUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('Fetched JSON data:', data);
+
+      // Check if the data is in the expected format
+      if (Array.isArray(data)) {
+        // Initialize the alphabet filter
+        createAlphabetFilter(data);
+
+        // Optionally, display content for the default letter '#'
+        filterContentByHash(data); // Automatically show content for '#' when the page loads
+
+        const searchInput = document.getElementById('Search-In-Brand');
+        const searchButton = document.getElementById('search-button');
+        searchInput.addEventListener('input', function () {
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm) {
+            filterContentBySearch(searchTerm, data); // Filter by search term
+          } else {
+            // If search is cleared, keep the active letter filter
+            if (activeLetter === '#') {
+              filterContentByHash(data); // Show content for non-alphabetic characters if '#' is active
+            } else {
+              filterContentByLetter(activeLetter, data); // Otherwise, keep the content for the selected letter
+            }
+          }
+        });
+        // Handle the search button click event
+        searchButton.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent form submission and page refresh
+
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm) {
+            filterContentBySearch(searchTerm, data); // Filter by search term when the button is clicked
+          } else {
+            // If no search term is entered, keep the active letter filter
+            if (activeLetter === '#') {
+              filterContentByHash(data); // Show content for non-alphabetic characters if '#' is active
+            } else {
+              filterContentByLetter(activeLetter, data); // Otherwise, keep the content for the selected letter
+            }
+          }
+        });
+      } else {
+        throw new Error('Fetched data is not an array.');
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching JSON:', error);
+      const categoryList = document.getElementById('category-list');
+      categoryList.innerHTML = '<p>Failed to load glossary data.</p>';
+    });
+</script>
+
+{% schema %}
+{
+  "name": "Learning Center Articles",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Learning Center Articles"
+    }
+  ]
+}
+{% endschema %}

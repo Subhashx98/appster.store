@@ -17,16 +17,17 @@
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
-      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <h2 class="title animate--slide-in">
         {{ section.settings.heading }}
       </h2>
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
+    <p>Use the form below to contact a CableOrganizer.com representative.</p>
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
-        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+        assign contact_form_class = 'isolate contact-form scroll-trigger animate--slide-in'
       endif
     -%}
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
@@ -56,13 +57,51 @@
           <input
             class="field__input"
             autocomplete="name"
+            aria-required="true"
+            type="text"
+            id="ContactForm-name"
+            name="contact[{{ 'templates.contact.form.company_name' | t }}]"
+            value="{% if form.company_name %}{{ form.company_name }}{% elsif customer %}{{ customer.company_name }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.company_name' | t }}"
+          >
+          <label class="field__label" for="ContactForm-name">
+            {{ 'templates.contact.form.company_name' | t }}
+            <span aria-hidden="true">*</span>
+          </label>
+        </div>
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            aria-required="true"
             type="text"
             id="ContactForm-name"
             name="contact[{{ 'templates.contact.form.name' | t }}]"
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
             placeholder="{{ 'templates.contact.form.name' | t }}"
           >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+          <label class="field__label" for="ContactForm-name">
+            {{ 'templates.contact.form.name' | t }}
+            <span aria-hidden="true">*</span>
+          </label>
+        </div>
+      </div>
+      <div class="contact__fields">
+        <div class="field">
+          <input
+            class="field__input"
+            autocomplete="name"
+            aria-required="true"
+            type="text"
+            id="ContactForm-name"
+            name="contact[{{ 'templates.contact.form.last_name' | t }}]"
+            value="{% if form.last_name %}{{ form.name }}{% elsif customer %}{{ customer.last_name }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.last_name' | t }}"
+          >
+          <label class="field__label" for="ContactForm-name">
+            {{ 'templates.contact.form.last_name' | t }}
+            <span aria-hidden="true">*</span>
+          </label>
         </div>
         <div class="field field--with-error">
           <input
@@ -83,20 +122,7 @@
           >
           <label class="field__label" for="ContactForm-email">
             {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                <span class="svg-wrapper">
-                  {{- 'icon-error.svg' | inline_asset_content -}}
-                </span>
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
-          {%- endif -%}
+            <span aria-hidden="true">*</span></label>
         </div>
       </div>
       <div class="field">

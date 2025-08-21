@@ -1,0 +1,64 @@
+.get-help{
+    padding: 60px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.get-help h2{
+    text-align: center;
+    width: 100%;
+}
+.get-help ul{
+    margin: 32px 0 0;
+    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0;
+}
+.get-help ul li{
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(33.33% - 11px);
+}
+.get-help ul li a{
+    background-color: var(--light-grey-color);
+    border: 1px solid #DDDDDD;
+    padding: 16px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--black-color);
+    border-radius: var(--border-radius-5);
+}
+.get-help ul li a img{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+.get-help ul li a:hover{
+    color: var(--primary-blue-color);
+}
+/* Responsive */
+@media screen and (min-width: 1200px) {
+    .get-help ul{ max-width: 70%;}
+}
+@media screen and (max-width: 991px) {
+    .customer-services{padding: 40px 0px; margin-top: 32px;}
+    .get-help{ padding: 40px 0;}
+    .customer-services .service-block .service-block-details{  flex: 0 0 calc(50% - 14px);  width: calc(50% - 14px);}
+}
+@media screen and (max-width: 750px) {
+    .customer-services{ width: calc(100% - 4rem); margin-left: 2rem; border-radius: 16px;}
+    .get-help{background-color: var(--light-grey-color); border-radius: 16px; padding: 40px 20px; margin: 32px 0px 40px;}
+    .get-help ul{ gap: 10px;}
+    .get-help ul li a{ background-color: var(--white-color);}
+    .get-help ul li{width: 100%;}
+    .customer-services .service-block{ gap: 10px;margin-top: 28px;}
+    .customer-services .service-block .service-block-details{flex: 0 0 100%; width: 100%;}
+}

@@ -1,0 +1,293 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "main_image_banner_YFzLAG": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Shipping Policy"
+      }
+    },
+    "section_breadcrumbs_RiAw3m": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "text_content_LMdhax": {
+      "type": "text-content",
+      "blocks": {
+        "description_cqMDLK": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>At CableOrganizer®, fast and accurate order turnaround is one of our top priorities... after all, no one likes to wait! When you place an order with us, you can be confident that we're doing everything we can to get your products on their way as quickly as possible, via some of the safest, most reliable carriers in the industry.</p>"
+          }
+        },
+        "heading_DLcX9p": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Shipping Methods"
+          }
+        },
+        "description_WdAnkb": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>For standard orders, we ship via UPS, FedEx, and the United States Postal Service (USPS). In most cases, at checkout you'll be given the option to select which carrier, cost and speed of delivery works best for you. For large items that require lift gate service or other special handling, delivery will be made by a specialized freight carrier.</p>"
+          }
+        },
+        "heading_tKUX9X": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Shipping Costs"
+          }
+        },
+        "description_JKfJdC": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Shipping costs are automatically calculated in your online shopping cart, and are based on the size and weight of your items, their destination, and which shipping method you choose. Our shipping rates are quoted to you directly from real time UPS, FedEx, and USPS shipping calculators, and include a small handling fee. CableOrganizer® does not make a profit from shipping costs, and we do everything we can to keep them as low as possible.<br/><br/>If you ever feel that a quoted shipping rate seems extravagantly high for the products you're ordering, please feel free to contact us toll-free at 1-833-3CABLEORG (1-833-322-2536), and we'll be happy to double check it for accuracy. Please note, if you wish to ship an item using your own personal account with a particular shipping service, you will be responsible for the payment of those charges.</p>"
+          }
+        },
+        "heading_3nrbVE": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "How Fast Will My Order Ship?"
+          }
+        },
+        "description_zPBWh6": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Items that are in stock and sent directly from our warehouse will typically ship in 24 to 48 hours. In most cases, if you place an order before 2:00pm ET and the requested item(s) are in stock, it will leave our warehouse the same day. If an item you order needs to be drop-shipped from one of our vendors, we'll make sure that they ship it out within 2 business days. If you're on a tight deadline and need same day shipping, please don't hesitate to ask - we'll do our absolute best to accommodate you.</p><p>Please be aware that expedited orders placed on Saturday, Sunday, or on shipping holidays will ship out the following business day. This means that Next Day Shipping or 2-Day Shipping orders placed over the weekend will ship out the following Monday. Unfortunately, we are unable to accommodate shipping on non-business days.</p><p>While we will make every effort to ensure your expedited shipment is delivered as soon as possible, please be aware that certain circumstances are beyond our control. Such incidents include inclement weather, customs delays, and other unforeseen situations that could cause an expedited shipment to reach its destination later than expected. In such rare cases, CableOrganizer® is not responsible and cannot refund shipping charges, as this is a carrier issue, and carriers do not issue shipping refunds due to Acts of God, customs delays, etc.</p><p>For more information, please visit <a href=\"https://www.ups.com/pr/en/support/shipping-support/legal-terms-conditions.page\" target=\"_blank\" title=\"https://www.ups.com/pr/en/support/shipping-support/legal-terms-conditions.page\">https://www.ups.com/pr/en/support/shipping-support/legal-terms-conditions.page</a> to view UPS' shipping terms and conditions.</p><p><a href=\"https://www.fedex.com/en-us/service-guide.html\">https://www.fedex.com/en-us/service-guide.html</a><br/>to view FedEx’s Service Guide.</p><p><a href=\"https://www.usps.com/terms-conditions/general.htm\">https://www.usps.com/terms-conditions/general.htm</a><br/>to view USPS’ terms and conditions.</p>"
+          }
+        },
+        "heading_xfKMXK": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Shipment Confirmation and Tracking"
+          }
+        },
+        "description_Fbd8fm": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>When your order ships, we'll send you a confirmation e-mail, complete with estimated delivery date and tracking information (if you selected a trackable shipping method). Orders shipped UPS or FedEx, always include signature tracking; and First Class, Priority and Express Mail have delivery confirmation. If your order is being shipped internationally, please keep in mind that tracking beyond the United States is only available through UPS.</p>"
+          }
+        },
+        "heading_VkGDJ7": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Will I Need to Sign for My Delivery?"
+          }
+        },
+        "description_3FQ37i": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>If your order ships via UPS or FedEx, someone will need sign for it upon delivery, as we always use Signature Tracking to ensure that your shipment arrives safely. Orders sent via USPS include delivery confirmation, but they generally don't require a signature.</p>"
+          }
+        },
+        "heading_t8jREQ": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "International Shipping"
+          }
+        },
+        "description_fJKxVV": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Need to have an order shipped internationally? No problem! We're able to ship product around the world via both UPS, FedEx and USPS. Please keep in mind that when you place an international order, you are responsible for all applicable duty and taxes, and that international order tracking is available only through UPS.</p><p>View our complete <a href=\"https://www.cableorganizer.com/answers/international-shipping-faq.html\" target=\"_blank\" title=\"https://www.cableorganizer.com/answers/international-shipping-faq.html\">International Shipping Policy</a></p>"
+          }
+        },
+        "heading_PqeRmt": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Hazardous Materials Shipping"
+          }
+        },
+        "description_HxLzp7": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Please note that some of the products available at CableOrganizer® are designated “ORM-D,” meaning that the FAA classifies them as potentially hazardous materials because they're liquids, have a particular chemical content, or are packaged in pressurized containers. Due to federal regulations, ORM-D items can only be shipped ground, and can't be sent beyond the 48 contiguous United States.</p>"
+          }
+        },
+        "heading_iGYGwD": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Package Guarantees"
+          }
+        },
+        "description_ihBN3j": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>In the unlikely situation that your shipment doesn't arrive at its destination, we're happy to issue replacement items. However, packages issued without tracking numbers are more difficult to trace after leaving our facility, so for your convenience and protection, we highly recommend choosing a trackable shipping method (UPS Ground being the surest bet).</p>"
+          }
+        },
+        "heading_ezj6wq": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Special Shipping Needs"
+          }
+        },
+        "description_8gcXQL": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>If you'd like order tracking, signature confirmation, insurance or other special shipping considerations that may not be automatically included with your chosen shipping method, please leave us a note in the “Comment” field during checkout, or call us directly to make a request. We'll do everything we can to accommodate you!</p><p>*In the event that your chosen shipping method isn't available at the time of shipment, we'll send your order via the closest comparable option, at no additional cost to you.</p>"
+          }
+        },
+        "heading_q78aeM": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Freight Shipping"
+          }
+        },
+        "description_RCBqMb": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Your shipment is being transported via freight truck, and we want you to be aware of and outline your rights, responsibilities and important things to know as the end recipient. Much can happen on the way from the manufacturer to your doorstep, so please understand the importance of inspecting your item immediately upon receipt and reporting any damage. DO NOT sign off on a damaged item without making a note of it. Failure to do so could result in an inability to collect on a damage claim. As much as we would like to assist you in these matters, freight companies will NOT work with us if a claim is not reported within 5 days of receipt of your shipment.</p>"
+          }
+        },
+        "description_nMLGmg": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p><strong>Before signing for your item:</strong></p><ul><li>Do not be intimidated by the driver, as they cannot leave until the Bill Of Lading or Freight Bill is signed by you (regardless of whether they claim to be in a hurry).</li><li>On arrival, inspect the shipment IMMEDIATELY for obvious signs of damage. Should you determine that any items are damaged or missing, you MUST note the item, the discrepancy, and write the damages/condition on the Bill Of Lading or Freight Bill before you sign it! If you do not inspect before signing you are waiving the right to collect on a damage claim even if the damage is discovered later (known as concealed damage). Open all cartons and packaging. If damage is not noted on the Bill Of Lading or Freight Bill, the liability to prove that the delivering carrier did the damage becomes your responsibility.</li><li>Whenever signing for freight, always write \"SUBJECT TO INSPECTION\".</li><li>After you've determined that the condition and quantity of your freight is acceptable, you can then sign the delivery receipt. The driver will provide you with a copy, taking the signed copy with them (as a delivery receipt). If one is not offered, request one, as is your right. The Bill Of Lading or Freight Bill is the only documentation of the condition of a shipment when it arrives at your location. Without this document, we cannot hold others accountable for items damaged or missing. Your signature on the delivering carrier's freight Bill Of Lading (BOL) constitutes acceptance of the merchandise as is and in good order.</li></ul><p><strong>If the box, crate, or merchandise is visibly damaged:</strong></p><ul><li>Note on the freight bill any obvious damage at the time of delivery (i.e. box corners crushed, tears, rips, slices, marks etc.); and be as specific and thorough as possible.</li><li>Refuse the delivery and contact us immediately to request a Return Authorization number so the merchandise can be shipped back to its origin at no charge.</li><li>We will ask you to email or fax us a copy of the bill of lading that notes the freight damage.</li><li>Take digital photography of the damage. If possible, photographs of the equipment still on the truck will limit your liability. Keep a copy of the Bill Of Lading or Freight Bill noting the damage.</li></ul><p><strong>If there is \"concealed damage\" (ie. damage that is not immediately apparent upon initial inspection or is discovered at a later date after shipment has been signed for):</strong></p><ul><li>If damage is not discovered upon initial inspection, it must still be reported within 5 days of receipt of the shipment. Failure to do so will result in an inability to file a claim with the freight carrier.</li><li>If you are ordering an item in advance of need, do not wait until installation to inspect the shipment for damage. In these cases, if damage is discovered, it is the consignee's sole responsibility to contact the freight carrier directly and pursue a claim. Document and photograph all damage, keep all packaging, and do not move the item. Hold all damaged goods in their original location for inspection by the carrier.</li><li>CableOrganizer® is not responsible for damaged or missing items that occur during freight transport. We will assist you to the best of our capabilities in dealing with the freight company, but any claims of damage must be filed directly with the freight company and it is ultimately the responsibility of the carrier to deliver the goods in satisfactory, undamaged condition.</li></ul><p>If your shipment is coming via freight, you may be charged one or more Accessorial Charges. Here is an explanation of what they might be:</p>"
+          }
+        },
+        "heading_NWkw79": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Lift-gate"
+          }
+        },
+        "description_yjttx7": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Lift gates are required for shipments exceeding 100 pounds or 72 inches in height, or pick-up and drop-off locations without accessible docks. In this case, your shipment may require a truck with a lift gate.</p>"
+          }
+        },
+        "heading_FYgmnC": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Limited Delivery Access"
+          }
+        },
+        "description_qdF4pY": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>If your pick up or drop off location has limited access for carriers and is not a part of the original quote, an adjustment may be applied. Limited access may include commercial businesses open to the walk-in public or in the case that an employee is not available to assist with loading or unloading.</p>"
+          }
+        },
+        "heading_BcEWWA": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Residential Fees"
+          }
+        },
+        "description_7dARhN": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>This fee is typically applied when a shipment is picked up or delivered to a residence or business that is not publicly marked and it not factored into the original shipment quote. To prevent this, make sure the business name is accurately listed on the bill of lading.</p>"
+          }
+        },
+        "heading_7PW46K": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Re-class"
+          }
+        },
+        "description_JawnKF": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>If a freight contract carrier has quoted a shipment based on a freight/NMFC class, and the actual class is different for the items being shipped, a reclass adjustment will most likely be applied.</p>"
+          }
+        },
+        "heading_XPMYjL": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Holiday Shipping"
+          }
+        },
+        "description_tktE6N": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We are committed to getting you what you need when you need it. We offer a variety of shipping methods to serve your needs however, during the holiday season, all carriers are often pushed beyond their capacity. Our most economical shipping options are most affected by this but even premium shipping can be delayed. For this reason, all carriers have issued disclaimers about shipping times and most have removed their guarantees. For time critical delivery needs please call us to discuss your best options.</p>"
+          }
+        },
+        "heading_PL3pFQ": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Promotional Code & Free Shipping Disclaimer"
+          }
+        },
+        "description_BKFrPM": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>All CableOrganizer® promotional and Free Shipping codes are subject to the following rules and restrictions:</p><ul><li>Free Shipping codes apply to domestic orders only.</li><li>Promotions excludes some products including but not limited to: Cable Ramps and drop shipped products.</li><li><a href=\"https://CableOrganizer.com\" target=\"_blank\" title=\"https://CableOrganizer.com\">CableOrganizer®</a> does not guarantee the validity of shipping or promotional codes provided by other parties.</li><li>All <a href=\"https://CableOrganizer.com\" target=\"_blank\" title=\"https://CableOrganizer.com\">CableOrganizer®</a> Shipping and Promotional codes expire. Please contact a representative with any questions regarding your promotional code.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "description_cqMDLK",
+        "heading_DLcX9p",
+        "description_WdAnkb",
+        "heading_tKUX9X",
+        "description_JKfJdC",
+        "heading_3nrbVE",
+        "description_zPBWh6",
+        "heading_xfKMXK",
+        "description_Fbd8fm",
+        "heading_VkGDJ7",
+        "description_3FQ37i",
+        "heading_t8jREQ",
+        "description_fJKxVV",
+        "heading_PqeRmt",
+        "description_HxLzp7",
+        "heading_iGYGwD",
+        "description_ihBN3j",
+        "heading_ezj6wq",
+        "description_8gcXQL",
+        "heading_q78aeM",
+        "description_RCBqMb",
+        "description_nMLGmg",
+        "heading_NWkw79",
+        "description_yjttx7",
+        "heading_FYgmnC",
+        "description_qdF4pY",
+        "heading_BcEWWA",
+        "description_7dARhN",
+        "heading_7PW46K",
+        "description_JawnKF",
+        "heading_XPMYjL",
+        "description_tktE6N",
+        "heading_PL3pFQ",
+        "description_BKFrPM"
+      ],
+      "custom_css": [
+        "a {color: #fe5b00;}",
+        "h3 {color: #336699; font-weight: bold;}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "main_image_banner_YFzLAG",
+    "section_breadcrumbs_RiAw3m",
+    "text_content_LMdhax"
+  ]
+}

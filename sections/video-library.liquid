@@ -1,0 +1,218 @@
+{{ 'section-video-library.css' | asset_url | stylesheet_tag }}
+{% paginate metaobjects.video_library.values by 500 %}
+  {% for video_library in metaobjects.video_library.values %}
+    {% assign categories_list = video_library.categories | remove: '[' | remove: ']' | replace: '","', ' || ' %}
+    {% assign categories_list = categories_list |  remove: '"' |  split: ' || ' %}
+  
+    {% for category in categories_list %}
+      {% assign category = category | strip %}
+      {% unless categories contains category %}
+        {% assign categories = categories | append: category | append: "||" %}
+      {% endunless %}
+    {% endfor %}
+  {% endfor %}
+{% endpaginate %}
+{% assign unique_categories = categories | split: "||" | uniq %}
+
+<div class="video-library">
+  <div class="page-width">
+    <div class="video-container">
+      <div class="video-filter video-box">
+        <div class="filter-box">{{- 'filter-icon.svg' | inline_asset_content -}} <h5>Filters</h5></div>
+        <div class="search-box">
+          <form action="#" class="search">
+            <div class="field">
+              <span class="svg-wrapper">
+                {{- 'icon-search.svg' | inline_asset_content -}}
+              </span>
+              <input
+                class="search__input field__input"
+                id="Search-In-Template"
+                type="search"
+                name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="Search Your Words"
+                {%- if settings.predictive_search_enabled -%}
+                  role="combobox"
+                  aria-expanded="false"
+                  aria-owns="predictive-search-results"
+                  aria-controls="predictive-search-results"
+                  aria-haspopup="listbox"
+                  aria-autocomplete="list"
+                  autocorrect="off"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                {%- endif -%}
+              >
+              <label class="field__label" for="Search-In-Template">Search</label>
+            </div>
+          </form>
+        </div>
+        <ul>
+          <li>
+            <a class="active" href="javascript:void(0)">All</a>
+          </li>
+          {% assign ordered_categories = "How-Tos||Cable Sleeving, Wire Loom, & Wraps||Heat Shrink Tubing||Strippers, Crimpers, & Tools||Cable Trays||Cable Ties, Wraps, Clips, & Clamps||Cable Raceway||Wire Duct||Desk Outlets & Grommets||Desk Organizers||Electrical Supplies||Wires & Cables||Cable Cover Protection||Cable Labels & Printers||Network Products||Server Racks, Enclosures, & Accessories||Safety Equipment||Fire Protection" | split: "||" %}
+
+          {% for type in ordered_categories %}
+            {% if unique_categories contains type %}
+              <li>
+                <a href="javascript:void(0)">{{ type }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="video-library-list">
+        <ul>
+          {% paginate metaobjects.video_library.values by 500 %}
+            {% for video_library in metaobjects.video_library.values %}
+              <li class="video-lists-card">
+                <div class="video-list-content">
+                <div class="video_thumbnil">
+                  <a href="javascript:void(0)" class="play-btn" data-video="{{ video_library.youtube_video_url }}">
+                    <span></span>
+                  </a>
+                  {% if video_library.featured_image != blank %}
+                    <img
+                      src="{{ video_library.featured_image | file_url }}"
+                      width="450"
+                      height="250"
+                      loading="lazy"
+                      alt="{{ video_library.featured_image.alt |  default:  video_library.title }}"
+                      class=""
+                    >
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endif %}
+                </div>
+                <h5>{{ video_library.title }}</h5>
+                {% assign categories_list = video_library.categories | remove: '[' | remove: ']' | replace: '","', ' || ' | remove: '"' %}
+                <span class="video-type">{{ categories_list }}</span>
+                </div>
+              </li>
+            {% endfor %}
+          {% endpaginate %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="video-modal video-modal-{{ section.id }}">
+    <div class="modal-body">
+      <div class="modal-close">
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </div>
+      <div class="modal-content">
+        <iframe
+          width="740"
+          height="400"
+          id="youtube-frame"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  $(document).ready(function () {
+    $('.search-box input').on('input', function () {
+      // Get the search input value and convert it to lowercase for case-insensitive comparison
+      const searchValue = $(this).val().toLowerCase();
+
+      // Loop through all cards and check if the title matches the search value
+      $('.video-lists-card').each(function () {
+        const title = $(this).find('h5').text().toLowerCase();
+        if (title.includes(searchValue)) {
+          // If title matches, show the card
+          $(this).show();
+        } else {
+          // Otherwise, hide the card
+          $(this).hide();
+        }
+      });
+    });
+
+    $('.video-box ul li a').on('click', function (e) {
+      e.preventDefault(); // Prevent default link behavior
+      var filterText = $(this).text().split(' (')[0].trim();
+
+      $('.video-box ul li a').removeClass('active');
+      $(this).addClass('active');
+
+      $('.video-lists-card').hide();
+
+      $('.video-lists-card').each(function () {
+        var cardType = $(this).find('.video-type').text().trim();
+        if (cardType.includes(filterText) || filterText === 'All') {
+          $(this).show();
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    // Open video modal
+    $(document).on('click', '.play-btn', function () {
+      $('.video-modal.video-modal-{{ section.id }}').addClass('open');
+      $('body').addClass('modal-main');
+      var videoUrl = $(this).data('video');
+      var embedUrl = '';
+      if (videoUrl.includes('embed')) {
+        embedUrl = videoUrl;
+      } else {
+        var videoId = '';
+        var match = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/);
+        if (match && match[1]) {
+          videoId = match[1];
+          embedUrl = 'https://www.youtube.com/embed/' + videoId;
+        } else {
+          embedUrl = videoUrl;
+        }
+      }
+      $('.video-modal-{{ section.id }} #youtube-frame').attr('src', embedUrl + '?autoplay=1');
+    });
+
+    $(document).on('click', '.modal-close', function () {
+      closeModal();
+    });
+
+    $(document).on('click', '.video-modal.video-modal-{{ section.id }}', function (e) {
+      if ($(e.target).closest('.modal-body').length === 0) {
+        closeModal();
+      }
+    });
+
+    $(document).on('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    function closeModal() {
+      $('.video-modal').removeClass('open');
+      $('.video-modal #youtube-frame').attr('src', '');
+      $('body').removeClass('modal-main');
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Video Library",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Video Library"
+    }
+  ]
+}
+{% endschema %}

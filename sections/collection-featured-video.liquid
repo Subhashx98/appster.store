@@ -1,0 +1,110 @@
+{{ 'section-collection-video.css' | asset_url | stylesheet_tag }}
+
+<div class="collection-video-content">
+  {% assign block_size = section.blocks.size %}
+  {% if block_size > 0 or section.settings.heading != blank %}
+    <div class="collection-featured">
+      <div class="featured-content">
+        {% if section.settings.heading != blank %}
+          <h2>{{ section.settings.heading }}</h2>
+        {% endif %}
+
+        {% if block_size > 0 %}
+          <ul>
+            {% for block in section.blocks %}
+              {% if block.type == 'video_block' %}
+                {% if block.settings.image != blank
+                  or block.settings.title != blank
+                  or block.settings.link_url != blank
+                  or block.settings.link_text != blank
+                %}
+                  <li>
+                    {% if block.settings.image != blank %}
+                      <span>
+                        <img
+                          src="{{ block.settings.image  | image_url }}"
+                          alt=""
+                          height="100"
+                          width="150"
+                          loading="lazy"
+                        >
+                      </span>
+                    {% endif %}
+                    <div class="featured-right-title">
+                      {% if block.settings.title != blank %}
+                        <h4>{{ block.settings.title }}</h4>
+                      {% endif %}
+                      {% if block.settings.link_url != blank or block.settings.link_text != blank %}
+                        <a href="{{ block.settings.link_url }}" class="watch-video">
+                          <img
+                            src="{{ block.settings.icon  | image_url }}"
+                            alt=""
+                            height="16"
+                            width="16"
+                            loading="lazy"
+                          >
+                          {{ block.settings.link_text }}
+                        </a>
+                      {% endif %}
+                    </div>
+                  </li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% schema %}
+{
+  "name": "collection Featured Video",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_block",
+      "name": "video Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Video Image"
+        },
+        {
+          "type": "text",
+          "id": "list_title",
+          "label": "Video Title"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "collection Featured Video"
+    }
+  ]
+}
+{% endschema %}

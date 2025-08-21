@@ -11,32 +11,85 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "newsletter_banner_niTm6B": {
-      "type": "newsletter-banner",
-      "settings": {
-        "banner_text": "Let’s Stay Connected <span>Sign Up Now!</span>"
-      }
-    },
     "footer": {
       "type": "footer",
+      "blocks": {
+        "link_list_rLUXDm": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop By Category",
+            "menu": "shop-by-category"
+          }
+        },
+        "link_list_93Py9J": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Learn",
+            "menu": "learn"
+          }
+        },
+        "link_list_DTiEEU": {
+          "type": "link_list",
+          "settings": {
+            "heading": "My Account",
+            "menu": "my-account"
+          }
+        },
+        "customer_services_Rfy8qX": {
+          "type": "customer_services",
+          "settings": {
+            "service_image": "shopify://shop_images/Fast_Shipping.svg",
+            "heading_services": "Fast Shipping",
+            "text_heading": "Fast, accurate order turnarounds is one of our top priorities."
+          }
+        },
+        "customer_services_xPBNCQ": {
+          "type": "customer_services",
+          "settings": {
+            "service_image": "shopify://shop_images/Expert_Customer_Service.svg",
+            "heading_services": "Expert Customer Service",
+            "text_heading": "Our knowledgeable staff is standing by to answer your questions."
+          }
+        },
+        "customer_services_8N6kM3": {
+          "type": "customer_services",
+          "settings": {
+            "service_image": "shopify://shop_images/Huge_Selection.svg",
+            "heading_services": "Huge Selection",
+            "text_heading": "Over 100,000 products from the top brands in wire and cable management."
+          }
+        }
+      },
+      "block_order": [
+        "link_list_rLUXDm",
+        "link_list_93Py9J",
+        "link_list_DTiEEU",
+        "customer_services_Rfy8qX",
+        "customer_services_xPBNCQ",
+        "customer_services_8N6kM3"
+      ],
       "settings": {
-        "color_scheme": "scheme-a93e382d-da2b-4e2f-8043-577836846979",
-        "newsletter_enable": false,
-        "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
-        "show_social": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "payment_enable": true,
-        "show_policy": true,
-        "margin_top": 0,
-        "padding_top": 12,
-        "padding_bottom": 12
+        "footer_logo": "shopify://shop_images/white-logo.svg",
+        "show_newsletter": true,
+        "newsletter_text": "Be the First to Know!",
+        "newsletter_subtitle": "Subscribe for New Product Announcements, News and Promotions!",
+        "call_text_1": "1-833-3CABLEORG",
+        "call_text_2": "1-833-322-2536",
+        "call_text_3": "Call Us Toll Free",
+        "address": "520 Lafayette Rd. Sparta, NJ 07871",
+        "email": "sales@cableorganizer.com",
+        "social_title": "Social Media Links",
+        "facebook_url": "https://www.facebook.com/CableOrganizer",
+        "x_url": "https://x.com/CableOrganizers",
+        "instagram_url": "https://www.instagram.com/cableorganizer/",
+        "youtube_url": "https://www.youtube.com/user/CableOrganizers",
+        "linkedin_url": "https://www.linkedin.com/company/cableorganizer.com",
+        "copyright": "CableOrganizer®. All Rights Reserved.",
+        "footer_menu": "footer"
       }
     }
   },
   "order": [
-    "newsletter_banner_niTm6B",
     "footer"
   ]
 }

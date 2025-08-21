@@ -1,0 +1,62 @@
+{{ 'section-purchase-form.css' |  asset_url |  stylesheet_tag }}
+{{ 'common-form.css' | asset_url | stylesheet_tag  }}
+
+<div class="purchase-order-form">
+	<div class="page-width">
+		<div class="order-form-main">
+			<div class="order-form-info">
+				{% if section.settings.image != blank %}
+					<span class="order-form-img">
+						<img
+							src="{{ section.settings.image |  image_url  }}"
+							alt="{{ section.settings.title }}"
+							height="600"
+							width="580"
+							loading="lazy"
+						>
+					</span>
+				{% endif %}
+			</div>
+			<div class="order-form-info main-form">
+				{% if section.settings.title != blank %}
+					<h2>{{ section.settings.title }}</h2>
+				{% endif %}
+				 {% if section.blocks.size > 0 %}
+					{% for block in section.blocks %}
+					  {% if block.type == '@app' %}
+						 {% render block %}
+					  {% endif %}
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% schema %} 
+{
+	"name": "Purchase Orders Form",
+	"tag": "section",
+	"settings": [
+		{
+			"type": "image_picker",
+			"id": "image",
+			"label": "Image"
+		},
+		{
+			"type": "text",
+			"id": "title",
+			"label": "Title"
+		}
+	],
+	"blocks": [
+		{
+			"type": "@app"
+		}
+  	],
+	"presets": [
+		{
+			"name": "Purchase Orders Form"
+		}
+	]
+}
+{% endschema %}

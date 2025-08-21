@@ -1,0 +1,238 @@
+{{ 'section-search-category.css' | asset_url | stylesheet_tag }}
+{{ 'section-shop-all.css' | asset_url | stylesheet_tag }}
+
+<div class="shop-all">
+  <div class="page-width">
+    <p class="need-help"><a href="#brand-discription"> Need help to find the right choice for you? Check out our guide below! </a></p>
+    <div class="search-all-brand">
+      {% assign brand_alphabet = '#ABCDEFGHIJKLMNOPQRSTUVWXYZ' | split: '' %}
+      <!-- Search Form -->
+      <form method="get" role="search" id="search-form">
+        <div class="field">
+          <input
+            class="shop-by-brand-search-filter search__input field__input"
+            id="Search-In-Brand"
+            type="search"
+            placeholder="Search by Brand..."
+            autocomplete="off"
+          >
+          <label class="field__label" for="Search-In-Brand">Search for Brands</label>
+          <button id="search-button" class="search__button field__button">
+            <img src="{{ 'icon-search.svg' | asset_url }}" width="20" loading="lazy" height="20" alt="Search">
+            Search
+          </button>
+        </div>
+      </form>
+      <!-- Alphabate -->
+      <ul class="alphabet-filter">
+        <li><a href="javascript:void(0)" data-brand="all" class="active">All</a></li>
+        <li><a href="javascript:void(0)" data-brand="#">#</a></li>
+        {% for letter in brand_alphabet %}
+          {% unless letter == '#' %}
+            <li>
+              <a href="javascript:void(0)" data-brand="{{ letter | handle }}">{{ letter }}</a>
+            </li>
+          {% endunless %}
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- Brand List -->
+    {% paginate shop.metaobjects.manufacturer.values by 50 %}
+      <ul id="brand-list" class="brand-list">
+        {% for brand in metaobjects.manufacturer.values %}
+          {%  assign brand_url = brand.system.url %}
+          {% if brand.child_manufacturer == blank %}
+            {% assign brand_handle = brand.system.handle | handle %}
+            {% assign brand_collection = collections[brand_handle] %}
+            {% if brand_collection and brand_collection.url %}
+              {% assign brand_url = brand_collection.url %}
+            {% endif %}
+          {% endif %}
+          {% if brand_url == blank %}
+            {%  assign brand_url = "javascript:void(0)" %}
+          {% endif %}
+          <li>
+            <a href="{{ brand_url }}">
+              {% if brand.image != blank %}
+                <img
+                  src="{{ brand.image | file_url }}"
+                  width="160"
+                  height="60"
+                  loading="lazy"
+                  alt="{{ brand.title | default: shop.name }}"
+                  class=""
+                >
+              {% else %}
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Brand-no-image.svg?v=1743054199"
+                  width="60"
+                  height="60"
+                  loading="lazy"
+                  alt="{{ brand.title }}"
+                  class="placeholder-image"
+                >
+              {% endif %}
+              <span>{{ brand.title }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      <div id="paginateNext" data-next-url="{{paginate.next.url}}" style="display: none">
+        {{ paginate.next.url }}
+      </div>
+      {%- if paginate.pages > 1 -%}
+        <div id="spining_icons" class="load-more">
+          <a href="javascript:void(0)" class="load-more_btn main-btn-small btn-blue" style="display: none;">
+            Load More
+          </a>
+        </div>
+      {%- endif -%}
+    {% endpaginate %}
+  </div>
+
+  <div class="ajax-loader">
+    <div class="loader">Loading...</div>
+  </div>
+
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchBox = document.getElementById('Search-In-Brand');
+    const filterLinks = document.querySelectorAll('.alphabet-filter a');
+    const searchForm = document.getElementById('search-form');
+
+    function filterBrands(query = '', selectedBrand = 'all') {
+      const brandItems = document.querySelectorAll('#brand-list li');
+      brandItems.forEach((item) => {
+        const brandName = item.querySelector('span').textContent.trim().toLowerCase();
+        const firstChar = brandName.charAt(0).toUpperCase();
+        let shouldDisplay = false;
+
+        if (brandName.includes(query.toLowerCase())) {
+          if (selectedBrand === 'all') {
+            shouldDisplay = true;
+          } else if (selectedBrand === '#') {
+            if (!/^[A-Z]/.test(firstChar)) {
+              shouldDisplay = true;
+            }
+          } else if (firstChar === selectedBrand.toUpperCase()) {
+            shouldDisplay = true;
+          }
+        }
+
+        item.style.display = shouldDisplay ? 'block' : 'none';
+      });
+    }
+
+    if (searchBox && filterLinks.length && searchForm) {
+      searchBox.addEventListener('input', function () {
+        const query = searchBox.value;
+        const activeLetter = document.querySelector('.alphabet-filter a.active')?.dataset.brand || 'all';
+        filterBrands(query, activeLetter);
+      });
+
+      filterLinks.forEach((link) => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          const selectedBrand = event.target.dataset.brand;
+
+          filterLinks.forEach((l) => l.classList.remove('active'));
+          event.target.classList.add('active');
+
+          const query = searchBox.value;
+          filterBrands(query, selectedBrand);
+        });
+      });
+
+      searchForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+      });
+
+      // Initial render
+      filterBrands();
+    }
+
+    // Pagination logic
+    const brandList = document.getElementById('brand-list');
+    const nextUrlEl = document.getElementById('paginateNext');
+    let next_url = nextUrlEl ? nextUrlEl.dataset.nextUrl : null;
+
+    const loadMoreBtn = document.querySelector('.load-more_btn');
+    const loader = document.querySelector('.ajax-loader');
+    let loading = false;
+
+    async function getNextPage() {
+      try {
+        const res = await fetch(next_url);
+        return await res.text();
+      } catch (error) {
+        console.error('Error fetching next page:', error);
+      }
+    }
+
+    async function loadMoreBrands() {
+      if (!next_url || loading) return;
+      loading = true;
+
+      loadMoreBtn.style.display = 'none';
+      loader.style.display = 'block';
+
+      const nextPageHtml = await getNextPage();
+      const parser = new DOMParser();
+      const nextDoc = parser.parseFromString(nextPageHtml, 'text/html');
+
+      const newBrands = nextDoc.querySelectorAll('#brand-list li');
+      newBrands.forEach((item) => {
+        brandList.appendChild(item);
+      });
+
+      const newNextUrlEl = nextDoc.getElementById('paginateNext');
+      next_url = newNextUrlEl ? newNextUrlEl.dataset.nextUrl : null;
+
+      loader.style.display = 'none';
+      loadMoreBtn.style.display = next_url ? 'flex' : 'none';
+
+      loading = false;
+
+      // Re-filter after new brands are added
+      const currentQuery = searchBox?.value || '';
+      const currentFilter = document.querySelector('.alphabet-filter a.active')?.dataset.brand || 'all';
+      filterBrands(currentQuery, currentFilter);
+
+      // Auto-load next if desired (remove if not needed)
+      if (next_url) loadMoreBrands();
+    }
+
+    // Initial auto-load
+    if (next_url) {
+      loadMoreBrands();
+    }
+
+    // Scroll trigger (infinite scroll)
+    window.addEventListener('scroll', function () {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1600) {
+        loadMoreBrands();
+      }
+    });
+
+    // Enhance spinner button container
+    const spinningIcon = document.getElementById('spining_icons');
+    if (spinningIcon) {
+      spinningIcon.classList.add('loadingMore_button');
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Shop All Brand",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Shop All Brand"
+    }
+  ]
+}
+{% endschema %}

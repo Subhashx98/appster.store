@@ -1,0 +1,133 @@
+{{ 'section-brand-collection.css' | asset_url | stylesheet_tag }}
+{% if section.settings.collection_list != blank %}
+  <div class="brand-collection-block">
+    <div class="page-width">
+      <ul class="brand-collection-list no-slider-list">
+        {% for collection in section.settings.collection_list %}
+          <li>
+            <a href="{{ collection.url }}"><span class="brand-collection-img">
+              <img
+                src="{{ collection.featured_image |  image_url }}"
+                alt="{{  collection.featured_image.alt |  default: collection.title }}"
+                height="288"
+                width="288"
+                loading="lazy"
+              >
+            </span></a>
+            <a href="{{ collection.url }}">{{ collection.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="progress-main">
+        <div class="progress-bar">
+          <span class="slider__label sr-only"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<script>
+  $(document).ready(function () {
+    $('.brand-collection-block').each(function () {
+      let $container = $(this);
+      let $slider = $container.find('.brand-collection-list');
+      let $progressBar = $container.find('.progress-bar');
+      let $progressBarLabel = $container.find('.slider__label');
+      let $nextArrow = $container.find('.next');
+      let $prevArrow = $container.find('.prev');
+
+      $slider.on('init', function (event, slick) {
+         $slider.removeClass('no-slider-list');
+        const totalSlides = slick.$slides.length;
+        const slidesToShow = slick.options.slidesToShow;
+
+        if (totalSlides > slidesToShow) {
+          // Show on hover (already handled)
+          // Enable hover event to toggle progress bar and arrows
+          $container.hover(
+            function () {
+              $progressBar.show();
+              $nextArrow && $nextArrow.show();
+              $prevArrow && $prevArrow.show();
+            },
+            function () {
+              $progressBar.hide();
+              $nextArrow && $nextArrow.hide();
+              $prevArrow && $prevArrow.hide();
+            }
+          );
+        } else {
+          // No need for progress bar or arrows
+          $progressBar.hide();
+          $nextArrow && $nextArrow.hide();
+          $prevArrow && $prevArrow.hide();
+        }
+      });
+
+      // Initialize the Slick slider
+      $slider.slick({
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        initialSlide: 0,
+        infinite: false,
+        speed: 300,
+        lazyLoad: 'ondemand',
+        responsive: [
+          {
+            breakpoint: 1366,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 4,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              arrows: false,
+            },
+          },
+        ],
+      });
+
+      // Set initial progress bar state
+      let initialProgress = 20; // 20% starting background
+      $progressBar.css('background-size', initialProgress + '% 100%').attr('aria-valuenow', initialProgress);
+      $progressBarLabel.text(initialProgress + '% completed');
+
+      // Update progress bar on slide change
+      $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        let slideCount = slick.slideCount; // Total number of slides
+        let slidesToScroll = slick.options.slidesToScroll || 1; // Get current slidesToScroll (fallback to 1)
+
+        let calc = ((nextSlide + slidesToScroll) / slideCount) * 100; // Calculate responsive progress
+        calc = Math.min(calc, 100); // Prevent overflow
+
+        // Update progress bar
+        $progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
+        $progressBarLabel.text(calc.toFixed(0) + '% completed');
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Brand Collection Block",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collection List"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Collection Block"
+    }
+  ]
+}
+{% endschema %}

@@ -4,33 +4,20 @@
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
-        <div class="page-width page-width--narrow">
+        <div class="page-width page-small-width">
           {% render block %}
         </div>
       {%- when 'featured_image' -%}
         {%- if article.image -%}
           <div
-            class="article-template__hero-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+            class="article-template__hero-container page-small-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
             {{ block.shopify_attributes }}
           >
             <div
-              class="article-template__hero-{{ block.settings.image_height }} media"
-              {% if block.settings.image_height == 'adapt' and article.image %}
-                style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
-              {% endif %}
+              class="article-template__hero_image"
             >
               <img
-                srcset="
-                  {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
-                  {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
-                  {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
-                  {% if article.image.width >= 1500 %}{{ article.image | image_url: width: 1500 }} 1500w,{% endif %}
-                  {% if article.image.width >= 2200 %}{{ article.image | image_url: width: 2200 }} 2200w,{% endif %}
-                  {% if article.image.width >= 3000 %}{{ article.image | image_url: width: 3000 }} 3000w,{% endif %}
-                  {{ article.image | image_url }} {{ article.image.width }}w
-                "
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
-                src="{{ article.image | image_url: width: 1100 }}"
+                src="{{ article.image | image_url }}"
                 loading="eager"
                 fetchpriority="high"
                 width="{{ article.image.width }}"
@@ -43,7 +30,7 @@
 
       {%- when 'title' -%}
         <header
-          class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+          class="page-width page-small-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
           {{ block.shopify_attributes }}
         >
           <h1
@@ -51,6 +38,11 @@
           >
             {{ article.title | escape }}
           </h1>
+          {%- if block.settings.blog_show_cableorganizer -%}
+            <span class="cableorganizer_text">
+              {{ block.settings.cableorganizer_text }}
+            </span>
+          {%- endif -%}
           {%- if block.settings.blog_show_date -%}
             <span class="circle-divider caption-with-letter-spacing">
               {{- article.published_at | time_tag: format: 'date' -}}
@@ -65,15 +57,33 @@
 
       {%- when 'content' -%}
         <div
-          class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="article-template__content page-width page-small-width rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {{ block.shopify_attributes }}
         >
+          {%- assign button_text = block.settings.general_cta_text -%}
+          {%- assign button_url = block.settings.general_cta_url -%}
+          {%- assign article_handle = article.handle | split: '/' -%}
+
+          {% if article_handle and article_handle[0] == 'articles' %}
+            {%- assign button_text = block.settings.article_library_cta_text -%}
+            {%- assign button_url = block.settings.article_library_cta_url -%}
+          {% elsif article_handle and article_handle[0] == 'how-to' %}
+            {%- assign button_text = block.settings.how_to_cta_text -%}
+            {%- assign button_url = block.settings.how_to_cta_url -%}
+          {% endif %}
+          {% if button_text != blank and button_url != blank %}
+            <div class="go-back-btn">
+              <a href="{{ button_url }}" class="view-link" aria-label="Go back">
+                {{ button_text }}
+              </a>
+            </div>
+          {% endif %}
           {{ article.content }}
         </div>
 
       {%- when 'share' -%}
         <div
-          class="article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="article-template__social-sharing page-width page-small-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {{ block.shopify_attributes }}
         >
           {% assign share_url = request.origin | append: article.url %}
@@ -81,16 +91,58 @@
         </div>
     {%- endcase -%}
   {%- endfor -%}
-
-  <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
-      <span class="icon-wrap">
-        <span class="svg-wrapper">
-          {{- 'icon-arrow.svg' | inline_asset_content -}}
+  <div class="page-width page-small-width">
+    <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <a
+        href="{{ blog.previous_article.url }}"
+        class="article-template__link link animate-arrow {% if blog.previous_article.url == blank %}disabled{% endif %}"
+      >
+        <span class="icon-wrap">
+          <span class="svg-wrapper">
+            {{- 'icon-arrow.svg' | inline_asset_content -}}
+          </span>
         </span>
-      </span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
-    </a>
+        {{ 'blogs.article.prev_blog' | t: title: blog.title | escape }}
+      </a>
+      <ul>
+        <li>
+          <a href="{{ section.settings.facebook }}" target="_blank" class="icon" aria-label="Facebook">
+            {{ 'icon-facebook.svg' | inline_asset_content }}
+          </a>
+        </li>
+        <li>
+          <a href="{{ section.settings.instagram }}" target="_blank" class="icon" aria-label="Instagram">
+            {{ 'icon-instagram.svg' | inline_asset_content }}
+          </a>
+        </li>
+        <li>
+          <a href="{{ section.settings.twitter }}" target="_blank" class="icon" aria-label="X">
+            {{ 'icon-x.svg' | inline_asset_content }}
+          </a>
+        </li>
+        <li>
+          <a href="{{ section.settings.youtube }}" target="_blank" class="icon" aria-label="YouTube">
+            {{ 'icon-youtube.svg' | inline_asset_content }}
+          </a>
+        </li>
+        <li>
+          <a href="{{ section.settings.linkedin }}" target="_blank" class="icon" aria-label="LinkedIn">
+            {{ 'icon-linkedin.svg' | inline_asset_content }}
+          </a>
+        </li>
+      </ul>
+      <a
+        href="{{ blog.next_article.url }}"
+        class="article-template__link next-blog link animate-arrow {% if blog.next_article.url == blank %}disabled{% endif %}"
+      >
+        <span class="icon-wrap">
+          <span class="svg-wrapper">
+            {{- 'icon-arrow.svg' | inline_asset_content -}}
+          </span>
+        </span>
+        {{ 'blogs.article.next_blog' | t: title: blog.title | escape }}
+      </a>
+    </div>
   </div>
   {%- if blog.comments_enabled? -%}
     <div class="article-template__comment-wrapper background-secondary">
@@ -297,6 +349,37 @@
   "name": "t:sections.main-article.name",
   "tag": "section",
   "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Social Media"
+    },
+    {
+      "type": "text",
+      "id": "facebook",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "text",
+      "id": "instagram",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "text",
+      "id": "twitter",
+      "label": "X URL"
+    },
+    {
+      "type": "text",
+      "id": "youtube",
+      "label": "Youtube URL"
+    },
+    {
+      "type": "text",
+      "id": "linkedin",
+      "label": "Linkedin URL"
+    }
+  ],
   "blocks": [
     {
       "type": "@app"
@@ -349,13 +432,56 @@
           "id": "blog_show_author",
           "default": false,
           "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_cableorganizer",
+          "default": false,
+          "label": "Cable Organizer"
+        },
+        {
+          "type": "text",
+          "id": "cableorganizer_text",
+          "label": "Text"
         }
       ]
     },
     {
       "type": "content",
       "name": "t:sections.main-article.blocks.content.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "general_cta_text",
+          "label": "General Button Text"
+        },
+        {
+          "type": "url",
+          "id": "general_cta_url",
+          "label": "General Button Link"
+        },
+        {
+          "type": "text",
+          "id": "article_library_cta_text",
+          "label": "Article Library Button Text"
+        },
+        {
+          "type": "url",
+          "id": "article_library_cta_url",
+          "label": "Article Library Button Link"
+        },
+        {
+          "type": "text",
+          "id": "how_to_cta_text",
+          "label": "How-To Button Text"
+        },
+        {
+          "type": "url",
+          "id": "how_to_cta_url",
+          "label": "How-To Button Link"
+        }
+      ]
     },
     {
       "type": "share",

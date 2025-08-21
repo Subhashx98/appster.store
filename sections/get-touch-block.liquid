@@ -1,0 +1,146 @@
+{{ 'section-image-block.css' | asset_url | stylesheet_tag }}
+
+{%  liquid 
+    assign img_position = section.settings.image_position
+%} 
+{% if section.settings.image
+  or section.settings.title
+  or section.settings.description
+  or section.settings['contact-icon']
+  or section.settings.contact
+  or section.settings['location-icon']
+  or section.settings.address
+  or section.settings['mailbox-icon']
+  or section.settings.email != blank
+%}
+  <div class="main-container about-contact-info">
+    <div class="page-width page-small-width">
+      <div class="image-content"  data-image-position="{{ img_position }}">
+        {% if section.settings.image != blank %}
+          <div class="image-content-inner">
+            <img
+              src="{{ section.settings.image |  image_url  }}"
+              alt="{{ section.settings.title }}"
+              height="430"
+              width="600"
+              loading="lazy"
+              class="content-main-img"
+            >
+          </div>
+        {% endif %}
+
+        {% if section.settings.title != blank or section.settings.description != blank %}
+          <div class="image-content-inner">
+            {% if section.settings.title != blank %}
+              <h2>{{ section.settings.title }}</h2>
+            {% endif %}
+            {% if section.settings.description != blank %}
+              {{ section.settings.description }}
+            {% endif %}
+            <ul class="get-in-touch">
+              {% if section.settings['contact-icon'] != blank or section.settings.contact != blank %}
+                <li>
+                  <a href="tel:877692523">
+                    <img
+                      src="{{ 'contact-icon.svg' | asset_url }}"
+                      alt="{{ section.settings.contact }}"
+                      height="18"
+                      width="18"
+                      loading="lazy"
+                    >
+                    {% if section.settings.contact != blank %}
+                      {{ section.settings.contact }}
+                    {% endif %}
+                  </a>
+                </li>
+              {% endif %}
+              {% if section.settings['location-icon']
+                or section.settings.address != blank
+              %}
+                <li>
+                  
+                    <img
+                      src="{{ 'location-icon.svg' | asset_url }}"
+                      alt="{{ section.settings.address }}"
+                      height="18"
+                      width="18"
+                      loading="lazy"
+                    >
+                    {% if section.settings.address != blank %}
+                      {{ section.settings.address }}
+                    {% endif %}
+                  
+                </li>
+              {% endif %}
+              {% if section.settings['mailbox-icon'] or section.settings.email != blank %}
+                <li>
+                  <a href="mailto:sales@cableorganizer.com">
+                    <img
+                      src="{{ 'mailbox-icon.svg' | asset_url }}"
+                      alt="{{ section.settings.email }}"
+                      height="18"
+                      width="18"
+                      loading="lazy"
+                    >
+                    {% if section.settings.email != blank %}
+                      {{ section.settings.email }}
+                    {% endif %}
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Get In Touch",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+        "type": "checkbox",
+        "id": "image_position",
+        "label": "Image Position Right",
+        "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "contact",
+      "label": "Contact"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Address"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Get In Touch"
+    }
+  ]
+}
+{% endschema %}

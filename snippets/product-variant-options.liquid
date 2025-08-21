@@ -1,3 +1,18 @@
+{% unless shsd_list_options_with_values -%}
+  {%- assign shsd_list_options_with_values = product.options_with_values -%}
+{%- endunless %}
+{% unless option_selected_value %}{% assign option_selected_value = option.selected_value %}{% endunless %}
+{% unless is_shsd_parent %}{% assign is_shsd_parent = false %}{% endunless %}
+{% unless shsd_product_variants %}{% assign shsd_product_variants = product.variants %}{% endunless %}
+{% unless selected_options %}{% assign selected_options = selected_variant.options | map: 'name' %}{% endunless %}
+
+{%- liquid
+  assign variants_available_arr = shsd_product_variants | map: 'available'
+  assign variants_option1_arr = shsd_product_variants | map: 'option1'
+  assign variants_option2_arr = shsd_product_variants | map: 'option2'
+  assign variants_option3_arr = shsd_product_variants | map: 'option3'
+-%}
+
 {% comment %}
   Renders product variant options
 
@@ -18,9 +33,70 @@
 {% endcomment %}
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
+
+  assign sorted_values = ''
+
+  if option.name == 'Nominal Diameter'
+    assign nominal_order = '0.03",0.07",0.11",0.19",0.20",0.22",0.24",1/32",1/16",3/64",5/64",7/64",9/64",11/64",13/64",3/32",5/32",1/8",3/16",1/5",8/25",19/25",11/20",1/4",5/16",3/8",7/16",1/2",9/16",5/8",11/16",3/4",25/32",13/16",7/8",15/16",0.472",0.71",0.785",0.83",0.92",0.93",0.98",1",1 1/8",1.18",1 1/4",1.34",1.35",1.38",1.43",1 3/8",1 7/16",1 1/2",1 9/16",1 5/8",1.59",1.81",1 3/4",1 7/8",2",2.07",2 3/16",2 1/4",2.36",2 3/8",2 1/2",2.54",2 5/8",2 3/4",2 7/8",3",3 1/8",3 1/4",3.34",3.38",3 1/2",3.63",3.66",3 3/4",4",4 1/4",4 1/2",4 3/4",5",5 1/2",6 1/2",6.88",7",7 1/2",8",9",10",11",12",13",14",16",17",18",20",22",24",28",0 AWG,1 AWG,2 AWG,3 AWG,4 AWG,5 AWG,6 AWG,7 AWG,8 AWG,9 AWG,10 AWG,11 AWG,12 AWG,13 AWG,14 AWG,15 AWG,16 AWG,17 AWG,18 AWG,19 AWG,20 AWG,21 AWG,22 AWG,23 AWG,24 AWG' | split: ','
+
+    for nominal in nominal_order
+      if option.values contains nominal
+        assign sorted_values = sorted_values | append: nominal | append: '|||'
+      endif
+    endfor
+
+    for option_value in option.values
+      unless nominal_order contains option_value
+        assign sorted_values = sorted_values | append: option_value | append: '|||'
+      endunless
+    endfor
+
+    assign sorted_values = sorted_values | split: '|||'
+
+  elsif option.name == 'Length'
+    assign length_order = 'Each|2 piece pack|3 piece pack|4 piece pack|5 piece pack|6 piece pack|8 piece pack|9 piece pack|10 piece pack|12 piece pack|15 piece pack|20 piece pack|25 piece pack|30 piece pack|35 piece pack|40 piece pack|48 piece pack|50 piece pack|60 piece pack|63 piece pack|70 piece pack|88 piece pack|90 piece pack|96 piece pack|100 piece pack|125 piece pack|150 piece pack|200 piece pack|250 piece pack|500 piece pack|900 piece spool|1,000 piece pack|5,000 piece pack|10,000 piece pack|1 ft cuts|2 ft cuts|2 ft spool|3 ft cuts|3 ft spool|4 ft cuts|4 ft spool|5 ft cuts|5 ft spool|6 ft cuts|6 ft spool|7 ft cuts|7 ft spool|8 ft cuts|8 ft spool|9 ft cuts|9 ft spool|9.7 ft cut|10 ft cuts|10 ft spool|12 ft cuts|12 ft spool|15 ft cuts|15 ft spool|20 ft cuts|20 ft spool|25 ft cuts|25 ft piece|25 ft spool|30 ft spool|40 ft spool|49 ft spool|50 ft spool|60 ft spool|65 ft spool|75 ft spool|75 ft piece|80 ft spool|82 ft cut|82 ft spool|98 ft spool|100 ft spool|110 ft spool|115 ft spool|120 ft spool|125 ft spool|135 ft spool|150 ft spool|164 ft spool|165 ft spool|200 ft spool|225 ft spool|235 ft spool|246 ft spool|250 ft spool|275 ft spool|285 ft spool|300 ft spool|325 ft spool|328 ft spool|400 ft spool|450 ft spool|492 ft spool|500 ft spool|600 ft spool|600 piece spool|650 ft spool|700 ft spool|750 ft spool|800 ft spool|900 ft spool|1,000 ft spool|1,500 ft spool|1,700 ft spool|2,000 ft spool|2,750 ft spool|3,000 ft spool|2,000 contact reel|2,500 contact reel|3,200 contact reel|4,000 contact reel|750 ft lacing tube|1,500 ft lacing tube' | split: '|'
+    for length in length_order
+      if option.values contains length
+        assign sorted_values = sorted_values | append: length | append: '|||'
+      endif
+    endfor
+
+    for option_value in option.values
+      unless length_order contains option_value
+        assign sorted_values = sorted_values | append: option_value | append: '|||'
+      endunless
+    endfor
+
+    assign sorted_values = sorted_values | split: '|||'
+  else
+    assign sorted_values = option.values | sort
+  endif
 -%}
 
-{%- for value in option.values -%}
+{%- for value_o in sorted_values -%}
+  {% assign value = value_o %}
+  {% if is_shsd_parent %}
+    {% assign value = shsd_list_options_with_values
+      | where: 'position', option.position
+      | map: 'values'
+      | where: 'name', value_o
+      | first
+    %}
+  {% else %}
+    {% assign value_from_options = option.values | where: 'name', value_o | first %}
+    {% if value_from_options %}
+      {% assign value = value_from_options %}
+    {% endif %}
+  {% endif %}
+
+  {% assign value_selected = value.selected %}
+  {% if is_shsd_parent %}
+    {% assign value_selected = false %}
+    {% if option_selected_value == value %}
+      {% assign value_selected = true %}
+    {% endif %}
+  {% endif %}
+
   {%- liquid
     assign swatch_focal_point = null
     if value.swatch.image
@@ -36,6 +112,27 @@
     assign option_disabled = true
     if value.available
       assign option_disabled = false
+    endif
+
+    if is_shsd_parent
+      assign option_disabled = true
+
+      for option1_name in variants_option1_arr
+        case option.position
+          when 1
+            if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+              assign option_disabled = false
+            endif
+          when 2
+            if option1_name == selected_options[0] and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+              assign option_disabled = false
+            endif
+          when 3
+            if option1_name == selected_options[0] and variants_option2_arr[forloop.index0] == selected_options[1] and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+              assign option_disabled = false
+            endif
+        endcase
+      endfor
     endif
   -%}
 
@@ -57,7 +154,6 @@
       {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
     </span>
   {%- endcapture -%}
-
   {%- if picker_type == 'swatch' -%}
     {%- capture help_text -%}
       <span class="visually-hidden">{{ value | escape }}</span>
@@ -70,7 +166,7 @@
       value: value | escape,
       swatch: value.swatch,
       product_form_id: product_form_id,
-      checked: value.selected,
+      checked: value_selected,
       visually_disabled: option_disabled,
       shape: block.settings.swatch_shape,
       help_text: help_text,
@@ -78,34 +174,37 @@
     %}
   {%- elsif picker_type == 'button' -%}
     <input
-      type="radio"
-      id="{{ input_id }}"
-      name="{{ input_name | escape }}"
-      value="{{ value | escape }}"
-      form="{{ product_form_id }}"
-      {% if value.selected %}
+      type='radio'
+      id='{{ input_id }}'
+      name='{{ input_name | escape }}'
+      value='{{ value | escape }}'
+      form='{{ product_form_id }}'
+      {% if value_selected %}
         checked
       {% endif %}
       {% if option_disabled %}
-        class="disabled"
+        class='disabled'
       {% endif %}
       {{ input_dataset }}
     >
-    <label for="{{ input_id }}">
+    <label for='{{ input_id }}'>
       {{ value -}}
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
-      id="{{ input_id }}"
-      value="{{ value | escape }}"
-      {% if value.selected %}
-        selected="selected"
+      id='{{ input_id }}'
+      value='{{ value | escape }}'
+      {% if value_selected %}
+        selected='selected'
+      {% endif %}
+      {% if option_disabled %}
+        class='option_inactive'
       {% endif %}
       {% if swatch_value and picker_type == 'swatch_dropdown' %}
-        data-option-swatch-value="{{ swatch_value }}"
+        data-option-swatch-value='{{ swatch_value }}'
         {% if swatch_focal_point %}
-          data-option-swatch-focal-point="{{ swatch_focal_point }}"
+          data-option-swatch-focal-point='{{ swatch_focal_point }}'
         {% endif %}
       {% endif %}
       {{ input_dataset }}

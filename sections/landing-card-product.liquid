@@ -1,0 +1,121 @@
+{{ 'section-landing-card.css' | asset_url | stylesheet_tag }}
+<div class="landing-cards-main">
+  <div class="page-width page-small-width">
+    <div class="landing-cards-content">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      <div class="landing-cards-main">
+        {% for block in section.blocks %}
+          {% if block.type == 'landing_block' %}
+            {% if block.settings.product_img != blank
+              or block.settings.logo != blank
+              or block.settings.title != blank
+              or block.settings.price != blank
+              or block.settings.link != blank
+              or block.settings.cta_text != blank
+            %}
+              <div class="landing-card-block">
+                {% if block.settings.product_img != blank %}
+                  <span class="landing-card-img">
+                    <img
+                      src="{{ block.settings.product_img |  image_url }}"
+                      alt="{{ section.settings.product_img.alt | default: 'Product Image' }}"
+                      height="180"
+                      width="150"
+                      loading="lazy"
+                    >
+                  </span>
+                {% endif %}
+                {% if block.settings.logo != blank
+                  or block.settings.title != blank
+                  or block.settings.price != blank
+                  or block.settings.link != blank
+                  or block.settings.cta_text != blank
+                %}
+                  <div class="card-right-text">
+                    {% if block.settings.logo != blank %}
+                      <img
+                        src="{{ block.settings.logo |  image_url }}"
+                        alt="{{ section.settings.logo.alt | default: 'Logo' }}"
+                        height="42"
+                        width="140"
+                        loading="lazy"
+                        class="card-logo"
+                      >
+                    {% endif %}
+                    {% if block.settings.title != blank %}
+                      <h3>{{ block.settings.title }}</h3>
+                    {% endif %}
+                    {% if block.settings.price != blank %}
+                      <span class="card-price">{{ block.settings.price }}</span>
+                    {% endif %}
+                    {% if block.settings.link != blank and block.settings.cta_text != blank %}
+                      <a href="{{ block.settings.link }}" class="main-btn-small">{{ block.settings.cta_text }}</a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Landing Card Product",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "landing_block",
+      "name": "Card Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_img",
+          "label": "Product Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Card Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,104 @@
+{{ 'section-brand-collection.css' | asset_url | stylesheet_tag }}
+{% if section.settings.documents != blank %}
+  <div class="brand-document brand-document-{{ section.id }}">
+    <div class="page-width">
+      {% if section.settings.heading != blank %}
+        <h2 class="section-main-title">
+          {% if section.settings.heading != blank %}
+            {{ section.settings.heading }}
+          {% endif %}
+        </h2>
+      {% endif %}
+      <ul class="brand-collection-list brand-list-slider">
+        {% for document in section.settings.documents %}
+          <li class="slick-slide">
+            <div class="brand-collection-item">
+              <span class="brand-collection-img">
+                {% if document.image %}
+                  <img
+                    src="{{ document.image | image_url }}"
+                    alt="{{ document.image.alt | default: document.title }}"
+                    height="288"
+                    width="288"
+                    loading="lazy"
+                  >
+                {% elsif document.document.value.preview_image %}
+                  <img
+                    src="{{ document.document.value.preview_image | image_url }}"
+                    alt="{{ document.image.alt | default: document.title }}"
+                    height="288"
+                    width="288"
+                    loading="lazy"
+                  >
+                {% else %}
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/documents-no-image.png"
+                    alt="{{ document.title }}"
+                    height="288"
+                    width="288"
+                    loading="lazy"
+                  >
+                {% endif %}
+              </span>
+              <a href="{{ document.document.value.url }}" target="_blank">{{ document.title }}</a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% comment %} Script {% endcomment %}
+  <script>
+    // Slider
+    $(document).ready(function () {
+      $('.brand-document-{{ section.id }} .brand-list-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        rows: 1,
+        infinite: false,
+        speed: 300,
+        lazyLoad: 'ondemand',
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              infinite: false,
+            },
+          },
+        ],
+      });
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Brand Collection Document",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "heading"
+    },
+    {
+      "id": "documents",
+      "label": "Documents",
+      "type": "metaobject_list",
+      "metaobject_type": "documents"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Collection Document"
+    }
+  ]
+}
+{% endschema %}

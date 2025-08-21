@@ -1,0 +1,163 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "brand_specific_banner_WhKeNV": {
+      "type": "brand-specific-banner",
+      "settings": {
+        "image": "{{ collection.metafields.custom.manufacturers.value.banner_image.value }}",
+        "brand_logo": "{{ collection.metafields.custom.manufacturers.value.logo.value }}"
+      }
+    },
+    "brand_collection_block_98GF7J": {
+      "type": "brand-collection-block",
+      "settings": {
+        "collection_list": "{{ collection.metafields.custom.manufacturers.value.collections.value }}"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "brand_collection_document_EwRz4F": {
+      "type": "brand-collection-document",
+      "settings": {
+        "heading": "Documents",
+        "documents": "{{ collection.metafields.custom.manufacturers.value.documents.value }}"
+      }
+    },
+    "about_specific_brand_MG3deX": {
+      "type": "about-specific-brand",
+      "blocks": {
+        "about_brand_DKdkPD": {
+          "type": "about_brand",
+          "settings": {
+            "image": "{{ collection.metafields.custom.manufacturers.value.image_1.value }}",
+            "description": "{{ collection.metafields.custom.manufacturers.value.content_1 | metafield_tag }}"
+          }
+        },
+        "about_brand_f4PNLc": {
+          "type": "about_brand",
+          "settings": {
+            "image": "{{ collection.metafields.custom.manufacturers.value.image_2.value }}",
+            "description": "{{ collection.metafields.custom.manufacturers.value.content_2 | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "about_brand_DKdkPD",
+        "about_brand_f4PNLc"
+      ],
+      "settings": {
+        "heading": "About {{ collection.metafields.custom.manufacturers.value.title.value }}"
+      }
+    },
+    "featured_resources_7DQ4tD": {
+      "type": "featured-resources",
+      "settings": {
+        "heading": "Resources",
+        "background_color": false,
+        "resources": "{{ collection.metafields.custom.manufacturers.value.resources.value }}"
+      }
+    },
+    "featured_resources_EeRDEq": {
+      "type": "featured-resources",
+      "settings": {
+        "heading": "Featured Video",
+        "background_color": true,
+        "resources": "{{ collection.metafields.custom.manufacturers.value.featured_videos.value }}"
+      }
+    },
+    "category_videos_MAkxWC": {
+      "type": "category-videos",
+      "blocks": {
+        "link_list_GGncAw": {
+          "type": "link_list",
+          "settings": {
+            "title": "General",
+            "menu": "techflex-category-videos-general"
+          }
+        },
+        "link_list_W9yt6H": {
+          "type": "link_list",
+          "settings": {
+            "title": "Heavy Duty",
+            "menu": "techflex-category-videos-heavy-duty"
+          }
+        },
+        "link_list_BnPgCz": {
+          "type": "link_list",
+          "settings": {
+            "title": "High Temperature",
+            "menu": "techflex-category-videos-high-temperature"
+          }
+        },
+        "link_list_RpWfNk": {
+          "type": "link_list",
+          "settings": {
+            "title": "Metal Shielding",
+            "menu": "techflex-category-videos-metal-shielding"
+          }
+        },
+        "link_list_gqBNji": {
+          "type": "link_list",
+          "settings": {
+            "title": "Specialty",
+            "menu": "techflex-category-videos-specialty"
+          }
+        },
+        "link_list_FwFF7H": {
+          "type": "link_list",
+          "settings": {
+            "title": "Advanced Engineering",
+            "menu": "techflex-category-videos-advanced-engineering"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_GGncAw",
+        "link_list_W9yt6H",
+        "link_list_BnPgCz",
+        "link_list_RpWfNk",
+        "link_list_gqBNji",
+        "link_list_FwFF7H"
+      ],
+      "settings": {
+        "heading": "Category Videos"
+      }
+    }
+  },
+  "order": [
+    "brand_specific_banner_WhKeNV",
+    "brand_collection_block_98GF7J",
+    "product-grid",
+    "brand_collection_document_EwRz4F",
+    "about_specific_brand_MG3deX",
+    "featured_resources_7DQ4tD",
+    "featured_resources_EeRDEq",
+    "category_videos_MAkxWC"
+  ]
+}

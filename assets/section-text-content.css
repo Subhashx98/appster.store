@@ -1,0 +1,63 @@
+.policy-content{
+    padding: 60px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.policy-content p:first-child,
+.policy-content ul:first-child,
+.policy-content > h3:first-child{
+    margin: 0px;
+}
+.policy-content p,
+.policy-content ul {
+    margin: 14px 0 0;
+    width: 100%;
+}
+.policy-content p,
+.policy-content ul li,
+.policy-content ul li a{
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 26px;
+    text-decoration: none;
+}
+.policy-content a{ 
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.6);
+}
+.policy-content ul li a:hover,
+.policy-content a:hover{
+    color: var(--primary-blue-color);
+}
+.policy-content strong{
+    color: var(--black-color);
+    font-weight: 600;
+}
+.policy-content div p,
+.policy-content div ul{
+    margin: 14px 0 0;
+}
+.policy-content h3{
+    font-family: var(--font-family-open);
+    font-weight: 500;
+    width: 100%;
+    margin-top: 32px;
+}
+.policy-content ul {
+    padding-left: 12px;
+}
+.policy-content ul li{
+    padding-top:4px;
+}
+.policy-content ul li:first-child{
+    padding-top: 0px;
+}
+.policy-content ul li::marker{
+    font-size: 10px;
+}
+/* responsive */
+@media only screen and (max-width: 991px) {
+    .policy-content p, .policy-content ul {margin: 20px 0 0;}
+    .policy-content h3{ margin-top: 20px; font-size: 18px;}
+    .policy-content p, .policy-content ul li, .policy-content ul li a{ line-height: 22px; font-size: 14px;}
+}

@@ -1,0 +1,46 @@
+.purchase-order-form{
+    background: var(--light-grey-color);
+    padding: 80px 0px;
+}
+.purchase-order-form .order-form-main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 80px;
+    background: var(--white-color);
+    padding: 80px;
+    border-radius: 6px;
+}
+.purchase-order-form .order-form-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: calc(50% - 40px);
+}
+.purchase-order-form .order-form-info h2{
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+.purchase-order-form .order-form-img{
+    height: 600px;
+    width: 100%;
+    display: flex;
+}
+.purchase-order-form .order-form-img img{
+    object-fit: cover;
+    max-height: 600px;
+    height: 100%;
+    border-radius: 6px;
+}
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+    .purchase-order-form .order-form-main{ gap: 40px; padding: 40px; }
+    .purchase-order-form .order-form-info{  width: calc(50% - 20px);}
+}
+@media only screen and (max-width: 991px) {
+    .purchase-order-form{ padding: 40px 0px;}
+    .purchase-order-form .order-form-main{ padding: 24px; gap: 28px;}
+    .purchase-order-form .order-form-info{ width: 100%;}
+    .purchase-order-form .order-form-info h2{ font-size: 20px; margin-bottom: 10px;}
+    .purchase-order-form .order-form-img{height: 260px;}
+}

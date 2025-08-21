@@ -1,0 +1,389 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "section_breadcrumbs_Xcdfqa": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "learning_home_banner_q48dcE": {
+      "type": "learning-home-banner",
+      "blocks": {
+        "slider_block_EnGrhk": {
+          "type": "slider_block",
+          "settings": {
+            "bg_img": "shopify://shop_images/Heatshrink-Article-Banner.jpg",
+            "slider_heading": "How to Use Heat Shrink Tubing",
+            "slider_content": "",
+            "cta_text": "Read Now",
+            "cta_url": "shopify://blogs/articles/how-do-i-use-heat-shrink-tubing"
+          }
+        },
+        "slider_block_3XcqiN": {
+          "type": "slider_block",
+          "settings": {
+            "bg_img": "shopify://shop_images/BraidedSleeving-Article-Banner.jpg",
+            "slider_heading": "Expandable Braided Sleeving Cutting Guide",
+            "slider_content": "",
+            "cta_text": "Read Now",
+            "cta_url": "shopify://blogs/articles/expandable-braided-sleeving-cutting-guide"
+          }
+        },
+        "slider_block_Yyegg3": {
+          "type": "slider_block",
+          "settings": {
+            "bg_img": "shopify://shop_images/HomeOffice-Article-Banner.jpg",
+            "slider_heading": "10 Simple Cable Organization Tips",
+            "slider_content": "For Your Home Office!",
+            "cta_text": "Read Now",
+            "cta_url": "shopify://blogs/articles/10-simple-cable-organization-tips-for-your-home-office"
+          }
+        },
+        "icon_text_block_jikXGM": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/How-Tos.svg",
+            "title": "How-Tos",
+            "page_url": "shopify://blogs/how-to"
+          }
+        },
+        "icon_text_block_LPwdU9": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/FAQs.svg",
+            "title": "FAQs",
+            "page_url": "shopify://pages/faq"
+          }
+        },
+        "icon_text_block_B7GThb": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/Articles.svg",
+            "title": "Articles",
+            "page_url": "shopify://blogs/articles"
+          }
+        },
+        "icon_text_block_eBYp6P": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/Comparison_Charts.svg",
+            "title": "Comparison Charts",
+            "page_url": "shopify://pages/product-comparison-charts"
+          }
+        },
+        "icon_text_block_Qbfhiz": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/Product_Reference.svg",
+            "title": "Product Reference",
+            "page_url": "shopify://pages/product-references"
+          }
+        },
+        "icon_text_block_PBKjgq": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/Videos.svg",
+            "title": "Videos",
+            "page_url": "shopify://pages/learning-center-video-library"
+          }
+        },
+        "icon_text_block_Rd8q8i": {
+          "type": "icon_text_block",
+          "settings": {
+            "icon": "shopify://shop_images/Glossary.svg",
+            "title": "Glossary",
+            "page_url": "shopify://pages/glossary"
+          }
+        }
+      },
+      "block_order": [
+        "slider_block_EnGrhk",
+        "slider_block_3XcqiN",
+        "slider_block_Yyegg3",
+        "icon_text_block_jikXGM",
+        "icon_text_block_LPwdU9",
+        "icon_text_block_B7GThb",
+        "icon_text_block_eBYp6P",
+        "icon_text_block_Qbfhiz",
+        "icon_text_block_PBKjgq",
+        "icon_text_block_Rd8q8i"
+      ],
+      "settings": {
+        "heading": "Learning Center"
+      }
+    },
+    "learning_how_to_9nGyFR": {
+      "type": "learning-how-to",
+      "blocks": {
+        "article_block_jVezRx": {
+          "type": "article_block",
+          "settings": {
+            "articles": "articles/essential-cable-management-tools-every-tech-needs"
+          }
+        },
+        "article_block_dPRwjg": {
+          "type": "article_block",
+          "settings": {
+            "articles": "articles/comparing-bumble-bee®-and-yellow-jacket®-cable-protectors"
+          }
+        },
+        "article_block_TqmcxB": {
+          "type": "article_block",
+          "settings": {
+            "articles": "articles/hdmi®-cable-q-a"
+          }
+        },
+        "article_block_QwgJRt": {
+          "type": "article_block",
+          "settings": {
+            "articles": "how-to/how-to-install-a-66-connecting-block"
+          }
+        },
+        "article_block_4kn6QU": {
+          "type": "article_block",
+          "settings": {
+            "articles": "how-to/how-to-install-a-110-wiring-block"
+          }
+        },
+        "article_block_RxFbRB": {
+          "type": "article_block",
+          "settings": {
+            "articles": "articles/10-ways-to-creatively-use-braided-sleeving-for-cable-management-applications-and-more"
+          }
+        },
+        "article_block_VcJ9Dx": {
+          "type": "article_block",
+          "settings": {
+            "articles": "articles/label-printer-tip-and-advice-center-labels-for-cable-management"
+          }
+        },
+        "article_block_qrVcha": {
+          "type": "article_block",
+          "settings": {
+            "articles": "articles/going-fishing-if-you-are-running-cable-it-s-a-wise-choice"
+          }
+        }
+      },
+      "block_order": [
+        "article_block_jVezRx",
+        "article_block_dPRwjg",
+        "article_block_TqmcxB",
+        "article_block_QwgJRt",
+        "article_block_4kn6QU",
+        "article_block_RxFbRB",
+        "article_block_VcJ9Dx",
+        "article_block_qrVcha"
+      ],
+      "settings": {
+        "title": "How-To",
+        "cta_text": "View All",
+        "cta_url": "shopify://blogs/how-to"
+      }
+    },
+    "learning_home_faqs_tdJJKj": {
+      "type": "learning-home-faqs",
+      "blocks": {
+        "icon_block_pr8TLP": {
+          "type": "icon_block",
+          "disabled": true,
+          "settings": {
+            "link": "shopify://pages/contact",
+            "icon": "shopify://shop_images/Customer_Service.svg",
+            "title": "Customer Service"
+          }
+        },
+        "icon_block_eiJPm8": {
+          "type": "icon_block",
+          "settings": {
+            "link": "shopify://metaobjects/faqs/cable-management",
+            "icon": "shopify://shop_images/Cable_Management.svg",
+            "title": "Cable Management"
+          }
+        },
+        "icon_block_MJgUqA": {
+          "type": "icon_block",
+          "settings": {
+            "link": "shopify://metaobjects/faqs/desk-power-management",
+            "icon": "shopify://shop_images/Desk_Power_Management.svg",
+            "title": "Desk Power & Management"
+          }
+        },
+        "icon_block_HPWU3p": {
+          "type": "icon_block",
+          "settings": {
+            "link": "shopify://metaobjects/faqs/it-networking-supplies",
+            "icon": "shopify://shop_images/IT_Networking_Supplies.svg",
+            "title": "IT & Networking Supplies"
+          }
+        },
+        "icon_block_N7rjfE": {
+          "type": "icon_block",
+          "settings": {
+            "link": "shopify://metaobjects/faqs/safety-protection",
+            "icon": "shopify://shop_images/Safety_Protection.svg",
+            "title": "Safety & Protection"
+          }
+        },
+        "icon_block_cbEmW4": {
+          "type": "icon_block",
+          "settings": {
+            "link": "shopify://metaobjects/faqs/security-surveillance",
+            "icon": "shopify://shop_images/Security_Surveillance.svg",
+            "title": "Security & Surveillance"
+          }
+        },
+        "icon_block_XbL4H6": {
+          "type": "icon_block",
+          "settings": {
+            "link": "shopify://metaobjects/faqs/electrical-supplies",
+            "icon": "shopify://shop_images/Electrical_Supplies.svg",
+            "title": "Electrical Supplies"
+          }
+        },
+        "icon_block_rDnxyf": {
+          "type": "icon_block",
+          "settings": {
+            "link": "shopify://metaobjects/faqs/installation-termination",
+            "icon": "shopify://shop_images/Installation_Termination.svg",
+            "title": "Installation & Termination"
+          }
+        },
+        "icon_block_znawUp": {
+          "type": "icon_block",
+          "settings": {
+            "link": "shopify://metaobjects/faqs/tools-accessories",
+            "icon": "shopify://shop_images/Tools_Accessories.svg",
+            "title": "Tools & Accessories"
+          }
+        }
+      },
+      "block_order": [
+        "icon_block_pr8TLP",
+        "icon_block_eiJPm8",
+        "icon_block_MJgUqA",
+        "icon_block_HPWU3p",
+        "icon_block_N7rjfE",
+        "icon_block_cbEmW4",
+        "icon_block_XbL4H6",
+        "icon_block_rDnxyf",
+        "icon_block_znawUp"
+      ],
+      "settings": {
+        "heading": "FAQs",
+        "content": "Have any more questions about our products? <a href=\"/pages/contact\" title=\"Contact\">Contact us here.</a>"
+      }
+    },
+    "learning_home_article_7bbcnL": {
+      "type": "learning-home-article",
+      "settings": {
+        "heading": "Articles",
+        "post_limit": 8,
+        "blog": "articles",
+        "show_image": true,
+        "show_date": true,
+        "show_learn_more": true,
+        "show_author": true,
+        "cta_text": "View All",
+        "cta_url": "shopify://blogs/articles"
+      }
+    },
+    "learning_comparison_charts_ptV6xT": {
+      "type": "learning-comparison-charts",
+      "settings": {
+        "heading": "Product Comparison Charts",
+        "product_comparison_charts": [
+          "cable-ties-cable-tie-gun",
+          "braided-sleeving",
+          "cables",
+          "heat-shrink",
+          "fire-safety-protection",
+          "cord-covers",
+          "fiber-optic",
+          "racks-enclosures"
+        ]
+      }
+    },
+    "learning_product_references_Jiyrjm": {
+      "type": "learning-product-references",
+      "settings": {
+        "title": "Product References",
+        "cta_text": "View All",
+        "cta_url": "shopify://pages/product-references",
+        "product_references": [
+          "ratings",
+          "heat-shrink",
+          "racks-enclosures",
+          "desktop-outlets",
+          "surge-suppression",
+          "powerflor",
+          "power-distribution",
+          "braided-sleeving",
+          "test-equipment",
+          "tools",
+          "cables",
+          "fire-protection",
+          "wire-loom"
+        ]
+      }
+    },
+    "learning_home_video_FpA47R": {
+      "type": "learning-home-video",
+      "settings": {
+        "title": "Videos",
+        "cta_text": "View All",
+        "cta_link": "shopify://pages/learning-center-video-library",
+        "video": [
+          "abbeon-aztc-20-compact-thermocutter",
+          "vanco-flat-panel-tv-bulk-cable-wall-plate",
+          "3mr-commandtm-adhesive-hooks-and-hangers",
+          "shrinkflex-breakout-boots",
+          "cable-tie-gun",
+          "zippertubing-prt-wrap-around-heat-shrink",
+          "triplett-true-rms-9045-digital-multimeter",
+          "triplett-breaker-sniff-it",
+          "jokarir-pc-cat-twisted-pair-cable-stripper",
+          "greenleer-kwik-strippertm",
+          "trend-networks-navitek-animation",
+          "jokarir-secura-2k-wire-stripper"
+        ]
+      }
+    },
+    "search_category_bE6JkB": {
+      "type": "search-category",
+      "settings": {
+        "search_text": "",
+        "show_go_back": false,
+        "show_heading": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_breadcrumbs_Xcdfqa",
+    "learning_home_banner_q48dcE",
+    "learning_how_to_9nGyFR",
+    "learning_home_faqs_tdJJKj",
+    "learning_home_article_7bbcnL",
+    "learning_comparison_charts_ptV6xT",
+    "learning_product_references_Jiyrjm",
+    "learning_home_video_FpA47R",
+    "search_category_bE6JkB"
+  ]
+}

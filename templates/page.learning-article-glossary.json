@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "main_image_banner_YyTCfD": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Glossary"
+      }
+    },
+    "section_breadcrumbs_8cAziM": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "search_category_a3XBPN": {
+      "type": "search-category",
+      "custom_css": [
+        ".section-main-title {color: #085284; font-size: 16px; font-family: Open Sans, sans-serif; font-weight:600;}"
+      ],
+      "settings": {
+        "search_text": "If you need technical terms defined, then you've come to the right place! Between our numerous categorical glossaries, you'll find thousands of definitions right at your fingertips.",
+        "show_go_back": true,
+        "show_heading": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_image_banner_YyTCfD",
+    "section_breadcrumbs_8cAziM",
+    "search_category_a3XBPN"
+  ]
+}

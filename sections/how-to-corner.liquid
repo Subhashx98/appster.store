@@ -1,0 +1,153 @@
+{{ 'section-how-to.css' | asset_url | stylesheet_tag }}
+{{ 'section-search-category.css' | asset_url | stylesheet_tag }}
+
+<div class="how-to-corner">
+	<div class="page-width">
+		<div class="search-how-to">
+			{% assign brand_alphabet = '#ABCDEFGHIJKLMNOPQRSTUVWXYZ' | split: '' %}
+			<div class="search-all-brand">
+				{%- render 'go-back-link' -%}
+				<!-- Search Form -->
+				<form method="get" role="search" id="search-form">
+				  <div class="field">
+					<input
+					  class="shop-by-brand-search-filter search__input field__input"
+					  id="Search-In-Brand"
+					  type="search"
+					  placeholder="Search For Products"
+					  autocomplete="off"
+					>
+					<label class="field__label" for="Search-In-Brand">Search For Products</label>
+					<button id="search-button" class="search__button field__button">
+					  <img src="{{ 'icon-search.svg' | asset_url }}" width="20" loading="lazy" height="20" alt="Search">
+					  Search
+					</button>
+				  </div>
+				</form>
+				<!-- Alphabate -->
+				<ul class="alphabet-filter">
+				  <li><a href="javascript:void(0)" data-brand="all" class="active">All</a></li>
+				  <li><a href="javascript:void(0)" data-brand="#">#</a></li>
+				  {% for letter in brand_alphabet %}
+					{% unless letter == '#' %}
+					  <li>
+						<a href="javascript:void(0)" data-brand="{{ letter | handle }}">{{ letter }}</a>
+					  </li>
+					{% endunless %}
+				  {% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="how-blog-list" id="how-blog-list">
+			{%- for article in section.settings.blog.articles  -%}
+				<div class="how-blog-item">
+					{%- render 'article-card',
+						article: article,
+						media_height: section.settings.image_height,
+						media_aspect_ratio: article.image.aspect_ratio,
+						show_image: section.settings.show_image,
+						show_excerpt: true
+					-%}
+				</div>
+			{% endfor %}
+		</div>
+    <div id="no-articles-message" style="display:none; text-align:center; padding: 20px;">Article not found</div>
+		{% comment %} <div class="load-more-article">
+			<a href="#" class="main-btn-large btn-blue">Load More</a>
+		</div> {% endcomment %}
+	</div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const searchBox = document.getElementById('Search-In-Brand');
+  const filterLinks = document.querySelectorAll('.alphabet-filter a');
+  const searchForm = document.getElementById('search-form');
+  const noArticlesMessage = document.getElementById('no-articles-message');
+
+  function filterBrands(query = '', selectedBrand = 'all') {
+    const brandItems = document.querySelectorAll('#how-blog-list .how-blog-item');
+    let visibleCount = 0;
+
+    brandItems.forEach((item) => {
+      const blogTitleEl = item.querySelector('.card__information .card__heading');
+      const blogTitle = blogTitleEl ? blogTitleEl.textContent.trim().toLowerCase() : '';
+      const firstChar = blogTitle.charAt(0).toUpperCase();
+
+      let shouldDisplay = false;
+
+      if (blogTitle.includes(query.toLowerCase())) {
+        if (selectedBrand === 'all') {
+          shouldDisplay = true;
+        } else if (selectedBrand === '#') {
+          if (!/^[A-Z]/.test(firstChar)) {
+            shouldDisplay = true;
+          }
+        } else if (firstChar === selectedBrand.toUpperCase()) {
+          shouldDisplay = true;
+        }
+      }
+
+      item.style.display = shouldDisplay ? 'block' : 'none';
+      if (shouldDisplay) visibleCount++;
+    });
+
+    if (noArticlesMessage) {
+      noArticlesMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  if (searchBox && filterLinks.length && searchForm) {
+    searchBox.addEventListener('input', function () {
+      const query = searchBox.value;
+      const activeLetter = document.querySelector('.alphabet-filter a.active')?.dataset.brand || 'all';
+      filterBrands(query, activeLetter);
+    });
+
+    filterLinks.forEach((link) => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const selectedBrand = event.target.dataset.brand;
+
+        filterLinks.forEach((l) => l.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const query = searchBox.value;
+        filterBrands(query, selectedBrand);
+      });
+    });
+
+    searchForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+    });
+
+    // Initial render
+    filterBrands();
+  }
+});
+</script>
+{% schema %}
+{
+	"name": "How to Corner",
+	"tag": "section",
+	"settings": [
+		{
+			"type": "blog",
+			"id": "blog",
+			"label": "t:sections.featured-blog.settings.blog.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_image",
+			"default": true,
+			"label": "t:sections.featured-blog.settings.show_image.label",
+			"info": "t:sections.featured-blog.settings.show_image.info"
+		}
+	],
+	"presets": [
+		{
+			"name": "How to Corner"
+		}
+	]
+}
+{% endschema %}

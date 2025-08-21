@@ -1,0 +1,378 @@
+{{ 'section-home-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width padding-0">
+  <div class="home-banner">
+    <div class="banner-product-card two-card-colunm">
+      {% for block in section.blocks %}
+        {% if block.type == 'card_block' %}
+          {% if block.settings.card_bg_img != blank
+            or block.settings.card_heading != blank
+            or block.settings.card_tag != blank
+            or block.settings.card_logo != blank
+            or block.settings.card_content != blank
+            or block.settings.cta_url != blank
+            or block.settings.cta_text != blank
+            or block.settings.product_img != blank
+          %}
+            <div class="product-card-content left-align-content orange-card">
+              {% if block.settings.card_bg_img != blank %}
+                <span class="card-bg-image">
+                  <img
+                    src="{{ block.settings.card_bg_img |  image_url }}"
+                    alt="{{ block.settings.card_bg_img.alt |  default: block.settings.card_heading  |  default:  'CableOrganizer®' }}"
+                    height="100"
+                    width="100"
+                    loading="lazy"
+                  >
+                </span>
+              {% endif %}
+              {% if block.settings.card_tag != blank %}
+                <div class="selleing-tag-option">
+                  <span class="selling-tag white-tag">{{ block.settings.card_tag }}</span>
+                </div>
+              {% endif %}
+              <div class="card-left-details">
+                {% if block.settings.card_logo != blank %}
+                  <span class="logo-img">
+                    <img
+                      src="{{ block.settings.card_logo |  image_url }}"
+                      alt="{{ block.settings.card_logo.alt |  default:  block.settings.card_heading }}"
+                      height="18"
+                      width="100"
+                      loading="lazy"
+                    >
+                  </span>
+                {% endif %}
+                {% if block.settings.card_heading != blank %}
+                  <h3>{{ block.settings.card_heading }}</h3>
+                {% endif %}
+                {% if block.settings.card_content != blank %}
+                  <p>{{ block.settings.card_content }}</p>
+                {% endif %}
+                {% if block.settings.cta_url != blank and block.settings.cta_text != blank %}
+                  <a href="{{ block.settings.cta_url }}" class="main-btn-small btn-white">
+                    {{- block.settings.cta_text -}}
+                  </a>
+                {% endif %}
+              </div>
+              <div class="product-img {% if block.settings.image_position == 'bottom_image' %}image-position-bottom{% else %}image-position-right{% endif %}">
+                {% if block.settings.product_img != blank %}
+                  <img
+                    src="{{ block.settings.product_img |  image_url }}"
+                    alt="{{ block.settings.product_img.alt |  default:  block.settings.card_heading }}"
+                    height="140"
+                    width="140"
+                    loading="lazy"
+                  >
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="banner-product-slider">
+      <div class="main-product-slider">
+        {% assign slide_count = 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'slider_block' %}
+            {% if block.settings.slider_card_img != blank
+              or block.settings.slider_logo != blank
+              or block.settings.slider_heading != blank
+              or block.settings.slider_content != blank
+              or block.settings.cta_url != blank
+              or block.settings.cta_text != blank
+              or block.settings.slider_bg_img != blank
+            %}
+              {% assign slide_count = slide_count | plus: 1 %}
+              <div class="slick-slide green-card">
+                <div class="slide-item">
+                  {% if block.settings.slider_card_img != blank %}
+                    <span class="card-bg-image">
+                      <img
+                        src="{{ block.settings.slider_card_img |  image_url }}"
+                        alt="{{ block.settings.slider_card_img.alt |  default: block.settings.slider_heading }}"
+                        height="100"
+                        width="100"
+                        loading="eager"
+                      >
+                    </span>
+                  {% endif %}
+                  <div class="slider-content">
+                    {% if block.settings.slider_logo != blank %}
+                      <span class="slide-logo-img">
+                        <img
+                          src="{{ block.settings.slider_logo |  image_url }}"
+                          alt="{{ block.settings.slider_logo.alt |  default:  block.settings.slider_heading }}"
+                          height="40"
+                          width="126"
+                          loading="eager"
+                        >
+                      </span>
+                    {% endif %}
+                    {% if block.settings.slider_heading != blank %}
+                      <h2>{{ block.settings.slider_heading }}</h2>
+                    {% endif %}
+                    {% if block.settings.slider_content != blank %}
+                      <p>{{ block.settings.slider_content }}</p>
+                    {% endif %}
+                    {% if block.settings.cta_url and block.settings.cta_text != blank %}
+                      <a href="{{ block.settings.cta_url }}" class="main-btn-small btn-white">
+                        {{- block.settings.cta_text -}}
+                      </a>
+                    {% endif %}
+                  </div>
+                  <div class="slider-image">
+                    {% if block.settings.slider_bg_img != blank %}
+                      <img
+                        src="{{ block.settings.slider_bg_img |  image_url }}"
+                        alt="{{ block.settings.slider_bg_img.alt |  default:  block.settings.slider_heading }}"
+                        height="320"
+                        width="320"
+                        loading="eager"
+                      >
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="banner-product-card">
+      {% if section.settings.section_card_img != blank
+        or section.settings.tag != blank
+        or section.settings.heading != blank
+        or section.settings.button_url != blank
+        or section.settings.button_text != blank
+      %}
+        <div class="product-card-content bottom-align-content grey-card">
+          {% if section.settings.section_card_img != blank %}
+            <span class="card-bg-image">
+              <img
+                src="{{ section.settings.section_card_img |  image_url }}"
+                alt="{{ section.settings.section_card_img.alt |  default:  section.settings.heading  |  default:  'CableOrganizer®'  }}"
+                height="100"
+                width="100"
+                loading="eager"
+              >
+            </span>
+          {% endif %}
+          {% if section.settings.tag != blank %}
+            <div class="selleing-tag-option">
+              <span class="selling-tag white-tag">{{ section.settings.tag }}</span>
+            </div>
+          {% endif %}
+          <div class="card-left-details">
+            {% if section.settings.right_card_logo != blank %}
+              <span class="slide-logo-img">
+                <img
+                  src="{{ section.settings.right_card_logo |  image_url }}"
+                  alt="{{ section.settings.right_card_logo.alt |  default:  section.settings.heading |  default:  'CableOrganizer®' }}"
+                  height="40"
+                  width="126"
+                  loading="lazy"
+                >
+              </span>
+            {% endif %}
+            {% if section.settings.heading != blank %}
+              <h3>{{ section.settings.heading }}</h3>
+            {% endif %}
+            {% if section.settings.button_url and section.settings.button_text != blank %}
+              <a href="{{ section.settings.button_url }}" class="main-btn-small btn-white">
+                {{- section.settings.button_text -}}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  // Slider
+  $(document).ready(function () {
+    var slideCount = {{ slide_count }};
+    var slickSettings = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 7000,
+      speed: 300,
+      prevArrow: false,
+      nextArrow: false,
+      lazyLoad: 'ondemand',
+      centerMode: false,
+      responsive: [
+        {
+          breakpoint: 578,
+          settings: {
+            centerMode: true,
+            centerPadding: '20px',
+            dots: false,
+          },
+        },
+      ],
+    };
+
+    // Show dots only if there's more than one slide
+    if (slideCount > 1) {
+      slickSettings.dots = true;
+    } else {
+      slickSettings.dots = false;
+    }
+
+    $('.main-product-slider').slick(slickSettings);
+  });
+</script>
+{% schema %}
+{
+  "name": "Home Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_card_img",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_card_logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card_block",
+      "name": "Product Card Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_bg_img",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "card_tag",
+          "label": "Tag"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_logo",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "card_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "card_content",
+          "label": "Content"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image Position",
+          "options": [
+            {
+              "value": "right_image",
+              "label": "Right"
+            },
+            {
+              "value": "bottom_image",
+              "label": "Bottom"
+            }
+          ],
+          "default": "right_image"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_img",
+          "label": "Product Image"
+        }
+      ]
+    },
+    {
+      "type": "slider_block",
+      "name": "Silder Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slider_card_img",
+          "label": "Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "slider_logo",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "slider_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "slider_content",
+          "label": "Content"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "slider_bg_img",
+          "label": "Product Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,43 @@
+{% if section.settings.image != blank or section.settings.title != blank %}
+  <div class="main-img-banner">
+    {% if section.settings.image != blank %}
+      <span class="main-banner-bg">
+        <img
+          src="{{ section.settings.image |  image_url }}"
+          alt="{{ section.settings.title | default: shop.name }}"
+          height="132"
+          width="100%"
+          loading="lazy"
+        >
+      </span>
+    {% endif %}
+    <div class="page-width">
+      {% if section.settings.title != blank %}
+        <h1>{{ section.settings.title }}</h1>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Main Image Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Image Banner"
+    }
+  ]
+}
+{% endschema %}

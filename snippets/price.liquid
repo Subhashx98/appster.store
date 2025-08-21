@@ -1,3 +1,5 @@
+{% unless selected_variant %}{% assign selected_variant = product.selected_or_first_available_variant %}{% endunless %}
+
 {% comment %}
   Renders a list of product's price (regular, sale)
 
@@ -14,7 +16,7 @@
 {% endcomment %}
 {%- liquid
   if use_variant
-    assign target = product.selected_or_first_available_variant
+    assign target = selected_variant
   elsif placeholder
     assign target = null
   else
@@ -108,17 +110,17 @@
           {{ money_price }}
         </span>
       </div>
-      <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
+      <small class="unit-price caption{% if selected_variant.unit_price_measurement == nil %} hidden{% endif %}">
         <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
         <span class="price-item price-item--last">
-          <span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
+          <span>{{- selected_variant.unit_price | money -}}</span>
           <span aria-hidden="true">/</span>
           <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
           <span>
-            {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
-              {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+            {%- if selected_variant.unit_price_measurement.reference_value != 1 -%}
+              {{- selected_variant.unit_price_measurement.reference_value -}}
             {%- endif -%}
-            {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+            {{ selected_variant.unit_price_measurement.reference_unit }}
           </span>
         </span>
       </small>

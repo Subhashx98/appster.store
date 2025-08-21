@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "main_image_banner_BfVk7V": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Article Library"
+      }
+    },
+    "section_breadcrumbs_HkzrV4": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": true
+      }
+    },
+    "learning_articles_bGfCTB": {
+      "type": "learning-articles",
+      "blocks": {
+        "article_rwBpB8": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "view_url": "",
+            "article_icon": "shopify://shop_images/Icon-industry-articles.svg",
+            "article_title": "Industry Experts"
+          }
+        },
+        "article_VeQjcR": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "view_url": "",
+            "article_icon": "shopify://shop_images/icon-home-articles.svg",
+            "article_title": "Home Users"
+          }
+        },
+        "article_WDGpUT": {
+          "type": "article",
+          "settings": {
+            "view_url": "",
+            "article_icon": "shopify://shop_images/Icon-all-aricle.svg",
+            "article_title": "View Our Entire Article Library"
+          }
+        }
+      },
+      "block_order": [
+        "article_rwBpB8",
+        "article_VeQjcR",
+        "article_WDGpUT"
+      ],
+      "settings": {
+        "heading": "Welcome to the CableOrganizer® Article Library!",
+        "description": "<p>You’ve hit the CableOrganizer® information jackpot! This is the place to find educational articles covering a wide range of topics, all categorized according to your areas of interest. Whether you want information on installing a network or managing the cables in your home theater system, we’ve got you covered. Just choose a section from the lineup of Networking, Home Theater, Office, Computing, Home, Industrial and Automotive, and a list of articles that are relevant to your application will be at your service!</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_image_banner_BfVk7V",
+    "section_breadcrumbs_HkzrV4",
+    "learning_articles_bGfCTB"
+  ]
+}

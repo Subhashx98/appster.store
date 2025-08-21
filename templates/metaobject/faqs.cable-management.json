@@ -1,0 +1,494 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_text_block_Py8LVE": {
+      "type": "image-text-block",
+      "settings": {
+        "image": "shopify://shop_images/FAQ-CableManagement.jpg",
+        "title": "Have Any More Questions About Cable Management?",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? CableOrganizer® representatives can answer your questions by phone from 9 a.m. to 5 p.m. ET at 1-888-3CABLEORG or by email at <a href=\"mailto:sales@cableorganizer.com\" title=\"mailto:sales@cableorganizer.com\"><strong>sales@cableorganizer.com</strong></a></p>",
+        "full_width": true,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "faq_question_answer_BG3KbA": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_XGtxB7": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Stop Braided Sleeving From Fraying?",
+            "faq_ans": "<p>When terminating braided sleeving, use a hot knife to keep the ends from fraying. Once the sleeving is cut, use pliers, or an inverted funnel to flare the ends to allow the sleeving to slide easily over your application. <a href=\"https://cdn.shopify.com/s/files/1/0892/0583/4033/files/How_To_Cut_Sleeving_Using_A_Hot_Knife.pdf?v=1743592295\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0892/0583/4033/files/How_To_Cut_Sleeving_Using_A_Hot_Knife.pdf?v=1743592295\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_CfDGWa": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Use Expandable Braided Sleeving?",
+            "faq_ans": "<p>When covering A/V, electrical, industrial, etc. wires and cables, expandable sleeving can be used. Some PET sleeves expand up to four times the sleeve's original diameter. <a href=\"/blogs/how-to/how-to-use-braided-sleeving-in-diy-wire-cable-management-projects\" target=\"_blank\" title=\"How to Use Braided Sleeving In DIY Wire & Cable Management Projects\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_DUHT8B": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Size Braided Sleeving Should I Use?",
+            "faq_ans": "<p>First, determine the diameter of the bundle of cables that you will be covering with braided sleeving. For snug fittings, try using expandable rigid sleeves and wraps; these allow for a range of fitting options. Or you can select a smaller braided sleeving with a diameter that is slightly smaller than your bundle of cables. For a loose fit, use a sleeve that is the same or slightly larger than your bundled cables. <a href=\"/blogs/how-to/how-to-determine-which-product-diameter-you-need\" target=\"_blank\" title=\"How to Determine Which Product Diameter You Need\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_KmTiit": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "When Should I Use Braided Sleeving?",
+            "faq_ans": "<p>People use braided sleeving for full coverage protection of their cables. There are many braided sleeving solutions for the automotive, military, and even aerospace industries. Braided sleeving, like PET Wrap, can be used for at home cable management. <a href=\"/blogs/articles/cable-management-tips-resources\" target=\"_blank\" title=\"Cable Management Tips & Resources\"><strong>...more</strong></a></p><p>Braided Sleeving is used not only for bundling longer cables, but can also be used to help protect your wires and cables from chemicals, heat, and other environmental factors. <a href=\"/blogs/how-to/how-to-use-braided-sleeving-in-diy-wire-cable-management-projects\" target=\"_blank\" title=\"How to Use Braided Sleeving In DIY Wire & Cable Management Projects\"><strong>...more</strong></a></p><p>Certain sleeving products like metal braided sleeving can be used for things like wildlife installations due to it's mesh-like features. <a href=\"/blogs/articles/protecting-your-pets-with-corrugated-wire-loom-tubing\" target=\"_blank\" title=\"Protecting Your Pets with Corrugated Wire Loom Tubing\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_XGtxB7",
+        "faq_CfDGWa",
+        "faq_DUHT8B",
+        "faq_KmTiit"
+      ],
+      "settings": {
+        "button_text": "go back FAQ landing page",
+        "button_link": "shopify://pages/faq",
+        "faq_heading": "Braided Sleeving"
+      }
+    },
+    "faq_question_answer_EbdUeD": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_G8jM9G": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Use Wire Loom Insertion Tool",
+            "faq_ans": "<p>First, gather your cables together and insert the bundle through the wire loom installation tool. Next, start sliding the tool through the wire loom until you reach the end. Lastly remove the tool and you have successfully managed your cables! <a href=\"https://cdn.shopify.com/s/files/1/0892/0583/4033/files/wireloom-install-instructions.pdf?v=1748891551\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0892/0583/4033/files/wireloom-install-instructions.pdf?v=1748891551\"><strong>...more</strong></a></p><p>Once your cables have been bundled and insterted in the tool, place the bulge of the tool under the end of the split tubing. Slide along the length of the tubing until you reach the end. Rotate the barrel and remove the tool from the bundled cables. Smooth out the sleeving with your hand and trim the excess wire loom. <a href=\"/blogs/how-to/how-to-tame-cables-with-wire-loom\" target=\"_blank\" title=\"How to Tame Cables with Wire Loom\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_jHVQca": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is Wire Loom Used For?",
+            "faq_ans": "<p>Wire Loom is used for tidying up cables. The split down the side of this tubing allows for easy addition and removal of cables. People with pets and children choose wire loom to prevent wires from being chewed on/ damaged. <a href=\"/blogs/how-to/how-to-keep-your-cables-tidy\" target=\"_blank\" title=\"How to Keep Your Cables Tidy\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_hFUerz": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Size Wire Loom Do I Need?",
+            "faq_ans": "<p>Gather together your cables that you want to bundle together. Measure the diameter of this bundle and select a wire loom with a diameter of equal or greater value. <a href=\"/blogs/how-to/how-to-determine-which-product-diameter-you-need\" target=\"_blank\" title=\"How to Determine Which Product Diameter You Need\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_G8jM9G",
+        "faq_jHVQca",
+        "faq_hFUerz"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Wire Loom"
+      }
+    },
+    "faq_question_answer_nDGPTP": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_xRW4pk": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Purpose of Cable Tray?",
+            "faq_ans": "<p>Cable trays are the perfect solution when you need to run high quantities of power and data cables. These cable trays provide support and a route for your cables. <a href=\"/blogs/articles/cable-management-tips-resources\" target=\"_blank\" title=\"Cable Management Tips & Resources\"><strong>...more</strong></a></p><p>Cable trays are a great way to get your cables off of the floor. Cable baskets are a great option for desk wire management — these trays simply attach to the underside of your desk and allow cables to break out wherever needed. <a href=\"/blogs/articles/desk-cable-organizers\" target=\"_blank\" title=\"Desk Cable Organizers\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_CMpKNg": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Where Can I Use Cable Trays?",
+            "faq_ans": "<p>Cable trays can be used under your floors or in the ceiling. <a href=\"/blogs/articles/cable-management-tips-resources\" target=\"_blank\" title=\"Cable Management Tips & Resources\"><strong>...more</strong></a></p><p>Cable basket trays can be used in places like offices by simply attaching the basket underneath a desk. <a href=\"/blogs/articles/desk-cable-organizers\" target=\"_blank\" title=\"Desk Cable Organizers\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_xRW4pk",
+        "faq_CMpKNg"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Cable Tray Systems"
+      }
+    },
+    "faq_question_answer_ikJBL4": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_cXafg3": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Types of Velcro Fasteners",
+            "faq_ans": "<p>There are many type of Velcro fasteners. Velcro has become a \"catch-all\" term for wraps and fasteners, and here at CableOrganizer® we carry a wide range of both Velcro brand wraps and other types of fasteners. Such as, rubber-based adhesive, loop fabric, acrylic-based adhesive, ripwrap, and CableCatch® just to name a few. <a href=\"/blogs/articles/cable-management-tips-resources\" target=\"_blank\" title=\"Cable Management Tips & Resources\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_bdJidY": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are Velcro Fasteners?",
+            "faq_ans": "<p>Velcro Fasteners are a cable management product that helps keep your cables, wires, and hoses together, secure, and organized. <a href=\"/blogs/articles/cable-management-tips-resources\" target=\"_blank\" title=\"Cable Management Tips & Resources\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_cXafg3",
+        "faq_bdJidY"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Hook-&-Loop Wraps & Fasteners"
+      }
+    },
+    "faq_question_answer_DBzETm": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_Xdfz8D": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Install Cable Raceway",
+            "faq_ans": "<p>Cable raceways are extremely straightforward. No tools are required for installing. It simply is installed directly onto a hard surface like a desk, floor, ceiling, or counter. Most raceways come with a peel and stick adhesive.  <a href=\"/blogs/articles/4-fast-easy-and-affordable-ways-to-hide-and-protect-speaker-wire\" target=\"_blank\" title=\"4 Fast, Easy, and Affordable Ways to Hide and Protect Speaker Wire\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_b8YcCe": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Cut Cable Raceway",
+            "faq_ans": "<p>Cable Raceways (or surface raceways) can be cut by using a utility knife, hacksaw, laser, etc. <a href=\"/blogs/articles/4-fast-easy-and-affordable-ways-to-hide-and-protect-speaker-wire\" target=\"_blank\" title=\"4 Fast, Easy, and Affordable Ways to Hide and Protect Speaker Wire\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_DhYM4m": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Types of Cable Raceway",
+            "faq_ans": "<p>There are many options to choose from when it comes to cable raceways. A couple of the options that CableOrganizer® carries are raceways that are made of fire-resistant PVC coating and raceways made for running along your ceiling (Raceway Crown™ Molding Surface). <a href=\"/blogs/articles/easy-ways-to-hide-speaker-wire\" target=\"_blank\" title=\"Easy Ways to Hide Speaker Wire\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_yGhDD8": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is Cable Raceway?",
+            "faq_ans": "<p>Cable Raceways (or surface raceways) are a rigid and enclosed or semi-enclosed channel. They are made to protect, route, and conceal your cables and wires. <a href=\"/blogs/articles/cable-management-tips-resources\" target=\"_blank\" title=\"Cable Management Tips & Resources\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_Xdfz8D",
+        "faq_b8YcCe",
+        "faq_DhYM4m",
+        "faq_yGhDD8"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Cable Raceway"
+      }
+    },
+    "faq_question_answer_hmgxmT": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_3DqKyg": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Cut Wire Duct",
+            "faq_ans": "<p>Wire ducts can be cut using a wire duct cutting tool.  <a href=\"/collections/wire-duct\" target=\"_blank\" title=\"Wire Duct\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_rxADmF": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is Wire Duct?",
+            "faq_ans": "<p>Wiring duct is an easy way to channel your wires and cables. It is made of a rigid PVC that helps protect your wires from debris. <a href=\"/blogs/articles/cable-management-tips-resources\" target=\"_blank\" title=\"Cable Management Tips & Resources\"><strong>...more</strong></a><br/><br/>Wire Ducts have slots where wires can exit and be rerouted if needed. <a href=\"/blogs/articles/desk-cable-organizers\" target=\"_blank\" title=\"Desk Cable Organizers\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_3DqKyg",
+        "faq_rxADmF"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Wire Duct"
+      }
+    },
+    "faq_question_answer_TRmDX6": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_GVbVPm": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Use Clamps",
+            "faq_ans": "<p>There are many different types of clamps. Some need a screw inserted to help tighten / close the clamp, or they snap together. Others like the Cable Clamp® have a quick release feature that allows you to lock and unlock the clamp with one hand. When you have a longer cable run, use multiple cable clamps to help keep the cables secure. <a href=\"/blogs/articles/mommy-s-little-helpers-baby-registry-must-haves-for-safety-minded-parents\" target=\"_blank\" title=\"Mommy’s Little Helpers: Baby Registry Must-Haves for Safety-Minded Parents\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_3hkaeG": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Do Clamps Do?",
+            "faq_ans": "<p>Clamps help to keep your cables fastened and allow your jumble of cables to become a neat arrangement. <a href=\"/blogs/articles/easy-steps-for-protecting-cables-from-toddlers\" target=\"_blank\" title=\"Easy Steps for Protecting Cables from Toddlers\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_GVbVPm",
+        "faq_3hkaeG"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Wraps, Clips, & Clamps"
+      }
+    },
+    "faq_question_answer_GeamxR": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_Eq93AT": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Are Cable Ties Reuseable?",
+            "faq_ans": "<p>The majority of cable ties once locked, are permanently locked until you cut them with scissors. However, here at CableOrganizer®, we also sell many releasable cable ties. This means that you can lock and unlock them when you need to, making them a better reusable option. <a href=\"/blogs/how-to/how-to-choose-the-right-cable-ties\" target=\"_blank\" title=\"How to Choose the Right Cable Ties\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_JhjhDa": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Remove Cable Ties",
+            "faq_ans": "<p>Cable ties should be cut with a pair of sturdy scissors. If you are removing metal cable ties, a pair of wire cutters may be required. You also want to make sure you are cutting parallel to the bundled wires / cables if there are any... this will reduce the risk of cutting an adjacent wire / cable. When it comes to releasable cable ties, no scissors or wire cutters are required! Simply disengage the built-in locking tab. Then you will be able to pull the tail end of the tie free from the head of the tie. <a href=\"/blogs/how-to/releasable-cable-tie-how-to\" target=\"_blank\" title=\"Releasable Cable Tie How-To\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_iPe9Mp": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Types of Cable Ties",
+            "faq_ans": "<p>Aside from the standard cable ties, there are also metal, releasable, and mounted cable ties. <a href=\"/blogs/how-to/how-to-choose-the-right-cable-ties\" target=\"_blank\" title=\"How to Choose the Right Cable Ties\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_TwCAUC": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are Cable Ties Made Of?",
+            "faq_ans": "<p>Cable ties are made of either plastic or metal. <a href=\"/blogs/articles/materials-spotlight-the-properties-of-nylon-12\" target=\"_blank\" title=\"Materials Spotlight: The Properties of Nylon 12\"><strong>...more</strong></a></p><p>CableOrganizer® offers plastic cable ties that are made of nylon (12 & 46 & 66), ETFE and PVDF. <a href=\"/collections/cable-ties\" target=\"_blank\" title=\"Cable Ties\"><strong>...more</strong></a><br/><br/>Metal cable ties can be made of aluminum, stainless steel, or coated metal. <a href=\"/blogs/articles/metal-cable-ties-breakdown\" target=\"_blank\" title=\"Metal Cable Ties Breakdown\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_bwpeTU": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Will Zip Ties Hold A License Plate?",
+            "faq_ans": "<p>Zip ties will have no problem holding your license plate onto your car. After all they are perfect for those who are worried about their hubcaps popping off, or for those who need to tie down cargo to their truck's flatbed. <a href=\"/blogs/articles/creative-new-ways-to-use-cable-ties\" target=\"_blank\" title=\"Creative New Ways To Use Cable Ties\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_Eq93AT",
+        "faq_JhjhDa",
+        "faq_iPe9Mp",
+        "faq_TwCAUC",
+        "faq_bwpeTU"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Cable Ties"
+      }
+    },
+    "faq_question_answer_rHmgWh": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_DDMphU": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Do Cable Carriers Work?",
+            "faq_ans": "<p>Cable Carriers work by guiding your industrial cables through facilities. They help keep the cables safe from any potential dangers like abrasion. Your cables won't twist, snag or break. <a href=\"/collections/cable-tracks-hose-carriers\" target=\"_blank\" title=\"Cable Tracks & Hose Carriers\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_DDMphU"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Cable Tracks & Hose Carriers"
+      }
+    },
+    "faq_question_answer_GdkicQ": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_ra3yTB": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are Cable Support Systems?",
+            "faq_ans": "<p>Cable support systems allow you to support long runs of cables. There are many ways to help support your cable runs, such as, cable runways, center-rail systems, cable trays, wire baskets, bridle rings / cable hooks, and wireways. <a href=\"/collections/cable-support-systems\" target=\"_blank\" title=\"Cable Support Systems\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_ra3yTB"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Cable Support Systems"
+      }
+    },
+    "faq_question_answer_6ra6rM": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_EhDpwH": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Are Fabric Cord Covers Safe?",
+            "faq_ans": "<p>Fabric cord covers that are made from Nylon materials are fire resistant. Meaning that they can still melt at high temperatures. <a href=\"/collections/fabric-cord-covers\" target=\"_blank\" title=\"Fabric Cord Covers\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_3XxiGi": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Do You Hide Unsightly Cords?",
+            "faq_ans": "<p>Fabric Cord Covers are a great way to hide your unsightly cords. Some can be used on carpets while others can be wrapped around a bundle of cables. <a href=\"/collections/fabric-cord-covers\" target=\"_blank\" title=\"Fabric Cord Covers\"><strong>...more</strong></a><br/><br/>The SafCord® is a fabric cord cover that is loop / Berber carpet friendly. You can even vacuum over it without a problem. <a href=\"/blogs/articles/organizing-bedroom-cables-transforming-clutter-nightmares-into-sweet-dreams\" target=\"_blank\" title=\"Organizing Bedroom Cables: Transforming Clutter Nightmares into Sweet Dreams\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_EhDpwH",
+        "faq_3XxiGi"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fabric Cord Covers"
+      }
+    },
+    "faq_question_answer_84XXTM": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_6LwMkf": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Are There Cord Covers That will Match my Décor?",
+            "faq_ans": "<p>Yes, we believe that cord covers can add to a room's appeal. Use a cord cover in a coordinating shade to your flooring for a better look! <a href=\"/blogs/articles/organizing-bedroom-cables-transforming-clutter-nightmares-into-sweet-dreams\" target=\"_blank\" title=\"Organizing Bedroom Cables: Transforming Clutter Nightmares into Sweet Dreams\"><strong>...more</strong></a><br/><br/>Cord Covers can easily blend into any space. There are different colors and styles to choose from to help match your décor. <a href=\"/blogs/articles/4-fast-easy-and-affordable-ways-to-hide-and-protect-speaker-wire\" target=\"_blank\" title=\"4 Fast, Easy, and Affordable Ways to Hide and Protect Speaker Wire\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_9PyC4k": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Hide Cable in a Classroom or Lab",
+            "faq_ans": "<p>Floor Cord Covers help prevent tripping accidents. Here at CableOrganizer® we also sell curated kits that have everything you need to start organizing your space. Velcro® wraps and straps, braided sleeving, and cable ties are all great tools for organizing your classroom or lab. <a href=\"/blogs/articles/hiding-cables-in-a-computer-lab\" target=\"_blank\" title=\"Hiding Cables in a Computer Lab\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_6LwMkf",
+        "faq_9PyC4k"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Light Capacity"
+      }
+    },
+    "faq_question_answer_HjFLiq": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_Nf6kPU": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Which Cord Cover Should I Use For An Outdoor Event?",
+            "faq_ans": "<p>Extra-Rugged Rubber Ducts are a great option for covering cables and wires that are snaking through your yard and walkways. <a href=\"/blogs/articles/4-fast-easy-and-affordable-ways-to-hide-and-protect-speaker-wire\" target=\"_blank\" title=\"4 Fast, Easy, and Affordable Ways to Hide and Protect Speaker Wire\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_Nf6kPU"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Medium Capacity"
+      }
+    },
+    "faq_question_answer_rfTkVU": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_jajiBf": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Durable Are High Capacity Cord Covers?",
+            "faq_ans": "<p>High Capacity cable covers can withstand between 10,000 to 40,300 pounds of load capacity per axle of vehicle traffic. They can also withstand inclement weather.  <a href=\"/blogs/articles/how-do-you-use-cable-cover-protection\" target=\"_blank\" title=\"How Do You Use Cable Cover Protection?\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_jajiBf"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "High Capacity"
+      }
+    },
+    "faq_question_answer_tRN46d": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_mkmzpj": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Are ADA Compliant Ramps Sturdy Enough for Vehicle Traffic?",
+            "faq_ans": "<p>Yes, ADA Compliant ramps in many cases are strong enough to withstand vehicle traffic. <a href=\"/blogs/articles/how-do-you-use-cable-cover-protection\" target=\"_blank\" title=\"How Do You Use Cable Cover Protection?\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_QGaUXf": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Maintain ADA Compliance With Cord Covers",
+            "faq_ans": "<p>Cover all your extension cords, cable, hoses, etc.; this will help prevent tripping hazards. A low-profile heavy-duty cord protector works, but you can also use standard heavy-duty polyurethane protectors. The standard heavy-duty protectors are able to be attached to ADA compliant ramps. <a href=\"/blogs/how-to/how-to-make-your-facility-ada-compliant\" target=\"_blank\" title=\"How to Make Your Facility ADA Compliant\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_mkmzpj",
+        "faq_QGaUXf"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "ADA Compliant Ramps"
+      }
+    }
+  },
+  "order": [
+    "image_text_block_Py8LVE",
+    "faq_question_answer_BG3KbA",
+    "faq_question_answer_EbdUeD",
+    "faq_question_answer_nDGPTP",
+    "faq_question_answer_ikJBL4",
+    "faq_question_answer_DBzETm",
+    "faq_question_answer_hmgxmT",
+    "faq_question_answer_TRmDX6",
+    "faq_question_answer_GeamxR",
+    "faq_question_answer_rHmgWh",
+    "faq_question_answer_GdkicQ",
+    "faq_question_answer_6ra6rM",
+    "faq_question_answer_84XXTM",
+    "faq_question_answer_HjFLiq",
+    "faq_question_answer_rfTkVU",
+    "faq_question_answer_tRN46d"
+  ]
+}

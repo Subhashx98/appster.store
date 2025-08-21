@@ -1,0 +1,326 @@
+{{ 'product-categories.css' | asset_url | stylesheet_tag }}
+<div class="product-categories">
+  <div class="page-width">
+    <div class="categories-list">
+      <div class="categories-select">
+        <h3>{{ section.settings.title }}</h3>
+        <a href="#" class="categories-toggle">
+          <img
+              src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/icon-ITCommunications.svg?v=1742206695"
+              alt="{{ section.settings.heading | default: 'IT Communications' }}"
+              height="24"
+              width="24"
+              loading="lazy"
+            >
+          Shop By Interest
+        </a>
+        <ul class="categories-dropdown">
+          {% for block in section.blocks %}
+            {% if block.type == 'categories_block' %}
+              <li class="categories-item" data-tab="{{ forloop.index }}">
+                <img
+                  src="{{ block.settings.icon |  image_url  }}"
+                  alt="{{ section.settings.icon.alt | default: block.settings.text }}"
+                  height="24"
+                  width="24"
+                  loading="lazy"
+                >
+                {{ block.settings.text }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- Default Category Block (the first block should be shown by default) -->
+      <div id="tab-default" class="categories-product-list active">
+        <h2 class="section-main-title">
+          {{ section.settings.heading }}
+          <!-- Default Category Title -->
+          <a href="{{ section.settings.link }}" class="view-link">{{ section.settings.cta_text }}</a>
+        </h2>
+        <div class="categories-list-slider" id="slider-default">
+          {% if section.settings.collection != blank %}
+            {% assign collection = section.settings.collection %}
+            {% assign product_count = collection.products.size %}
+            {% for product in collection.products limit: section.settings.number_of_products_show %}
+              <div class="slick-slide" data-index="{{ forloop.index }}">
+                {% render 'card-product',
+                  card_product: product,
+                  show_secondary_image: false,
+                  lazy_load: false,
+                  section_id: section.id,
+                  quick_add: section.settings.quick_add
+                %}
+              </div>
+            {% endfor %}
+          {% else %}
+            <p class="no-product">No products available for this category.</p>
+          {% endif %}
+        </div>
+        {% if product_count >= 4 %}
+          <!-- Progress Bar Container -->
+          {% if section.settings.collection != blank %}
+            <div class="progress-bar-main">
+              <div class="progress-bg"></div>
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <!-- Dynamic Category Tabs Content -->
+      {% for block in section.blocks %}
+        {% if block.type == 'categories_block' %}
+          <div id="tab-{{ forloop.index }}" class="categories-product-list">
+            <h2 class="section-main-title">
+              {{ block.settings.text }}
+              <!-- Category Title -->
+              <a href="{{ block.settings.link }}" class="view-link">{{ block.settings.cta_text }}</a>
+            </h2>
+            <div class="categories-list-slider" id="slider-{{ forloop.index }}">
+              {% if block.settings.block_collection != blank %}
+                {% assign collection = block.settings.block_collection %}
+                {% assign product_count = collection.products.size %}
+                {% for product in collection.products limit: section.settings.number_of_products_show %}
+                  <div class="slick-slide" data-index="{{ forloop.index }}">
+                    {% render 'card-product',
+                      card_product: product,
+                      show_secondary_image: false,
+                      lazy_load: false,
+                      section_id: section.id
+                    %}
+                  </div>
+                {% endfor %}
+              {% else %}
+                <p class="no-product">No products available for this category.</p>
+                <!-- Handle case when no collection is set -->
+              {% endif %}
+            </div>
+            {% if product_count >= 4 %}
+              <!-- Progress Bar Container -->
+              {% if block.settings.block_collection != blank %}
+                <div class="progress-bar-main">
+                  <div class="progress-bg"></div>
+                </div>
+              {% endif %}
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Slick Slider for a given slider
+    function initializeSlickSlider(sliderId) {
+      const slider = $('#' + sliderId);
+
+      slider.slick({
+        infinite: false,
+        slidesToShow: 3, // Adjust the number of slides you want to show at once
+        slidesToScroll: 3, // Scroll 3 products at a time
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+        ],
+      });
+
+      // Update progress bar on slide change
+      slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        updateProgressBar(slick, nextSlide);
+      });
+    }
+
+    // Function to handle tab switching
+    function switchTab(tabId) {
+      // Remove the active class from all tabs
+      const allTabs = document.querySelectorAll('.categories-product-list');
+      allTabs.forEach((tab) => tab.classList.remove('active'));
+
+      // Remove the active class from all tabs
+      const allTabItems = document.querySelectorAll('.categories-item');
+      allTabItems.forEach((tab) => tab.classList.remove('active'));
+
+      // Show the selected tab
+      const selectedTab = document.getElementById('tab-' + tabId);
+      if (selectedTab) {
+        selectedTab.classList.add('active');
+
+        // Add the active class to the clicked tab
+        const selectedTabItem = document.querySelector(`[data-tab='${tabId}']`);
+        if (selectedTabItem) {
+          selectedTabItem.classList.add('active');
+        }
+
+        // Initialize the Slick slider for the tab only if it's not already initialized
+        const sliderId = selectedTab.querySelector('.categories-list-slider').id;
+        const slider = $('#' + sliderId);
+        if (!slider.hasClass('slick-initialized')) {
+          initializeSlickSlider(sliderId);
+        }
+
+        // Update the progress bar for this tab
+        const slickInstance = $('#' + sliderId).slick('getSlick');
+        updateProgressBar(slickInstance, 0);
+      }
+    }
+
+    // Initialize the progress bar
+    function updateProgressBar(slick, nextSlide) {
+      // Find the closest `.categories-product-list` and ensure it's a DOM element
+      const categoriesProductList = slick.$slider[0].closest('.categories-product-list');
+      const progressBarContainer = categoriesProductList.querySelector('.progress-bg');
+
+      if (!progressBarContainer) return;
+
+      const totalSlides = slick.slideCount; // Total number of slides
+      const totalVisibleSlides = slick.options.slidesToShow; // Number of visible slides
+
+      // Ensure that nextSlide is within bounds (nextSlide could be greater than totalSlides)
+      nextSlide = Math.min(nextSlide, totalSlides - 1);
+      
+      // Calculate progress: we calculate the progress based on the current slide and total slides
+      let progress = ((nextSlide + totalVisibleSlides) / totalSlides) * 100;
+
+      progress = Math.min(progress, 100);
+    
+      // Smoothly update progress bar
+      requestAnimationFrame(() => {
+        progressBarContainer.style.width = progress + '%';
+      });
+    }
+
+
+    // Add event listener to tabs
+    const tabs = document.querySelectorAll('.categories-item');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', function () {
+        const tabId = tab.getAttribute('data-tab');
+        switchTab(tabId);
+      });
+    });
+
+    // Initialize default tab (slider-default) manually
+    const sliderDefault = document.getElementById('slider-default');
+    if (sliderDefault && !$('#slider-default').hasClass('slick-initialized')) {
+      initializeSlickSlider('slider-default');
+      const slickInstance = $('#slider-default').slick('getSlick');
+      updateProgressBar(slickInstance, 0);
+    }
+
+    // Optionally, initialize the first tab manually or leave it uninitialized (no call to switchTab)
+    // switchTab(1); // Remove this line to avoid activating the first tab by default
+  });
+  // JavaScript to handle dropdown toggle on click and update dropdown-toggle text
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.querySelector('.categories-toggle');
+    const dropdown = document.querySelector('.categories-dropdown');
+    const dropdownItems = document.querySelectorAll('.categories-item');
+
+    // Toggle dropdown visibility
+    dropdownToggle.addEventListener('click', function (e) {
+      e.preventDefault(); // Prevent default link behavior
+      dropdown.classList.toggle('open');
+    });
+
+    // Update dropdown-toggle text when an item is clicked
+    dropdownItems.forEach((item) => {
+      item.addEventListener('click', function () {
+        // Find the image and text within the clicked item
+        const img = this.querySelector('img').outerHTML;
+        const text = this.textContent.trim();
+
+        // Set the dropdown-toggle content to include the image and the selected item text
+        dropdownToggle.innerHTML = img + text;
+        // Close the dropdown
+        dropdown.classList.remove('open');
+      });
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Product Categories",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select Collection"
+    },
+    {
+      "type": "range",
+      "id": "number_of_products_show",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "label": "Number Of Products Show",
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "categories_block",
+      "name": "Categories",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "collection",
+          "id": "block_collection",
+          "label": "Select Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Categories"
+    }
+  ]
+}
+{% endschema %}

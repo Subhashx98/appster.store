@@ -1,0 +1,106 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_text_block_eJnF4q": {
+      "type": "image-text-block",
+      "settings": {
+        "image": "shopify://shop_images/FAQ-InstallAndTermination.jpg",
+        "title": "Have Any More Questions About Fiber Optics?",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? CableOrganizer® representatives can answer your questions by phone from 9 a.m. to 5 p.m. ET at 1-888-3CABLEORG or by email at <a href=\"mailto:sales@cableorganizer.com\" title=\"mailto:sales@cableorganizer.com\"><strong>sales@cableorganizer.com</strong></a></p>",
+        "full_width": true,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "faq_question_answer_3f9ytk": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_n6dgHd": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Heat Shrink is Made",
+            "faq_ans": "<p>Heat shrink tubing is made of a wide range of thermoplastics depending on the tubing's specific use. Such as, polyvinyl, PVC, Neoprene®, and Kynar® just to name a few. When these tubes are exposed to radiation (known as cross-linking), it will cause covalent bonds to form between the polymer atoms. These bonds that are created give polymers plastic memory, which means at a certain temperature, the tubing will automatically shrink back to its original size. <a href=\"/blogs/articles/heat-shrink-history\" target=\"_blank\" title=\"Heat Shrink History\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_qJQbjx": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Does Heat Shrink Do?",
+            "faq_ans": "<p>Heat shrink helps to seal out things like water and dirt from getting to your cables; it can even protect cables from corrosive materials. Heat shrink insulates against extreme heat produced by things like military vehicles and boats. Aside from these factors, heat shrink is also a great product to use when color coding / labeling cables, and helps improve the look of your cables all at the same time. <a href=\"/blogs/articles/heat-shrink-history\" target=\"_blank\" title=\"Heat Shrink History\"><strong>...more</strong></a></p><p>Heat shrink can also be used in other applications, such as, pencil grips, light switch extensions, curling iron repair, tool handle grips, repairing your glasses, improved grip on pull-up and dip bars, animal protection, and heat shrink end caps can even can seal the feet of your furniture to protect your floors. <a href=\"/blogs/how-to/how-to-use-heat-shrink\" target=\"_blank\" title=\"How to Use Heat Shrink\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_biM8hM": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Why is Heat Shrink Used?",
+            "faq_ans": "<p>Heat shrink is used not only for a cosmetic enhancement of the ends on your cables and wires, but also acts as another layer of protection. Heat shrink insulates against extreme heat and seals out water and debris. <a href=\"/blogs/articles/heat-shrink-history\" target=\"_blank\" title=\"Heat Shrink History\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_n6dgHd",
+        "faq_qJQbjx",
+        "faq_biM8hM"
+      ],
+      "settings": {
+        "button_text": "go back FAQ landing page",
+        "button_link": "shopify://pages/faq",
+        "faq_heading": "Heat Shrink"
+      }
+    },
+    "faq_question_answer_HeGk9K": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_bcjHEA": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Why Would You Use a Heat Gun?",
+            "faq_ans": "<p>Heat guns can be used for stripping paint, drying paint, applying heat shrink, drying out damp wood, welding some plastics, loosening rusty nuts and bults, etc. <a href=\"/blogs/articles/heat-guns-their-uses\" target=\"_blank\" title=\"Heat Guns & Their Uses\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_bcjHEA"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Heating & Installation"
+      }
+    },
+    "faq_question_answer_U9rU78": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_YR4QBY": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Why Do Electricians Use Fish Tape?",
+            "faq_ans": "<p>Fish tape allows you to run cable quicker and better than attempting to run it by hand. It can be difficult to get around corners, walls, ceilings, and floors. It can go through small spaces around tight bends and it won't snag. <a href=\"/blogs/articles/going-fishing-if-you-are-running-cable-it-s-a-wise-choice\" target=\"_blank\" title=\"Going Fishing? If You Are Running Cable, It’s a Wise Choice\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_YR4QBY"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Wire Installation"
+      }
+    }
+  },
+  "order": [
+    "image_text_block_eJnF4q",
+    "faq_question_answer_3f9ytk",
+    "faq_question_answer_HeGk9K",
+    "faq_question_answer_U9rU78"
+  ]
+}

@@ -1,0 +1,136 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "section_breadcrumbs_CkFbWr": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "image_banner_hm7Kiq": {
+      "type": "image-banner",
+      "custom_css": [
+        ".banner {width: 92%; max-width: 1500px; /* optional, for responsiveness */ margin: 0 auto; /* centers the container */ margin-bottom: 20px; text-align: center; /* optional, if you're not using flexbox */}",
+        ".banner img {max-width: 100%; /* fill the container but not stretch */ height: auto; display: block; margin: 0 auto; /* center the image inside the container */}"
+      ],
+      "settings": {
+        "image": "{{ collection.metafields.custom.last_chance_items_banner.value }}",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "rich_text_jybXTB": {
+      "type": "rich-text",
+      "blocks": {
+        "text_N6T9Mi": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "text_N6T9Mi"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {max-width: 100%;}",
+        "a {color: #fe5b00;}"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "collection_product_slider_mTKtWi": {
+      "type": "collection-product-slider",
+      "name": "Collection Product Slider",
+      "settings": {}
+    },
+    "shop_top_collections_mHa6rH": {
+      "type": "shop-top-collections",
+      "disabled": true,
+      "custom_css": [
+        "a {text-align: center;}"
+      ],
+      "settings": {
+        "heading": "",
+        "cta_text": "Last Chance Items",
+        "cta_url": "shopify://collections/last-chance-items",
+        "collection": [
+          "last-chance-cable-management",
+          "last-chance-desk-outlets-grommets",
+          "last-chance-desk-organizers",
+          "last-chance-cable-cover-protection",
+          "last-chance-cable-labels-printers",
+          "last-chance-racks-enclosures",
+          "last-chance-safety-equipment",
+          "last-chance-wires-cables",
+          "last-chance-fiber-optic",
+          "last-chance-security-surveillance",
+          "last-chance-network-products",
+          "last-chance-electrical-supplies",
+          "last-chance-fire-protection",
+          "last-chance-tools-more"
+        ]
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "section_breadcrumbs_CkFbWr",
+    "image_banner_hm7Kiq",
+    "rich_text_jybXTB",
+    "collection_product_slider_mTKtWi",
+    "shop_top_collections_mHa6rH",
+    "product-grid"
+  ]
+}

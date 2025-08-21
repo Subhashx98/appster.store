@@ -1,0 +1,46 @@
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      {% for block in section.blocks %}
+        {% assign header_menu = link.title | handle %}
+        {% assign block_header_menu = block.settings.navigation_title | handle %}
+        {% assign menu_available = false %}
+        {% if link.links.size > 0 %}
+          {% if block_header_menu == header_menu %}
+            <li class="has-sub-child">
+              <a
+                href="{{ link.url }}"
+                {% if link.current %}
+                  aria-current="page"
+                {% endif %}
+              >
+                <span>{{ link.title }}</span>
+              </a>
+              {% if link.links.size > 0 %}
+                {%- render 'header-custom-megamenu-blocks', block: block, link: link, section: section -%}
+              {% endif %}
+            </li>
+            {% assign menu_available = true %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% unless menu_available %}
+        <li class="{%  if link.links.size > 0 %}has-sub-child b2b-click-menu{% endif %}">
+          <a href="{%  if link.links.size > 0 %}javascript:void(0){% else %} {{ link.url }} {% endif %}">
+            <span>{{ link.title }}</span>
+          </a>
+          {% if link.links.size > 0 %}
+            <ul class="sub-menu second-level-menu">
+              {% for secondLevelLink in link.links %}
+                <li>
+                  <a href="{{ secondLevelLink.url }}">{{ secondLevelLink.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</nav>

@@ -12,15 +12,19 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor }}",
+            "text": "",
             "text_style": "uppercase"
           }
         },
-        "title": {
-          "type": "title",
+        "description": {
+          "type": "description",
           "settings": {}
         },
         "price": {
@@ -30,8 +34,16 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "dropdown",
             "swatch_shape": "circle"
+          }
+        },
+        "inventory_ATX6Ey": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
           }
         },
         "quantity_selector": {
@@ -45,37 +57,68 @@
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "share": {
-          "type": "share",
+        "certifications_NUyEMr": {
+          "type": "certifications",
           "settings": {
-            "share_label": "Share"
+            "heading": "Certifications",
+            "certification": "{{ product.metafields.custom.certifications.value }}"
+          }
+        },
+        "collapsible_tab_E3GTey": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What's Special",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.what_s_special | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_wMMJTy": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Features",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.features | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "rebuy_personalization_engine_rebuy_widget_rDheC3": {
+          "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-widget/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "205727",
+            "product_id_enabled": true,
+            "collection_id_enabled": false
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
+        "vendor",
+        "description",
         "price",
         "variant_picker",
+        "inventory_ATX6Ey",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "share"
+        "certifications_NUyEMr",
+        "collapsible_tab_E3GTey",
+        "collapsible_tab_wMMJTy",
+        "rebuy_personalization_engine_rebuy_widget_rDheC3"
+      ],
+      "custom_css": [
+        ".visibility-hidden {display: none !important;}"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "small",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
+        "media_fit": "cover",
         "gallery_layout": "thumbnail_slider",
         "media_position": "left",
-        "image_zoom": "hover",
-        "mobile_thumbnails": "show",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
@@ -84,6 +127,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -99,10 +143,24 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "okendo_review_Ydyqz8": {
+      "type": "okendo-review",
+      "settings": {}
+    },
+    "co_pdp_related_products_nHJBg9": {
+      "type": "co-pdp-related-products",
+      "settings": {
+        "heading": "You may also like",
+        "cta_text": "View All",
+        "cta_url": "shopify://collections"
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "okendo_review_Ydyqz8",
+    "co_pdp_related_products_nHJBg9"
   ]
 }

@@ -284,3 +284,33 @@ if (!customElements.get('cart-note')) {
     }
   );
 }
+
+$(document).on('click', '.rebuy-product-actions', function () {
+  setTimeout(function () {
+    fetch(`${routes.cart_url}?section_id=cart-drawer`)
+      .then((response) => response.text())
+      .then((responseText) => {
+        const html = new DOMParser().parseFromString(responseText, 'text/html');
+        const selectors = ['cart-drawer-items', '.drawer__footer', '.item-count'];
+        for (const selector of selectors) {
+          const targetElement = document.querySelector(selector);
+          const sourceElement = html.querySelector(selector);
+          if (targetElement && sourceElement) {
+            targetElement.replaceWith(sourceElement);
+          }else if (!targetElement) {
+            const targetElement = document.querySelector('.drawer__inner');
+            const sourceElement = html.querySelector('.drawer__inner');
+            if (targetElement && sourceElement) {
+              targetElement.replaceWith(sourceElement);
+            }
+          }
+        }
+        $('.drawer__inner-empty').remove()
+        $('cart-drawer.drawer').removeClass('is-empty')
+        $('cart-drawer.drawer').addClass('active')
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  }, 1200)
+});

@@ -1,0 +1,82 @@
+<div class="account-address-order">
+    <div class="address-info" id="myAccount">
+        <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
+        <ul class="address-block">
+            <li>
+                <h4>Billing Address</h4>
+                {{ customer.default_address | format_address }}
+            </li>
+        </ul>
+    </div>
+    <div class="oredr-info" id="orderHistory">
+        <h2>{{ 'customer.orders.title' | t }}</h2>
+        <ul class="order-accordian">
+            {%- for order in customer.orders -%}
+                <li class="accordian-items">
+                    <div class="accordion-header">
+                        <h4>{{ 'customer.orders.order_number' | t }} 
+                            <strong>#{{ order.name }}</strong>
+                            <small>{{ order.created_at | time_tag: format: 'date' }}</small>
+                        </h4>
+                        <div class="order-manage">
+                            <span class="order-total"> {{ 'customer.orders.total' | t }}  :  
+                                {{ order.total_price | money }} 
+                                {% comment %} {{ order.subtotal_price | money }}  {% endcomment %} </span>
+                            <span class="manage-title">Manage Order</span>
+                        </div>
+                    </div>
+                    <div class="accordion-details">
+                        {% if order.line_items.size > 0 %}
+                            {% for product in order.line_items %}
+                              <div class="order-box">
+                                <span class="order-product-img">
+                                    {% if product.image.src != blank %}
+                                    <img
+                                        src="{{  product.image.src |  image_url: width: 60, height: 60 }}"
+                                        width="90"
+                                        height="90"
+                                        alt="{{ product.title }}"
+                                    >
+                                    {% else %}
+                                    <img src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Brand-no-image.svg" 
+                                        width="90" 
+                                        height="90"
+                                        alt="{{ product.title }}">
+                                    {% endif %}
+                                </span>
+                                <div class="product-title-price">
+                                  <a href="{{ product.url }}" class="productName" 
+                                  data-product_sku="{{ product.sku | handleize |  prepend: 'sku-'  }}">{{ product.title }}</a>
+                                  <span><strong>{{ product.price | money }}</strong></span>
+                                  <span>Qty: <small>{{ product.quantity }}</small></span>
+                                </div>
+                                <table>
+                                    <tr>
+                                        <td>{{ 'customer.orders.date' | t }}:</td>
+                                        <td><strong>{{ order.created_at | time_tag: format: 'date' }}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ 'customer.orders.payment_status' | t }}:</td>
+                                        <td><strong>{{ order.financial_status_label }}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ 'customer.orders.fulfillment_status' | t }}:</td>
+                                        <td><strong>{{ order.fulfillment_status_label }}</strong></td>
+                                    </tr>
+                                </table>
+                                <div class="track-order">
+                                    <button class="main-btn-small btn-blue" onclick="window.location.href='{{ order.order_status_url }}'">
+                                        Track Order
+                                    </button>
+                                </div>
+                              </div>
+                            {% endfor %}
+                        {%- else -%}
+                            <p>{{ 'customer.orders.none' | t }}</p>
+                        {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

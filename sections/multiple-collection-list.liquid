@@ -1,0 +1,416 @@
+{{ 'section-multiple-collection.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-video.css' | asset_url | stylesheet_tag }}
+{{ 'section-brand-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.child_manufacturer != blank %}
+  <div class="multiple-collection-list">
+    {% for child_manufacturer in section.settings.child_manufacturer %}
+      {%- assign child_manufacturer_handle = child_manufacturer.system.handle | handleize -%}
+      {% assign is_even = forloop.index0 | modulo: 2 %}
+      <div class="multiple-manufacturer{% if is_even == 1 %} manufacturer-light-grey{% endif %}">
+        <div class="page-width">
+          <div class="multiple-brand-logo">
+            <span>
+              {% if child_manufacturer.image != blank %}
+                <img
+                  src="{{ child_manufacturer.image | image_url }}"
+                  alt="{{ child_manufacturer.title | handleize }}"
+                  height="90"
+                  width="260"
+                  loading="lazy"
+                >
+              {% endif %}
+            </span>
+            {% if collections[child_manufacturer_handle] != blank %}
+              <a href="{{ collections[child_manufacturer_handle].url }}" class="view-link"> View All </a>
+            {% endif %}
+          </div>
+          <div class="multiple-brand-title">
+            {% if child_manufacturer.subtitle != blank %}
+              <h2 class="section-main-title">{{ child_manufacturer.subtitle }}</h2>
+            {% else %}
+              <h2 class="section-main-title">{{ child_manufacturer.title }}</h2>
+            {% endif %}
+            {% if child_manufacturer.description != blank %}
+              <p>
+                {{ child_manufacturer.description }}
+              </p>
+            {% endif %}
+          </div>
+          {% if child_manufacturer.featured_products != blank %}
+            <div class="multiple-brand-block--outer">
+              <div class="multiple-brand-block">
+                {% for product in child_manufacturer.featured_products.value %}
+                  <div class="multiple-brand-block--inner">
+                    {% render 'card-product',
+                      card_product: product,
+                      media_aspect_ratio: 'adapt',
+                      image_shape: 'default',
+                      show_secondary_image: false,
+                      show_vendor: false,
+                      show_rating: false,
+                      quick_add: 'none',
+                      section_id: child_manufacturer.id
+                    %}
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="progress-bar-main">
+                <div class="progress-bg"></div>
+              </div>
+            </div>
+          {% endif %}
+          <div class="view_all_block">
+            {% if collections[child_manufacturer_handle] != blank %}
+              <a href="{{ collections[child_manufacturer_handle].url }}" class="main-btn-large btn-blue"> View All </a>
+            {% endif %}
+          </div>
+          {% if child_manufacturer.featured_videos != blank or child_manufacturer.resources != blank %}
+            <div class="collection-video-content">
+              <div class="collection-featured {% if child_manufacturer.featured_videos != blank and child_manufacturer.resources == blank %} collection-full-content{% endif %} {% if child_manufacturer.featured_videos == blank and child_manufacturer.resources != blank %} collection-full-content{% endif %}">
+                {% if child_manufacturer.featured_videos != blank %}
+                  <div class="featured-content">
+                    {% if section.settings.featured_video_title != blank %}
+                      <h2>{{ section.settings.featured_video_title }}</h2>
+                    {% endif %}
+                    <ul>
+                      {% for video in child_manufacturer.featured_videos.value %}
+                        <li>
+                          <span>
+                            {% if video.featured_image != blank %}
+                              <img
+                                src="{{ video.featured_image | image_url }}"
+                                alt="{{ video.title | handleize }}"
+                                height="100"
+                                width="150"
+                                loading="lazy"
+                              >
+                            {% else %}
+                              {{ 'image' | placeholder_svg_tag }}
+                            {% endif %}
+                          </span>
+                          <div class="featured-right-title">
+                            <h4>
+                              <a href="javascript:void(0)" class="play-btn" data-video="{{ video.youtube_video_url }}">
+                                {{ video.title -}}
+                              </a>
+                            </h4>
+                            <a
+                              href="javascript:void(0)"
+                              class="watch-video play-btn"
+                              data-video="{{ video.youtube_video_url }}"
+                            >
+                              <img
+                                src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Vector.svg?v=1743760560"
+                                alt="watch-video-icon"
+                                height="16"
+                                width="16"
+                                loading="lazy"
+                              >
+                              Watch Video
+                            </a>
+                          </div>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+                {% if child_manufacturer.resources != blank %}
+                  <div class="featured-content">
+                    {% if section.settings.resources_title != blank %}
+                      <h2>{{ section.settings.resources_title }}</h2>
+                    {% endif %}
+                    <ul>
+                      {% for resource in child_manufacturer.resources.value %}
+                        <li>
+                          <span>
+                            {% if resource.featured_image != blank %}
+                              <img
+                                src="{{ resource.featured_image | image_url }}"
+                                alt="{{ resource.title | handleize }}"
+                                height="100"
+                                width="150"
+                                loading="lazy"
+                              >
+                            {% else %}
+                              {{ 'image' | placeholder_svg_tag }}
+                            {% endif %}
+                          </span>
+                          <div class="featured-right-title">
+                            <h4>
+                              <a
+                                href="javascript:void(0)"
+                                class="play-btn"
+                                data-video="{{ resource.youtube_video_url }}"
+                              >
+                                {{ resource.title }}
+                              </a>
+                            </h4>
+                            <a
+                              href="javascript:void(0)"
+                              class="watch-video play-btn"
+                              data-video="{{ resource.youtube_video_url }}"
+                            >
+                              <img
+                                src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Vector.svg?v=1743760560"
+                                alt="watch-video-icon"
+                                height="16"
+                                width="16"
+                                loading="lazy"
+                              >
+                              Watch Video
+                            </a>
+                          </div>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+          {% if child_manufacturer.documents != blank %}
+            <div class="brand-document">
+              {% if section.settings.documents_title != blank %}
+                <h2 class="section-main-title">{{ section.settings.documents_title }}</h2>
+              {% endif %}
+              <ul class="brand-collection-list brand-list-slider">
+                {% for document in child_manufacturer.documents.value %}
+                  <li class="slick-slide">
+                    <div class="brand-collection-item">
+                      <span class="brand-collection-img">
+                        <img
+                          src="{{ document.image | default: document.document.value.preview_image |  image_url }}"
+                          alt="{{  document.image.alt | default: document.title }}"
+                          height="288"
+                          width="288"
+                          loading="lazy"
+                        >
+                      </span>
+                      <a href="{{ document.document.value.url }}" target="_blank">{{ document.title }}</a>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="video-modal video-modal-{{ section.id }}">
+    <div class="modal-body">
+      <div class="modal-close">
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </div>
+      <div class="modal-content">
+        <iframe
+          width="740"
+          height="400"
+          id="youtube-frame"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $(document).on('click', '.play-btn', function () {
+        $('.video-modal.video-modal-{{ section.id }}').addClass('open');
+        $('body').addClass('modal-main');
+        var videoUrl = $(this).data('video');
+        var embedUrl = '';
+        if (videoUrl.includes('embed')) {
+          embedUrl = videoUrl;
+        } else {
+          var videoId = '';
+          var match = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/);
+          if (match && match[1]) {
+            videoId = match[1];
+            embedUrl = 'https://www.youtube.com/embed/' + videoId;
+          } else {
+            embedUrl = videoUrl;
+          }
+        }
+        $('.video-modal-{{ section.id }} #youtube-frame').attr('src', embedUrl + '?autoplay=1');
+      });
+
+      $(document).on('click', '.modal-close', function () {
+        closeModal();
+      });
+
+      $(document).on('click', '.video-modal.video-modal-{{ section.id }}', function (e) {
+        if ($(e.target).closest('.modal-body').length === 0) {
+          closeModal();
+        }
+      });
+
+      $(document).on('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeModal();
+        }
+      });
+
+      function closeModal() {
+        $('.video-modal').removeClass('open');
+        $('.video-modal #youtube-frame').attr('src', '');
+        $('body').removeClass('modal-main');
+      }
+
+      $('.brand-list-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        rows: 1,
+        infinite: false,
+        speed: 300,
+        lazyLoad: 'ondemand',
+        responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              slidesToShow: 3,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              infinite: false,
+            },
+          },
+        ],
+      });
+      function initMultipleBrandSliders() {
+        $('.multiple-brand-block').each(function () {
+          const $slider = $(this);
+          const totalSlides = $slider.find('.multiple-brand-block--inner').length;
+
+          console.log('Total slides:', totalSlides);
+
+          // Detect visible slides based on current screen width
+          let slidesToShow = 4;
+          if (window.innerWidth < 768) {
+            slidesToShow = 2;
+          } else if (window.innerWidth < 1024) {
+            slidesToShow = 3;
+          }
+
+          // If already initialized, destroy first
+          if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
+          }
+
+          if (totalSlides <= slidesToShow) {
+            $slider.addClass('no-slider');
+          } else {
+            $slider.removeClass('no-slider');
+
+            $slider.slick({
+              slidesToShow: 4,
+              slidesToScroll: 4,
+              infinite: false,
+              speed: 300,
+              lazyLoad: 'ondemand',
+              responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                  },
+                },
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                  },
+                },
+              ],
+            });
+
+            $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+              updateProgressBar(slick, nextSlide);
+            });
+
+            const slickInstance = $slider.slick('getSlick');
+            updateProgressBar(slickInstance, 0);
+          }
+        });
+      }
+
+      // Call once
+      initMultipleBrandSliders();
+
+      // Call on resize
+      let resizeTimeout;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          initMultipleBrandSliders();
+        }, 300);
+      });
+
+      // Progress bar update function
+      function updateProgressBar(slick, nextSlide) {
+        const sliderWrapper = slick.$slider.closest('.multiple-brand-block--outer')[0]; // updated wrapper class
+        const progressBarContainer = sliderWrapper.querySelector('.progress-bg');
+
+        if (!progressBarContainer) return;
+
+        const totalSlides = slick.slideCount;
+        const visibleSlides = slick.options.slidesToShow;
+        nextSlide = Math.min(nextSlide, totalSlides - 1);
+
+        let progress = ((nextSlide + visibleSlides) / totalSlides) * 100;
+        progress = Math.min(progress, 100);
+
+        requestAnimationFrame(() => {
+          progressBarContainer.style.width = progress + '%';
+        });
+      }
+    });
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Multiple Collection",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "metaobject_list",
+      "id": "child_manufacturer",
+      "label": "Select Child Manufacturer",
+      "metaobject_type": "manufacturer"
+    },
+    {
+      "type": "text",
+      "id": "featured_video_title",
+      "label": "Featured Video Title",
+      "default": "Featured Video"
+    },
+    {
+      "type": "text",
+      "id": "resources_title",
+      "label": "Resources Title",
+      "default": "Resources"
+    },
+    {
+      "type": "text",
+      "id": "documents_title",
+      "label": "Documents Title",
+      "default": "Documents"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multiple Collection"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,272 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "main_image_banner_aGHQMG": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Terms & Conditions"
+      }
+    },
+    "section_breadcrumbs_VbgXzA": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "text_content_wxXzeX": {
+      "type": "text-content",
+      "blocks": {
+        "description_ci3Bc9": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>These standard terms and conditions of sale apply to all products or services <a href=\"https://cableorganizer.com\" title=\"https://cableorganizer.com\">CableOrganizer®</a> (the “Seller”) provides to customers wishing to purchase products (the “Buyer”). Seller rejects any additional terms and conditions that may be contained in any document provided previously by the Buyer. Seller recognizes no other terms and conditions including but not limited to terms and conditions in documents provided subsequent to the date of this Agreement unless approved in writing by Seller’s authorized representative.</p>"
+          }
+        },
+        "heading_iVg4jk": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Purchase Orders"
+          }
+        },
+        "description_6BGxn4": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Purchase orders from Buyer sent to Seller shall be binding on Seller if accepted and acknowledged in writing by Seller or upon fulfillment by Seller. Purchase orders are cancelable by Buyer prior to shipment without further fees or charges. Purchase orders canceled by Buyer after shipment are subject to the return policy set forth in Section 5 and Buyer shall be responsible for payment of any and all shipping costs incurred by Seller and restocking fees, if applicable. Any terms of sale contained in Buyer’s purchase orders are superseded by these Standard Terms and Conditions.</p>"
+          }
+        },
+        "heading_FNCLyh": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Acceptance Of Order: Termination"
+          }
+        },
+        "description_BdcQ6h": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Acceptance of any order is subject to credit approval and acceptance of order by Seller. If Buyer’s credit becomes unsatisfactory to Seller, Seller reserves the right to terminate upon notice to Buyer and without liability to Seller.</p>"
+          }
+        },
+        "heading_4Cg4xy": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Prices And Shipments"
+          }
+        },
+        "description_UgVMAT": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Prices shall be those in effect at time of shipment which shall be made EXW. Shipping methods and costs quoted are subject to change based on freight availability.</p><p>Due to a rapidly changing economy and shifting costs of materials, all prices on CableOrganizer® are subject to change without notice. If a product on CableOrganizer® is mistakenly listed at an incorrect price, CableOrganizer® reserves the right to refuse or cancel any such orders placed for incorrectly priced products even if the order has been confirmed and your credit card has been charged. In the event that your credit card has already been charged for the purchase and your order is cancelled, CableOrganizer® shall issue a refund to your credit card in the amount that was charged.</p>"
+          }
+        },
+        "heading_FrWFDF": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Payment Terms"
+          }
+        },
+        "description_3jXC8a": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p><a href=\"https://cableorganizer.com\" title=\"https://cableorganizer.com\">CableOrganizer®</a> accepts Purchase Orders from our approved, USA-based customers. Our account terms are Net 30 days. To obtain an account please send the following information*:</p><ul><li>Your Company's W-9 IRS Form</li><li>Your Company's Dun & Bradstreet Number (D&B)</li><li>1 Bank and 3 Trade References</li><li>Your Initial Purchase Order</li></ul><p><br/>*At our discretion, CableOrganizer® reserves the right to amend or waive any or all of these conditions at any time.<br/><br/>Please fax or email this information to our Accounting Department at (973)-300-9048 or email them to accounting@cableorganizer.com. Our Accounting Dept. will process your application upon receipt. It can take up to 30 days for us to verify credit references, your bank reference, and process an application. If your bank requires a fee to obtain your credit verification, this fee will be added to your first order on Net 30 Terms. Once we have made the decision, we will contact you and let you know the status of your account. If you need an order expedited, please feel free to pay via one of our other payment options shown below.</p><p>Once your company has been approved for credit you will be able to fax or email us Purchase Orders. Please fax them to (973)-300-9048 or email them to info@cableorganizer.com.</p><p>**At this time we are unable to extend credit terms to our internationally based customers, however we do have other payment options available.</p><p>Alternative payment methods: major credit cards, check, money order, PayPal, or wire transfer.</p><p>Please feel free to give us a call at 1-833-3CABLEORG (1-833-322-2536) to speak with one of our Customer Care Consultants if you have any questions.</p>"
+          }
+        },
+        "heading_zMk74U": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Return Of Products"
+          }
+        },
+        "description_pdWLzw": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Except for products considered Non-cancelable or Nonreturnable by Seller, credit will be allowed for products returned with prior written approval from Seller. The approval must be in the form of a Return Merchandise Authorization (“RMA”) issued by Seller. A restocking fee of 25% of the total purchase value will apply. Buyer shall be responsible for all shipping costs of returned products. Credits will be issued only for products returned within 90 days of the date of purchase, returned in original packaging and deemed by Seller to be in original resellable condition.</p>"
+          }
+        },
+        "heading_h7Vhrk": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Taxes"
+          }
+        },
+        "description_PRLikr": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Many countries and jurisdictions around the world apply some type of tax on consumer purchases, including items bought on CableOrganizer®. Currently, we are obligated to charge sales tax for delivery within the following 7 states – FL, IL, MD, NJ, NY, OH, and VA.</p><p>However, many companies and organizations qualify as exempt from sales tax and may make purchases on CableOrganizer® without paying sales tax. If you are a tax-exempt buyer, you must provide CableOrganizer® with a copy of a state resale certificate, an exemption certificate, or other acceptable proof of your exempt status in the state to which the items will be shipped.</p><p>To submit your documentation, please scan your certificate and email it to us at sales@cableorganizer.com. Please include 'Tax Exemption Request' in your email's subject line. Also, please include the following with your documentation:</p><ul><li>Customer number</li><li>Name of organization making the purchase</li><li>Email address associated with the account.</li></ul>"
+          }
+        },
+        "heading_jzgbkf": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Delay In Delivery"
+          }
+        },
+        "description_nEPenm": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Seller is not accountable for delays in delivery occasioned by acts of God, failure of its suppliers to ship or deliver on time, or other circumstances over which Seller has no direct control. Factory shipment or delivery dates are the best estimates for delivery. In no case shall Seller be liable for any damages arising from any delay in delivery.</p>"
+          }
+        },
+        "heading_9tmHVr": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Warranties"
+          }
+        },
+        "description_GkDiwV": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Seller makes no warranty, either expressed or implied, of any kind including without limitation any warranty of merchantability, fitness for a particular purpose, title or lack of infringement. The only warranties available to Buyer shall be those made by the manufacturer. Buyer shall assert any claims only against the manufacturer and shall have no recourse against the Seller.</p>"
+          }
+        },
+        "heading_LPW9nL": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Security Interest"
+          }
+        },
+        "description_XFVhWg": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Seller will retain a security interest in all products sold until the full purchase price and charges enumerated on the invoice are paid. Buyer’s failure to pay any amount when due will give seller the right to possession and removal of the equipment upon written notice at least ten (10) days prior.</p>"
+          }
+        },
+        "heading_H9F4Qi": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Limitation Of Liability"
+          }
+        },
+        "description_mhhBFH": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>It is understood and agreed that Seller’s liability, whether in contract, in tort, under any warranty, in negligence or otherwise shall not exceed and Buyer’s remedy is limited to either, at Seller’s option: (I) Replacement of the defective products Exw, (Ii) correction of the defective service, (Iii) repair of the defective products, (Iv) return of the defective product by the Buyer and refund of the purchase price, or (V) refund of the service price. Under no circumstances shall Seller be liable to Buyer or any third party for loss of profits, special, direct, indirect, incidental, or consequential damages or an amount greater than the purchase price for the products or services purchased by the Buyer. The price stated for the products or services is a consideration in limiting Seller’s liability. No action, regardless of form, arising out of the transactions of this agreement may be brought by Buyer more than one year after the cause of action has accrued.</p>"
+          }
+        },
+        "heading_Fg9tGf": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Waiver"
+          }
+        },
+        "description_nE7GMz": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>The failure of Seller to insist upon the performance of any of the terms or conditions of this contract or to exercise any right hereunder shall not be deemed to be a waiver of such terms, conditions or rights in the future, nor shall it be deemed to be a waiver of any other term, condition, or right under this contract.</p>"
+          }
+        },
+        "heading_hHGehL": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Modification Of Terms And Conditions"
+          }
+        },
+        "description_8mzqEQ": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>No terms and conditions other than those stated herein and no agreement or understanding, in any way purporting to modify these terms or conditions, shall be binding on Seller without the Seller’s written consent.</p>"
+          }
+        },
+        "heading_wrE34P": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Choice Of Law"
+          }
+        },
+        "description_L7MBUr": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>This agreement shall be governed by the laws of the State of New Jersey, USA, without regard to principles of conflicts of laws, and the courts of the State of New Jersey in the County of Sussex shall have nonexclusive jurisdiction over causes of action arising under this agreement. All parties hereby submit to the jurisdiction of such courts and waive any objection of forum non conveniens that they may be entitled to raise. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded.</p>"
+          }
+        },
+        "heading_d3TEit": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Promotional Rules And Restrictions"
+          }
+        },
+        "description_VkNbnA": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>No terms and conditions other than those stated herein and no agreement or understanding, in any way purporting to modify these terms or conditions, shall be binding on Seller without the Seller’s written consent.</p><p>a. Free Standard Ground Shipping within the Continental U.S. — All eligible orders will ship using a carrier and method that CableOrganizer® chooses. Large orders/products that cannot ship standard ground due to weight, size and/or require a freight truck, will not be eligible for the promotion.</p><p>b. Promotional codes cannot be redeemed for cash.</p><p>c. Promotional discounts cannot be applied to gift certificates.</p><p>d. Promo codes cannot be combined with any other CableOrganizer® discount or offer.</p><p>e. Promo codes cannot be applied to prior purchases.</p><p>f. Limit one use of promo code per customer (unless otherwise noted)</p><p>g. Promo codes are subject to minimum order amounts, excluding tax and shipping.</p><p>h. Promo codes expire at 11:59 p.m. EST (unless otherwise noted).</p><p>i. Promo codes may not be transferrable and may only be used by the intended recipient.</p><p>j. Promo codes may not be used on some brands, products, and categories.</p><p>k. Promo codes are subject to product availability, and quantity limits may apply.</p><p>l. CableOrganizer® reserves the right to limit use of promo codes for activity that CableOrganizer® deems, in its sole discretion, to be fraudulent, abusive, in violation of CableOrganizer® Terms & Conditions, or otherwise inappropriate.</p>"
+          }
+        },
+        "heading_89jGak": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "California's Proposition 65"
+          }
+        },
+        "description_yKj68p": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>California’s Proposition 65 — officially known as the Safe Drinking Water and Toxic Enforcement Act of 1986 — was enacted as a ballot initiative in November 1986. Its main purpose is to protect the state’s drinking water sources from contamination by any chemicals purported to cause cancer, birth defects or other reproductive harm. Proposition 65 requires businesses to inform Californians about potential exposures to such chemicals.</p><p>A Proposition 65 warning does not necessarily mean a product is in violation of any product-safety standards or requirements.</p><p>The Proposition 65 warning may apply to certain products available from CableOrganizer®, with materials listed under the Prop 65 Enforcement Act. Should the Buyer have questions about California Proposition 65, more information is found on the California Office of Environmental Health Hazard Assessment (OEHHA) website <a href=\"https://oehha.ca.gov/proposition-65\" target=\"_blank\">here</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "description_ci3Bc9",
+        "heading_iVg4jk",
+        "description_6BGxn4",
+        "heading_FNCLyh",
+        "description_BdcQ6h",
+        "heading_4Cg4xy",
+        "description_UgVMAT",
+        "heading_FrWFDF",
+        "description_3jXC8a",
+        "heading_zMk74U",
+        "description_pdWLzw",
+        "heading_h7Vhrk",
+        "description_PRLikr",
+        "heading_jzgbkf",
+        "description_nEPenm",
+        "heading_9tmHVr",
+        "description_GkDiwV",
+        "heading_LPW9nL",
+        "description_XFVhWg",
+        "heading_H9F4Qi",
+        "description_mhhBFH",
+        "heading_Fg9tGf",
+        "description_nE7GMz",
+        "heading_hHGehL",
+        "description_8mzqEQ",
+        "heading_wrE34P",
+        "description_L7MBUr",
+        "heading_d3TEit",
+        "description_VkNbnA",
+        "heading_89jGak",
+        "description_yKj68p"
+      ],
+      "custom_css": [
+        "a {color: #fe5b00;}",
+        "h3 {color: #336699; font-weight: bold;}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "main_image_banner_aGHQMG",
+    "section_breadcrumbs_VbgXzA",
+    "text_content_wxXzeX"
+  ]
+}

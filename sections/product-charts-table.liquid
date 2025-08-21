@@ -1,0 +1,75 @@
+{{ 'section-product-comparison.css' | asset_url | stylesheet_tag }}
+{{ '//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js' | script_tag }}
+
+<div class="product-comparison product-comparison-info">
+  <div class="page-width">
+    <div class="go-link">
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_url }}" class="view-link">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </div>
+    <div class="charts-table">
+      <div
+        id="pdf-container"
+        data-pdf="{{ metaobject.pdf.value.url }}"
+      ></div>
+    </div>
+
+    <div class="view-more-info">
+      {% assign collection = metaobject.link.value %}
+      {% if collection.url != blank %}
+        <a href="{{ collection.url }}" class="main-btn-small btn-blue"> Shop More </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<script>
+  const container = document.getElementById('pdf-container');
+  const pdfUrl = container.getAttribute('data-pdf');
+
+  // Load the PDF document
+  pdfjsLib.getDocument(pdfUrl).promise.then((pdf) => {
+    for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+      pdf.getPage(pageNumber).then((page) => {
+        const scale = 6.0; // Higher scale = better quality
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        container.appendChild(canvas);
+
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport,
+        };
+        page.render(renderContext);
+      });
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Product Charts Table",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Charts Table"
+    }
+  ]
+}
+{% endschema %}

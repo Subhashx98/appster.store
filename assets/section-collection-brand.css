@@ -1,0 +1,91 @@
+.collection-brand{
+    margin-bottom: 60px;
+}
+.collection-brand-logos .slick-track{
+    display: flex;
+}
+.collection-brand-logos .slick-list{
+    margin-left: -3px;
+}
+.collection-brand-logos .slick-slide{
+    height: auto;  
+    border: 1px solid #dddddd;
+    border-left: 0px;
+}
+.collection-brand-logos .slick-slide:first-child{
+    border-left: 1px solid #dddddd;
+}
+.collection-brand-logos .logo-image{
+    border-left: 0px;
+    padding: 10px;
+    height: 110px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.collection-brand-logos .logo-image img{
+    height: 100%;
+    max-height: 70px;
+    transition: var(--webkit-transition-all);
+}
+.collection-brand-logos .logo-image:hover img{
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+}
+.collection-brand-logos .logo-image span{
+    font-size: 16px;
+    margin-top: 4px;
+    color: var(--black-color);
+    text-transform: capitalize;
+    transition: var(--webkit-transition-all);
+    transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 22px;
+    line-height: 22px;
+    opacity: 0;
+    font-size: 0;
+    height: 0;
+    position: absolute;
+    bottom: 14px;
+}
+.collection-brand-logos .logo-image span:after{
+    border: solid var(--black-color);
+    border-width: 0 1px 1px 0;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    margin-top: 4px;
+}
+.collection-brand-logos .logo-image:hover span{
+    opacity: 1;
+    font-size: 14px;
+    height: 22px;
+}
+/* Responsive */
+@media screen and (max-width: 991px) {
+    .collection-brand .section-main-title{flex-wrap: nowrap;justify-content: space-between; margin-bottom: 24px;}
+    .collection-brand .section-main-title span{width: 70%;}
+    .collection-brand{ margin-bottom: 0px;}
+    .collection-brand-logos{ margin-bottom: 104px;}
+    .collection-brand-logos .slick-arrow.slick-next{left: 50%; margin-left: 5px;}
+    .collection-brand-logos .slick-arrow.slick-prev{right: 50%; margin-right: 5px;}
+    .collection-brand-logos .slick-arrow { bottom: -64px;  margin-bottom: 0;}
+    .collection-brand .section-main-title a{ margin-left: auto; margin-right: 15px;}
+    .collection-brand-logos .slick-slide div:first-child{border-top: 0;}
+    .collection-brand-logos .slick-slide div{ border-top: 1px solid #dddddd; }
+}
+@media screen and (max-width: 767px) {
+    .collection-brand-logos .logo-image{height: 70px; position: relative;}
+    .collection-brand-logos .logo-image span{ bottom: 10px;}
+    .collection-brand-logos .logo-image:hover span{font-size: 12px;}
+}

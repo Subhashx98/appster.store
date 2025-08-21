@@ -1,0 +1,91 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "main_image_banner_EwMMxk": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Returns & Exchanges"
+      }
+    },
+    "section_breadcrumbs_hqRi3n": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": true
+      }
+    },
+    "return_and_exchange_zYxJeC": {
+      "type": "return-and-exchange",
+      "blocks": {
+        "time_and_fee_k8yHQB": {
+          "type": "time_and_fee",
+          "settings": {
+            "time_text": "Up to 30 days",
+            "fee_text": "15%"
+          }
+        },
+        "time_and_fee_beTX7D": {
+          "type": "time_and_fee",
+          "settings": {
+            "time_text": "31 - 90 days",
+            "fee_text": "20%"
+          }
+        },
+        "time_and_fee_pXApL9": {
+          "type": "time_and_fee",
+          "settings": {
+            "time_text": "90 days to 6 months",
+            "fee_text": "25%"
+          }
+        },
+        "time_and_fee_7kwdLg": {
+          "type": "time_and_fee",
+          "settings": {
+            "time_text": "Over 6 months",
+            "fee_text": "50%"
+          }
+        }
+      },
+      "block_order": [
+        "time_and_fee_k8yHQB",
+        "time_and_fee_beTX7D",
+        "time_and_fee_pXApL9",
+        "time_and_fee_7kwdLg"
+      ],
+      "settings": {
+        "description": "<p>If you have a defective item or if the wrong product was shipped to you, please notify us immediately. We do our very best to ensure the quality of the products we sell on CableOrganizer®. We have partnered with the top manufacturers and carry the best and most reliable brands in the industry.</p><p>Returns* for quality reasons are taken very seriously and will be handled quickly. Contact us by phone at 1-833-3CABLEORG (1-833-322-2536) for a Return Material Authorization number (RMA). Credit will not be issued for any returns without an RMA number.</p><p>If material has been ordered incorrectly, we will do our very best to assist you. However, all braided sleeving and heat shrink tubing orders for 25 feet or less will not be refunded.</p><p>Full spools of 25 feet and larger, and unused tools may be returned for credit. </p>",
+        "gorgias_form_liquid": "<script defer src=\"https://contact.gorgias.help/api/contact-forms/loader.js?v=3\" data-gorgias-loader-contact-form data-gorgias-contact-form-uid=\"2a6vk56r\"></script>",
+        "heading": "",
+        "table_heding_main": "See chart for restocking fees:",
+        "table_heding_time": "Elapsed Time",
+        "table_heding_fee": "Restocking Fee",
+        "text": "<strong>*Returned items must be in their original packaging, in as-new condition, and must be accompanied by the original packing slip.</strong>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_image_banner_EwMMxk",
+    "section_breadcrumbs_hqRi3n",
+    "return_and_exchange_zYxJeC"
+  ]
+}

@@ -1,0 +1,120 @@
+{{ 'section-product-references.css' | asset_url | stylesheet_tag }}
+
+<div class="product-references">
+  <div class="page-width">
+    <h2 class="section-main-title">
+      {% if section.settings.title != blank %}
+        {{ section.settings.title }}
+      {% endif %}
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_url }}" class="view-link">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </h2>
+    <div class="product-references-slider">
+      {% if section.settings.product_references != blank %}
+        {% for product in section.settings.product_references %}
+          {% assign anchor = product.title %}
+          {% assign page_url = '/pages/product-references#' | append: anchor %}
+          <div class="slick-slide">
+            <span class="slide-product-img">
+              {% if product.image %}
+                <a href="{{ page_url }}"
+                  ><img
+                    src="{{ product.image | file_url }}"
+                    width="155"
+                    height="60"
+                    loading="lazy"
+                    alt="{{ product.image.alt | default: "Brand Logo" }}"
+                    class="image"
+                ></a>
+              {% else %}
+                <a href="{{ page_url }}">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Brand-no-image.svg"
+                    width="155"
+                    height="60"
+                    loading="lazy"
+                    alt="Brand Logo"
+                    class="image"
+                  >
+                </a>
+              {% endif %}
+            </span>
+            <a href="{{ page_url }}">{{ product.title }}</a>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  // Slider
+  $(document).ready(function () {
+    $('.product-references-slider').slick({
+      slidesToShow: 6,
+      slidesToScroll: 6,
+      infinite: false,
+      lazyLoad: 'ondemand',
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4
+          },
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          },
+        },
+      ],
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product References",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Link"
+    },
+    {
+      "type": "metaobject_list",
+      "id": "product_references",
+      "label": "Select Product References",
+      "metaobject_type": "product_reference_categories"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Product References"
+    }
+  ]
+}
+{% endschema %}

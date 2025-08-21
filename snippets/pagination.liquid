@@ -25,7 +25,7 @@
               aria-label="{{ 'general.pagination.previous' | t }}"
             >
               <span class="svg-wrapper">
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
               </span>
             </a>
           </li>
@@ -46,7 +46,7 @@
                 <a
                   role="link"
                   aria-disabled="true"
-                  class="pagination__item pagination__item--current light"
+                  class="pagination__item pagination__item--current"
                   aria-current="page"
                   aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
                 >
@@ -67,7 +67,7 @@
               aria-label="{{ 'general.pagination.next' | t }}"
             >
               <span class="svg-wrapper">
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
               </span>
             </a>
           </li>

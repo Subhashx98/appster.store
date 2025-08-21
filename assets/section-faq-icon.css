@@ -1,0 +1,66 @@
+.faq-icon-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px 0px;
+}
+.faq-icon-list ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+.faq-icon-list ul li{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width:calc(20% - 16px);
+    flex: 0 0 calc(20% - 16px);
+}
+.faq-icon-list ul li a{
+    text-transform: capitalize;
+    font-weight: 400;
+    text-align: center;
+    color: var(--black-color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    line-height: normal;
+}
+.faq-icon-list ul li a:hover {
+    color: var(--orange-color);
+}
+.faq-icon-list ul li .faq-icon{
+    background-color: var(--light-grey-color);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius-5);
+}
+.faq-icon-list ul li .faq-icon img{
+    transition: var(--webkit-transition-all);
+}
+.faq-icon-list ul li a:hover .faq-icon img{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+/* responsive */
+@media only screen and (min-width: 1200px) {
+    .faq-icon-list ul li{ width:calc(18% - 16px); flex: 0 0 calc(18% - 16px);}
+    .faq-icon-list ul li .faq-icon{padding: 48px;}
+}
+@media only screen and (max-width: 991px) {
+    .faq-icon-list ul li{ width: calc(25% - 16px);flex: 0 0 calc(25% - 16px);}
+}
+@media only screen and (max-width: 640px) {
+    .faq-icon-list ul{ gap: 10px; row-gap: 20px;}
+    .faq-icon-list ul li{ width: calc(50% - 5px);flex: 0 0 calc(50% - 5px);}
+    .faq-icon-list ul li a{ font-size: 14px;}
+    .faq-icon-list ul li .faq-icon img{ width: 100px;height: 100px;}
+    .faq-icon-list ul li .faq-icon{ padding: 44px 20px;}
+}

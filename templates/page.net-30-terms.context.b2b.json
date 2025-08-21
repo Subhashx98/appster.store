@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.net-30-terms.json",
+  "context": {
+    "b2b": true
+  },
+  "sections": {
+    "main_image_banner_dGznF": {
+      "type": "main-image-banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/About_Us_image.jpg",
+        "title": "Apply for Net 30 Terms"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "purchase_order_content_UeWJW": {
+      "type": "purchase-order-content",
+      "disabled": true,
+      "settings": {
+        "description": "<h2>What is Net 30 Terms</h2><p>Unlock flexible financing options to support your business growth. With our Net 30 payment terms, you can enjoy 30 days to pay on all orders with 0% interest and no annual fees, empowering you to manage cash flow more effectively and invest in new opportunities to<br/>expand your operations.</p><ul><li>Net 30 payment terms with 0% interest and no annual fees</li><li>Convenient invoice payment options - online, by mail, or over the phone</li><li>Real-time visibility into invoices and account balance through our secure portal</li></ul>",
+        "image": "shopify://shop_images/purchase-order.jpg",
+        "header-1004959ecece9e8e22cb435d53760258": null,
+        "email_text": "Email us",
+        "email": "sales@cableorganizer.com",
+        "contact_text": "Give us call",
+        "contact": "1-833-3CABLEORG (1-833-322-2536)",
+        "call_text": "1-833-3CABLEORG"
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "Purchase Orders Accounts"
+    },
+    "credit_application_form_rjtz3": {
+      "type": "credit-application-form",
+      "disabled": true,
+      "settings": {},
+      "blocks": {
+        "powerful_form_builder_app_block_6XxMV": {
+          "type": "shopify://apps/powerful-form-builder/blocks/app-block/e4bcb1eb-35b2-42e6-bc37-bfe0e1542c9d",
+          "disabled": false,
+          "settings": {
+            "shortcode": "<div class=\"globo-formbuilder\" data-id=\"ODU5NjI=\"></div>"
+          }
+        }
+      },
+      "block_order": [
+        "powerful_form_builder_app_block_6XxMV"
+      ],
+      "name": "Credit Application Form"
+    },
+    "main_404_Y6iUR": {
+      "type": "main-404",
+      "disabled": false,
+      "settings": {
+        "bg_img": "shopify://shop_images/shop-banner-img.jpg",
+        "facebook": "https://www.facebook.com/CableOrganizer",
+        "twitter": "https://x.com/CableOrganizers",
+        "insta": "https://www.instagram.com/cableorganizer/",
+        "youtube": "https://www.youtube.com/user/CableOrganizers",
+        "linkedin": "https://www.linkedin.com/company/cableorganizer.com/"
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "404 Page"
+    },
+    "co_related_products_UwzH8": {
+      "type": "co-related-products",
+      "disabled": false,
+      "settings": {
+        "heading": "Our Bestsellers",
+        "cta_text": "View",
+        "cta_url": "shopify://collections"
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "Rebuy Related Products"
+    }
+  },
+  "order": [
+    "main_404_Y6iUR",
+    "co_related_products_UwzH8",
+    "main_image_banner_dGznF",
+    "purchase_order_content_UeWJW",
+    "credit_application_form_rjtz3"
+  ]
+}

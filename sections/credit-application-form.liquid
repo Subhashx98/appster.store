@@ -1,0 +1,35 @@
+{{ 'section-application-form.css' | asset_url | stylesheet_tag }}
+{{ 'common-form.css' | asset_url | stylesheet_tag  }}
+
+<div class="credit-application-form">
+	<div class="page-width">
+		<div class="application-form main-form">
+			{% if section.blocks.size > 0 %}
+				{% for block in section.blocks %}
+				  {% if block.type == '@app' %}
+					 {% render block %}
+				  {% endif %}
+				{% endfor %}
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% schema %}
+	{
+		"name": "Credit Application Form",
+		"tag": "section",
+		"settings": [
+		],
+		"blocks": [
+			{
+				"type": "@app"
+			}
+		],
+		"presets": [
+			{
+				"name": "Credit Application Form"
+			}
+		]
+	}
+{% endschema %}
+    

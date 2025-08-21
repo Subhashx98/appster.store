@@ -1,0 +1,82 @@
+.credit-application-form{
+    padding: 80px 0px;
+    background-color: var(--light-grey-color);
+}
+.credit-application-form .application-form{
+    display: flex;
+    background: var(--white-color);
+    padding: 46px 50px;
+    border-radius: 6px;
+}
+/* Main Form */
+.application-form.main-form .globo-form .globo-form-app .globo-form-control{
+    display: none;
+}
+.application-form.main-form .globo-form .globo-form-app .globo-form-control[data-type="heading"]{
+    display: block;
+    border: 1px solid var(--primary-blue-color);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-5);
+}
+.application-form.main-form .globo-form .globo-form-app .globo-form-control[data-type="heading"].active{
+    background: var(--light-grey-color);
+}
+.application-form.main-form .globo-form .globo-form-app .header h3.title{
+    width: 75%;
+}
+.application-form.main-form .globo-form .globo-form-app .globo-form-control .heading-title{
+    cursor: pointer;
+    padding: 4px 36px 4px 0px;
+    position: relative;
+}
+.application-form.main-form .globo-form .globo-form-app .globo-form-control .heading-title::after{
+    background-color: #F2F2F2;
+    border: 1px solid #F2F2F2;
+    width: 38px;
+    height: 38px;
+    background-image: url(icon-plus.svg);
+    background-size: 18px;
+    display: flex;
+    content: "";
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 0;
+}
+.application-form.main-form .globo-form .globo-form-app .globo-form-control[data-type="heading"].active .heading-title::after{
+    background: transparent;
+    background-image: url(icon-minus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px;
+}
+/* checkbox */
+.application-form .globo-form-control.checkbox-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.application-form .globo-form-control.checkbox-list .globo-label{
+    margin: 0px;
+}
+.application-form .globo-form-control .globo-list-control.option-3-column{
+    width: auto;
+}
+.application-form .globo-form-control .material_outlined-label .label-content{
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+}
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+    .credit-application-form{padding: 40px 0px;}
+    .credit-application-form .application-form{padding: 22px 24px;}
+}
+@media only screen and (max-width: 991px) {
+    .application-form.main-form .globo-form .globo-form-app .header h3.title{ width: 100%;}
+    .application-form .globo-form-control.checkbox-list{ width: 100% !important;}
+    .application-form.main-form .globo-form .globo-form-app .globo-form-control .heading-title::after{width: 34px; height: 34px;}
+}
+@media only screen and (max-width: 767px) {
+    .application-form .globo-formbuilder-wizard .gfb__footer.wizard__footer button{ width: 100%;}
+}

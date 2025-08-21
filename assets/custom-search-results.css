@@ -1,0 +1,119 @@
+/* Search Results Page Styles */
+.search-results-page {
+  padding: 2rem 0;
+}
+
+.search-results-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.search-results-heading {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#search-results-count {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.search-results-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .search-results-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Custom layout adjustments for search page */
+.search-results-layout.facets-vertical .facets-wrapper {
+  padding-right: 2rem;
+}
+
+/* Use CSS Grid for proper alignment and prevent expanding */
+.search-results-main .grid--3-col-desktop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-desktop-horizontal-spacing);
+}
+
+.search-results-main .grid--3-col-desktop .grid__item {
+  width: auto;
+  max-width: none;
+  flex-grow: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .search-results-main .grid--2-col-tablet-down {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-mobile-horizontal-spacing);
+  }
+  
+  .search-results-main .grid--2-col-tablet-down .grid__item {
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Facet count styling to match collection design */
+.search-results-main .facet-checkbox__text-count {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9em;
+  margin-left: 0.5rem;
+  font-weight: normal;
+}
+
+/* Pagination Styling */
+#search-pagination-container {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.search-results-info {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Product Grid Styles */
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.search-result-item {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.search-result-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.no-results, .search-error {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+mark {
+  background-color: yellow;
+  padding: 0 2px;
+}
+
+.pagination-wrapper p {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #666;
+}

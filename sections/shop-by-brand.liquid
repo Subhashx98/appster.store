@@ -1,0 +1,231 @@
+{{ 'section-shop-by-brand.css' | asset_url | stylesheet_tag }}
+<div class="page-width">
+  <div class="shop-by-brand">
+    <h2 class="section-main-title">
+      {% if section.settings.title != blank %}
+        {{ section.settings.title }}
+      {% endif %}
+      {% if section.settings.cta_url and section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_url }}" class="view-link">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </h2>
+    <div class="shop-by-brand-logos">
+      <div class="brand-logo-slider">
+        {% if section.settings.shop_by_brand_list != blank %}
+          {% for brand in section.settings.shop_by_brand_list %}
+            {% assign brand_url = brand.system.url %}
+
+            {% if brand.child_manufacturer == blank %}
+              {% assign brand_handle = brand.system.handle | handle %}
+              {% assign brand_collection = collections[brand_handle] %}
+              {% if brand_collection and brand_collection.url %}
+                {% assign brand_url = brand_collection.url %}
+              {% endif %}
+            {% endif %}
+
+            {% if brand_url == blank %}
+              {% assign brand_url = 'javascript:void(0)' %}
+            {% endif %}
+
+            {% if brand.image %}
+              <a href="{{ brand_url }}" class="slick-slide-logo">
+                <img
+                  src="{{ brand.image | file_url }}"
+                  width="155"
+                  height="60"
+                  loading="lazy"
+                  alt="{{ brand.image.alt | default: "Brand Logo" }}"
+                  class="image"
+
+                ><span>{{ brand.title }}</span>
+              </a>
+            {% else %}
+              <a href="{{ brand_url }}" class="slick-slide-logo">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Brand-no-image.svg"
+                  width="155"
+                  height="60"
+                  loading="lazy"
+                  alt="Brand Logo"
+                  class="image"
+
+                ><span>{{ brand.title }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      {% if section.settings.image != blank
+        or section.settings.heading != blank
+        or section.settings.logo != blank
+        or section.settings.sale_text != blank
+        or section.settings.tag != blank
+        or section.settings.offer_text != blank
+        or section.settings.button_url != blank
+        or section.settings.button_text != blank
+      %}
+        <div class="shop-featured-brand">
+          {% if section.settings.image != blank %}
+            <span class="featured-bg-image">
+              <img
+                src="{{ section.settings.image |  image_url }}"
+                alt="{{ section.settings.image.alt |  default: section.settings.heading }}"
+                height="400"
+                width="100"
+                loading="lazy"
+              >
+            </span>
+          {% endif %}
+          {% if section.settings.heading != blank %}
+            <h2>{{ section.settings.heading }}</h2>
+          {% endif %}
+          <div class="featured-bottom-text">
+            {% if section.settings.logo != blank %}
+              <span class="featured-product-logo">
+                <img
+                  src="{{ section.settings.logo |  image_url }}"
+                  alt="{{ section.settings.logo.alt | default: section.settings.heading }}"
+                  height="28"
+                  width="130"
+                  oading="lazy"
+                >
+              </span>
+            {% endif %}
+            {% if section.settings.sale_text != blank or section.settings.tag != blank %}
+              <span class="end-season">
+                {% if section.settings.sale_text != blank %}
+                  {{- section.settings.sale_text }}
+                {% endif %}
+                {% if section.settings.tag != blank %}
+                  <span class="season-sale">{{ section.settings.tag }}</span>
+                {% endif %}
+              </span>
+            {% endif %}
+            {% if section.settings.offer_text != blank %}
+              <span class="off-price">{{ section.settings.offer_text }}</span>
+            {% endif %}
+            {% if section.settings.button_url and section.settings.button_text != blank %}
+              <a href="{{ section.settings.button_url }}" class="main-btn-large btn-white">
+                {{- section.settings.button_text -}}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  // Slider
+  $(document).ready(function () {
+    $('.brand-logo-slider').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      rows: 3,
+      infinite: false,
+      speed: 300,
+      lazyLoad: 'ondemand',
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4,
+            rows: 2,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 3,
+            rows: 2,
+          },
+        },
+      ],
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Shop By Brand",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Select Brand"
+    },
+    {
+      "type": "metaobject_list",
+      "id": "shop_by_brand_list",
+      "label": "Brand",
+      "metaobject_type": "manufacturer",
+      "limit": 15
+    },
+    {
+      "type": "header",
+      "content": "Featured Brand Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "sale_text",
+      "label": "Sale Text"
+    },
+    {
+      "type": "text",
+      "id": "tag",
+      "label": "Tag"
+    },
+    {
+      "type": "text",
+      "id": "offer_text",
+      "label": "Offer Text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop By Brand"
+    }
+  ]
+}
+{% endschema %}

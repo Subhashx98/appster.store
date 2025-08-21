@@ -1,0 +1,342 @@
+{{ 'section-search-category.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="search-category">
+    {%- if section.settings.show_heading -%}
+      <h2 class="search-title">Glossary</h2>
+    {% endif %}
+    {%- if section.settings.show_go_back -%}
+      <button class="view-link mobile-view-link back-button">Go Back</button>
+    {% endif %}
+    {% if section.settings.search_text != blank %}
+      <p class="section-main-title">{{ section.settings.search_text }}</p>
+    {% endif %}
+    <!-- Shop Brand Search -->
+    <div class="search-all-brand">
+      {%- if section.settings.show_go_back -%}
+        <button class="view-link back-button">Go Back</button>
+      {% endif %}
+      <!-- Search Form -->
+      <form method="get" role="search">
+        <div class="field">
+          <input
+            class="shop-by-brand-search-filter search__input field__input"
+            id="Search-In-Brand"
+            type="search"
+            placeholder="Search by Brand..."
+          >
+          <label class="field__label" for="Search-In-Brand">Search for Technical Term</label>
+          <button id="search-button" class="search__button field__button">
+            <img src="{{ 'icon-search.svg' | asset_url }}" width="20" loading="lazy" height="20" alt="Search">
+            Search
+          </button>
+        </div>
+      </form>
+      <!-- Alphabate -->
+      <ul class="alphabet-filter"></ul>
+    </div>
+
+    <ul class="category-list" id="category-list">
+      <li>
+        <a href="#" class="open-modal"></a>
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="close-modal"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  // Go Back
+  var backButtons = document.getElementsByClassName('back-button');
+  // Loop through the collection and add the event listener to each element
+  for (var i = 0; i < backButtons.length; i++) {
+    backButtons[i].addEventListener('click', function () {
+      window.history.back(); // Go back to the previous page
+    });
+  }
+
+  // URL of the uploaded JSON file in Shopify Files
+  const jsonDataUrl = '{{ "glossary_newdata.json" | file_url }}';
+
+  let activeLetter = '#';
+
+  // Function to create and display alphabet filter links
+  function createAlphabetFilter(data) {
+    const alphabetFilter = document.querySelector('.alphabet-filter');
+    const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+    // Create the '#' link for non-alphabetic characters first
+    const hashLink = document.createElement('li');
+    const hashAnchor = document.createElement('a');
+    hashAnchor.href = 'javascript:void(0)';
+    hashAnchor.textContent = '#';
+    hashAnchor.setAttribute('data-brand', '#');
+
+    // Add event listener for the '#' click
+    hashAnchor.addEventListener('click', () => {
+      // Remove active class from previously active letter
+      const activeLink = alphabetFilter.querySelector('.active');
+      if (activeLink) {
+        activeLink.classList.remove('active');
+      }
+
+      // Add active class to the '#' link
+      hashAnchor.classList.add('active');
+      activeLetter = '#';
+
+      // Reset the search input when switching to '#'
+      const searchInput = document.getElementById('Search-In-Brand');
+      searchInput.value = ''; // Clear the search input
+
+      filterContentByHash(data);
+    });
+
+    hashLink.appendChild(hashAnchor);
+    alphabetFilter.appendChild(hashLink);
+
+    // Create alphabet links A-Z
+    letters.forEach((letter) => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = 'javascript:void(0)';
+      a.textContent = letter.toUpperCase();
+      a.setAttribute('data-brand', letter);
+
+      // Add event listener for each alphabet letter
+      a.addEventListener('click', () => {
+        // Remove active class from previously active letter
+        const activeLink = alphabetFilter.querySelector('.active');
+        if (activeLink) {
+          activeLink.classList.remove('active');
+        }
+
+        // Add active class to the clicked letter
+        a.classList.add('active');
+        activeLetter = letter;
+
+        // Reset the search input when switching alphabet
+        const searchInput = document.getElementById('Search-In-Brand');
+        searchInput.value = ''; // Clear the search input
+
+        filterContentByLetter(letter, data);
+      });
+
+      li.appendChild(a);
+      alphabetFilter.appendChild(li);
+    });
+
+    // Set the default active link to '#'
+    const defaultActiveLink = alphabetFilter.querySelector('[data-brand="#"]');
+    if (defaultActiveLink) {
+      defaultActiveLink.classList.add('active');
+    }
+  }
+
+  // Function to filter content based on the selected letter
+  function filterContentByLetter(letter, data) {
+    const filteredData = data.filter((item) => item.title && item.title.toLowerCase().startsWith(letter.toLowerCase()));
+
+    displayContent(filteredData, letter);
+  }
+
+  // Function to filter content when '#' is clicked
+  function filterContentByHash(data) {
+    const filteredData = data.filter((item) => item.title && /[^a-zA-Z]/.test(item.title.charAt(0)));
+
+    displayContent(filteredData, '#');
+  }
+
+  // Function to filter content by search term
+  function filterContentBySearch(searchTerm, data) {
+    const filteredData = data.filter(
+      (item) => item.title && item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    displayContent(filteredData, searchTerm);
+  }
+
+  // Function to display the filtered content
+  function displayContent(filteredData, category) {
+    const categoryList = document.getElementById('category-list');
+    categoryList.innerHTML = ''; // Clear current content
+
+    if (filteredData.length > 0) {
+      filteredData.forEach((item, index) => {
+        let listItem = document.createElement('li');
+        const anchor = document.createElement('a');
+        anchor.href = `#${slugify(item.title)}`;
+        anchor.textContent = item.title;
+        listItem.setAttribute('data-item-handle', slugify(item.title));
+        anchor.classList.add('open-modal');
+
+        const modalContent = document.createElement('div');
+        modalContent.classList.add('modal-content');
+        const modalBody = document.createElement('div');
+        modalBody.classList.add('modal-body');
+        modalBody.textContent = item.content;
+
+        const closeModal = document.createElement('div');
+        closeModal.classList.add('close-modal');
+        modalBody.appendChild(closeModal);
+        modalContent.appendChild(modalBody);
+        listItem.appendChild(anchor);
+        listItem.appendChild(modalContent);
+
+        categoryList.appendChild(listItem);
+
+        anchor.addEventListener('click', function (event) {
+          event.preventDefault();
+          
+          const slug = slugify(item.title);
+          history.replaceState(null, '', `#${slug}`); 
+
+          modalContent.classList.add('visible');
+        });
+
+        closeModal.addEventListener('click', function () {
+          modalContent.classList.remove('visible');
+
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        });
+      });
+    } else {
+      categoryList.innerHTML = `<p>No items found for the letter ${category}</p>`;
+    }
+  }
+
+  function handleHashClick(data) {
+    const hash = window.location.hash.substring(1); // Remove the '#' from the hash
+    if (hash) {
+      const matchedItem = data.find((item) => slugify(item.title) === hash);
+      if (matchedItem) {
+        const firstChar = matchedItem.title.charAt(0).toLowerCase();
+        let tabLetter = '';
+
+        if (firstChar.match(/[a-z]/i)) {
+          tabLetter = firstChar;
+        } else {
+          tabLetter = '#'; // non-alphabetic
+        }
+        const alphabetFilter = document.querySelector('.alphabet-filter');
+        const targetTab = alphabetFilter.querySelector(`[data-brand="${tabLetter}"]`);
+        if (targetTab) {
+          targetTab.click(); // Simulate click on correct tab
+        }
+        setTimeout(() => {
+          const targetItem = document.querySelector(`[data-item-handle="${hash}"]`);
+          if (targetItem) {
+            const anchor = targetItem.querySelector('a.open-modal');
+            if (anchor) {
+              anchor.click();
+            }
+          }
+        }, 500);
+      }
+    }
+  }
+
+  function slugify(text) {
+    return text
+      .toString()
+      .toLowerCase()               // Convert to lowercase
+      .trim()                       // Remove leading/trailing whitespace
+      .replace(/[\s\_]+/g, '-')     // Replace spaces and underscores with hyphens
+      .replace(/[^\w\-]+/g, '')     // Remove all non-word characters except hyphens
+      .replace(/\-\-+/g, '-');      // Replace multiple hyphens with single hyphen
+  }
+
+  // Fetch the JSON file and display the data
+  fetch(jsonDataUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('Fetched JSON data:', data);
+
+      // Check if the data is in the expected format
+      if (Array.isArray(data)) {
+        // Initialize the alphabet filter
+        createAlphabetFilter(data);
+
+        // Optionally, display content for the default letter '#'
+        filterContentByHash(data); // Automatically show content for '#' when the page loads
+
+        const searchInput = document.getElementById('Search-In-Brand');
+        const searchButton = document.getElementById('search-button');
+        searchInput.addEventListener('input', function () {
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm) {
+            filterContentBySearch(searchTerm, data); // Filter by search term
+          } else {
+            // If search is cleared, keep the active letter filter
+            if (activeLetter === '#') {
+              filterContentByHash(data); // Show content for non-alphabetic characters if '#' is active
+            } else {
+              filterContentByLetter(activeLetter, data); // Otherwise, keep the content for the selected letter
+            }
+          }
+        });
+        // Handle the search button click event
+        searchButton.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent form submission and page refresh
+
+          const searchTerm = searchInput.value.trim();
+          if (searchTerm) {
+            filterContentBySearch(searchTerm, data); // Filter by search term when the button is clicked
+          } else {
+            // If no search term is entered, keep the active letter filter
+            if (activeLetter === '#') {
+              filterContentByHash(data); // Show content for non-alphabetic characters if '#' is active
+            } else {
+              filterContentByLetter(activeLetter, data); // Otherwise, keep the content for the selected letter
+            }
+          }
+        });
+        setTimeout(() => { handleHashClick(data) }, 500);
+      } else {
+        throw new Error('Fetched data is not an array.');
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching JSON:', error);
+      const categoryList = document.getElementById('category-list');
+      categoryList.innerHTML = '<p>Failed to load glossary data.</p>';
+    });
+</script>
+{% schema %}
+{
+  "name": "Search Category",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "search_text",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_go_back",
+      "default": true,
+      "label": "Go Back"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "default": false,
+      "label": "Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Search Category"
+    }
+  ]
+}
+{% endschema %}

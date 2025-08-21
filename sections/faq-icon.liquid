@@ -1,0 +1,64 @@
+{{ 'section-faq-icon.css' | asset_url | stylesheet_tag }}
+<div class="page-width">
+  <div class="faq-icon-list">
+    <ul>
+      {% for block in section.blocks %}
+        {% if block.type == 'icon_block' %}
+          {% if block.settings.link != blank or block.settings.icon != blank or block.settings.title != blank %}
+            <li>
+              <a href="{{ block.settings.link }}">
+                {% if block.settings.icon != blank %}
+                  <span class="faq-icon">
+                    <img
+                      src="{{ block.settings.icon |  image_url }}"
+                      alt="{{ block.settings.title | default: shop.name }}"
+                      height="140"
+                      width="140"
+                      loading="lazy"
+                    >
+                  </span>
+                {% endif %}
+                {{ block.settings.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "FAQ Icon",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "icon_block",
+      "name": "Icon Block",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Icon"
+    }
+  ]
+}
+{% endschema %}

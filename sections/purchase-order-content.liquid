@@ -1,0 +1,127 @@
+{{ 'section-purchase-orders.css' | asset_url | stylesheet_tag }}
+<div class="purchase-accounts">
+  <div class="page-width">
+    <div class="purchase-accounts-details">
+      <div class="purchase-accounts-info">
+        {% if section.settings.description != blank %}
+          {{ section.settings.description }}
+        {% endif %}
+        <div class="purchase-orders-contact">
+          <div class="contact-details">
+            {% if section.settings.email_text != blank or section.settings.email != blank %}
+              <span>
+                <img
+                  src="{{ 'icon-email-orange.svg' | asset_url }}"
+                  alt="{{ section.settings.email_text }}"
+                  height=""
+                  width=""
+                >
+              </span>
+            {% endif %}
+            <div class="phone-email">
+              {% if section.settings.email_text != blank %}
+                <h6>{{ section.settings.email_text }}</h6>
+              {% endif %}
+              {% if section.settings.email != blank %}
+                <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+              {% endif %}
+            </div>
+          </div>
+          <div class="contact-details">
+            {% if section.settings.contact_text != blank
+              or section.settings.contact != blank
+              or section.settings.call_text != blank
+            %}
+              <span>
+                <img
+                  src="{{ 'icon-phone-orange.svg' | asset_url }}"
+                  alt="{{ section.settings.contact_text }}"
+                  height=""
+                  width=""
+                >
+              </span>
+            {% endif %}
+            <div class="phone-email">
+              {% if section.settings.contact_text != blank %}
+                <h6>{{ section.settings.contact_text }}</h6>
+              {% endif %}
+              {% if section.settings.contact != blank or section.settings.call_text != blank %}
+                <a href="tel:{{ section.settings.contact }}">
+                  {{ section.settings.contact -}}
+                  {{- section.settings.call_text }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="purchase-accounts-info">
+        {% if section.settings.image != blank %}
+          <span class="purchase-accounts-img">
+            <img
+              src="{{ section.settings.image |  image_url  }}"
+              alt="{{- section.settings.call_text }}"
+              height="400"
+              width="600"
+              loading="lazy"
+            >
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Purchase Orders Accounts",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Contact Details"
+    },
+    {
+      "type": "text",
+      "id": "email_text",
+      "label": "Email Title",
+      "default": "Email us"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email"
+    },
+    {
+      "type": "text",
+      "id": "contact_text",
+      "label": "Call Title",
+      "default": "Give us call"
+    },
+    {
+      "type": "text",
+      "id": "contact",
+      "label": "Contact"
+    },
+    {
+      "type": "text",
+      "id": "call_text",
+      "label": "Call Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purchase Orders Accounts"
+    }
+  ]
+}
+{% endschema %}

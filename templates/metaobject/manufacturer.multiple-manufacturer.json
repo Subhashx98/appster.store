@@ -1,0 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection_banner_4jQXmN": {
+      "type": "collection-banner",
+      "custom_css": [
+        ".collection-banner span:after {background: none;}"
+      ],
+      "settings": {
+        "heading": "About {{ metaobject.title.value }}",
+        "content": "<p>{{ metaobject.description | metafield_tag }}</p>",
+        "cta_text": "",
+        "link": "",
+        "image": "{{ metaobject.banner_image.value }}"
+      }
+    },
+    "manufacturer_featured_product_zkpQqz": {
+      "type": "manufacturer-featured-product",
+      "name": "Manufacturer Featured Product",
+      "settings": {
+        "title": "",
+        "description": "",
+        "manufacturer_featured_products": "{{ metaobject.featured_products.value }}"
+      }
+    },
+    "multiple_collection_list_xzDUFn": {
+      "type": "multiple-collection-list",
+      "settings": {
+        "child_manufacturer": "{{ metaobject.child_manufacturer.value }}",
+        "featured_video_title": "Featured Video",
+        "resources_title": "Resources",
+        "documents_title": "Documents"
+      }
+    }
+  },
+  "order": [
+    "collection_banner_4jQXmN",
+    "manufacturer_featured_product_zkpQqz",
+    "multiple_collection_list_xzDUFn"
+  ]
+}

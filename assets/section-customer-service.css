@@ -1,0 +1,77 @@
+.customer-services{
+    background: #f2f2f2;
+    padding: 60px 0px;
+    margin-top: 60px;
+}
+.customer-services.category-videos{
+    background: var(--light-grey-color);
+    margin: 0px;
+    padding: 20px 0 60px;
+}
+.customer-services .page-width{
+    max-width: 1180px;
+}
+.customer-services h2{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+.customer-services .service-block{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    gap: 20px;
+}
+.customer-services .service-block .service-block-details{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 calc(33.33% - 14px);
+    width: calc(33.33% - 14px);
+    background: var(--white-color);
+    padding: 20px;
+    border: 1px solid #DDDDDD;
+    border-radius: var(--border-radius-5);
+    align-content: flex-start;
+}
+.customer-services .service-block .service-block-details h3{
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    line-height: normal;
+}
+.customer-services .service-block .service-block-details ul{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    margin: 4px 0px 0px;
+}
+.customer-services .service-block .service-block-details ul li{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 12px 0px 0;
+}
+.customer-services .service-block .service-block-details ul li a{
+    color: var(--primary-blue-color);
+    text-decoration: underline;
+    font-size: 15px;
+    line-height: normal;
+}
+.customer-services .service-block .service-block-details ul li a:hover{
+    color: var(--orange-color);
+    text-decoration: none;
+}
+/* video category */
+.customer-services.category-videos h2{ margin-bottom: 32px;}
+.customer-services.category-videos .service-block{margin-top: 0px;}
+/* responisve */
+@media only screen and (max-width: 991px) {
+    .customer-services.category-videos{ padding: 0px 0px 40px;}
+     .customer-services.category-videos h2{ margin-bottom: 28px;}
+    .customer-services.category-videos .service-block{margin-top: 0; gap: 10px;}
+    .customer-services.category-videos .service-block .service-block-details{ padding: 20px 15px;width: calc(50% - 5px); flex: 0 0 calc(50% - 5px);}
+    .customer-services.category-videos .service-block .service-block-details h3{ font-size: 14px;}
+    .customer-services.category-videos .service-block .service-block-details ul li a{ font-size: 13px;}
+}

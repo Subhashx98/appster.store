@@ -1,0 +1,120 @@
+{{ 'section-return-exhange.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width page-small-width">
+  <div class="returns-exchanges">
+    <div class="returns-exchanges-content">
+      {% if section.settings.description != blank %}
+        {{ section.settings.description }}
+      {% endif %}
+    </div>
+    <div class="returns-exchanges-content">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {{ section.settings.gorgias_form_liquid }}
+    </div>
+    <div class="returns-exchanges-table">
+      <p class="table_heding_main">{{ section.settings.table_heding_main }}</p>
+      {% if section.settings.table_heding_time != blank or section.settings.table_heding_fee != blank %}
+        <table>
+          <thead>
+            <tr>
+              {% if section.settings.table_heding_time != blank %}
+                <th> {{ section.settings.table_heding_time }} </th>
+              {% endif %}
+              {% if section.settings.table_heding_fee != blank %}
+                <th>{{ section.settings.table_heding_fee }} </th>
+              {% endif %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for block in section.blocks %}
+              {% if block.type == 'time_and_fee' %}
+                {% if block.settings.time_text != blank and block.settings.fee_text != blank %}
+                <tr>
+                  {% if block.settings.time_text != blank %}
+                    <td>{{ block.settings.time_text }}</td>
+                  {% endif %}
+                  {% if block.settings.fee_text != blank %}
+                    <td>{{ block.settings.fee_text }}</td>
+                  {% endif %}
+                </tr>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <p>{{ section.settings.text }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Returns Exchanges",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+        "type": "liquid",
+        "id": "gorgias_form_liquid",
+        "label": "Code"
+      },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "table_heding_main",
+      "label": "Table Heading"
+    },
+    {
+      "type": "text",
+      "id": "table_heding_time",
+      "label": "Table Sub Heading Time"
+    },
+    {
+      "type": "text",
+      "id": "table_heding_fee",
+      "label": "Table Sub Heading Fee"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "time_and_fee",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "time_text",
+          "label": "Time"
+        },
+        {
+          "type": "text",
+          "id": "fee_text",
+          "label": "Percentage Fee"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Returns Exchanges"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,84 @@
+<style>
+  .collection-heading {
+    background-color: #D4E4EE;
+    padding: 40px 0px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 40px 0px;
+    position: relative;
+  }
+
+  .collection-heading h1 {
+    line-height: 50px;
+    color: var(--white-color);
+    text-align: center;
+  }
+
+  .collection-heading .main-banner-bg {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .collection-heading .main-banner-bg img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .collection-heading .main-banner-bg:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 991px) {
+    .collection-heading h1 {
+      line-height: normal;
+    }
+  }
+</style>
+<div class="collection-heading">
+  {% if section.settings.image != blank %}
+  <span class="main-banner-bg">
+    <img src="{{ section.settings.image |  image_url }}" alt="{{ section.settings.heading | default: shop.name }}" height="132" width="" loading="eager">
+  </span>
+  {% endif %}
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+    <h1>{{ section.settings.heading }}</h1>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Collection Main Heading",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Main Heading"
+    }
+  ]
+}
+{% endschema %}

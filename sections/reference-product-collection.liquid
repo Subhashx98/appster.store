@@ -1,0 +1,129 @@
+{{ 'section-reference-collection.css' | asset_url | stylesheet_tag }}
+{{ 'section-references.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width page-small-width go-link-references">
+  <div class="go-link">
+	{% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+    <a href="{{ section.settings.cta_url }}" class="view-link">{{ section.settings.cta_text }}</a>
+	 {% endif %}
+  </div> 
+</div>
+{% if section.settings.reference_categories != blank %}
+  <div class="reference-collection">
+    <div class="page-width page-small-width">
+      <ul class="reference-product-list">
+        {% for reference in section.settings.reference_categories %}
+          <li>
+            <span>
+              {% if reference.image != blank %}
+                <img
+                  src="{{ reference.image | image_url }}"
+                  alt="{{ reference.title }}"
+                  height="205"
+                  width="100"
+                  loading="lazy"
+                >
+              {% else %}
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0892/0583/4033/files/Brand-no-image.svg?v=1743798471"
+                  height=""
+                  width=""
+                  alt="{{ reference.title }}"
+                  loading="lazy"
+                  class="no-image"
+                >
+              {% endif %}
+            </span>
+            <a href="#{{ reference.title}}">{{ reference.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="product-references-main">
+    <div class="page-width page-small-width">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        {{ section.settings.description }}
+      {% endif %}
+      <div class="references-faq">
+        {% for reference in section.settings.reference_categories %}
+          <div class="references-faq-item" id="{{ reference.title}}">
+            <h4 class="references-faq-question">
+              {% if reference.heading_title == blank %}
+                {{ reference.title }}
+              {% else %}
+                {{ reference.heading_title }}
+              {% endif %}
+              <span class="plus-minus"></span>
+            </h4>
+            <div class="references-faq-answer">
+              {% assign reference_list = reference.product_reference.value %}
+              {% if reference_list == blank or reference_list.size == 0 %}
+                <p>Product References list Not Available</p>
+              {% else %}
+                <ul>
+                  {% for list_item in reference_list %}
+                    {% assign product = list_item.product.value %}
+                    {% assign collection = list_item.collection.value %}
+                    <li>
+                      {% if product != blank %}
+                        <a href="{{ product.url }}">{{ list_item.title }}</a>
+                      {% elsif collection != blank %}
+                        <a href="{{ collection.url }}">{{ list_item.title }}</a>
+                      {% else %}
+                        <a href="{{ list_item.system.url }}">{{ list_item.title }}</a>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Reference Top Collection",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "metaobject_list",
+      "id": "reference_categories",
+      "label": "Product Reference Categories",
+      "metaobject_type": "product_reference_categories"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+	 {
+		"type": "text",
+		"id": "cta_text",
+		"label": "Button Text"
+	 },
+	 {
+		"type": "url",
+		"id": "cta_url",
+		"label": "Link"
+	 }
+  ],
+  "presets": [
+    {
+      "name": "Reference Top Collection"
+    }
+  ]
+}
+{% endschema %}

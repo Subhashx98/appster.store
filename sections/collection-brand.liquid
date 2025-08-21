@@ -1,0 +1,125 @@
+{{ 'section-collection-brand.css' | asset_url | stylesheet_tag }}
+<div class="page-width">
+  <div class="collection-brand">
+    <h2 class="section-main-title">
+      {% if section.settings.heading != blank %}
+        <span>{{ section.settings.heading }}</span>
+      {% endif %}
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_url }}" class="view-link">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </h2>
+    <div class="collection-brand-logos">
+      {% for meta_category in metaobject.top_brands.value %}
+        {% assign brand_url = meta_category.system.url %}
+        {% if meta_category.child_manufacturer == blank %}
+          {% assign brand_handle = meta_category.system.handle | handle %}
+          {% assign brand_collection = collections[brand_handle] %}
+          {% if brand_collection and brand_collection.url %}
+            {% assign brand_url = brand_collection.url %}
+          {% endif %}
+        {% endif %}
+        {% if brand_url == blank %}
+          {% assign brand_url = 'javascript:void(0)' %}
+        {% endif %}
+        <div class="slick-slide">
+          <div>
+            <a href="{{ brand_url }}" class="logo-image">
+              {% if meta_category.image != blank %}
+                <img
+                  src="{{ meta_category.image |  image_url }}"
+                  alt="{{ meta_category.image.alt | handle |  default: meta_category.title }}"
+                  height="38"
+                  width="140"
+                  loading="lazy"
+                >
+              {% else %}
+                <img
+                  src="//cdn.shopify.com/s/files/1/0892/0583/4033/files/default-ui-image-placeholder-wireframes-600nw-1037719192.webp?v=1742821231"
+                  alt="{{ meta_category.title | handle |  default: meta_category.title }}"
+                  height="205"
+                  width="205"
+                  loading="lazy"
+                >
+              {% endif %}
+              <span>{{ meta_category.title }}</span>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  // Slider
+  $(document).ready(function () {
+    const $slider = $('.collection-brand-logos');
+    const slideCount = $slider.children().length;
+
+    const responsiveSettings = [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          rows: 2,
+        },
+      },
+    ];
+
+    if (slideCount < 8) {
+      $slider.slick({
+        slidesToShow: slideCount,
+        slidesToScroll: 1,
+        infinite: false,
+        responsive: responsiveSettings,
+        centerMode: false,
+      });
+    } else {
+      $slider.slick({
+        slidesToShow: 8,
+        slidesToScroll: 1,
+        speed: 300,
+        lazyLoad: 'ondemand',
+        infinite: false,
+        dots: false,
+        responsive: responsiveSettings,
+        centerMode: false,
+      });
+    }
+  });
+</script>
+{% schema %}
+{
+  "name": "Collection Brand Logo",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button Url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Brand Logo"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,78 @@
+.article-library{
+    padding: 60px 0px;
+}
+.article-library h1{
+    color: #101828;
+    font-size: 32px;
+    line-height: normal;
+}
+.article-library p{
+    margin-top: 5px;
+    color: #444444;
+    line-height: 26px;
+}
+.article-library ul{
+    margin: 0;
+    padding: 0;
+}
+.article-library ul.article-library-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: var(--light-grey-color);
+    padding: 28px;
+    width: 100%;
+    margin-top: 40px;
+}
+.article-library ul.article-library-list li{
+    background-color: var(--white-color);
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    flex: 0 0 calc(33.33% - 20px);
+    width: calc(33.33% - 20px);
+}
+.article-library ul.article-library-list li a{
+    color: var(--black-color);
+    font-size: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.article-library ul.article-library-list li span.article-icons{
+    width: 110px;
+    height: 110px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-grey-color);
+}
+.article-library ul.article-library-list li span.article-text{
+    width: calc(100% - 110px);
+    padding-left: 30px;
+    display: flex;
+    line-height: 26px;
+    transition: var(--webkit-transition-all);
+}
+.article-library ul.article-library-list li span.article-text:hover{
+    color: var(--primary-blue-color);
+}
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+    .article-library ul.article-library-list li span.article-icons{ width: 96px; height: 96px; }
+    .article-library ul.article-library-list li a{ font-size: 18px;}
+    .article-library ul.article-library-list li span.article-text{padding-left: 24px; width: calc(100% - 96px);}
+    .article-library ul.article-library-list li{padding: 12px;}
+}
+@media only screen and (max-width: 991px) {
+    .article-library{padding: 40px 0px;}
+    .article-library ul.article-library-list{margin-top: 20px; gap: 10px; padding: 12px;}
+    .article-library ul.article-library-list li{ flex: 0 0 calc(50% - 5px); width: calc(50% - 5px);}
+    .article-library p{line-height: 24px;}
+}
+@media only screen and (max-width:767px) {
+    .article-library h1{font-size: 20px; line-height: 28px;}
+    .article-library ul.article-library-list li{ flex: 0 0 100%; width: 100%;}
+}

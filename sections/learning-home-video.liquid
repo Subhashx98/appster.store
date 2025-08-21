@@ -1,0 +1,168 @@
+{{ 'section-home-video.css' | asset_url | stylesheet_tag }}
+
+<div class="learning-video">
+  <div class="page-width">
+    <h2 class="section-main-title">
+      {% if section.settings.title != blank %}
+        {{ section.settings.title }}
+      {% endif %}
+      {% if section.settings.cta_link != blank and section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_link }}" class="view-link">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </h2>
+    <div class="learning-video-slider">
+      {% for video in section.settings.video %}
+        <div class="slick-slide">
+          <div class="learning-video-item">
+            <div class="learning-video-thumbnil">
+              <a
+                href="javascript:void(0)"
+                class="play-btn"
+                data-video="{{ video.youtube_video_url }}"
+              >
+                <span></span>
+              </a>
+              {% if video.featured_image %}
+                <img
+                  src="{{ video.featured_image |  image_url }}"
+                  alt="{{ video.title }}"
+                  height="205"
+                  width="205"
+                  loading="lazy"
+                >
+              {% else %}
+                {{ 'image' | placeholder_svg_tag }}
+              {% endif %}
+            </div>
+            <h4>{{ video.title }}</h4>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="video-modal video-modal-{{ section.id }}">
+  <div class="modal-body">
+    <div class="modal-close">
+      {{- 'icon-close.svg' | inline_asset_content -}}
+    </div>
+    <div class="modal-content">
+      <iframe
+        width="740"
+        height="400"
+        id="youtube-frame"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  $(document).ready(function () {
+    // Open video modal
+    $(document).on('click', '.play-btn', function () {
+      $('.video-modal.video-modal-{{ section.id }}').addClass('open');
+      $('body').addClass('modal-main');
+      var videoUrl = $(this).data('video');
+      var embedUrl = '';
+      if (videoUrl.includes('embed')) {
+        embedUrl = videoUrl;
+      } else {
+        var videoId = '';
+        var match = videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/);
+        if (match && match[1]) {
+          videoId = match[1];
+          embedUrl = 'https://www.youtube.com/embed/' + videoId;
+        } else {
+          embedUrl = videoUrl;
+        }
+      }
+      $('.video-modal-{{ section.id }} #youtube-frame').attr('src', embedUrl + '?autoplay=1');
+    });
+
+    $(document).on('click', '.modal-close', function () {
+      closeModal();
+    });
+
+    $(document).on('click', '.video-modal.video-modal-{{ section.id }}', function (e) {
+      if ($(e.target).closest('.modal-body').length === 0) {
+        closeModal();
+      }
+    });
+
+    $(document).on('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    function closeModal() {
+      $('.video-modal').removeClass('open');
+      $('.video-modal #youtube-frame').attr('src', '');
+      $('body').removeClass('modal-main');
+    }
+  });
+  // Slider
+  $(document).ready(function () {
+    $('.learning-video-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      infinite: false,
+      lazyLoad: 'ondemand',
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          },
+        },
+      ],
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Learning Home Video",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Link"
+    },
+    {
+      "type": "metaobject_list",
+      "id": "video",
+      "label": "Select Video",
+      "metaobject_type": "video_library"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Learning Home Video"
+    }
+  ]
+}
+{% endschema %}

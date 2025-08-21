@@ -1,0 +1,118 @@
+{{ 'section-collection-slider.css' | asset_url | stylesheet_tag }}
+{%- if metaobject.tips_resources.value != blank -%}
+<div class="collection-slider">
+  <div class="page-width">
+    {% if section.settings.slider_heading != blank %}
+    <h2>{{ section.settings.slider_heading }}</h2>
+    {% endif %}
+    <div class="collection-product-slider">
+      {% for resources in metaobject.tips_resources.value %}
+      <div class="collection-slider-card">
+        <div class="product-slider-block">
+          <div class="slider-for">
+            {%  assign image =  resources.image.value %} 
+            <div>
+              <img src="{{ image | image_url }}" alt="{{ resources.title.value | default: shop.name}}" height="250" width="400" loading="lazy">
+            </div>
+          </div>
+          {% comment %} <div class="slider-nav">
+            {% for image in resources.images.value %}
+            <div>
+              <img src="{{ image | image_url }}" alt="{{ resources.title.value }}" height="50" width="50" loading="lazy">
+            </div>
+            {% endfor %}
+          </div> {% endcomment %}
+        </div>
+        <div class="slider-block-text">
+          {%- if resources.title.value != blank -%}
+          <h3>{{ resources.title.value }}</h3>
+          {%- endif -%}
+
+          {%- if resources.description.value != blank -%}
+          <p class="description-text">{{ resources.description.value }}</p>
+          <button class="read-more-btn" onclick="toggleText(this)">Read More</button>
+          {%- endif -%}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+ {%- endif -%}
+
+<script>
+  // Slider
+  // $(document).ready(function () {
+  //   $('.collection-slider-card').each(function (index) {
+  //     let sliderFor = $(this).find('.slider-for');
+  //     let sliderNav = $(this).find('.slider-nav');
+
+  //     sliderFor.slick({
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       centerMode: false,
+  //       fade: true,
+  //       asNavFor: sliderNav,
+  //     });
+
+  //     sliderNav.slick({
+  //       slidesToShow: 4,
+  //       slidesToScroll: 1,
+  //       asNavFor: sliderFor,
+  //       arrows: false,
+  //       focusOnSelect: true,
+  //     });
+  //   });
+  // });
+
+  //ReadMore Button 
+  $(document).ready(function () {
+
+    function toggleText(button) {
+      var $paragraph = $(button).prev('p');
+      var isExpanded = $paragraph.css('webkit-line-clamp') === 'none';
+
+      if (isExpanded) {
+        $paragraph.css('webkit-line-clamp', '5');
+        $(button).text('Read More');
+      } else {
+        $paragraph.css('webkit-line-clamp', 'none');
+        $(button).text('Read Less');
+      }
+    }
+
+    $('.slider-block-text').each(function () {
+      var $paragraph = $(this).find('p');
+      var paragraphHeight = $paragraph[0].scrollHeight;
+      var visibleHeight = $paragraph.height();
+
+      if (paragraphHeight > visibleHeight) {
+        $(this).find('.read-more-btn').show();
+      }
+    });
+
+    $('.read-more-btn').click(function () {
+      toggleText(this);
+    });
+  });
+
+</script>
+{% schema %}
+{
+  "name": "Collection Slider",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "slider_heading",
+      "label": "Heading",
+      "default": "Cable Management Tips & Resources"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Slider"
+    }
+  ]
+}
+{% endschema %}

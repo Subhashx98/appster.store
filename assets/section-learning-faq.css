@@ -1,0 +1,84 @@
+.learning-home-faq{
+    background: var(--light-grey-color);
+    border-radius: var(--border-radius-5);
+    padding: 48px;
+    margin-bottom: 72px;
+}
+.learning-home-faq .section-main-title{
+    line-height: normal;
+    margin-bottom: 2px;
+}
+.learning-home-faq p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.learning-home-faq p a {
+    color:black;
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+.learning-home-faq p a:hover {
+    color: var(--orange-color);
+    text-decoration: underline;
+}
+.learning-home-faq .home-faq-icon{
+    margin: 32px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0px;
+}
+.learning-home-faq .home-faq-icon li{
+    display: flex;
+    justify-content: center;
+    flex:  0 0 calc(25% - 15px);
+    width: calc(25% - 15px);
+    align-items: center;
+    background: var(--white-color);
+    border-radius: var(--border-radius-5);
+    padding: 30px 24px;
+}
+.learning-home-faq .home-faq-icon li span.home-faq-item{
+    display: flex;
+    margin-bottom: 18px;
+}
+.learning-home-faq .home-faq-icon li span.home-faq-item img{
+    width: 110px;
+    height: 110px;
+}
+.learning-home-faq .home-faq-icon li a{
+    color: var(--black-color);
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: normal;
+    text-align: center;
+}
+.learning-home-faq .home-faq-icon li a:hover{
+    color: var(--primary-blue-color);
+}
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+    .learning-home-faq .home-faq-icon li{ padding: 16px 20px;}
+    .learning-home-faq .home-faq-icon li a{font-size: 16px;}
+}
+@media only screen and (max-width: 991px) {
+    .learning-home-faq{ padding: 40px 20px; margin-bottom: 40px;}
+    .learning-home-faq p{ font-size: 14px;}
+    .learning-home-faq .home-faq-icon{ margin: 26px 0 0;}
+    .learning-home-faq .home-faq-icon li{ flex: 0 0 calc(33.33% - 15px); width: calc(33.33% - 15px);}
+    .learning-home-faq .home-faq-icon li span.home-faq-item{ margin-bottom: 8px;}
+}
+@media only screen and (max-width: 767px) {
+    .section-faq{background: var(--light-grey-color);}
+    .learning-home-faq{ padding: 40px 0px;}
+    .learning-home-faq .home-faq-icon{ gap: 8px;}
+    .learning-home-faq .home-faq-icon li{width: 100%; flex: 0 0 100%;  justify-content: flex-start;}
+    .learning-home-faq .home-faq-icon li a{ flex-direction: row; text-align: left;}
+    .learning-home-faq .home-faq-icon li span.home-faq-item img{ width: 60px; height: 60px; margin-right: 18px;}
+    .learning-home-faq .home-faq-icon li span.home-faq-item{ margin-bottom: 0px;}
+}

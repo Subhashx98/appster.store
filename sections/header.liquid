@@ -1,7 +1,9 @@
+{{ 'co-header.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'algolia-autocomplete.css' | asset_url }}" media="print" onload="this.media='all'">
 
 {%- if settings.predictive_search_enabled -%}
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -10,7 +12,6 @@
 {%- if section.settings.menu_type_desktop == 'mega' -%}
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-
 
 <style>
   header-drawer {
@@ -74,7 +75,7 @@
 
 {%- style -%}
   .header {
-    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
+    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 2rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 2rem;
   }
 
   .section-header {
@@ -98,6 +99,13 @@
 
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
+<!-- Algolia autocomplete custom script -->
+<script src="{{ 'algolia-utils.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'algolia-autocomplete-articles.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'algolia-autocomplete-products.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'algolia-autocomplete.js' | asset_url }}" defer="defer"></script>
+
+
 {%- liquid
   for block in section.blocks
     if block.type == '@app'
@@ -106,7 +114,10 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<sticky-header
+  data-sticky-type="{{ section.settings.sticky_header_type }}"
+  class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
+>
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -120,117 +131,106 @@
     endif
   -%}
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
-    {%- liquid
-      if section.settings.menu != blank
-        render 'header-drawer'
-      endif
+    <div class="mobile-left-block">
+      {%- liquid
+        if section.settings.menu != blank
+          render 'header-drawer'
+        endif
 
-      if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-        render 'header-search', input_id: 'Search-In-Modal-1'
-      endif
-    -%}
+        if section.settings.logo_position == 'top-center' or section.settings.menu == blank
+          render 'header-search', input_id: 'Search-In-Modal-1'
+        endif
+      -%}
+      {% render 'header-search', input_id: 'Search-In-Modal' %}
+    </div>
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
-                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo motion-reduce',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
-              </div>
-            {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
-            {%- endif -%}
-          </a>
+      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+        {%- if settings.logo != blank -%}
+          <div class="header__heading-logo-wrapper">
+            {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+            {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+            {{
+              settings.logo
+              | image_url: width: 600
+              | image_tag:
+                class: 'header__heading-logo motion-reduce',
+                widths: widths,
+                height: logo_height,
+                width: settings.logo_width,
+                alt: logo_alt,
+                sizes: sizes,
+                preload: true
+            }}
+          </div>
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
       {%- if request.page_type == 'index' -%}
         </h1>
       {%- endif -%}
     {%- endif -%}
 
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
-      endif
-    %}
+    <div class="search_header_block">
+      <div class="template-search__search">
+        <div class="field">
+          <div id="algolia-autocomplete-container"></div>
+          <input name="options[prefix]" type="hidden" value="last">
+        </div>
+      </div>
+    </div>
+    <div class="contact_us_block">
+      <a href="tel:{{ section.settings.call_text_1 }}" class="call">
+        <span>{{ section.settings.call_text_1 }}</span>
+        <span>({{ section.settings.call_text_2 }})</span>
+      </a>
+      <a href="mailto:{{ section.settings.email_text }}" class="email">{{ section.settings.email_text }}</a>
+    </div>
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-            {%- if settings.logo != blank -%}
-              <div class="header__heading-logo-wrapper">
-                {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
-                {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
-                {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
-                {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
-                {{ settings.logo | image_url: width: 600 | image_tag:
-                  class: 'header__heading-logo',
-                  widths: widths,
-                  height: logo_height,
-                  width: settings.logo_width,
-                  alt: logo_alt,
-                  sizes: sizes,
-                  preload: true
-                }}
-              </div>
-            {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
-            {%- endif -%}
-          </a>
+      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+        {%- if settings.logo != blank -%}
+          <div class="header__heading-logo-wrapper">
+            {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+            {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+            {% capture sizes %}(min-width: 750px) {{ settings.logo_width }}px, 50vw{% endcapture %}
+            {% capture widths %}{{ settings.logo_width }}, {{ settings.logo_width | times: 1.5 | round }}, {{ settings.logo_width | times: 2 }}{% endcapture %}
+            {{
+              settings.logo
+              | image_url: width: 600
+              | image_tag:
+                class: 'header__heading-logo',
+                widths: widths,
+                height: logo_height,
+                width: settings.logo_width,
+                alt: logo_alt,
+                sizes: sizes,
+                preload: true
+            }}
+          </div>
+        {%- else -%}
+          <span class="h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
       {%- if request.page_type == 'index' -%}
         </h1>
       {%- endif -%}
     {%- endif -%}
 
-    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
-      <div class="desktop-localization-wrapper">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
-            {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {% endif %}
-
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <localization-form class="small-hide medium-hide" data-prevent-hide>
-            {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
-              <div>
-                <h2 class="visually-hidden" id="HeaderLanguageLabel">{{ 'localization.language_label' | t }}</h2>
-                {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
-      {% render 'header-search', input_id: 'Search-In-Modal' %}
+    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %} header_icons_new">
+      {% comment %} {% render 'header-search', input_id: 'Search-In-Modal' %} {% endcomment %}
 
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-          class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
-          rel="nofollow"
+          class="header__icon header__icon--account link focus-inset"
         >
           {%- if section.settings.enable_customer_avatar -%}
             <account-icon>
@@ -243,9 +243,11 @@
           {%- else -%}
             <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
           {%- endif -%}
-          <span class="visually-hidden">
+          <span class="small-hide">
             {%- liquid
-              if customer
+              if customer and customer.first_name != blank
+                echo customer.first_name
+              elsif customer
                 echo 'customer.account_fallback' | t
               else
                 echo 'customer.log_in' | t
@@ -263,27 +265,67 @@
       {%- endfor -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-          {% if cart == empty %}
-            <span class="svg-wrapper">{{'icon-cart-empty.svg' | inline_asset_content }}</span>
-          {% else %}
-            <span class="svg-wrapper">{{'icon-cart.svg' | inline_asset_content }}</span>
-          {% endif %}
-        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {% if cart == empty %}
+          <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+        {% else %}
+          <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+        {% endif %}
+        <span class="small-hide">{{ 'templates.cart.cart' | t }} </span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
             {%- if cart.item_count < 100 -%}
               <span aria-hidden="true">{{ cart.item_count }}</span>
             {%- endif -%}
-            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+            {% comment %} <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span> {% endcomment %}
           </div>
         {%- endif -%}
       </a>
     </div>
   </header>
-</{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
+  {% comment %}
+    {%- liquid
+      if section.settings.menu != blank
+        if section.settings.menu_type_desktop == 'dropdown'
+          render 'header-dropdown-menu'
+        elsif section.settings.menu_type_desktop != 'drawer'
+          render 'header-mega-menu'
+        endif
+      endif
+    %}
+  {% endcomment %}
+  <div class="co-header-megamenu">
+    <div class="header">
+      <div class="page-width">
+        {% if section.settings.menu != blank %}
+          {%- render 'header-custom-megamenu', section: section -%}
+        {% endif %}
 
-{%- if settings.cart_type == "notification" -%}
-  {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
+        {% if section.settings.offers_text_1 != blank or section.settings.offers_text_2 != blank %}
+          <div class="header-offers-block">
+            {% if section.settings.offers_text_1 != blank -%}
+              <a href="{{ section.settings.offers_url_1 }}">
+                {{- 'icon-special-offers.svg' | inline_asset_content }}
+                {{ section.settings.offers_text_1 -}}
+              </a>
+            {%- endif %}
+            {% if section.settings.offers_text_2 != blank -%}
+              <a href="{{ section.settings.offers_url_2 }}">
+                {{- 'icon-loyalty.svg' | inline_asset_content }}
+                {{ section.settings.offers_text_2 -}}
+              </a>
+            {%- endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</sticky-header>
+
+{%- if settings.cart_type == 'notification' -%}
+  {%- render 'cart-notification',
+    color_scheme: section.settings.color_scheme,
+    desktop_menu_type: section.settings.menu_type_desktop
+  -%}
 {%- endif -%}
 
 {% javascript %}
@@ -294,7 +336,9 @@
 
     connectedCallback() {
       this.header = document.querySelector('.section-header');
-      this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
+      this.headerIsAlwaysSticky =
+        this.getAttribute('data-sticky-type') === 'always' ||
+        this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
 
       this.setHeaderHeight();
@@ -303,14 +347,14 @@
 
       if (this.headerIsAlwaysSticky) {
         this.header.classList.add('shopify-section-header-sticky');
-      };
+      }
 
       this.currentScrollTop = 0;
       this.preventReveal = false;
       this.predictiveSearch = this.querySelector('predictive-search');
 
       this.onScrollHandler = this.onScroll.bind(this);
-      this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+      this.hideHeaderOnScrollUp = () => (this.preventReveal = true);
 
       this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
       window.addEventListener('scroll', this.onScrollHandler, false);
@@ -386,7 +430,7 @@
 
     closeMenuDisclosure() {
       this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
-      this.disclosures.forEach(disclosure => disclosure.close());
+      this.disclosures.forEach((disclosure) => disclosure.close());
     }
 
     closeSearchModal() {
@@ -403,9 +447,11 @@
     "@context": "http://schema.org",
     "@type": "Organization",
     "name": {{ shop.name | json }},
+    "image": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% if settings.logo %}
       "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
+   "description":"{{ shop.description }}",
     "sameAs": [
       {{ settings.social_twitter_link | json }},
       {{ settings.social_facebook_link | json }},
@@ -417,12 +463,22 @@
       {{ settings.social_youtube_link | json }},
       {{ settings.social_vimeo_link | json }}
     ],
-    "url": {{ request.origin | append: page.url | json }}
+    "url": {{ request.origin | append: page.url | json }},
+    "email": "{{ shop.email }}",
+    "telephone": "{{ shop.phone }}",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ shop.address.address1 }}",
+        "addressLocality": "{{ shop.address.city }}",
+        "addressCountry": "{{ shop.address.country_code }}",
+        "addressRegion": "{{ shop.address.province }}",
+        "postalCode": "{{ shop.address.zip }}"
+    }
   }
 </script>
 
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -438,11 +494,177 @@
   </script>
 {%- endif -%}
 
+<script>
+  $(document).ready(function () {
+    const $maniItemWithSubChild = $('.list-menu--inline .has-sub-child');
+
+    // Handle first-level menu click
+    $maniItemWithSubChild.on('click', function (e) {
+      // Only prevent default if the click isn't on a link inside .product_list
+      if (!$(e.target).closest('.second-level-mega-menu-wrapper, .featured-products-container').length) {
+        e.preventDefault();
+      }
+
+      // If the click is inside .product_list, let it proceed (e.g., follow the link)
+      if ($(e.target).closest('.second-level-mega-menu-wrapper, .featured-products-container').length) {
+        return; // Exit early, allowing the link to work
+      }
+      closeAllMenus();
+      $(this).addClass('active');
+      $(this).children('.first-menu').addClass('active');
+      $('body').addClass('menu-active');
+    });
+
+    // Close all menus when clicking anywhere on the document
+    $(document).on('click', '.overlay-bg', function () {
+      closeAllMenus();
+      $('body').removeClass('menu-active');
+    });
+
+    // Function to close all open menus
+    function closeAllMenus() {
+      $maniItemWithSubChild.removeClass('active');
+      $maniItemWithSubChild.find('.first-menu').removeClass('active');
+    }
+
+    $('.second-level-menu li').on('mouseenter', function () {
+      // Remove active class from all menu items
+      $('.second-level-menu li').removeClass('active');
+
+      // Add active class to hovered item
+      $(this).addClass('active');
+
+      // Get the tab ID from data attribute
+      var tabId = $(this).data('tabid');
+
+      // Hide all menu-wrap sections
+      $('.menu-wrap').addClass('hidden');
+
+      // Show the selected menu-wrap section
+      $('.menu-wrap.' + tabId).removeClass('hidden');
+    });
+
+    $('.menu-box > ul > li').on('mouseenter', function () {
+      // Remove active class from all menu items
+      $('.menu-box > ul > li').removeClass('active');
+
+      // Add active class to hovered item
+      $(this).addClass('active');
+
+      // Hide all product-card-block sections
+      $('.product-card-block').addClass('hidden');
+
+      // Show the product-card-block within the hovered li
+      $(this).find('.product-card-block').removeClass('hidden');
+    });
+
+    // Handle responsive menu clicks
+    const $mobileTopLevelMenu = $('.responsive li.menu-has-child');
+
+    $($mobileTopLevelMenu)
+      .find('.submenu-trigger')
+      .on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const $parentLi = $(this).closest('li.menu-has-child');
+        const $allMenus = $('.responsive li.menu-has-child');
+
+        // Close all other open menus
+        $allMenus.not($parentLi).removeClass('active').find('.mb-second-level-menu').slideUp(300);
+
+        // Toggle the clicked menu
+        $parentLi.toggleClass('active');
+        $parentLi.find('.mb-second-level-menu').slideToggle(300);
+      });
+
+    // Handle responsive sub-menu clicks
+    $(document).on('click', '.menu-has-sec-child .secondmenu-trigger-container .secondmenu-trigger', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const $currentMenuWrap = $(this).closest('.menu-has-sec-child').find('.menu-wrap, .mobile_featured_product');
+      const $parentMenu = $(this).closest('.sub-menu');
+
+      // Close other open submenus within the same parent menu
+      $parentMenu
+        .find('.menu-wrap, .mobile_featured_product')
+        .not($currentMenuWrap)
+        .slideUp()
+        .closest('.menu-has-sec-child')
+        .removeClass('active');
+
+      // Toggle the clicked menu's menu-wrap
+      $currentMenuWrap.slideToggle().closest('.menu-has-sec-child').toggleClass('active');
+    });
+
+    // Handle responsive sub-menu clicks
+    $(document).on(
+      'click',
+      '.menu-drawer__navigation ul li.active .mb-second-level-menu ul li.active .menu-wrap .menu-box ul li .thirdmenu-trigger',
+      function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const $clickedLi = $(this).closest('li');
+        const $menuItems = $(
+          '.menu-drawer__navigation ul li.active .mb-second-level-menu ul li.active .menu-wrap .menu-box ul li'
+        );
+        const $productCardBlock = $('.product-card-block');
+
+        // Remove 'current' class from all menu items except the clicked one
+        $menuItems.not($clickedLi).removeClass('current');
+
+        // Toggle 'current' class on clicked menu item
+        $clickedLi.toggleClass('current');
+
+        // Ensure only the clicked item's product card block is shown
+        $productCardBlock.slideUp(300);
+        if ($clickedLi.hasClass('current')) {
+          $clickedLi.find('.product-card-block').slideDown(300);
+        }
+      }
+    );
+  });
+</script>
+
+<script>
+  $(document).ready(function () {
+    $('.select_link').on('click', function (e) {
+      e.stopPropagation();
+      var $categoriesDropmenu = $(this).closest('.categories_dropmenu');
+      var $menuBlockDropmenu = $categoriesDropmenu.find('.menu_block_dropmenu');
+      $categoriesDropmenu.toggleClass('open');
+      $menuBlockDropmenu.toggleClass('open');
+    });
+
+    // When clicking outside of the categories_dropmenu, close the dropdown menu
+    $(document).on('click', function (e) {
+      if (
+        !$(e.target).closest('.categories_dropmenu').length &&
+        !$(e.target).closest('.co-header-megamenu .header .header__inline-menu ul.list-menu li').length
+      ) {
+        $('.categories_dropmenu').removeClass('open');
+        $('.menu_block_dropmenu').removeClass('open');
+      }
+    });
+
+    $('.categories_dropmenu').on('click', function (e) {
+      e.stopPropagation();
+    });
+
+    // close dropdown when clicking on any list item inside the menu
+    $('.co-header-megamenu .header .header__inline-menu ul.list-menu li').on('click', function () {
+      $('.categories_dropmenu').removeClass('open');
+      $('.menu_block_dropmenu').removeClass('open');
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 3,
+  "max_blocks": 10,
   "settings": [
     {
       "type": "select",
@@ -598,46 +820,213 @@
     },
     {
       "type": "header",
-      "content": "t:sections.all.spacing"
+      "content": "Contact Us"
     },
     {
-      "type": "range",
-      "id": "margin_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.header.settings.margin_bottom.label",
-      "default": 0
+      "type": "text",
+      "id": "call_text_1",
+      "label": "Call Text"
+    },
+    {
+      "type": "text",
+      "id": "call_text_2",
+      "label": "Call Number"
+    },
+    {
+      "type": "text",
+      "id": "email_text",
+      "label": "Email"
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Offer Text"
     },
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 36,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 20
+      "type": "text",
+      "id": "offers_text_1",
+      "label": "Button Text 1"
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 36,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 20
+      "type": "url",
+      "id": "offers_url_1",
+      "label": "Button Link 1"
+    },
+    {
+      "type": "text",
+      "id": "offers_text_2",
+      "label": "Button Text 2"
+    },
+    {
+      "type": "url",
+      "id": "offers_url_2",
+      "label": "Button Link 2"
     }
   ],
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "navigation-with-cards",
+      "name": "Navigation With Cards",
+      "settings": [
+        {
+          "type": "text",
+          "id": "navigation_title",
+          "label": "Navigation title(Required)",
+          "default": "Navigation title"
+        },
+        {
+          "type": "link_list",
+          "id": "block_navigation_menu",
+          "label": "Menu"
+        },
+        {
+          "type": "header",
+          "content": "Featured Cards"
+        },
+        {
+          "type": "text",
+          "id": "tag_name",
+          "label": "Tag Name",
+          "default": "Featured Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image_1",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "card_title_1",
+          "label": "Card Title"
+        },
+        {
+          "type": "text",
+          "id": "card_button_text_1",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "card_button_url_1",
+          "label": "Button Link"
+        }
+      ]
+    },
+    {
+      "type": "navigation-with-brands",
+      "name": "Brands",
+      "settings": [
+        {
+          "type": "text",
+          "id": "navigation_title",
+          "label": "Navigation title(Required)",
+          "default": "Shop By Brands"
+        },
+        {
+          "type": "header",
+          "content": "Brands Block"
+        },
+        {
+          "type": "text",
+          "id": "brand_name",
+          "label": "Heading",
+          "default": "Shop By Brands"
+        },
+        {
+          "type": "text",
+          "id": "button_view_name",
+          "label": "Heading",
+          "default": "View All"
+        },
+        {
+          "type": "url",
+          "id": "button_view_link",
+          "label": "Link"
+        },
+        {
+          "type": "metaobject_list",
+          "id": "shop_by_brand_list",
+          "label": "Select Brand",
+          "metaobject_type": "manufacturer",
+          "limit": 15
+        },
+        {
+          "type": "header",
+          "content": "Featured Block"
+        },
+
+        {
+          "type": "text",
+          "id": "featured_title_1",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured_image",
+          "label": "Card Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "featured__sub_1",
+          "label": "Sub Title"
+        },
+        {
+          "type": "text",
+          "id": "featured_button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "featured_button_url",
+          "label": "Button Link"
+        }
+      ]
+    },
+    {
+      "type": "nav-featured-products",
+      "name": "Featured Products",
+      "settings": [
+        {
+          "type": "text",
+          "id": "navigation_title",
+          "label": "Navigation title(Required)",
+          "default": "Shop Featured Products"
+        },
+        {
+          "type": "header",
+          "content": "Featured Products Block"
+        },
+        {
+          "type": "text",
+          "id": "brand_name",
+          "label": "Heading",
+          "default": "Featured Products"
+        },
+        {
+          "type": "product_list",
+          "id": "product_list",
+          "label": "Products",
+          "limit": 4
+        }
+      ]
+    },
+    {
+      "type": "link_list",
+      "limit": 1,
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,212 @@
+{{ 'section-learning-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="learning-home-banner">
+  <div class="page-width">
+    <div class="left-home-slider">
+      <div class="learning-home-slider">
+        {% for block in section.blocks %}
+          {% if block.type == 'slider_block' %}
+            {% if block.settings.bg_img != blank
+              or block.settings.logo != blank
+              or block.settings.slider_heading != blank
+              or block.settings.slider_content != blank
+              or block.settings.cta_url != blank
+              or block.settings.cta_text != blank
+            %}
+              <div class="slick-slide">
+                <div class="home-slide-item">
+                  {% if block.settings.bg_img != blank %}
+                    <span class="learning-slide-bg">
+                      <img
+                        src="{{ block.settings.bg_img | image_url }}"
+                        alt="{{ block.settings.bg_img.alt |  default:  block.settings.slider_heading }}"
+                        height="100"
+                        width="100"
+                        loading="lazy"
+                      >
+                    </span>
+                  {% endif %}
+                  <div class="slide-left-content">
+                    {% if block.settings.logo != blank %}
+                      <span class="top-logo">
+                        <img
+                          src="{{ block.settings.logo |  image_url }}"
+                          alt="{{ block.settings.logo.alt |  default: block.settings.slider_heading }}"
+                          height="40"
+                          width="126"
+                          loading="lazy"
+                        >
+                      </span>
+                    {% endif %}
+                    {% if block.settings.slider_heading != blank %}
+                      {% if forloop.index == 1 %}
+                        <h1>{{ block.settings.slider_heading }}</h1>
+                      {% else %}
+                        <div class="h1">{{ block.settings.slider_heading }}</div>
+                      {% endif %}
+                   
+                    {% endif %}
+                    {% if block.settings.slider_content != blank %}
+                      <p>{{ block.settings.slider_content }}</p>
+                    {% endif %}
+                    {% if block.settings.cta_url != blank and block.settings.cta_text != blank %}
+                      <a href="{{ block.settings.cta_url }}" class="main-btn-small btn-white">
+                        {{ block.settings.cta_text }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  {% if block.settings.slider_card_img != blank %}
+                    <div class="slide-right-image">
+                      <img
+                        src="{{ block.settings.slider_card_img |  image_url }}"
+                        alt="{{ shop.name  }}"
+                        height="440"
+                        width="440"
+                        loading="lazy"
+                      >
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="right-link-list">
+      {% if section.settings.heading != blank %}
+        <h1>{{ section.settings.heading }}</h1>
+      {% endif %}
+      <ul>
+        {% for block in section.blocks %}
+          {% if block.type == 'icon_text_block' %}
+            {% if block.settings.page_url != blank or block.settings.icon != blank or block.settings.title != blank %}
+              <li>
+                <a href="{{ block.settings.page_url }}">
+                  {% if block.settings.icon != blank %}
+                    <span>
+                      <img
+                        src="{{ block.settings.icon |  image_url }}"
+                        alt="{{ block.settings.title }}"
+                        height="20"
+                        width="20"
+                        loading="lazy"
+                      >
+                    </span>
+                  {% endif %}
+                  {% if block.settings.title != blank %}
+                    {{ block.settings.title }}
+                  {% endif %}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% comment %} Script {% endcomment %}
+<script>
+  // Slider
+  $(document).ready(function () {
+    var $slider = $('.learning-home-slider');
+    var slideCount = $slider.children().length; // Count slides
+
+    $slider.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 7000,
+      prevArrow: false,
+      nextArrow: false,
+      dots: slideCount > 1, // Show dots only if more than 1 slide
+      fade: true,
+      lazyLoad: 'ondemand',
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Learning Home Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_text_block",
+      "name": "Learning Center Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "page_url",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "type": "slider_block",
+      "name": "Slider Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_img",
+          "label": "Background Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "text",
+          "id": "slider_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "slider_content",
+          "label": "Content"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "slider_card_img",
+          "label": "Product Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Learning Home Banner"
+    }
+  ]
+}
+{% endschema %}

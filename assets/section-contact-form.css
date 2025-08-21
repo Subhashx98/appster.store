@@ -1,3 +1,22 @@
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact.page-width--narrow{
+  max-width: 92rem;
+}
+.contact .title{
+  margin: 0;
+}
+.contact p{
+  color: rgba(0, 0, 0, 0.6);
+  margin: 10px 0px 0px;
+}
+.contact .contact-form{
+  margin-top: 36px;
+  width: 100%;
+}
 .contact img {
   max-width: 100%;
 }

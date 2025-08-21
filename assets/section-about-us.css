@@ -1,0 +1,94 @@
+.about-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 0px 0px;
+}
+.about-content .about-us-title{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+.about-content .about-us-title h1{
+    line-height: 50px;
+}
+.about-content p{
+    max-width: 600px;
+    color: #444444;
+    margin-top: 8px;
+}
+.about-content .about-us-image{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    min-height: 520px;
+    padding: 40px 50px;
+    margin-top: 40px;
+}
+.about-content .about-us-image span.about-bg-image{
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-5);
+}
+.about-content .about-us-image span.about-bg-image img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-5);
+}
+.about-content .about-us-image ul.about-icon-text{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    background-color: var(--white-color);
+    width: 100%;
+    border-radius: var(--border-radius-5);
+    margin: 0;
+}
+.about-content .about-us-image ul.about-icon-text li{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    border-left: 1px solid #DDDDDD;
+    padding:0px 35px;
+    color: var(--black-color);
+    line-height: normal;
+}
+.about-content .about-us-image ul.about-icon-text li:first-child{
+    padding-left: 0px;
+    border-left: 0px;
+}
+.about-content .about-us-image ul.about-icon-text li:last-child{
+    padding-right: 0px;
+}
+.about-content .about-us-image ul.about-icon-text li img{
+    width: auto;
+    margin-right: 18px;
+}
+/* responsive */
+@media only screen and (max-width: 1200px) {
+    .about-content .about-us-image{ padding: 20px;}
+    .about-content .about-us-image ul.about-icon-text{ padding: 20px;}
+}
+@media only screen and (max-width: 991px) {
+    .about-content{padding: 40px 0px 0px;}
+    .about-content .about-us-image{ min-height: 370px;}
+    .about-content .about-us-image ul.about-icon-text li{ font-size: 14px; padding: 0px 12px;}
+    .about-content .about-us-image ul.about-icon-text li img{ margin-right: 8px; max-width: 14px;}
+}
+@media only screen and (max-width: 767px) {
+    .about-content .about-us-image ul.about-icon-text{ flex-direction: column; gap: 12px;}
+    .about-content .about-us-image ul.about-icon-text li{border: 0px; padding: 0;}
+}

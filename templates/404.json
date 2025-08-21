@@ -1,1 +1,48 @@
-{"sections":{"main":{"type":"main-404","settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "bg_img": "shopify://shop_images/404-Page-Banner.jpg",
+        "facebook": "https://www.facebook.com/CableOrganizer",
+        "twitter": "https://x.com/CableOrganizers",
+        "insta": "https://www.instagram.com/cableorganizer/",
+        "youtube": "https://www.youtube.com/user/CableOrganizers",
+        "linkedin": "https://www.linkedin.com/company/cableorganizer.com/"
+      }
+    },
+    "best_seller_AMAwni": {
+      "type": "best-seller",
+      "disabled": true,
+      "settings": {
+        "heading": "Our Bestsellers",
+        "cta_text": "View All",
+        "cta_url": "shopify://collections",
+        "collection": "frontpage",
+        "number_of_products_show": 8
+      }
+    },
+    "co_related_products_xtMh7a": {
+      "type": "co-related-products",
+      "settings": {
+        "heading": "Top Picks",
+        "cta_text": "View All",
+        "cta_url": "shopify://collections/best-sellers"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "best_seller_AMAwni",
+    "co_related_products_xtMh7a"
+  ]
+}

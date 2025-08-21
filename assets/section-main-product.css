@@ -36,7 +36,7 @@ product-info {
   }
 
   .product__info-wrapper--extra-padding {
-    padding: 0 0 0 8rem;
+    padding: 0 0 0 4rem;
   }
 
   .product--right .product__info-wrapper {
@@ -78,14 +78,14 @@ product-info {
 
   .product--medium:not(.product--no-media) .product__media-wrapper,
   .product--small:not(.product--no-media) .product__info-wrapper {
-    max-width: 55%;
-    width: calc(55% - var(--grid-desktop-horizontal-spacing) / 2);
+    max-width: 50%;
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   .product--medium:not(.product--no-media) .product__info-wrapper,
   .product--small:not(.product--no-media) .product__media-wrapper {
-    max-width: 45%;
-    width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
+    max-width: 50%;
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 }
 
@@ -218,7 +218,7 @@ product-info {
 /* Product info */
 
 .product__info-container > * + * {
-  margin: 1.5rem 0;
+  margin: 2.8rem 0 0;
 }
 
 .product__info-container iframe {
@@ -252,9 +252,6 @@ a.product__text {
 
 .product__title > * {
   margin: 0;
-  font-size: x-large;
-  line-height: normal;
-  color: var(--black);
 }
 
 .product__title > a {
@@ -1346,7 +1343,7 @@ a.product__text {
 
   .product-media-container.constrain-height {
     --viewport-offset: 170px;
-    --constrained-min-height: 500px;
+    --constrained-min-height: 600px;
   }
 
   .product-media-container.media-fit-cover,
@@ -1494,4 +1491,9 @@ a.product__text {
   .recipient-form > input[type='checkbox']:checked + label .icon-checkmark {
     border: none;
   }
+}
+
+@media only screen and (max-width: 991px) {
+  .product-media-container.constrain-height{--constrained-min-height: 300px;}
+  .product .no-image{ height: 300px;}
 }

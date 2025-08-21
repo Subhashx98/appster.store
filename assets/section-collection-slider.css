@@ -1,0 +1,190 @@
+.collection-slider {
+    margin-bottom: 60px;
+}
+
+.collection-slider h2 {
+    font-size: 26px;
+    text-transform: capitalize;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.collection-slider .collection-product-slider {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 30px;
+}
+
+.collection-slider .collection-product-slider .collection-slider-card {
+    width: calc(33.33% - 20px);
+    flex: 0 0 calc(33.33% - 20px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-5);
+    overflow: hidden;
+    background: var(--light-grey-color);
+}
+
+.collection-slider .collection-slider-card .product-slider-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background: var(--white-color);
+}
+
+.collection-slider .product-slider-block .slider-nav {
+    margin-top: 20px;
+    justify-content: center;
+    display: flex
+}
+
+.collection-slider .slider-nav .slick-slide {
+    cursor: pointer;
+}
+
+.collection-slider .slider-nav .slick-slide img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.collection-slider .slider-nav .slick-list {
+    width: 280px;
+}
+
+.collection-slider .slider-nav .slick-slide.slick-current img {
+    border-color: var(--black-color);
+}
+
+.collection-slider .slider-for .slick-slide {
+    padding: 0px 48px;
+}
+
+.collection-slider .slider-for .slick-slide img {
+    max-height: 220px;
+}
+
+.collection-slider .slider-for .slick-arrow {
+    top: 50%;
+    bottom: auto;
+    margin: 0px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    right: 0;
+}
+
+.collection-slider .slider-for .slick-arrow.slick-prev {
+    left: 0;
+}
+
+.collection-slider .collection-slider-card .slider-block-text {
+    background: var(--light-grey-color);
+    padding: 32px;
+}
+
+.collection-slider .collection-slider-card .slider-block-text h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.collection-slider .collection-slider-card .slider-block-text p {
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 5;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: #222425;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: underline;
+    display: none;
+    padding-left: 0;
+}
+
+.read-more-btn.show {
+    display: inline_block;
+}
+.search_blogs_block_main{
+    display: block;
+}
+.search_blogs_block_main .search-all-brand{
+    padding-bottom: 40px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .collection-slider {
+        margin-bottom: 40px;
+    }
+
+    .collection-slider h2 {
+        margin-bottom: 32px;
+        font-size: 24px;
+    }
+
+    .collection-slider .collection-product-slider {
+        gap: 8px;
+    }
+
+    .collection-slider .collection-slider-card .slider-block-text {
+        padding: 24px;
+    }
+
+    .collection-slider .collection-product-slider .collection-slider-card {
+        width: calc(50% - 8px);
+        flex: 0 0 calc(50% - 8px);
+    }
+
+    .collection-slider .collection-slider-card .slider-block-text h3 {
+        font-size: 18px;
+    }
+
+    .collection-slider .collection-slider-card .slider-block-text p {
+        line-height: 22px;
+    }
+
+    .collection-slider .collection-slider-card .product-slider-block {
+        padding: 10px 0px 20px;
+    }
+
+    .collection-slider .slider-for .slick-arrow.slick-prev {
+        left: 10px;
+    }
+
+    .collection-slider .slider-for .slick-arrow.slick-next {
+        right: 10px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .collection-slider .collection-product-slider .collection-slider-card {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .collection-slider .collection-product-slider {
+        gap: 30px;
+    }
+
+    .collection-slider .collection-slider-card .slider-block-text p {
+        line-clamp: 5;
+        -webkit-line-clamp: 5;
+    }
+}

@@ -1,0 +1,266 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_text_block_qqEaRX": {
+      "type": "image-text-block",
+      "settings": {
+        "image": "shopify://shop_images/FAQ-SafetyAndProtection.jpg",
+        "title": "Have Any More Questions About Safety Equipment?",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? CableOrganizer® representatives can answer your questions by phone from 9 a.m. to 5 p.m. ET at 1-888-3CABLEORG or by email at <a href=\"mailto:sales@cableorganizer.com\" title=\"mailto:sales@cableorganizer.com\"><strong>sales@cableorganizer.com</strong></a></p>",
+        "full_width": true,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "faq_question_answer_mUAkGf": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_7zqd4U": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How to Control Parking Lot Traffic",
+            "faq_ans": "<p>Use speed bumps to help slow down speeding vehicles. <a href=\"/blogs/articles/do-it-yourself-traffic-control-for-special-events\" target=\"_blank\" title=\"Do-It-Yourself Traffic Control for Special Events\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_7zqd4U"
+      ],
+      "settings": {
+        "button_text": "go back FAQ landing page",
+        "button_link": "shopify://pages/faq",
+        "faq_heading": "Speed Bumps & Humps"
+      }
+    },
+    "faq_question_answer_KnCAAb": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_xCgFNc": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Function of Storage Safety Cabinets?",
+            "faq_ans": "<p>Some safety cabinets are made to store flammable items. Others can store corrosive materials and pesticides. <a href=\"/blogs/how-to/how-to-reduce-labor-costs-and-increase-workplace-safety-with-industrial-safety-and-personal-protective-equipment\" target=\"_blank\" title=\"How to Reduce Labor Costs and Increase Workplace Safety with Industrial Safety and Personal Protective Equipment\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_xCgFNc"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Industrial Safety"
+      }
+    },
+    "faq_question_answer_Hrj7ER": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_aYHXUk": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is a Bollard Post?",
+            "faq_ans": "<p>Bollard posts help protect machinery and buildings from trucks and forklifts. They can also be used to restrict different access areas. <a href=\"/products/eagle-manufacturing-bollard-posts-and-machine-guards\" target=\"_blank\" title=\"Eagle Manufacturing® Bollard Posts and Machine Guards\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_aYHXUk"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Traffic Safety"
+      }
+    },
+    "faq_question_answer_JYUaaE": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_wdWBhi": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Benefit of Using Floor Mats?",
+            "faq_ans": "<p>Floor mats are impact absorbing and anti-slip, which means they help relieve joint and muscle stress for people who stand while working all day. <a href=\"/blogs/how-to/warehouse-safety-checklist-how-to-reduce-warehouse-liability\" target=\"_blank\" title=\"Warehouse Safety Checklist: How to Reduce Warehouse Liability\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_wdWBhi"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Industrial Floor Mats"
+      }
+    },
+    "faq_question_answer_3bTJAK": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_xKA9VB": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What PPE is Required for Arc Flash Hazard?",
+            "faq_ans": "<p>The type and amount of PPE required differs depending on the Arc Hazard Category. However, safety glasses, hard hats, FR coveralls, leather gloves & leather shoes are required in all four categories. <a href=\"/blogs/articles/what-are-arc-hazard-categories\" target=\"_blank\" title=\"What are Arc Hazard Categories?\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_xKA9VB"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "PPE & Arc Flash Equipment"
+      }
+    },
+    "faq_question_answer_c3hkVi": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_QMMT7X": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Can You Tell if There is Carbon Monoxide in Your House?",
+            "faq_ans": "<p>Carbon Monoxide Detectors are the only way to know if your air quality is being affected. <a href=\"/blogs/articles/carbon-monoxide-safety-q-a\" target=\"_blank\" title=\"Carbon Monoxide Safety Q&A\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_RJFrGk": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Smoke Detectors do Firemen Recommend?",
+            "faq_ans": "<p>A dual sensor smoke detector is the best choice when choosing a smoke detector. While some alarms are ionization or photoelectric, there is another type that combines the two! This way you don't have to worry about whether you will choose the correct style for each area of your home; the combination ionization / photoelectric alarms have got you covered! <a href=\"/blogs/articles/smoke-alarm-roundup\" target=\"_blank\" title=\"Smoke Alarm Roundup\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_QMMT7X",
+        "faq_RJFrGk"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fire Alarms & Smoke Detectors: CO, Gas"
+      }
+    },
+    "faq_question_answer_XrhBWm": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_HwCVwX": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is Fire Caulk and Sealant Used For?",
+            "faq_ans": "<p>Fire caulk is used for a range of things; i.e.: sealing joints between fire rated walls and floors, protecting cables from the spread of flames, filling in gaps in firestop devices, etc. <a href=\"/blogs/articles/top-10-products-for-fire-protection\" target=\"_blank\" title=\"Top 10 Products for Fire Protection\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_HwCVwX"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fire Caulks, Sealants & Mortar"
+      }
+    },
+    "faq_question_answer_XxmNrr": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_zqjgHQ": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Do I Need to Use a Fire Caulk Gun?",
+            "faq_ans": "<p>Caulk can be applied by hand without a caulk gun, but it is more tedious and requires you to be more precise. <a href=\"/collections/fire-caulk-guns\" target=\"_blank\" title=\"/collections/fire-caulk-guns\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_zqjgHQ"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fire Caulk Guns"
+      }
+    },
+    "faq_question_answer_7VeBjB": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_tMBY8F": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are the Main Types of Firestop Devices?",
+            "faq_ans": "<p>Light fixture covers, duct wrap, wall pathways / sleeves, and pipe collars are all types of firestop devices. <a href=\"/blogs/articles/what-are-firestop-devices\" target=\"_blank\" title=\"What Are Firestop Devices?\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_tMBY8F"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fire Stop Devices"
+      }
+    },
+    "faq_question_answer_DeWria": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_QGQjWk": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are Fire Pillows Used For?",
+            "faq_ans": "<p>Fire pillows are used for preventing fire, gas, smoke, etc. from passing through to the next floor or next room for the rated time period. <a href=\"/blogs/articles/top-10-products-for-fire-protection\" target=\"_blank\" title=\"Top 10 Products for Fire Protection\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_QGQjWk"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fire Bricks, Pillows & Composite Sheets"
+      }
+    },
+    "faq_question_answer_DUUfAh": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_Nndxrw": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Type of Fire Alarm Cable Do I Need?",
+            "faq_ans": "<p>Fire alarm cables can be Plenum, Non-plenum, or Riser cables. Plenum cables (FPLP) are used in enclosed air spaces, while Non-plenum cables (FPL) are used in surface wiring applications. Riser cable (FPLR) is used in vertical applications (floor to floor). <a href=\"/collections/fire-alarm-security-cables\" target=\"_blank\" title=\"/collections/fire-alarm-security-cables\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_Nndxrw"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Fire Alarm & Security Cables"
+      }
+    }
+  },
+  "order": [
+    "image_text_block_qqEaRX",
+    "faq_question_answer_mUAkGf",
+    "faq_question_answer_KnCAAb",
+    "faq_question_answer_Hrj7ER",
+    "faq_question_answer_JYUaaE",
+    "faq_question_answer_3bTJAK",
+    "faq_question_answer_c3hkVi",
+    "faq_question_answer_XrhBWm",
+    "faq_question_answer_XxmNrr",
+    "faq_question_answer_7VeBjB",
+    "faq_question_answer_DeWria",
+    "faq_question_answer_DUUfAh"
+  ]
+}

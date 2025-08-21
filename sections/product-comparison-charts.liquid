@@ -1,0 +1,66 @@
+{{ 'section-product-comparison.css' | asset_url | stylesheet_tag }}
+
+<div class="product-comparison">
+  <div class="page-width">
+    <div class="go-link">
+      {% if section.settings.cta_url != blank and section.settings.cta_text != blank %}
+      <a href="{{ section.settings.cta_url }}" class="view-link">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </div>
+    <div class="comparison-charts-item">
+      {% for categories in section.settings.chart_category %}
+        
+        <div class="comparison-charts">
+          <div class="charts-heading">
+            <img
+              src="{{ categories.image |  image_url }}"
+              alt="{{ chart.title }}"
+              height="48"
+              width="48"
+              loading="lazy"
+            >
+            <h3>{{ categories.title }}</h3>
+          </div>
+          <ul>
+            {% for chart in categories.product_comparison_charts.value %}
+              {% assign chart_url = chart.system.url %}
+              <li>
+                <a target="_blank" href="{{ chart_url }}">{{ chart.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Comparison",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "metaobject_list",
+      "id": "chart_category",
+      "label": "Select Comparison Chart Category",
+      "metaobject_type": "product_comparison_charts_categories"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Comparison"
+    }
+  ]
+}
+{% endschema %}

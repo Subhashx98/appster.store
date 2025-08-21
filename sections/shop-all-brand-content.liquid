@@ -1,0 +1,61 @@
+{{ 'shop-all-content.css' | asset_url | stylesheet_tag }}
+<div class="shop-all shop-by-content">
+  <div class="brand-discription" id="brand-discription">
+    <div class="page-width">
+      {% for block in section.blocks %}
+        {% if block.type == 'content_block' %}
+            <div class="brand-discription-block">
+              {% if block.settings.title != blank %}
+                <h2>{{ block.settings.title }}</h2>
+              {% endif %}
+              {% if block.settings.content != blank %}
+                {{ block.settings.content }}
+              {% endif %}
+            </div>
+        {% endif %}
+      {% endfor %}
+      {% if section.settings.detail != blank %}
+        <p>
+          {{ section.settings.detail }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Shop All Brand Content",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "detail",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "content_block",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop All Brand Content"
+    }
+  ]
+}
+{% endschema %}

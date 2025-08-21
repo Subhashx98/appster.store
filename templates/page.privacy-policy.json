@@ -1,0 +1,314 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "main_image_banner_BaxKin": {
+      "type": "main-image-banner",
+      "custom_css": [
+        ".main-banner-bg::after {display: none;}"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CO-MultiplePage-Banner.jpg",
+        "title": "Privacy Policy"
+      }
+    },
+    "section_breadcrumbs_t6A8xy": {
+      "type": "section-breadcrumbs",
+      "settings": {
+        "show_small_width": false
+      }
+    },
+    "text_content_eP6YHg": {
+      "type": "text-content",
+      "blocks": {
+        "description_AyfRc6": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>CableOrganizer®, LLC. (\"we,\" \"us,\" or the \"Company\") wants you to be familiar with how we collect, use, and disclose information. This Privacy Policy describes our practices in connection with information that we collect through <a href=\"https://www.cableorganizer.com\" target=\"_blank\" title=\"https://www.cableorganizer.com\">https://www.cableorganizer.com</a> and any other websites operated by us from which you are accessing this Privacy Policy (the \"Websites\"), through our social media pages located at:<br/></p><ul><li><a href=\"https://www.facebook.com/CableOrganizer\" target=\"_blank\" title=\"https://www.facebook.com/CableOrganizer\">https://www.facebook.com/CableOrganizer</a></li><li><a href=\"https://www.instagram.com/CableOrganizer\" target=\"_blank\" title=\"https://www.facebook.com/CableOrganizer\">https://www.instagram.com/CableOrganizer</a></li><li><a href=\"https://x.com/@cableorganizers\" target=\"_blank\" title=\"https://twitter.com/@cableorganizers\">https://x.com/@cableorganizers</a></li><li><a href=\"https://www.linkedin.com/company/cableorganizer.com\" target=\"_blank\" title=\"https://www.linkedin.com/company/cableorganizer.com\">https://www.linkedin.com/company/cableorganizer.com</a></li><li><a href=\"https://www.youtube.com/user/CableOrganizers\" target=\"_blank\" title=\"https://www.youtube.com/user/CableOrganizers\">https://www.youtube.com/user/CableOrganizers<br/><br/>     <br/></a></li></ul><p>(Collectively, our \"Social Media Pages\") as well as through HTML-formatted email messages that we send to you that link to this Privacy Policy, or through products and services you purchase, subscribe to, or license from us (collectively, including the Websites and our Social Media Pages, the \"Services\"). By using the Services, you agree to this Privacy Policy.</p>"
+          }
+        },
+        "heading_YGmcyi": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Personal Information"
+          }
+        },
+        "description_3TRjdT": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>\"Personal Information\" is information that identifies you as an individual or relates to an identifiable individual, including:<br/></p><ul><li>Name</li><li>Postal Address</li><li>Telephone Number</li><li>Email Address</li><li>Credit and Debit Card Number<br/><br/>We need to collect and process these types of Personal Information in order to provide the requested Services to you, or because we are legally required to do so. If you do not provide the information that we request, we may not be able to provide you with the requested Services.</li></ul>"
+          }
+        },
+        "heading_hkkfiU": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Collection Of Personal Information"
+          }
+        },
+        "description_3eVw3E": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We and our service providers may collect Personal Information in a variety of ways, including:</p><ul><li>Through the Services: We may collect Personal Information through the Services, e.g., when you sign up for a newsletter or register.</li><li>From Other Services: We may receive your Personal Information from other sources, such as public databases, joint marketing partners, social media platforms (including from people with whom you are friends or otherwise connected) and from other third parties.</li></ul>"
+          }
+        },
+        "heading_TAAJQY": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Use Of Personal Information"
+          }
+        },
+        "description_ci3iM9": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We and our service providers use Personal Information for legitimate business purposes, including the following:<br/><br/>Providing the functionality of the Services and fulfilling your requests.</p><ul><li>To respond to your inquiries, fulfill your requests, complete your transactions, and provide you with related customer service.</li><li>To send administrative information to you, such as changes to our terms, conditions and policies, as well as marketing communications that we believe may be of interest.</li></ul><p>We will engage in these activities to manage our contractual relationship with you and/or to comply with a legal obligation.</p><ul><li>Analysis of Personal Information for business reporting and providing personalized services.</li><li>To personalize your experience on the Services by presenting products and offers tailored to you.</li></ul><p>We will provide personalized services either with your consent or because we have a legitimate interest.</p><ul><li>For data analysis, such as to improve the efficiency of our Services;</li><li>For audits, to verify that our internal processes function as intended and are compliant with legal, regulatory, or contractual requirements;</li><li>For fraud and security monitoring purposes, such as to detect and prevent cyberattacks or attempts to commit identity theft;</li><li>For developing new products and services;</li><li>For enhancing, improving, or modifying our Services;</li><li>For identifying usage trends, such as understanding which parts of our Services are of most interest to users;</li><li>For determining the effectiveness of our promotional campaigns, so that we can adapt our campaigns to the needs and interests of our users; and</li><li>For operating and expanding our business activities, such as understanding which parts of our Services are of most interest to our users so we can focus our energies on meeting our users' interests.</li></ul><p>We engage in these activities to manage our contractual relationship with you, to comply with a legal obligation, and/or because we have a legitimate interest.<br/></p>"
+          }
+        },
+        "heading_RHkreE": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Disclosure of Personal Information"
+          }
+        },
+        "description_ckwfA3": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>Your Personal Information may be disclosed:</p><ul><li>To our third-party service providers who provide services such as website hosting, data analysis, payment processing, order fulfillment, information technology and related infrastructure provision, customer service, email delivery, auditing and other services.</li><li>To third parties, to permit them to send you marketing communications, consistent with your choices.</li><li>By you, on message boards, chat, profile pages and blogs and other services to which you are able to post information and content. Please note that any information you post or disclose through these services will become public and may be available to other users and the general public.</li><li>To our affiliates for the purposes described in this Privacy Policy. CableOrganizer® LLC. is the party responsible for the management of the jointly-used Personal Information. </li></ul>"
+          }
+        },
+        "heading_bqJW4d": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Other Uses And Disclosures"
+          }
+        },
+        "description_89eY6a": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>\"Other Information\" is any information that does not reveal your specific identity or does not directly relate to an identifiable individual, such as:</p><ul><li>Browser and device information</li><li>Information collected through cookies, pixel tags and other technologies</li><li>Demographic information and other information provided by you that does not reveal your specific identity</li><li>Information that has been aggregated in a manner such that it no longer reveals your specific identity</li></ul><p>If we are required to treat Other Information as Personal Information under applicable law, then we may use and disclose it for the purposes for which we use and disclose Personal Information as detailed in this Policy.</p>"
+          }
+        },
+        "heading_xwPF4W": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Collection Of Other Information"
+          }
+        },
+        "description_iqHC9X": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We and our service providers may collect Other Information in a variety of ways, including:</p><ul><li>Through your browser or device: Certain information is collected by most browsers or automatically through your device, such as your Media Access Control (MAC) address, computer type (Windows or Macintosh), screen resolution, operating system name and version, device manufacturer and model, language, Internet browser type and version and the name and version of the Services you are using. We use this information to ensure that the Services function properly.</li><li>Using cookies: Cookies are pieces of information stored directly on the computer that you are using. Cookies allow us to collect information such as browser type, time spent on the Services, pages visited, language preferences, and other anonymous traffic data. We and our service providers use the information for security purposes, to facilitate navigation, to display information more effectively, and to personalize your experience. We also gather statistical information about use of the Services in order to continually improve their design and functionality, understand how they are used and assist us with resolving questions regarding them. Cookies further allow us to select which of our offers are most likely to appeal to you and display them while you are on the Services. We may also use cookies or other technologies in online advertising to track responses to our ads, and to serve ads in our partner networks. We do not respond to do-not-track signals. We engage in cross-site tracking, such as retargeting campaigns. If you do not want information collected through the use of cookies, most browsers allow you to automatically decline cookies or be given the choice of declining or accepting a particular cookie (or cookies) from a particular website. You may also wish to refer to <a href=\"https://www.allaboutcookies.org\" target=\"_blank\" title=\"https://www.allaboutcookies.org\">All About Cookies</a>. If, however, you do not accept cookies, you may experience some inconvenience in your use of the Services. You also may not receive advertising or other offers from us that are relevant to your interests and needs.</li><li>Using pixel tags and other similar technologies: Pixel tags (also known as web beacons and clear GIFs) may be used to, among other things, track the actions of users of the Services (including email recipients), measure the success of our marketing campaigns and compile statistics about usage of the Services and response rates.</li><li>Analytics: We use Google Analytics, which uses cookies and similar technologies to collect and analyze information about use of the Services and report on activities and trends. This service may also collect information regarding the use of other websites, apps and online resources. You can learn about Google's practices by going to <a href=\"https://www.google.com/policies/privacy\" target=\"_blank\" title=\"https://www.google.com/policies/privacy\">www.google.com/policies/privacy</a>, and opt out of them by downloading the Google Analytics opt-out browser add-on, available at <a href=\"https://tools.google.com/dlpage/gaoptout\" target=\"_blank\" title=\"https://tools.google.com/dlpage/gaoptout\">Google Opt-Out</a>.</li><li>IP Address: Your IP address is automatically assigned to your computer by your Internet Service Provider. An IP address may be identified and logged automatically in our server log files whenever a user accesses the Services, along with the time of the visit and the page(s) that were visited. Collecting IP addresses is standard practice and is done automatically by many websites, applications and other services. We use IP addresses for purposes such as calculating usage levels, diagnosing server problems and administering the Services. We may also derive your approximate location from your IP address.</li><li>Physical Location: We may collect the physical location of your device by, for example, using satellite, cell phone tower or WiFi signals. We may use your device's physical location to provide you with personalized location-based services and content. In some instances, you may be permitted to allow or deny such uses and/or sharing of your device's location, but if you do, we may not be able to provide you with the applicable personalized services and content.</li></ul>"
+          }
+        },
+        "heading_Wt89U6": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Uses And Disclosures Of Other Information"
+          }
+        },
+        "description_hz8UCm": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We may use and disclose Other Information for any purpose, except where we are required to do otherwise under applicable law. In some instances, we may combine Other Information with Personal Information. If we do, we will treat the combined information as Personal Information as long as it is combined.</p>"
+          }
+        },
+        "heading_9WDhB3": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Third-party Services"
+          }
+        },
+        "description_EkaJFh": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>This Privacy Policy does not address, and we are not responsible for, the privacy, information or other practices of any third parties, including any third party operating any website or service to which the Services link. The inclusion of a link on the Services does not imply endorsement of the linked site or service by us or by our affiliates. In addition, we are not responsible for the information collection, use, disclosure or security policies or practices of other organizations, such as Facebook, Apple, Google, Microsoft, or any other developer, social media platform provider, operating system provider, wireless service provider or device manufacturer, including with respect to any Personal Information you disclose to other organizations through or in connection with our Social Media Pages.</p>"
+          }
+        },
+        "heading_W6kNt7": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Third-party Advertising"
+          }
+        },
+        "description_tPKjYc": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We may use third-party advertising companies to serve advertisements regarding goods and services that may be of interest to you when you access and use the Services and other websites or online services, based on information relating to your access to and use of the Services and other websites or online services on any of your devices, as well as on information received from third parties. To do so, these companies may place or recognize a unique cookie on your browser (including through the use of pixel tags). They may also use these technologies, along with information they collect about your online use, to recognize you across the devices you use, such as a mobile phone and a laptop. If you would like more information about this practice, and to learn how to opt out of it in desktop and mobile browsers on the particular device on which you are accessing this Privacy Policy, please visit About Ads and Network Advertising.</p>"
+          }
+        },
+        "heading_Ldref4": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Security"
+          }
+        },
+        "description_bG43LJ": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We seek to use reasonable organizational, technical and administrative measures designed to protect Personal Information within our organization. Unfortunately, no data transmission or storage system can be guaranteed to be 100% secure. If you have reason to believe that your interaction with us is no longer secure, please immediately notify us in accordance with the \"Contacting Us\" section below.</p>"
+          }
+        },
+        "heading_nrDc3J": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Choices And Access"
+          }
+        },
+        "description_C4pzGb": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p><strong>Your choices regarding our use and disclosure of your Personal Information</strong></p><p>We give you choices regarding our use and disclosure of your Personal Information for marketing purposes. You may opt-out from:</p><ul><li>Receiving electronic communication from us: If you no longer want to receive marketing-related emails from us on a going-forward basis, you may opt-out by following the instructions contained in each such email.</li><li>Our sharing of your Personal Information with our affiliates and third parties for their direct marketing purpose: If you would prefer that we not share your Personal Information on a going-forward basis with our affiliates and third parties for their direct marketing purposes, you may opt-out at any time.</li></ul><p>We will try to comply with your request(s) as soon as reasonably practicable. Please note that if you opt-out of receiving marketing-related emails from us, we may still send you important administrative messages, from which you cannot opt-out.</p><p><strong>How you can access, change or suppress your Personal Information</strong></p><p>If you would like to request to review, correct, update, suppress, restrict or delete Personal Information that you have previously provided to us, or if you would like to request to receive an electronic copy of your Personal Information for purposes of transmitting it to another company (to the extent this right to data portability is provided to you by applicable law), you may contact us by emailing <a href=\"mailto:sales@cableorganizer.com\" title=\"mailto:sales@cableorganizer.com\">sales@cableorganizer.com</a>. We will respond to your request consistent with applicable law.</p><p>In your request, please make clear what Personal Information you would like to have changed, whether you would like to have your Personal Information suppressed from our database or otherwise let us know what limitations you would like to put on our use of your Personal Information. For your protection, we will only implement requests with respect to the Personal Information associated with the particular email address that you use to send us your request, and we may need to verify your identity before implementing your request. We will try to comply with your request as soon as reasonably practicable.</p><p>Please note that we may need to retain certain information for recordkeeping purposes and/or to complete any transactions that you began prior to requesting a change or deletion. There may also be residual information that will remain within our databases and other records, which will not be removed.</p>"
+          }
+        },
+        "heading_3tNpkM": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Security"
+          }
+        },
+        "description_ehNRpG": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We seek to use reasonable organizational, technical and administrative measures designed to protect Personal Information within our organization. Unfortunately, no data transmission or storage system can be guaranteed to be 100% secure. If you have reason to believe that your interaction with us is no longer secure, please immediately notify us in accordance with the \"Contacting Us\" section below.</p>"
+          }
+        },
+        "heading_7bcd6U": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Retention Period"
+          }
+        },
+        "description_BMyTbG": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We will retain your Personal Information for as long as needed or permitted in light of the purpose(s) for which it was obtained. The criteria used to determine our retention periods include: (i) the length of time we have an ongoing relationship with you and provide the Services to you; (ii) when we have legal obligation to which we are subject; or (iii) as advisable in light of our legal position (such as in regard to applicable statutes of limitations, litigation or regulatory investigations).</p>"
+          }
+        },
+        "heading_c3LLzi": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Use Of Services By Minors"
+          }
+        },
+        "description_JBDHYx": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>The Services are not directed to individuals under the age of sixteen (16), and we do not knowingly collect Personal Information from individuals under sixteen (16).</p>"
+          }
+        },
+        "heading_bCHVCh": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Sensitive Information"
+          }
+        },
+        "description_tzexWj": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We ask that you not send us, and you not disclose, any sensitive Personal Information (e.g., social security numbers, information related to racial or ethnic origin, political opinions, religion or other beliefs, health, biometrics or genetic characteristics, criminal background or trade union membership) on or through the Services or otherwise to us.</p>"
+          }
+        },
+        "heading_KP9WKY": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Accessibility Statement"
+          }
+        },
+        "description_aBk6VV": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>CableOrganizer® has maintained a longtime digital accessibility commitment to reach the largest and most diverse audience possible, no matter a site visitor’s technology or capabilities. We conduct regular website audits to determine that it conforms to the Americans with Disabilities Act (ADA) Standards for Accessible Design and recommendations of the Web Content Accessibility Guidelines 2.1 AA (WCAG 2.1 AA). These assessments ensure we continue to provide an accessible web experience that complies with applicable rules, while embracing the needs of all our website visitors.</p><p>As technology never stops evolving, it is a continuous process to manage the standards for our digital presence. If you encounter any access difficulties during your visit to our website or have questions or feedback pertaining to our site’s accessibility, please do not hesitate to contact our Customer Service team at <a href=\"mailto:sales@cableorganizer.com\" title=\"mailto:sales@cableorganizer.com\">sales@cableorganizer.com</a> or 1-833-322-2536.</p>"
+          }
+        },
+        "heading_ykzL3n": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Updates To This Privacy Policy"
+          }
+        },
+        "description_PLhrzb": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>We may change this Privacy Policy. This Privacy Policy was last updated in March 2025. Any changes will become effective when we post the revised Privacy Policy on the Services. Your use of the Services following these changes means that you accept the revised Privacy Policy.</p>"
+          }
+        },
+        "heading_KWjPDc": {
+          "type": "heading",
+          "settings": {
+            "block_heading": "Contacting Us"
+          }
+        },
+        "description_diU399": {
+          "type": "description",
+          "settings": {
+            "block_description": "<p>CableOrganizer® LLC, located at 520 Lafayette Rd., Sparta, NJ 07871 is the company responsible for collection, use and disclosure of your Personal Information under this Privacy Policy. If you have any questions about this Privacy Policy, please contact us at <a href=\"mailto:sales@cableorganizer.com\" title=\"mailto:sales@cableorganizer.com\">sales@cableorganizer.com</a>. Because email communications are not always secure, please do not include credit card or other sensitive information in your emails to us.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "description_AyfRc6",
+        "heading_YGmcyi",
+        "description_3TRjdT",
+        "heading_hkkfiU",
+        "description_3eVw3E",
+        "heading_TAAJQY",
+        "description_ci3iM9",
+        "heading_RHkreE",
+        "description_ckwfA3",
+        "heading_bqJW4d",
+        "description_89eY6a",
+        "heading_xwPF4W",
+        "description_iqHC9X",
+        "heading_Wt89U6",
+        "description_hz8UCm",
+        "heading_9WDhB3",
+        "description_EkaJFh",
+        "heading_W6kNt7",
+        "description_tPKjYc",
+        "heading_Ldref4",
+        "description_bG43LJ",
+        "heading_nrDc3J",
+        "description_C4pzGb",
+        "heading_3tNpkM",
+        "description_ehNRpG",
+        "heading_7bcd6U",
+        "description_BMyTbG",
+        "heading_c3LLzi",
+        "description_JBDHYx",
+        "heading_bCHVCh",
+        "description_tzexWj",
+        "heading_KP9WKY",
+        "description_aBk6VV",
+        "heading_ykzL3n",
+        "description_PLhrzb",
+        "heading_KWjPDc",
+        "description_diU399"
+      ],
+      "custom_css": [
+        "a {color: #fe5b00;}",
+        "h3 {color: #336699; font-weight: bold;}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "main_image_banner_BaxKin",
+    "section_breadcrumbs_t6A8xy",
+    "text_content_eP6YHg"
+  ]
+}

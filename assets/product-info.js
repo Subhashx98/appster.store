@@ -70,6 +70,37 @@ if (!customElements.get('product-info')) {
         const shouldSwapProduct = this.dataset.url !== productUrl;
         const shouldFetchFullPage = this.dataset.updateUrl === 'true' && shouldSwapProduct;
 
+
+//option load image fix
+let variantsJsonEl = document.getElementById("shsdVariantsJson");
+if(variantsJsonEl){
+  let selectedOptions = Array.from(document.querySelectorAll("select.select__select option[selected]")).map(k => k.value);
+  let variants = JSON.parse(variantsJsonEl.innerHTML);
+  let sectionId = variantsJsonEl.getAttribute("data-section-id");
+  let selectedVariant = variants.find(k => k.options.join(",") == selectedOptions.join(","));
+  
+  if(selectedVariant){
+    let featuredMediaId = selectedVariant.featuredMediaId;
+    let mediaData = selectedVariant.mediaData;
+    document.querySelector("media-gallery * ul li").outerHTML = `<li id="Slide-${sectionId}-${featuredMediaId}" class="product__media-item grid__item slider__slide is-active product__media-item--single scroll-trigger animate--fade-in" data-media-id="template--${sectionId}-${featuredMediaId}"> <div class="product-media-container media-type-image media-fit-cover global-media-settings gradient constrain-height" style="--ratio: 1.0; --preview-ratio: 1.0;"> <modal-opener class="product__modal-opener product__modal-opener--image" data-modal="#ProductModal-template--24741105074481__main"> <span class="product__media-icon motion-reduce quick-add-hidden product__media-icon--lightbox" aria-hidden="true"> <span class="svg-wrapper"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="icon icon-plus" viewBox="0 0 19 19"> <path fill="currentColor" fill-rule="evenodd" d="M4.667 7.94a.5.5 0 0 1 .499-.501l5.534-.014a.5.5 0 1 1 .002 1l-5.534.014a.5.5 0 0 1-.5-.5" clip-rule="evenodd" /> <path fill="currentColor" fill-rule="evenodd" d="M7.926 4.665a.5.5 0 0 1 .501.498l.014 5.534a.5.5 0 1 1-1 .003l-.014-5.534a.5.5 0 0 1 .499-.501" clip-rule="evenodd" /> <path fill="currentColor" fill-rule="evenodd" d="M12.832 3.03a6.931 6.931 0 1 0-9.802 9.802 6.931 6.931 0 0 0 9.802-9.802M2.323 2.323a7.931 7.931 0 0 1 11.296 11.136l4.628 4.628a.5.5 0 0 1-.707.707l-4.662-4.662A7.932 7.932 0 0 1 2.323 2.323" clip-rule="evenodd" /> </svg> </span> </span> <div class="loading__spinner hidden"> <svg xmlns="http://www.w3.org/2000/svg" class="spinner" viewBox="0 0 66 66"> <circle stroke-width="6" cx="33" cy="33" r="30" fill="none" class="path" /> </svg> </div> <div class="product__media media media--transparent">${mediaData} </div> <button class="product__media-toggle quick-add-hidden product__media-zoom-lightbox" type="button" aria-haspopup="dialog" data-media-id="${featuredMediaId}"> <span class="visually-hidden"> Open media 1 in modal </span> </button> </modal-opener> </div> </li>`;
+    let mediaGalleryTop = document.querySelector("media-gallery").getBoundingClientRect().top;
+    window.scrollTo({ top: mediaGalleryTop + window.scrollY, behavior: 'smooth' });
+    let mediaGalleriesSections = document.querySelectorAll("media-gallery slider-component");
+    if(mediaGalleriesSections.length > 1){
+      let mediaThumbnailTop = mediaGalleriesSections[1].querySelector("ul");
+      let mediaThumbnailElement = mediaThumbnailTop.querySelector(`li[data-variant-media-id="${featuredMediaId}"`);
+      mediaThumbnailElement.querySelector("button").setAttribute("aria-current", true);
+      if(mediaThumbnailElement){
+        let mediaFirstElement = mediaThumbnailTop.querySelector("li");
+        mediaFirstElement.querySelector("button").removeAttribute("aria-current");
+        mediaThumbnailTop.insertBefore(mediaThumbnailElement, mediaThumbnailTop.querySelector("li"));
+      }
+    }
+    let modalMediaData = mediaData.replace('<img ', `<img class="global-media-settings global-media-settings--no-shadow product__media-item--variant active" loading="lazy" width="1100" height="1100" data-media-id="${featuredMediaId}" `);
+    document.querySelector(".product-media-modal__content").innerHTML = modalMediaData;
+  }
+}
+        
         this.renderProductInfo({
           requestUrl: this.buildRequestUrlWithParams(productUrl, selectedOptionValues, shouldFetchFullPage),
           targetId: target.id,
@@ -175,7 +206,9 @@ if (!customElements.get('product-info')) {
             return;
           }
 
-          this.updateMedia(html, variant?.featured_media?.id);
+          if(!document.querySelector(".isShsdProduct")){
+              this.updateMedia(html, variant?.featured_media?.id);
+          }
 
           const updateSourceFromDestination = (id, shouldHide = (source) => false) => {
             const source = html.getElementById(`${id}-${this.sectionId}`);
@@ -186,6 +219,8 @@ if (!customElements.get('product-info')) {
             }
           };
 
+          updateSourceFromDestination('part_number');
+          updateSourceFromDestination('properties_part_number');
           updateSourceFromDestination('price');
           updateSourceFromDestination('Sku', ({ classList }) => classList.contains('hidden'));
           updateSourceFromDestination('Inventory', ({ innerText }) => innerText === '');
@@ -196,10 +231,23 @@ if (!customElements.get('product-info')) {
           this.querySelector(`#Quantity-Rules-${this.dataset.section}`)?.classList.remove('hidden');
           this.querySelector(`#Volume-Note-${this.dataset.section}`)?.classList.remove('hidden');
 
-          this.productForm?.toggleSubmitButton(
-            html.getElementById(`ProductSubmitButton-${this.sectionId}`)?.hasAttribute('disabled') ?? true,
-            window.variantStrings.soldOut
+          const submitButtonFromHtml = html.getElementById(`ProductSubmitButton-${this.sectionId}`);
+          const isButtonDisabled = submitButtonFromHtml?.hasAttribute('disabled') ?? true;
+
+          const selectedOptions = html.querySelectorAll('select option[selected], input[type="radio"]:checked');
+          const hasInactiveOption = Array.from(selectedOptions).some(option => 
+            option.classList.contains('option_inactive')
           );
+
+          let buttonText = window.variantStrings?.addToCart || 'Add to cart';
+          let shouldDisable = isButtonDisabled || hasInactiveOption;
+
+          if (hasInactiveOption) {
+            buttonText = window.variantStrings?.unavailableSelectAnother || 'Unavailable - select another option';
+            shouldDisable = true;
+          }
+
+          this.productForm?.toggleSubmitButton(shouldDisable, buttonText);
 
           publish(PUB_SUB_EVENTS.variantChange, {
             data: {

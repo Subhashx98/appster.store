@@ -1,0 +1,169 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_text_block_N9wD7A": {
+      "type": "image-text-block",
+      "settings": {
+        "image": "shopify://shop_images/FAQ-SecurityAndSurveillance.jpg",
+        "title": "Have Any More Questions About Security & Surveillance?",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? CableOrganizer® representatives can answer your questions by phone from 9 a.m. to 5 p.m. ET at <strong>1-888-3CABLEORG</strong> or by email at  <a href=\"mailto:sales@cableorganizer.com\" target=\"_blank\" title=\"mailto:sales@cableorganizer.com\">sales@cableorganizer.com</a></p>",
+        "full_width": true,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "faq_question_answer_gYfAer": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_HdkLhE": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What are the Disadvantages of Analog Cameras?",
+            "faq_ans": "<p>Analog camera's resolution quality when compared to even the worst of IP cameras, are poor in comparison and don't cover as large of an area, meaning you need more cameras. Also, instead of being able to clearly see just the events (motion detection) that an IP camera would detect and flag, you would potentially have to search through hours of footage. <a href=\"/blogs/articles/security-ip-cameras-vs-analog-cameras\" target=\"_blank\" title=\"Security: IP Cameras vs. Analog Cameras\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_6fKBRa": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Where Do I Place My Security Cameras?",
+            "faq_ans": "<p>While setting up cameras to monitor the perimeter of your property, you will want to ensure places like, front doors, garages, and pools/play areas are covered. As for indoors, try and monitor points of entry, home business areas, and nanny cams. <a href=\"/blogs/articles/8-ways-to-protect-your-home-with-security-cameras\" target=\"_blank\" title=\"8 Ways to Protect Your Home with Security Cameras\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_HdkLhE",
+        "faq_6fKBRa"
+      ],
+      "settings": {
+        "button_text": "go back FAQ landing page",
+        "button_link": "shopify://pages/faq",
+        "faq_heading": "Security Cameras"
+      }
+    },
+    "faq_question_answer_CAYKmA": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_3MN6Ue": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Do I Need a DVR Lock Box?",
+            "faq_ans": "<p>Since DVRs are able to store the security camera footage, you will want to secure them. You can do this by using a DVR Lock Box. <a href=\"/collections/dvr-lock-boxes\" target=\"_blank\" title=\"/collections/dvr-lock-boxes\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_3MN6Ue"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "DVR Lock Boxes"
+      }
+    },
+    "faq_question_answer_AiGBRP": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_aUbaGG": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Can You Use Any Monitor for Security Cameras?",
+            "faq_ans": "<p>You can get a larger monitor to view the footage in greater detail. This also makes the footage more public, which helps people know they are under surveillance. Or you could go with a smaller more compact screen for private viewing. <a href=\"/products/invid-tech-monitors\" target=\"_blank\" title=\"InVid Tech Monitors\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_MeXwGY": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Do I Really Need a DVR for Security Cameras?",
+            "faq_ans": "<p>Digital Video Recorders are normally paired with analog cameras. They can encode, store, and decode the footage for remote viewing. <a href=\"/collections/video-recorders-monitors\" target=\"_blank\" title=\"/collections/video-recorders-monitors\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_aUbaGG",
+        "faq_MeXwGY"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Video Recorders & Monitors"
+      }
+    },
+    "faq_question_answer_qhELbT": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_tJbfyz": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are HD-TVI, CVI, and AHD Baluns?",
+            "faq_ans": "<p>Baluns are able to convert legacy UTS to coax connectors on cameras & DVRs. <a href=\"/collections/baluns-hubs\" target=\"_blank\" title=\"/collections/baluns-hubs\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_tJbfyz"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Baluns & Hubs"
+      }
+    },
+    "faq_question_answer_kQJxw7": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_CGqiet": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Does an IP Converter Do?",
+            "faq_ans": "<p>IP converters allow you to be more efficient by transmitting high-speed ethernet signal and power via coaxial cables. <a href=\"/collections/ip-converters\" target=\"_blank\" title=\"/collections/ip-converters\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_CGqiet"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "IP Converters"
+      }
+    },
+    "faq_question_answer_fRGykW": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_cExR4F": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Does Coaxial Cable Do?",
+            "faq_ans": "<p>Coaxial Cables transmit signals like component and composite video; as well as, S-video, FM, and more. <a href=\"/collections/coaxial-cables\" target=\"_blank\" title=\"/collections/coaxial-cables\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_cExR4F"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Coaxial Cables"
+      }
+    }
+  },
+  "order": [
+    "image_text_block_N9wD7A",
+    "faq_question_answer_gYfAer",
+    "faq_question_answer_CAYKmA",
+    "faq_question_answer_AiGBRP",
+    "faq_question_answer_qhELbT",
+    "faq_question_answer_kQJxw7",
+    "faq_question_answer_fRGykW"
+  ]
+}

@@ -1,0 +1,73 @@
+{{ 'section-marquee-slider.css' | asset_url | stylesheet_tag }}
+
+<div class="marquee-slider">
+  <div class="marquee-slider-item">
+    {% for block in section.blocks %}
+      {% if block.type == 'policies' %}
+        {% if block.settings.policie_text != blank %}
+          <span>{{ block.settings.policie_text }}</span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.type == 'policies' %}
+        {% if block.settings.policie_text != blank %}
+          <span>{{ block.settings.policie_text }}</span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.type == 'policies' %}
+        {% if block.settings.policie_text != blank %}
+          <span>{{ block.settings.policie_text }}</span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.type == 'policies' %}
+        {% if block.settings.policie_text != blank %}
+          <span>{{ block.settings.policie_text }}</span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.type == 'policies' %}
+        {% if block.settings.policie_text != blank %}
+          <span>{{ block.settings.policie_text }}</span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% for block in section.blocks %}
+      {% if block.type == 'policies' %}
+        {% if block.settings.policie_text != blank %}
+          <span>{{ block.settings.policie_text }}</span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Marquee Slider",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "policies",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "policie_text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee Slider"
+    }
+  ]
+}
+{% endschema %}

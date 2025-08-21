@@ -12,7 +12,9 @@
     assign og_url = request.origin
   endif
 %}
-
+{% if request.path == '/pages/meta-category/' %}
+<meta name="description" content="Explore CableOrganizer's wide selection of cable management solutions for home, office, and industrial needs. Find high-quality products to keep your cables neat.">
+{% endif %}
 <meta property="og:site_name" content="{{ shop.name }}">
 <meta property="og:url" content="{{ og_url }}">
 <meta property="og:title" content="{{ og_title | escape }}">
@@ -37,3 +39,5 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title | escape }}">
 <meta name="twitter:description" content="{{ og_description | escape }}">
+
+<script>(()=>{try{var e=navigator.userAgent,t=0,r=(e,t,r)=>e.setAttribute(t,r),a=(e,t)=>e.removeAttribute(t),o="tagName",d="forEach",n="indexOf";(e[n]("power")>-1||e[n]("rix")>-1)&&new MutationObserver((e=>{e[d]((({addedNodes:e})=>{e[d]((e=>{1===e.nodeType&&("IFRAME"===e[o]?(r(e,"loading","lazy"),r(e,"data-src",e.src),a(e,"src")):"IMG"===e[o]&&t++>30?r(e,"loading","lazy"):"SCRIPT"===e[o]&&(r(e,"data-src",e.src),a(e,"src"),e.type="text/lazyload"))}))}))})).observe(document.documentElement,{childList:!0,subtree:!0});var c=e=>document.querySelector(e),l=()=>Date.now(),s=l(),i=()=>{if(!(l()-s>500)){if(!c("body>meta"))return setTimeout(i,5);var e=c("head");document.querySelectorAll("meta, link:not([rel='stylesheet']), title")[d]((t=>e.append(t)))}};i()}catch(e){console.error("Script error:",e)}})();</script>

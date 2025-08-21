@@ -1,6 +1,7 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-filter.css' |  asset_url |  stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -35,12 +36,14 @@
     }
   }
 {%- endstyle -%}
-
+{% if template contains 'collection' %}
+<h1 style="display:none">{{ collection.title }}</h1>
+{% endif %}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
-      <facet-filters-form class="facets facets-vertical-sort page-width small-hide">
+      <facet-filters-form class="facets facets-vertical-sort page-width medium-hide small-hide">
         <form class="facets-vertical-form" id="FacetSortForm">
           <div class="facet-filters sorting caption">
             <div class="facet-filters__field">
@@ -73,7 +76,7 @@
             </div>
           </div>
 
-          <div class="product-count-vertical light" role="status">
+          <div class="product-count-vertical" role="status">
             <h2 class="product-count__text text-body">
               <span id="ProductCountDesktop">
                 {%- if collection.results_count -%}
@@ -154,6 +157,9 @@
             >
               {% assign skip_card_product_styles = false %}
               {%- for product in collection.products -%}
+                {% if product.tags contains "shsdchildproduct" %}
+                  {% continue %}
+                {% endif %} 
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
@@ -165,7 +171,7 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% comment %} {% render 'card-product',
+                  {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
@@ -176,8 +182,7 @@
                     skip_styles: skip_card_product_styles,
                     quick_add: section.settings.quick_add,
                     section_id: section.id
-                  %} {% endcomment %}
-                  {%- render 'product-item', product: product, section_id: section.id -%}
+                  %}
                 </li>
                 {%- assign skip_card_product_styles = true -%}
               {%- endfor -%}

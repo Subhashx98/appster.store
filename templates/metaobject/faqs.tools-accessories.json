@@ -1,0 +1,190 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_text_block_AUU7RW": {
+      "type": "image-text-block",
+      "settings": {
+        "image": "shopify://shop_images/FAQ-ToolsAndAccessories.jpg",
+        "title": "Have Any More Questions About Tools?",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? CableOrganizer® representatives can answer your questions by phone from 9 a.m. to 5 p.m. ET at <strong>1-888-3CABLEORG</strong> or by email at  <a href=\"mailto:sales@cableorganizer.com\" target=\"_blank\" title=\"mailto:sales@cableorganizer.com\">sales@cableorganizer.com</a></p>",
+        "full_width": true,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "faq_question_answer_ctBPYq": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_WMUDJq": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Can I Use a Hole Saw With Any Drill?",
+            "faq_ans": "<p>Generally speaking, most drills will work perfectly with your hole saw. But you want to aim for a drill that has at least 14 volts of power. This will help ensure that the cuts are clean and consistent. <a href=\"/blogs/articles/hole-saw-faqs\" target=\"_blank\" title=\"Hole Saw FAQs\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_3Fhz4A": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Are There Different Types of Crimping Tools?",
+            "faq_ans": "<p>There are crimpers for ethernet, non-ratcheting wire crimpers, heavy duty crimpers, universal crimpers, modular plug crimp tools, coaxial compression tools, terminal and splice crimpers, and many more! <a href=\"/blogs/articles/different-crimpers-offer-a-variety-of-features\" target=\"_blank\" title=\"Different Crimpers Offer a Variety of Features\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_WMUDJq",
+        "faq_3Fhz4A"
+      ],
+      "settings": {
+        "button_text": "go back FAQ landing page",
+        "button_link": "shopify://pages/faq",
+        "faq_heading": "Strippers, Crimpers, & Cutters"
+      }
+    },
+    "faq_question_answer_RgcKFh": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_MP34Cc": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are the Three Types of Test Instruments?",
+            "faq_ans": "<p>The three types of test instruments are network testers, electrical testers, and cctv / security testers. <a href=\"/collections/test-instruments\" target=\"_blank\" title=\"/collections/test-instruments\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_MP34Cc"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Test Instruments"
+      }
+    },
+    "faq_question_answer_rHBx4y": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_XWwcUP": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Must Insulated Tools be Marked?",
+            "faq_ans": "<p>Insulated tools must be appropriately marked with the official 1000-volt rating symbol. <a href=\"/products/klein-tools-insulated-tools\" target=\"_blank\" title=\"Klein Tools Insulated Tools\"><strong>...more</strong></a></p>"
+          }
+        },
+        "faq_t3QPVH": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Should Everyone Have in Their Tool Box?",
+            "faq_ans": "<p>Tools like screwdrivers, pliers, hammers, levels, wrenches, and punchdown tools are all great items to have in your tool box. You can also get tool kits that come with all of the basic tools you'll need. <a href=\"/blogs/articles/must-have-electrician-tools-for-on-the-job-safety-and-efficiency\" target=\"_blank\" title=\"Must-Have Electrician Tools for On-the-Job Safety and Efficiency\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_XWwcUP",
+        "faq_t3QPVH"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Hand Tools"
+      }
+    },
+    "faq_question_answer_peEkpc": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_6KVnAw": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What are the Different Types of Tape?",
+            "faq_ans": "<p>Here at CableOrganizer® we carry a wide range of tapes. For example, cable path tape, thermo-shield tape, electrical tape, and double-sided tape just to name a few. <a href=\"/collections/tapes-adhesives\" target=\"_blank\" title=\"/collections/tapes-adhesives\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_6KVnAw"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Tapes & Adhesives"
+      }
+    },
+    "faq_question_answer_9PHdgc": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_DMJ8M6": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Tool Storage",
+            "faq_ans": "<p>Tools can be stored in portable tool boxes, totes, bags, rolling tool chests, and tool carts. <a href=\"/blogs/how-to/tool-box-roundup-how-to-find-the-right-one-for-you\" target=\"_blank\" title=\"Tool Box Roundup: How to Find the Right One for You\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_DMJ8M6"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Tool Storage"
+      }
+    },
+    "faq_question_answer_jzd9kx": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_yayYzn": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Types of Flashlights Are There?",
+            "faq_ans": "<p>Flashlights come in all shapes and sizes! Some have more lumens, a longer battery, or a further reach. While others can be waterproof, drop-proof, or even project light in different colors! <a href=\"/blogs/articles/how-do-i-choose-the-best-flashlight\" target=\"_blank\" title=\"How Do I Choose the Best Flashlight?\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_yayYzn"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Flashlights"
+      }
+    },
+    "faq_question_answer_3dCb8x": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_WKzX7B": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Do Cleaners and Degreasers Protect Sensitive Components?",
+            "faq_ans": "<p>Cleaners and degreasers come in sprays and wipes the provide permanent protection against moisture, abrasion, chemicals, etc. <a href=\"/collections/cleaners-degreasers-encapsulating-compounds\" target=\"_blank\" title=\"/collections/cleaners-degreasers-encapsulating-compounds\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_WKzX7B"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Cleaners, Degreasers & Encapsulating Compounds"
+      }
+    }
+  },
+  "order": [
+    "image_text_block_AUU7RW",
+    "faq_question_answer_ctBPYq",
+    "faq_question_answer_RgcKFh",
+    "faq_question_answer_rHBx4y",
+    "faq_question_answer_peEkpc",
+    "faq_question_answer_9PHdgc",
+    "faq_question_answer_jzd9kx",
+    "faq_question_answer_3dCb8x"
+  ]
+}

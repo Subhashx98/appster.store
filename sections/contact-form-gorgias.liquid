@@ -1,0 +1,52 @@
+<style>
+    .gorgias-contact-form{
+        padding: 60px 0 0;
+    }
+    .gorgias-contact-form h2{
+      text-align: center;
+    }
+    .gorgias-contact-form p{
+      text-align: center;
+      opacity: 0.6;
+      padding: 10px 0 30px 0;
+    }
+    @media screen and (max-width: 989px) {
+    .gorgias-contact-form{
+        padding: 40px 0 0;
+    }
+}
+</style>
+<div class="gorgias-contact-form">
+  <div class="page-width">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.sub_heading != blank %}
+        <p>{{ section.settings.sub_heading }}</p>
+      {% endif %}
+    <script defer src="https://contact.gorgias.help/api/contact-forms/loader.js?v=3" data-gorgias-loader-contact-form data-gorgias-contact-form-uid="rlo88ilz"></script>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Gorgias Contact form",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub Heading"  
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gorgias Contact form"
+    }
+  ]
+}
+{% endschema %}

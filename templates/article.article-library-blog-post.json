@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "disabled": true,
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": false,
+            "blog_show_cableorganizer": true,
+            "cableorganizer_text": "By: CableOrganizer®"
+          }
+        },
+        "featured_image": {
+          "type": "featured_image",
+          "disabled": true,
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {
+            "general_cta_text": "Go Back",
+            "general_cta_url": "shopify://blogs/blog",
+            "article_library_cta_text": "Back to Article Library",
+            "article_library_cta_url": "shopify://blogs/articles",
+            "how_to_cta_text": "Back to How to Corner",
+            "how_to_cta_url": "shopify://blogs/how-to"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "featured_image",
+        "content"
+      ],
+      "custom_css": [
+        "h1 {color: #336699; font-weight: bolder;}",
+        "h4 {color: #336699; font-size: large; padding-bottom: 10px;}",
+        "h6 {font-size: medium;}",
+        "hr {margin-top: 10px; margin-bottom: 10px;}",
+        "a {color: #fe5b00;}",
+        ".article-template__back {background-color: #f2f2f2; padding-top: 10px; padding-bottom: 10px; font-weight: bold;}",
+        "img {border: 0 !important; padding: 0px;}",
+        "hr {border: 1px solid #e6e6e6;}",
+        ".breadcrumbs__item:hover {text-decoration: underline;}",
+        ".breadcrumbs__link_1:hover {text-decoration: underline;}"
+      ],
+      "settings": {
+        "facebook": "https://www.facebook.com/CableOrganizer",
+        "instagram": "https://www.instagram.com/cableorganizer/",
+        "twitter": "https://x.com/CableOrganizers",
+        "youtube": "https://www.youtube.com/user/CableOrganizers",
+        "linkedin": "https://www.linkedin.com/company/cableorganizer.com"
+      }
+    },
+    "featured_item_CXFbfP": {
+      "type": "featured-item",
+      "settings": {
+        "heading": "Related Items",
+        "collection": "frontpage"
+      }
+    },
+    "featured_home_blog_4jVW3k": {
+      "type": "featured-home-blog",
+      "settings": {
+        "heading": "Latest Articles",
+        "subheading": "",
+        "blog": "articles",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "show_image": true,
+        "show_date": true,
+        "show_author": true,
+        "show_view_all": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_item_CXFbfP",
+    "featured_home_blog_4jVW3k"
+  ]
+}

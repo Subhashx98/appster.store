@@ -1,0 +1,82 @@
+.landing-banner{
+    padding-bottom: 40px;
+}
+.landing-banner[data-top-padding="true"] {
+    margin-top: 40px;
+}
+.landing-banner span.landing-banner-img{
+    display: flex;
+    flex-wrap: wrap;
+    height: 480px;
+    border-radius: var(--border-radius-5);
+    overflow: hidden;
+}
+.landing-banner span.landing-banner-img img{
+    height: 100%;
+    object-fit: cover;
+}
+.landing-banner .marketing-content{
+    position: absolute;
+    top: 0;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 55%;
+    height: 100%;    
+    justify-content: center;
+    align-items: flex-start;
+    gap: 36px;
+}
+.landing-banner .marketing-content h1,
+.landing-banner .marketing-content p{
+    color: var(--white-color);
+}
+.landing-banner .marketing-content p{
+    margin-top: -24px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 24px;
+}
+.landing-banner .marketing-content .main-btn-small{
+    background-color: var(--orange-color);
+    color: var(--white-color);
+    padding: 14px 56px;
+}
+.landing-banner .marketing-content .main-btn-small:hover{
+    background-color: var(--primary-blue-color); 
+}
+.landing-banner .marketing-content .banner-logo {
+    display: flex;
+}
+.landing-banner .marketing-content .banner-logo span{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-left: 30px;
+    max-width: 200px;
+    height: 40px;
+}
+.landing-banner .marketing-content .banner-logo span:first-child{
+    padding-left: 0px;
+}
+.landing-banner .marketing-content .banner-logo span img{
+    max-width: 100%;
+    max-height: 100%;
+}
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .landing-banner .marketing-content{ padding: 32px 40px;}
+}
+@media only screen and (max-width: 767px) {
+    .landing-banner[data-top-padding="true"] {margin: 0px; padding-bottom: 0px;}
+    .landing-banner .page-width{ max-width: 100%; padding: 0px;}
+    .landing-banner span.landing-banner-img{position: relative; border-radius: 0px; height: 500px; align-items: flex-end; background-color: var(--black-color);}
+    .landing-banner span.landing-banner-img img{ border-radius: 0px; height: 280px; object-position: bottom right;}
+    .landing-banner .marketing-content{ max-width: 100%; gap: 28px; justify-content: flex-start; align-items: center; text-align: center;}
+    .landing-banner .marketing-content h1{ font-size: 28px;line-height: normal;}
+    .landing-banner .marketing-content p{ line-height: 20px; margin-top: -20px;}
+    .landing-banner span.landing-banner-img:before{ content: ""; position: absolute; bottom: 0;
+        left: 0; right: 0; height: 320px; background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.10) 51%);
+        pointer-events: none; box-shadow: inset 0px 50px 30px 0px #000000;
+    }
+}

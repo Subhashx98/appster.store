@@ -1,0 +1,279 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_text_block_3PeHeP": {
+      "type": "image-text-block",
+      "settings": {
+        "image": "shopify://shop_images/FAQ-DeskPowerAndManagement.jpg",
+        "title": "Have Any More Questions About Desk Outlets & Gromemts?",
+        "description": "<p>Do you need recommendations on what product(s) to select for your next project? CableOrganizer® representatives can answer your questions by phone from 9 a.m. to 5 p.m. ET at 1-888-3CABLEORG or by email at <a href=\"mailto:sales@cableorganizer.com\" title=\"mailto:sales@cableorganizer.com\"><strong>sales@cableorganizer.com</strong></a></p>",
+        "full_width": true,
+        "image_position": false,
+        "text_size": false
+      }
+    },
+    "faq_question_answer_khA77t": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_nDDwqV": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Do I need to Cable Manage my Workspace?",
+            "faq_ans": "<p>We offer many options to help organize your workspace under our Desk Organizers category. We also have curated kits that contain everything you need to organize your desk / office. <a href=\"/blogs/how-to/how-to-get-back-whats-yours-reclaiming-your-desk-with-cable-management\" target=\"_blank\" title=\"How to Get Back What's Yours: Reclaiming Your Desk with Cable Management\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_nDDwqV"
+      ],
+      "settings": {
+        "button_text": "go back FAQ landing page",
+        "button_link": "shopify://pages/faq",
+        "faq_heading": "Desk Cable Management"
+      }
+    },
+    "faq_question_answer_9B44dG": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_eXQXKQ": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Products Help Prevent Computer and Data Theft?",
+            "faq_ans": "<p>Our computer kits are great options when trying to secure your laptop. Some kits allow your computer to lock to your workstation, while others make it so you can protect your computer's memory/ other components from those who try and tamper with your information. <a href=\"/blogs/how-to/how-to-prevent-computer-and-data-theft\" target=\"_blank\" title=\"How to Prevent Computer and Data Theft\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_eXQXKQ"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Computer Mounts & Kits"
+      }
+    },
+    "faq_question_answer_hKKL6U": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_7rapKK": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Are There Any Space Saving USB-Charging Solutions?",
+            "faq_ans": "<p>Yes, we offer a 5-port USB Charger that is portable; we also carry the Black Box USB Hub. <a href=\"/blogs/articles/helpful-tips-for-powering-multiple-devices-in-a-small-area\" target=\"_blank\" title=\"Helpful Tips for Powering Multiple Devices in a Small Area\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_7rapKK"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Charging Stations & Batteries"
+      }
+    },
+    "faq_question_answer_Y4dHY8": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_rKAMNA": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "Where Can I Buy a Computer Workstation?",
+            "faq_ans": "<p>Here at CableOrganizer® we offer a few options from workbenches to classroom training tables. We also offer a customizable desk where you can choose the color, or choose to add wings and side racks. <a href=\"/blogs/how-to/how-to-customize-your-work-from-home-office-space\" target=\"_blank\" title=\"How to Customize Your Work-From-Home Office Space\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_rKAMNA"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Computer Workstations"
+      }
+    },
+    "faq_question_answer_qcpcR6": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_eN4tQA": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Type of Tablet / Laptop Stand Should I Get?",
+            "faq_ans": "<p>We offer the Mika, Kickflip, and Kosta stands from Advantus BlueLounge®. Depending on your tablet / laptop the one you pick will vary. <a href=\"/blogs/articles/office-mod-update-your-workspace-in-5-simple-steps\" target=\"_blank\" title=\"Office Mod: Update Your Workspace in 5 Simple Steps\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_eN4tQA"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Mobile & Tablet Accessories"
+      }
+    },
+    "faq_question_answer_PYTBHx": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_98GyeB": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Do I Add an Outlet to my Desk?",
+            "faq_ans": "<p>We offer a range of removable desk outlets that can either slide or screw into place. <a href=\"/collections/removable-desk-outlets\" target=\"_blank\" title=\"Removable Desk Outlets\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_98GyeB"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Removable Desk Outlets"
+      }
+    },
+    "faq_question_answer_LgdCqE": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_7jq496": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What is the Retractable Power / Data Communication Center?",
+            "faq_ans": "<p>The Retractable Power/ Data Communication Center helps keep your workspace free of wires and cables; it fully retracts underneath the tabletop. <a href=\"/products/retractable-power-data-communication-center\" target=\"_blank\" title=\"Retractable Power / Data Communication Center\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_7jq496"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Retractable Power / Data Communication Center"
+      }
+    },
+    "faq_question_answer_3iCbkw": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_YKePbK": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Are Built In Outlets?",
+            "faq_ans": "<p>Built in desk outlets come in a variaty of options. Some can help to cover and protect your outlets. These can have flip covers, a hinge, or a pop top. We also carry flush exposed inserts which are great not only for desks but also for furniture like chairs and couches; these outlets are easy to access due to the plugs being exposed. Lastly there are elevated static inserts which are perfect for a large shared space like a library or computer lab and they are the easiest to access. <a href=\"/blogs/articles/built-in-desk-outlets\" target=\"_blank\" title=\"Built-in Desk Outlets\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_YKePbK"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Built-In Desk Outlets"
+      }
+    },
+    "faq_question_answer_pihfbq": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_GcARFV": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "How Can I Hide My Power Outlet on my Desk?",
+            "faq_ans": "<p>A great solution for hiding outlets on your desk is to use a pop-up desk outlet. This way you can hide your outlets when they are not in use. <a href=\"/collections/pop-up-desk-outlets\" target=\"_blank\" title=\"Pop-Up Desk Outlets\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_GcARFV"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Pop-Up Desk Outlets"
+      }
+    },
+    "faq_question_answer_kyqfML": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_z3iQKX": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What Shape Desk Grommet Should I Get?",
+            "faq_ans": "<p>We carry a range of shapes from round and rectangular, to oval! A round desk grommet may not be the best option if you have many cables; for a greater amount of cables, consider using a rectangular or oval desk grommet. <a href=\"/blogs/articles/things-to-consider-when-choosing-a-desk-grommet\" target=\"_blank\" title=\"Things to Consider When Choosing a Desk Grommet\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_z3iQKX"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Desk Grommets"
+      }
+    },
+    "faq_question_answer_37BHNa": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_hWpLpk": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "When Should I Use Floor Access Grommets?",
+            "faq_ans": "<p>Floor access grommets are perfect for office spaces, classrooms, and more. The help prevent tripping hazards when cords have to pass through the floor. <a href=\"/collections/floor-access-grommets\" target=\"_blank\" title=\"Floor Access Grommets\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_hWpLpk"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Floor Access Grommets"
+      }
+    },
+    "faq_question_answer_MUqEgk": {
+      "type": "faq-question-answer",
+      "blocks": {
+        "faq_HeHwhk": {
+          "type": "faq",
+          "settings": {
+            "faq_que": "What are Rubber Grommets used for?",
+            "faq_ans": "<p>Rubber grommets act as a bumper to help protect cables from edges and corners. This means cables can pass through walls, floors, and furniature without being damaged. <a href=\"/blogs/articles/grommets-bushings-edgings-what-does-it-all-mean\" target=\"_blank\" title=\"Grommets, Bushings, Edgings... What Does It All Mean?\"><strong>...more</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_HeHwhk"
+      ],
+      "settings": {
+        "button_text": "",
+        "button_link": "",
+        "faq_heading": "Rubber Grommets"
+      }
+    }
+  },
+  "order": [
+    "image_text_block_3PeHeP",
+    "faq_question_answer_khA77t",
+    "faq_question_answer_9B44dG",
+    "faq_question_answer_hKKL6U",
+    "faq_question_answer_Y4dHY8",
+    "faq_question_answer_qcpcR6",
+    "faq_question_answer_PYTBHx",
+    "faq_question_answer_LgdCqE",
+    "faq_question_answer_3iCbkw",
+    "faq_question_answer_pihfbq",
+    "faq_question_answer_kyqfML",
+    "faq_question_answer_37BHNa",
+    "faq_question_answer_MUqEgk"
+  ]
+}

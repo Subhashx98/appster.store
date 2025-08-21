@@ -1,0 +1,29 @@
+{{ 'section-about-brand.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.description != blank %}
+  <div class="about-brand about-brand-description">
+    <div class="page-width">
+      {% if section.settings.description != blank %}
+        {{ section.settings.description }}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "About Brand Description",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Brand Description"
+    }
+  ]
+}
+{% endschema %}

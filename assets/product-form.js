@@ -17,7 +17,7 @@ if (!customElements.get('product-form')) {
         this.hideErrors = this.dataset.hideErrors === 'true';
       }
 
-      onSubmitHandler(evt) {
+      async onSubmitHandler(evt) {
         evt.preventDefault();
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
@@ -32,6 +32,53 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
+        const variantId = formData.get('id');
+        const quantityToAdd = parseInt(formData.get('quantity') || 1, 10);
+
+        // Get the max quantity available for this variant from .product__inventory
+        let maxQuantity = Infinity;
+        const inventoryP = document.querySelector('.product__inventory');
+        if (inventoryP && typeof inventoryP.textContent === 'string') {
+          // Match the last number in the string (e.g., "Low stock: 5 Left" or "Only 2 Left")
+          const match = inventoryP.textContent.match(/(\d+)(?!.*\d)/);
+          if (match) {
+            maxQuantity = parseInt(match[1], 10);
+          }
+        }
+        let quantityInCart = 0
+        if (maxQuantity < Infinity){
+          // Check cart for variant quantity ---
+          try {
+            const cartData = await fetch('/cart.js').then(res => res.json());
+            const cartItem = cartData.items.find(item => String(item.variant_id) === String(variantId));
+            quantityInCart = cartItem ? cartItem.quantity : 0;
+          } catch (e) {
+            this.handleErrorMessage('Could not check cart. Please try again.');
+            this.submitButton.classList.remove('loading');
+            this.querySelector('.loading__spinner').classList.add('hidden');
+            this.submitButton.removeAttribute('aria-disabled');
+            return;
+          }
+
+          
+        }
+
+        if (quantityInCart + quantityToAdd > maxQuantity) {
+          const allowedToAdd = Math.max(0, maxQuantity - quantityInCart);
+          if (allowedToAdd > 0) {
+            // Set the quantity to the maximum allowed and proceed
+            this.handleErrorMessage(`You already have ${quantityInCart} in your cart. Only ${allowedToAdd} more can be added. Adding the maximum allowed.`);
+            // Update formData to reflect the new quantity
+            formData.set('quantity', allowedToAdd);
+          } else {
+            this.handleErrorMessage(`You already have the maximum allowed quantity (${maxQuantity}) in your cart.`);
+            this.submitButton.classList.remove('loading');
+            this.querySelector('.loading__spinner').classList.add('hidden');
+            this.submitButton.removeAttribute('aria-disabled');
+            return;
+          }
+        }
+
         if (this.cart) {
           formData.append(
             'sections',
