@@ -39,7 +39,7 @@
             <li class="breadcrumbs__item">
               {{- product.title -}}
             </li>
-          {%- when 'collection' and collection.handle -%}
+          {%- when 'collection' -%}
             {%- if current_tags -%}
               <li class="breadcrumbs__item">
                 {{ collection.title | link_to: collection.url }}
@@ -95,3 +95,13 @@
     </nav>
   </div>
 {%- endunless -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- when 'collection' and collection.handle -%}"
+  to: "{%- when 'collection' -%}"
+  position: 2164..2189
+{% endcomment %}
